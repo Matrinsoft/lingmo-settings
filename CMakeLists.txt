@@ -23,8 +23,8 @@ find_package(Freetype REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Libcrypt REQUIRED)
 
-find_package(KF6NetworkManagerQt QUIET)
-find_package(KF6ModemManagerQt QUIET)
+find_package(KF6NetworkManagerQt REQUIRED)
+find_package(KF6ModemManagerQt REQUIRED)
 find_package(KF6Config)
 
 find_package(LingmoLogger REQUIRED)

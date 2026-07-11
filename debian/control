@@ -5,7 +5,15 @@ Maintainer: Lingmo OS Team <team@lingmo.org>
 Build-Depends:
     cmake (>= 3.20),
     debhelper-compat (= 13),
+    libcrypt-dev,
+    libfreetype-dev,
+    libkf6config-dev,
+    libkf6modemmanagerqt-dev,
+    libkf6networkmanagerqt-dev,
+    libx11-dev,
+    pkg-config,
     qt6-base-dev (>= 6.5),
+    qt6-declarative-dev,
 Standards-Version: 4.6.2
 Homepage: https://github.com/Matrinsoft/lingmo-settings
 Rules-Requires-Root: no
