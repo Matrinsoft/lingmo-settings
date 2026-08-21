@@ -1,0 +1,40 @@
+Source: lingmo-settings
+Section: utils
+Priority: optional
+Maintainer: Lingmo OS Team <team@lingmo.org>
+Build-Depends:
+    debhelper-compat (=13),
+    cmake,
+    fonts-open-sans,
+    just,
+    libclang-dev,
+    libdav1d-dev,
+    libexpat1-dev,
+    libfontconfig-dev,
+    libfreetype-dev,
+    libinput-dev,
+    libudev-dev,
+    libwayland-dev,
+    libxkbcommon-dev,
+    pkg-config,
+    rust-all,
+Standards-Version: 4.6.2
+Homepage: https://github.com/Matrinsoft/lingmo-settings
+
+Package: lingmo-settings
+Architecture: amd64 arm64
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    accountsservice,
+    lingmo-randr,
+    lingmo-settings-daemon,
+    gettext,
+    iso-codes,
+    network-manager-gnome,
+    network-manager-openvpn,
+    network-manager-openvpn-gnome,
+    xkb-data,
+Recommends: adw-gtk3
+Description: Settings application for the COSMIC desktop environment
+ Settings application for the COSMIC desktop environment
