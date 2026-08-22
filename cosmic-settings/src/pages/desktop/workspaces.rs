@@ -3,9 +3,9 @@
 
 // TODO make settings work
 
-use cosmic::cosmic_config::{self, ConfigGet, ConfigSet};
-use cosmic::widget::{self, settings};
-use cosmic::{Apply, Element, surface};
+use lingmo::cosmic_config::{self, ConfigGet, ConfigSet};
+use lingmo::widget::{self, settings};
+use lingmo::{Apply, Element, surface};
 use cosmic_comp_config::workspace::{Action, WorkspaceConfig, WorkspaceLayout, WorkspaceMode};
 use cosmic_settings_page::{self as page, Section, section};
 use slotmap::SlotMap;
@@ -107,7 +107,7 @@ impl Page {
         }
     }
 
-    pub fn update(&mut self, message: Message) -> cosmic::iced::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> lingmo::iced::Task<crate::app::Message> {
         match message {
             Message::SetWorkspaceMode(value) => {
                 self.comp_workspace_config.workspace_mode = value;
@@ -140,10 +140,10 @@ impl Page {
                 }
             }
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
         }
-        cosmic::iced::Task::none()
+        lingmo::iced::Task::none()
     }
 }
 
@@ -182,7 +182,7 @@ pub fn action_on_typing() -> Section<crate::pages::Message> {
                             &page.action_on_typing_selections,
                             page.action_on_typing_active,
                             Message::SetActionOnTyping,
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(crate::pages::Message::Workspaces(

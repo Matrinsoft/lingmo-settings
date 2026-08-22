@@ -23,10 +23,10 @@ pub fn display_name(name: &str, physical: (u32, u32)) -> String {
 /// Spawn a background tasks and forward its messages
 pub fn forward_event_loop<M: 'static + Send, T: Future<Output = ()> + Send + 'static>(
     event_loop: impl FnOnce(futures::channel::mpsc::Sender<M>) -> T + Send + 'static,
-) -> (tokio::sync::oneshot::Sender<()>, cosmic::Task<M>) {
+) -> (tokio::sync::oneshot::Sender<()>, lingmo::Task<M>) {
     let (cancel_tx, cancel_rx) = tokio::sync::oneshot::channel::<()>();
 
-    let task = cosmic::Task::stream(cosmic::iced::stream::channel(1, |emitter| async move {
+    let task = lingmo::Task::stream(lingmo::iced::stream::channel(1, |emitter| async move {
         select(
             std::pin::pin!(cancel_rx),
             std::pin::pin!(event_loop(emitter)),

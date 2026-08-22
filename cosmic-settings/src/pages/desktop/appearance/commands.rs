@@ -3,7 +3,7 @@
 
 //! CLI commands for theme import and export.
 
-use cosmic::cosmic_theme::ThemeBuilder;
+use lingmo::cosmic_theme::ThemeBuilder;
 use std::path::Path;
 
 use super::theme_manager::Manager;

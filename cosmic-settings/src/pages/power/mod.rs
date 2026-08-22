@@ -3,11 +3,11 @@ mod backend;
 use self::backend::{GetCurrentPowerProfile, SetPowerProfile};
 use backend::{Battery, ConnectedDevice, PowerProfile};
 
-use cosmic::iced::core::text::{Ellipsize, EllipsizeHeightLimit};
-use cosmic::iced::widget::{column, row};
-use cosmic::iced::{self, Alignment, Length, stream};
-use cosmic::widget::{self, settings, space, text};
-use cosmic::{Apply, Task, surface};
+use lingmo::iced::core::text::{Ellipsize, EllipsizeHeightLimit};
+use lingmo::iced::widget::{column, row};
+use lingmo::iced::{self, Alignment, Length, stream};
+use lingmo::widget::{self, settings, space, text};
+use lingmo::{Apply, Task, surface};
 use cosmic_config::{Config, CosmicConfigEntry};
 use cosmic_idle_config::CosmicIdleConfig;
 use cosmic_settings_page::{self as page, Section, section};
@@ -54,7 +54,7 @@ pub struct Page {
     entity: page::Entity,
     battery: Battery,
     connected_devices: Vec<ConnectedDevice>,
-    on_enter_handle: Option<cosmic::iced::task::Handle>,
+    on_enter_handle: Option<lingmo::iced::task::Handle>,
     screen_off_labels: Vec<String>,
     suspend_labels: Vec<String>,
     idle_config: Config,
@@ -118,8 +118,8 @@ impl page::Page<crate::pages::Message> for Page {
 
     fn subscription(
         &self,
-        _core: &cosmic::Core,
-    ) -> cosmic::iced::Subscription<crate::pages::Message> {
+        _core: &lingmo::Core,
+    ) -> lingmo::iced::Subscription<crate::pages::Message> {
         // Shared logic between the system battery and connected device batteries.
         async fn receive_battery_changes(
             proxy: DeviceProxy<'static>,
@@ -202,17 +202,17 @@ impl page::Page<crate::pages::Message> for Page {
         iced::Subscription::batch(std::iter::once(system_battery).chain(device_batteries))
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         let futures: Vec<Task<Message>> = vec![
-            cosmic::Task::future(async move {
+            lingmo::Task::future(async move {
                 let battery = Battery::update_battery().await;
                 Message::UpdateBattery(battery)
             }),
-            cosmic::Task::future(async move {
+            lingmo::Task::future(async move {
                 let devices = ConnectedDevice::update_connected_devices().await;
                 Message::UpdateConnectedDevices(devices)
             }),
-            cosmic::Task::future(async move {
+            lingmo::Task::future(async move {
                 if let Ok(backend) = tokio::time::timeout(
                     std::time::Duration::from_millis(1000),
                     backend::get_backend(),
@@ -225,7 +225,7 @@ impl page::Page<crate::pages::Message> for Page {
                     Message::BackendAvailabilityCheck(None)
                 }
             }),
-            cosmic::Task::run(
+            lingmo::Task::run(
                 stream::channel(
                     1,
                     |mut emitter: futures::channel::mpsc::Sender<Message>| async move {
@@ -280,7 +280,7 @@ impl page::Page<crate::pages::Message> for Page {
             ),
         ];
 
-        let (task, handle) = cosmic::Task::batch(futures)
+        let (task, handle) = lingmo::Task::batch(futures)
             .map(crate::pages::Message::Power)
             .abortable();
 
@@ -334,7 +334,7 @@ impl Page {
                 if let Some(ref backend) = self.backend {
                     self.current_power_profile = Some(p);
                     let backend = backend.clone();
-                    return cosmic::Task::future(async move {
+                    return lingmo::Task::future(async move {
                         backend.set_power_profile(p).await;
                         crate::app::Message::None
                     });
@@ -392,14 +392,14 @@ impl Page {
                 }
             }
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
             Message::BackendAvailabilityCheck(backend) => {
                 self.backend.clone_from(&backend);
 
                 // If backend is available, get the current power profile
                 if let Some(backend) = backend {
-                    return cosmic::Task::future(async move {
+                    return lingmo::Task::future(async move {
                         let profile = backend.get_current_power_profile().await;
                         crate::app::Message::PageMessage(crate::pages::Message::Power(
                             Message::CurrentPowerProfileUpdate(profile),
@@ -436,7 +436,7 @@ fn battery_info() -> Section<crate::pages::Message> {
                 .push(
                     row!(battery_icon, battery_label)
                         .align_y(Alignment::Center)
-                        .spacing(cosmic::theme::active().cosmic().space_xxxs()),
+                        .spacing(lingmo::theme::active().cosmic().space_xxxs()),
                 )
                 .into()
         })
@@ -450,7 +450,7 @@ fn connected_devices() -> Section<crate::pages::Message> {
         .descriptions(descriptions)
         .show_while::<Page>(|page| !page.connected_devices.is_empty())
         .view::<Page>(move |_binder, page, section| {
-            let devices: Vec<cosmic::Element<'_, _>> = page
+            let devices: Vec<lingmo::Element<'_, _>> = page
                 .connected_devices
                 .iter()
                 .map(|connected_device| {
@@ -489,7 +489,7 @@ fn connected_devices() -> Section<crate::pages::Message> {
                         .height(Length::Fill),
                     )
                     .height(64.)
-                    .class(cosmic::theme::Container::List)
+                    .class(lingmo::theme::Container::List)
                     .into()
                 })
                 .collect();
@@ -505,7 +505,7 @@ fn connected_devices() -> Section<crate::pages::Message> {
                                 .chunks(2)
                                 .into_iter()
                                 .map(|mut device_row| {
-                                    cosmic::Element::from(
+                                    lingmo::Element::from(
                                         row!(
                                             device_row.next().unwrap_or(space::horizontal().into()),
                                             device_row.next().unwrap_or(space::horizontal().into()),
@@ -550,7 +550,7 @@ fn profiles() -> Section<crate::pages::Message> {
             }
 
             section
-                .apply(cosmic::Element::from)
+                .apply(lingmo::Element::from)
                 .map(crate::pages::Message::Power)
         })
 }
@@ -561,7 +561,7 @@ fn power_saving_row<'a>(
     selected_time: Option<Duration>,
     times: &'static [Duration],
     on_select: fn(Option<Duration>) -> Message,
-) -> cosmic::Element<'a, Message> {
+) -> lingmo::Element<'a, Message> {
     let selected = if let Some(time) = selected_time {
         times.iter().position(|x| *x == time)
     } else {
@@ -575,7 +575,7 @@ fn power_saving_row<'a>(
             labels,
             selected,
             move |i| on_select(times.get(i).copied()),
-            cosmic::iced::window::Id::RESERVED,
+            lingmo::iced::window::Id::RESERVED,
             Message::Surface,
             |a| crate::app::Message::PageMessage(crate::pages::Message::Power(a)),
         ),
@@ -639,7 +639,7 @@ fn power_saving() -> Section<crate::pages::Message> {
                 ));
             }
             section
-                .apply(cosmic::Element::from)
+                .apply(lingmo::Element::from)
                 .map(crate::pages::Message::Power)
         })
 }

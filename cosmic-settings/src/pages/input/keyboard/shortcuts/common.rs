@@ -1,15 +1,15 @@
 // Copyright 2024 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use cosmic::app::ContextDrawer;
-use cosmic::iced::event::listen_with;
-use cosmic::iced::keyboard::key::Named;
-use cosmic::iced::keyboard::{Key, Location, Modifiers};
-use cosmic::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
-use cosmic::iced::platform_specific::shell::wayland::keymap;
-use cosmic::iced::{self, Alignment, Length};
-use cosmic::widget::{self, button, icon, list, settings, text};
-use cosmic::{Apply, Element, Task, theme};
+use lingmo::app::ContextDrawer;
+use lingmo::iced::event::listen_with;
+use lingmo::iced::keyboard::key::Named;
+use lingmo::iced::keyboard::{Key, Location, Modifiers};
+use lingmo::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
+use lingmo::iced::platform_specific::shell::wayland::keymap;
+use lingmo::iced::{self, Alignment, Length};
+use lingmo::widget::{self, button, icon, list, settings, text};
+use lingmo::{Apply, Element, Task, theme};
 use cosmic_config::{ConfigGet, ConfigSet};
 use cosmic_settings_config::shortcuts::{self, Action, Binding, Shortcuts};
 use cosmic_settings_page as page;
@@ -116,7 +116,7 @@ impl ShortcutModel {
 #[must_use]
 pub struct Model {
     pub entity: page::Entity,
-    pub add_keybindings_button_id: cosmic::widget::Id,
+    pub add_keybindings_button_id: lingmo::widget::Id,
     pub defaults: Shortcuts,
     pub editing: Option<usize>,
     pub replace_dialog: Option<(usize, Binding, Action, String)>,
@@ -186,7 +186,7 @@ impl Model {
         apply: fn(ShortcutMessage) -> crate::pages::Message,
     ) -> Option<ContextDrawer<'_, crate::pages::Message>> {
         self.shortcut_context.as_ref().map(|id| {
-            cosmic::app::context_drawer(
+            lingmo::app::context_drawer(
                 context_drawer(
                     &self.shortcut_title,
                     &self.shortcut_models,
@@ -236,7 +236,7 @@ impl Model {
         None
     }
 
-    pub(super) fn on_enter(&mut self) -> cosmic::Task<ShortcutMessage> {
+    pub(super) fn on_enter(&mut self) -> lingmo::Task<ShortcutMessage> {
         let mut shortcuts = self.config.get::<Shortcuts>("defaults").unwrap_or_default();
         self.defaults = shortcuts.clone();
 
@@ -400,7 +400,7 @@ impl Model {
                     && let Some(binding) = model.bindings.get_mut(id)
                 {
                     binding.reset();
-                    return cosmic::widget::text_input::focus(binding.id.clone());
+                    return lingmo::widget::text_input::focus(binding.id.clone());
                 }
             }
             ShortcutMessage::DeleteBinding(id) => {
@@ -432,7 +432,7 @@ impl Model {
                         shortcut.input = shortcut.binding.to_string();
                     }
                     return Task::batch(vec![
-                        cosmic::widget::text_input::focus(self.add_keybindings_button_id.clone()),
+                        lingmo::widget::text_input::focus(self.add_keybindings_button_id.clone()),
                         keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
                     ]);
                 }
@@ -482,7 +482,7 @@ impl Model {
                 self.shortcut_title = description;
                 self.replace_dialog = None;
 
-                let mut tasks = vec![cosmic::task::message(
+                let mut tasks = vec![lingmo::task::message(
                     crate::app::Message::OpenContextDrawer(self.entity),
                 )];
 
@@ -535,7 +535,7 @@ impl Model {
                             return Task::batch(vec![
                                 keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
                                 self.submit_binding(id),
-                                cosmic::widget::text_input::focus(
+                                lingmo::widget::text_input::focus(
                                     self.add_keybindings_button_id.clone(),
                                 ),
                             ]);
@@ -543,7 +543,7 @@ impl Model {
                             self.editing = None;
                             shortcut.reset();
                             return Task::batch(vec![
-                                cosmic::widget::text_input::focus(
+                                lingmo::widget::text_input::focus(
                                     self.add_keybindings_button_id.clone(),
                                 ),
                                 keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
@@ -553,7 +553,7 @@ impl Model {
                     shortcut.input = shortcut.pending.to_string();
                 }
             }
-            // libcosmic requires we set on_tab() and manually process here
+            // liblingmo requires we set on_tab() and manually process here
             // otherwise it'll consume the tab key event for navigation
             ShortcutMessage::TabPressed => {
                 if let Some((short_id, id)) = self.shortcut_context.zip(self.editing)
@@ -566,7 +566,7 @@ impl Model {
                     return Task::batch(vec![
                         keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
                         self.submit_binding(id),
-                        cosmic::widget::text_input::focus(self.add_keybindings_button_id.clone()),
+                        lingmo::widget::text_input::focus(self.add_keybindings_button_id.clone()),
                     ]);
                 }
             }
@@ -593,14 +593,14 @@ impl Model {
                             return Task::batch(vec![
                                 keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
                                 self.submit_binding(id),
-                                cosmic::widget::text_input::focus(
+                                lingmo::widget::text_input::focus(
                                     self.add_keybindings_button_id.clone(),
                                 ),
                             ]);
                         }
 
                         return Task::batch(vec![
-                            cosmic::widget::text_input::focus(
+                            lingmo::widget::text_input::focus(
                                 self.add_keybindings_button_id.clone(),
                             ),
                             keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
@@ -617,7 +617,7 @@ impl Model {
                         binding.reset();
                         self.editing = None;
                         return Task::batch(vec![
-                            cosmic::widget::text_input::focus(
+                            lingmo::widget::text_input::focus(
                                 self.add_keybindings_button_id.clone(),
                             ),
                             keyboard_shortcuts_inhibit::inhibit_shortcuts(false).discard(),
@@ -641,8 +641,8 @@ impl Model {
     #[cfg(feature = "wayland")]
     pub(crate) fn subscription(
         &self,
-        _core: &cosmic::Core,
-    ) -> cosmic::iced::Subscription<ShortcutMessage> {
+        _core: &lingmo::Core,
+    ) -> lingmo::iced::Subscription<ShortcutMessage> {
         if self.editing.is_some() && self.replace_dialog.is_none() {
             listen_with(|event, _, _| match event {
                 iced::event::Event::Keyboard(iced::keyboard::Event::KeyPressed {
@@ -652,8 +652,8 @@ impl Model {
                     modifiers,
                     ..
                 }) => {
-                    use cosmic::iced::keyboard::Key;
-                    use cosmic::iced::keyboard::key::Named;
+                    use lingmo::iced::keyboard::Key;
+                    use lingmo::iced::keyboard::key::Named;
 
                     if matches!(
                         key,
@@ -670,8 +670,8 @@ impl Model {
                     location,
                     ..
                 }) => {
-                    use cosmic::iced::keyboard::Key;
-                    use cosmic::iced::keyboard::key::Named;
+                    use lingmo::iced::keyboard::Key;
+                    use lingmo::iced::keyboard::key::Named;
 
                     if matches!(
                         key,
@@ -689,7 +689,7 @@ impl Model {
                 _ => None,
             })
         } else {
-            cosmic::iced::Subscription::none()
+            lingmo::iced::Subscription::none()
         }
     }
 
@@ -764,7 +764,7 @@ impl Model {
                     self.config_remove(&prev_binding);
                 }
                 self.config_add(action, new_binding);
-                return cosmic::widget::text_input::focus(self.add_keybindings_button_id.clone());
+                return lingmo::widget::text_input::focus(self.add_keybindings_button_id.clone());
             }
         }
 
@@ -780,7 +780,7 @@ fn context_drawer<'a>(
     id: usize,
     show_action: bool,
 ) -> Element<'a, ShortcutMessage> {
-    let cosmic::cosmic_theme::Spacing {
+    let lingmo::cosmic_theme::Spacing {
         space_xs, space_l, ..
     } = theme::spacing();
 

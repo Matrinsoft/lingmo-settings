@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 use super::{ShortcutMessage, ShortcutModel};
-use cosmic::app::ContextDrawer;
-use cosmic::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
-use cosmic::{Element, Task};
+use lingmo::app::ContextDrawer;
+use lingmo::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
+use lingmo::{Element, Task};
 use cosmic_settings_config::shortcuts::Action;
 use cosmic_settings_config::shortcuts::action::ResizeDirection;
 use cosmic_settings_page::{self as page, Section, section};
@@ -78,8 +78,8 @@ impl page::Page<crate::pages::Message> for Page {
     #[cfg(feature = "wayland")]
     fn subscription(
         &self,
-        core: &cosmic::Core,
-    ) -> cosmic::iced::Subscription<crate::pages::Message> {
+        core: &lingmo::Core,
+    ) -> lingmo::iced::Subscription<crate::pages::Message> {
         self.model
             .subscription(core)
             .map(crate::pages::Message::ManageWindowShortcuts)

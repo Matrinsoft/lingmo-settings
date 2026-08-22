@@ -1,4 +1,4 @@
-﻿[workspace]
+[workspace]
 members = ["cosmic-settings", "page", "pages/*", "subscriptions/*"]
 default-members = ["cosmic-settings"]
 resolver = "3"
@@ -9,7 +9,7 @@ rust-version = "1.93"
 [workspace.dependencies]
 cosmic-randr = { git = "https://github.com/Matrinsoft/lingmo-randr" }
 tokio = { version = "1.53.1", features = ["macros"] }
-iced_winit = { git = "https://github.com/Matrinsoft/libcosmic", default-features = false }
+iced_winit = { git = "https://github.com/Matrinsoft/liblingmo", default-features = false }
 image = { version = "0.25.10", default-features = false, features = [
     "jpeg",
     "png",
@@ -27,10 +27,10 @@ features = [
     "tokio",
     "qr_code",
 ]
-git = "https://github.com/Matrinsoft/libcosmic"
+git = "https://github.com/Matrinsoft/liblingmo"
 
 [workspace.dependencies.cosmic-config]
-git = "https://github.com/Matrinsoft/libcosmic"
+git = "https://github.com/Matrinsoft/liblingmo"
 
 [workspace.dependencies.cosmic-bg-config]
 git = "https://github.com/Matrinsoft/lingmo-background"
@@ -77,17 +77,17 @@ cosmic-client-toolkit = { git = "https://github.com/Matrinsoft/lingmo-protocols/
 # cosmic-settings-config = { git = "https://github.com/Matrinsoft/lingmo-settings-daemon//", branch = "input_nobuild" }
 
 # For development and testing purposes
-# [patch.'https://github.com/Matrinsoft/libcosmic']
-# libcosmic = { path = "../libcosmic" }
+# [patch.'https://github.com/Matrinsoft/liblingmo']
+# liblingmo = { path = "../libcosmic" }
 # cosmic-config = { path = "../libcosmic/cosmic-config" }
 # cosmic-theme = { path = "../libcosmic/cosmic-theme" }
 # iced_futures = { path = "../libcosmic/iced/futures" }
 # iced_winit = { path = "../libcosmic/iced/winit" }
-# iced_futures = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# libcosmic = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# iced_winit = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
+# iced_futures = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# liblingmo = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# cosmic-config = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# cosmic-theme = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# iced_winit = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
 
 # [patch.'https://github.com/Matrinsoft/dbus-settings-bindings']
 # upower_dbus = { path = "../dbus-settings-bindings/upower" }

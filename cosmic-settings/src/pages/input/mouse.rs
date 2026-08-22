@@ -1,17 +1,17 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::{self, row, settings, text};
-use cosmic::{Apply, Element};
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::{self, row, settings, text};
+use lingmo::{Apply, Element};
 use cosmic_comp_config::input::AccelProfile;
 use cosmic_settings_page::{self as page, Section, section};
 use slotmap::SlotMap;
 
 use super::Message;
 
-pub fn default_primary_button() -> cosmic::widget::segmented_button::SingleSelectModel {
-    let mut model = cosmic::widget::segmented_button::SingleSelectModel::builder()
+pub fn default_primary_button() -> lingmo::widget::segmented_button::SingleSelectModel {
+    let mut model = lingmo::widget::segmented_button::SingleSelectModel::builder()
         .insert(|b| b.text(fl!("primary-button", "left")))
         .insert(|b| b.text(fl!("primary-button", "right")))
         .build();
@@ -64,7 +64,7 @@ fn mouse() -> Section<crate::pages::Message> {
                 .add(
                     settings::flex_item(
                         &descriptions[primary_button],
-                        cosmic::widget::segmented_control::horizontal(&input.primary_button)
+                        lingmo::widget::segmented_control::horizontal(&input.primary_button)
                             .minimum_button_width(0)
                             .on_activate(|x| Message::PrimaryButtonSelected(x, false)),
                     )

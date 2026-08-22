@@ -5,13 +5,13 @@ use std::collections::HashMap;
 use std::sync::{Arc, LazyLock};
 
 use anyhow::Context;
-use cosmic::dialog::file_chooser::FileFilter;
-use cosmic::iced::core::text::Wrapping;
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::space::horizontal as horizontal_space;
-use cosmic::widget::text_input::focus;
-use cosmic::widget::{self, icon};
-use cosmic::{Apply, Element, Task, task};
+use lingmo::dialog::file_chooser::FileFilter;
+use lingmo::iced::core::text::Wrapping;
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::space::horizontal as horizontal_space;
+use lingmo::widget::text_input::focus;
+use lingmo::widget::{self, icon};
+use lingmo::{Apply, Element, Task, task};
 use cosmic_settings_page::{self as page, Section, section};
 use futures::{FutureExt, SinkExt, StreamExt};
 use indexmap::IndexMap;
@@ -364,12 +364,12 @@ impl page::Page<crate::pages::Message> for Page {
         )
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         let (tx, rx) = tokio::sync::mpsc::channel(4);
         self.secret_tx = Some(tx);
         if self.nm_task.is_none() {
-            return cosmic::Task::batch([
-                cosmic::task::future(async move {
+            return lingmo::Task::batch([
+                lingmo::task::future(async move {
                     nmrs::NetworkManager::new()
                         .await
                         .context("failed to connect to NetworkManager")
@@ -378,7 +378,7 @@ impl page::Page<crate::pages::Message> for Page {
                             Message::NetworkManagerConnect,
                         )
                 }),
-                cosmic::Task::stream(nm_secret_agent::secret_agent_stream(
+                lingmo::Task::stream(nm_secret_agent::secret_agent_stream(
                     "com.system76.CosmicSettings.VPN.NetworkManager.SecretAgent",
                     rx,
                 ))
@@ -386,7 +386,7 @@ impl page::Page<crate::pages::Message> for Page {
             ]);
         }
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
     fn on_leave(&mut self) -> Task<crate::pages::Message> {
@@ -422,7 +422,7 @@ impl Page {
                 if let Some(NmState { ref conn, .. }) = self.nm_state {
                     let conn = conn.clone();
                     self.update_active_conns(state);
-                    return cosmic::Task::batch(vec![
+                    return lingmo::Task::batch(vec![
                         connection_settings(conn.clone()),
                         update_devices(conn),
                     ]);
@@ -453,7 +453,7 @@ impl Page {
                 network_manager::Event::ActiveConns | network_manager::Event::Devices,
             ) => {
                 if let Some(NmState { ref conn, .. }) = self.nm_state {
-                    return cosmic::Task::batch(vec![
+                    return lingmo::Task::batch(vec![
                         update_state(conn.clone()),
                         update_devices(conn.clone()),
                         connection_settings(conn.clone()),
@@ -476,7 +476,7 @@ impl Page {
                         .collect(),
                 });
 
-                return cosmic::Task::batch(vec![
+                return lingmo::Task::batch(vec![
                     connection_settings(conn.clone()),
                     update_devices(conn),
                 ]);
@@ -493,7 +493,7 @@ impl Page {
             }
             Message::WireGuardConfig => {
                 if let Some(VpnDialog::WireGuardName(device, filename, path)) = self.dialog.take() {
-                    return cosmic::task::future(async move {
+                    return lingmo::task::future(async move {
                         let _ = filename;
                         match network_manager::import_wireguard(path, &device).await {
                             Ok(_) => Message::Refresh,
@@ -567,7 +567,7 @@ impl Page {
             Message::Settings(uuid) => {
                 self.close_popup_and_apply_updates();
 
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     super::nm_edit_connection(uuid.as_ref())
                         .then(|res| async move {
                             match res {
@@ -582,7 +582,7 @@ impl Page {
             }
             Message::Refresh => {
                 if let Some(NmState { ref conn, .. }) = self.nm_state {
-                    return cosmic::Task::batch(vec![
+                    return lingmo::Task::batch(vec![
                         update_state(conn.clone()),
                         update_devices(conn.clone()),
                         connection_settings(conn.clone()),
@@ -800,8 +800,8 @@ impl Page {
             Message::FocusSecureInput => {
                 // retry until the widget is in the tree and focused or the dialog is removed.
                 if matches!(self.dialog, Some(VpnDialog::Password { .. })) {
-                    return cosmic::iced::runtime::task::widget(
-                        cosmic::iced::core::widget::operation::focusable::find_focused(),
+                    return lingmo::iced::runtime::task::widget(
+                        lingmo::iced::core::widget::operation::focusable::find_focused(),
                     )
                     .collect()
                     .then(|id| {
@@ -908,10 +908,10 @@ fn devices_view() -> Section<crate::pages::Message> {
                 ref active_conns, ..
             }) = page.nm_state
             else {
-                return cosmic::widget::space().into();
+                return lingmo::widget::space().into();
             };
 
-            let spacing = cosmic::theme::spacing();
+            let spacing = lingmo::theme::spacing();
 
             let mut view = widget::column::with_capacity(4);
 
@@ -998,8 +998,8 @@ fn devices_view() -> Section<crate::pages::Message> {
                                         ))
                                         .width(Length::Fixed(200.0))
                                         .apply(widget::container)
-                                        .padding(cosmic::theme::spacing().space_xxs)
-                                        .class(cosmic::theme::Container::Dropdown),
+                                        .padding(lingmo::theme::spacing().space_xxs)
+                                        .class(lingmo::theme::Container::Dropdown),
                                 )
                                 .apply(|e| Some(Element::from(e)))
                         } else {
@@ -1034,19 +1034,19 @@ fn devices_view() -> Section<crate::pages::Message> {
 }
 
 fn popup_button(message: Message, text: &str) -> Element<'_, Message> {
-    let spacing = cosmic::theme::spacing();
+    let spacing = lingmo::theme::spacing();
     widget::text::body(text)
         .align_y(Alignment::Center)
         .apply(widget::button::custom)
         .padding([spacing.space_xxxs, spacing.space_xs])
         .width(Length::Fill)
-        .class(cosmic::theme::Button::MenuItem)
+        .class(lingmo::theme::Button::MenuItem)
         .on_press(message)
         .into()
 }
 
 fn update_state(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    cosmic::task::future(async move {
+    lingmo::task::future(async move {
         match NetworkManagerState::new(&conn).await {
             Ok(state) => Message::UpdateState(state),
             Err(why) => Message::Error(ErrorKind::UpdatingState, why.to_string()),
@@ -1055,7 +1055,7 @@ fn update_state(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
 }
 
 fn update_devices(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    cosmic::task::future(async move {
+    lingmo::task::future(async move {
         let filter =
             |device_type| matches!(device_type, network_manager::devices::DeviceType::WireGuard);
 
@@ -1071,7 +1071,7 @@ fn add_network() -> Task<crate::app::Message> {
         return Task::none();
     };
 
-    cosmic::dialog::file_chooser::open::Dialog::new()
+    lingmo::dialog::file_chooser::open::Dialog::new()
         .directory(dir)
         .title(fl!("vpn", "select-file"))
         .filter(
@@ -1122,15 +1122,15 @@ fn add_network() -> Task<crate::app::Message> {
                         Err(why) => Message::Error(ErrorKind::Config, why.to_string()),
                     }
                 }
-                Err(cosmic::dialog::file_chooser::Error::Cancelled) => Message::CancelDialog,
+                Err(lingmo::dialog::file_chooser::Error::Cancelled) => Message::CancelDialog,
                 Err(why) => Message::Error(ErrorKind::Config, why.to_string()),
             }
         })
-        .apply(cosmic::task::future)
+        .apply(lingmo::task::future)
 }
 
 fn connection_settings(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    cosmic::task::future(async move {
+    lingmo::task::future(async move {
         let settings = async move {
             let vpns = conn.list_vpn_connections().await?;
             let mut settings = IndexMap::new();

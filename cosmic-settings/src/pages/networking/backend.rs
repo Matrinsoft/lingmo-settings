@@ -1433,7 +1433,7 @@ pub mod nm_secret_agent {
         rx: tokio::sync::mpsc::Receiver<Request>,
     ) -> impl futures::Stream<Item = Event> {
         let identifier = identifier.as_ref().to_string();
-        cosmic::iced::stream::channel(
+        lingmo::iced::stream::channel(
             4,
             move |mut msg_tx: futures::channel::mpsc::Sender<Event>| async move {
                 if let Err(error) = secret_agent_stream_impl(&identifier, msg_tx.clone(), rx).await

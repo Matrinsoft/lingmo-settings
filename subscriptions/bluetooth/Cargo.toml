@@ -1,4 +1,4 @@
-﻿[package]
+[package]
 name = "cosmic-settings-bluetooth-subscription"
 version = "1.0.7"
 edition = "2024"
@@ -9,7 +9,7 @@ publish = true
 [dependencies]
 bluez-zbus = { git = "https://github.com/Matrinsoft/dbus-settings-bindings" }
 futures = "0.3.33"
-iced_futures = { git = "https://github.com/Matrinsoft/libcosmic" }
+iced_futures = { git = "https://github.com/Matrinsoft/liblingmo" }
 tokio = "1.53.1"
 tracing = "0.1.44"
 zbus = "5.18.0"

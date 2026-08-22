@@ -10,7 +10,7 @@ use std::process::Stdio;
 use std::sync::Arc;
 
 use anyhow::Context;
-use cosmic::{Apply, Element, Task, widget};
+use lingmo::{Apply, Element, Task, widget};
 use cosmic_settings_page::{self as page, Section, section};
 use futures::{SinkExt, StreamExt};
 use secure_string::SecureString;
@@ -215,7 +215,7 @@ impl page::Page<crate::pages::Message> for Page {
                             device: None,
                         },
                     ))
-                    .spacing(cosmic::theme::active().cosmic().spacing.space_s);
+                    .spacing(lingmo::theme::active().cosmic().spacing.space_s);
 
                 Element::from(device_list).map(crate::pages::Message::Networking)
             },
@@ -224,9 +224,9 @@ impl page::Page<crate::pages::Message> for Page {
         Some(vec![sections.insert(device_list)])
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         if self.nm_task.is_none() {
-            return cosmic::Task::future(async move {
+            return lingmo::Task::future(async move {
                 nmrs::NetworkManager::new()
                     .await
                     .context("failed to connect to NetworkManager")
@@ -286,10 +286,10 @@ impl Page {
             Message::OpenPage { page, device } => {
                 let mut tasks = Vec::<Task<crate::app::Message>>::new();
 
-                tasks.push(cosmic::task::message(crate::app::Message::Page(page)));
+                tasks.push(lingmo::task::message(crate::app::Message::Page(page)));
 
                 if let Some(device) = device {
-                    tasks.push(cosmic::task::message(crate::app::Message::PageMessage(
+                    tasks.push(lingmo::task::message(crate::app::Message::PageMessage(
                         match device {
                             DeviceVariant::WiFi(device) => {
                                 crate::pages::Message::WiFi(wifi::Message::SelectDevice(device))
@@ -301,7 +301,7 @@ impl Page {
                     )));
                 }
 
-                return cosmic::Task::batch(tasks);
+                return lingmo::Task::batch(tasks);
             }
 
             Message::UpdateDevices(devices) => {

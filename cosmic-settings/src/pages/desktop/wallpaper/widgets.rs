@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 use super::Message;
-use cosmic::iced::Radius;
-use cosmic::iced::core::gradient::Linear;
-use cosmic::iced::core::{Background, Border, Color, Degrees, Length};
-use cosmic::iced::runtime::core::image::Handle as ImageHandle;
-use cosmic::prelude::*;
-use cosmic::widget::{Space, button, container};
-use cosmic::{Element, iced};
+use lingmo::iced::Radius;
+use lingmo::iced::core::gradient::Linear;
+use lingmo::iced::core::{Background, Border, Color, Degrees, Length};
+use lingmo::iced::runtime::core::image::Handle as ImageHandle;
+use lingmo::prelude::*;
+use lingmo::widget::{Space, button, container};
+use lingmo::{Element, iced};
 use cosmic_settings_wallpaper as wallpaper;
 use slotmap::DefaultKey;
 use std::sync::OnceLock;
@@ -48,7 +48,7 @@ pub fn color_image<'a, M: 'a>(
     border_radius: Option<f32>,
 ) -> Element<'a, M> {
     container(Space::new().width(width).height(height))
-        .class(cosmic::theme::Container::custom(move |theme| {
+        .class(lingmo::theme::Container::custom(move |theme| {
             container::Style {
                 icon_color: None,
                 text_color: None,
@@ -161,7 +161,7 @@ pub fn wallpaper_select_options(
 }
 
 fn flex_select_row(elements: Vec<Element<'_, Message>>) -> Element<'_, Message> {
-    cosmic::widget::flex_row(elements)
+    lingmo::widget::flex_row(elements)
         .column_spacing(COLUMN_SPACING)
         .row_spacing(ROW_SPACING)
         .apply(container)
@@ -175,7 +175,7 @@ fn wallpaper_button(
     removable: bool,
     selected: bool,
 ) -> Element<'_, Message> {
-    cosmic::widget::button::image(handle.clone())
+    lingmo::widget::button::image(handle.clone())
         .selected(selected)
         .on_press(Message::Select(id))
         .on_remove_maybe(if removable {

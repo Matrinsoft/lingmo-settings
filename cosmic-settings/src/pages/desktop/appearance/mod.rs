@@ -11,21 +11,21 @@ pub mod theme_manager;
 
 use std::sync::Arc;
 
-use cosmic::app::ContextDrawer;
+use lingmo::app::ContextDrawer;
 //TODO: use embedded cosmic-files for portability
-use cosmic::config::CosmicTk;
-use cosmic::cosmic_config::{Config, ConfigSet, CosmicConfigEntry};
-use cosmic::cosmic_theme::palette::{FromColor, Hsv, Srgb};
-use cosmic::cosmic_theme::{CornerRadii, Density, Roundness, ThemeBuilder, ThemeMode};
+use lingmo::config::CosmicTk;
+use lingmo::cosmic_config::{Config, ConfigSet, CosmicConfigEntry};
+use lingmo::cosmic_theme::palette::{FromColor, Hsv, Srgb};
+use lingmo::cosmic_theme::{CornerRadii, Density, Roundness, ThemeBuilder, ThemeMode};
 #[cfg(feature = "xdg-portal")]
-use cosmic::dialog::file_chooser::{self, FileFilter};
-use cosmic::iced::Subscription;
-use cosmic::iced::core::{Alignment, Length};
-use cosmic::widget::color_picker::ColorPickerUpdate;
-use cosmic::widget::space::horizontal;
-use cosmic::widget::text_input::focus;
-use cosmic::widget::{button, container, row, settings, text};
-use cosmic::{Apply, Element, Task, task, widget};
+use lingmo::dialog::file_chooser::{self, FileFilter};
+use lingmo::iced::Subscription;
+use lingmo::iced::core::{Alignment, Length};
+use lingmo::widget::color_picker::ColorPickerUpdate;
+use lingmo::widget::space::horizontal;
+use lingmo::widget::text_input::focus;
+use lingmo::widget::{button, container, row, settings, text};
+use lingmo::{Apply, Element, Task, task, widget};
 #[cfg(feature = "wayland")]
 use cosmic_panel_config::CosmicPanelConfig;
 use cosmic_settings_page::{self as page, Section, section};
@@ -54,7 +54,7 @@ pub enum ContextView {
 #[allow(clippy::struct_excessive_bools)]
 pub struct Page {
     entity: page::Entity,
-    on_enter_handle: Option<cosmic::iced::task::Handle>,
+    on_enter_handle: Option<lingmo::iced::task::Handle>,
     can_reset: bool,
     context_view: Option<ContextView>,
     drawer: drawer::Content,
@@ -90,7 +90,7 @@ impl From<theme_manager::Manager> for Page {
             context_view: None,
             drawer: drawer::Content::from(&theme_manager),
             roundness: theme_builder.corner_radii.into(),
-            density: cosmic::config::interface_density(),
+            density: lingmo::config::interface_density(),
             theme_manager,
             tk_config,
             day_time: true,
@@ -150,7 +150,7 @@ pub enum Message {
     #[cfg(feature = "xdg-portal")]
     ImportSuccess(Box<ThemeBuilder>),
     Left,
-    PaletteAccent(cosmic::iced::Color),
+    PaletteAccent(lingmo::iced::Color),
     Reset,
     Roundness(Roundness),
     #[cfg(feature = "xdg-portal")]
@@ -203,7 +203,7 @@ impl Page {
                 let mut previous =
                     std::mem::replace(&mut self.drawer, drawer::Content::from(&self.theme_manager));
                 self.drawer.preserve_from(&mut previous);
-                tasks.push(cosmic::task::message(
+                tasks.push(lingmo::task::message(
                     crate::app::Message::OpenContextDrawer(self.entity),
                 ));
                 tasks.push(self.drawer.on_open(&context_view));
@@ -308,20 +308,20 @@ impl Page {
                 let r = self.roundness;
                 self.drawer.reset(&self.theme_manager);
 
-                tasks.push(cosmic::task::future(async move {
+                tasks.push(lingmo::task::future(async move {
                     #[cfg(feature = "wayland")]
                     {
                         Self::update_panel_radii(r);
                         Self::update_panel_spacing(Density::Standard);
                     }
 
-                    app::Message::SetTheme(cosmic::theme::system_preference())
+                    app::Message::SetTheme(lingmo::theme::system_preference())
                 }));
             }
 
             #[cfg(feature = "xdg-portal")]
             Message::StartImport => {
-                tasks.push(cosmic::task::future(async move {
+                tasks.push(lingmo::task::future(async move {
                     let res = file_chooser::open::Dialog::new()
                         .modal(true)
                         .filter(FileFilter::glob(FileFilter::new("ron"), "*.ron"))
@@ -346,7 +346,7 @@ impl Page {
                 let is_dark = self.theme_manager.mode().is_dark;
                 let name = format!("{}.ron", if is_dark { fl!("dark") } else { fl!("light") });
 
-                tasks.push(cosmic::task::future(async move {
+                tasks.push(lingmo::task::future(async move {
                     let res = file_chooser::save::Dialog::new()
                         .modal(true)
                         .file_name(name)
@@ -362,7 +362,7 @@ impl Page {
                     }
                 }));
 
-                return cosmic::Task::batch(tasks);
+                return lingmo::Task::batch(tasks);
             }
 
             #[cfg(feature = "xdg-portal")]
@@ -378,7 +378,7 @@ impl Page {
                     return Task::none();
                 };
 
-                tasks.push(cosmic::task::future(async move {
+                tasks.push(lingmo::task::future(async move {
                     let res = tokio::fs::read_to_string(path).await;
                     if let Some(b) = res.ok().and_then(|s| ron::de::from_str(&s).ok()) {
                         Message::ImportSuccess(Box::new(b))
@@ -405,7 +405,7 @@ impl Page {
 
                 let theme_builder = self.theme_manager.builder().clone();
 
-                tasks.push(cosmic::task::future(async move {
+                tasks.push(lingmo::task::future(async move {
                     let Ok(builder) =
                         ron::ser::to_string_pretty(&theme_builder, PrettyConfig::default())
                     else {
@@ -425,7 +425,7 @@ impl Page {
                     .into()
                 }));
 
-                return cosmic::Task::batch(tasks);
+                return lingmo::Task::batch(tasks);
             }
 
             // TODO: error message toast?
@@ -462,8 +462,8 @@ impl Page {
 
                 self.can_reset = self.can_reset();
 
-                return cosmic::task::future(async move {
-                    app::Message::SetTheme(cosmic::theme::system_preference())
+                return lingmo::task::future(async move {
+                    app::Message::SetTheme(lingmo::theme::system_preference())
                 });
             }
 
@@ -525,8 +525,8 @@ impl Page {
                     self.context_view,
                     Some(ContextView::SystemFont | ContextView::MonospaceFont)
                 ) {
-                    return cosmic::iced::runtime::task::widget(
-                        cosmic::iced::core::widget::operation::focusable::find_focused(),
+                    return lingmo::iced::runtime::task::widget(
+                        lingmo::iced::core::widget::operation::focusable::find_focused(),
                     )
                     .collect()
                     .then(|id| {
@@ -551,7 +551,7 @@ impl Page {
                 tasks.push(self.drawer.update_blur(blur_strength as u8));
             }
             Message::Glass(glass) => {
-                let mut alpha_map = cosmic::cosmic_theme::AlphaMap::default();
+                let mut alpha_map = lingmo::cosmic_theme::AlphaMap::default();
                 let glass_offset_min = alpha_map.extremely_high_2;
                 let glass_offset_max = 1.0 - alpha_map.extremely_low;
                 let offset = (glass - 0.5) / 0.5
@@ -600,7 +600,7 @@ impl Page {
             }
         }
 
-        let mut tasks = cosmic::Task::batch(tasks);
+        let mut tasks = lingmo::Task::batch(tasks);
 
         if let Some(stage) = theme_staged {
             tasks = tasks.chain(self.theme_manager.build_theme(stage))
@@ -661,7 +661,7 @@ impl Page {
 
     #[cfg(feature = "wayland")]
     pub fn update_panel_spacing(density: Density) {
-        let spacing: cosmic::cosmic_theme::Spacing = density.into();
+        let spacing: lingmo::cosmic_theme::Spacing = density.into();
         let space_none = spacing.space_none as u32;
 
         for name in ["Panel", "Dock"] {
@@ -724,11 +724,11 @@ impl page::Page<crate::pages::Message> for Page {
     }
 
     fn on_enter(&mut self) -> Task<crate::pages::Message> {
-        let (task, handle) = cosmic::task::batch(vec![
+        let (task, handle) = lingmo::task::batch(vec![
             // Load icon themes
-            // cosmic::task::future(icon_themes::fetch()).map(crate::pages::Message::Appearance),
+            // lingmo::task::future(icon_themes::fetch()).map(crate::pages::Message::Appearance),
             // Load font families
-            cosmic::task::future(async move {
+            lingmo::task::future(async move {
                 let (interface, mono) = font_config::load_font_families();
                 Message::DrawerFont(drawer::FontMessage::FontLoaded(interface, mono))
             })
@@ -746,14 +746,14 @@ impl page::Page<crate::pages::Message> for Page {
             handle.abort();
         }
         tasks.push(self.drawer.on_leave());
-        tasks.push(cosmic::task::message(crate::pages::Message::Appearance(
+        tasks.push(lingmo::task::message(crate::pages::Message::Appearance(
             Message::Left,
         )));
 
-        cosmic::task::batch(tasks)
+        lingmo::task::batch(tasks)
     }
 
-    fn subscription(&self, core: &cosmic::Core) -> Subscription<crate::pages::Message> {
+    fn subscription(&self, core: &lingmo::Core) -> Subscription<crate::pages::Message> {
         // Keep the Appearance page in sync when the daemon auto-switches light/dark.
         core.watch_config::<ThemeMode>("com.system76.CosmicTheme.Mode")
             .map(|update| {

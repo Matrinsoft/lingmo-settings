@@ -3,8 +3,8 @@
 
 use crate::section::{self, Section};
 use crate::{Content, Info, Page};
-use cosmic::app::ContextDrawer;
-use cosmic::{Element, Task};
+use lingmo::app::ContextDrawer;
+use lingmo::{Element, Task};
 use regex::Regex;
 use slotmap::{SecondaryMap, SlotMap, SparseSecondaryMap};
 use std::any::{Any, TypeId};

@@ -1,4 +1,4 @@
-﻿[package]
+[package]
 name = "cosmic-settings-a11y-manager-subscription"
 version = "1.0.7"
 edition = "2024"
@@ -8,7 +8,7 @@ publish = true
 
 [dependencies]
 cosmic-protocols = { git = "https://github.com/Matrinsoft/lingmo-protocols" }
-iced_futures = { git = "https://github.com/Matrinsoft/libcosmic" }
+iced_futures = { git = "https://github.com/Matrinsoft/liblingmo" }
 num-derive = "0.4.2"
 num-traits = "0.2.19"
 sctk.workspace = true

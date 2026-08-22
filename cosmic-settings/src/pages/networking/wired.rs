@@ -5,11 +5,11 @@ use std::collections::BTreeSet;
 use std::sync::Arc;
 
 use anyhow::Context;
-use cosmic::iced::core::text::Wrapping;
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::space::horizontal as horizontal_space;
-use cosmic::widget::{self, icon};
-use cosmic::{Apply, Element, Task};
+use lingmo::iced::core::text::Wrapping;
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::space::horizontal as horizontal_space;
+use lingmo::widget::{self, icon};
+use lingmo::{Apply, Element, Task};
 use cosmic_settings_page::{self as page, Section, section};
 use futures::{SinkExt, StreamExt};
 
@@ -140,7 +140,7 @@ impl page::Page<crate::pages::Message> for Page {
         })
     }
 
-    fn header_view(&self) -> Option<cosmic::Element<'_, crate::pages::Message>> {
+    fn header_view(&self) -> Option<lingmo::Element<'_, crate::pages::Message>> {
         Some(
             widget::button::standard(fl!("add-network", "profile"))
                 .trailing_icon(icon::from_name("window-pop-out-symbolic"))
@@ -153,9 +153,9 @@ impl page::Page<crate::pages::Message> for Page {
         )
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         if self.nm_task.is_none() {
-            return cosmic::task::future(async move {
+            return lingmo::task::future(async move {
                 nmrs::NetworkManager::new()
                     .await
                     .context("failed to connect to NetworkManager")
@@ -230,7 +230,7 @@ impl Page {
                 network_manager::Event::ActiveConns | network_manager::Event::Devices,
             ) => {
                 if let Some(NmState { ref conn, .. }) = self.nm_state {
-                    return cosmic::Task::batch(vec![
+                    return lingmo::Task::batch(vec![
                         update_state(conn.clone()),
                         update_devices(conn.clone()),
                     ]);
@@ -259,7 +259,7 @@ impl Page {
             Message::NetworkManager(_event) => (),
 
             Message::AddNetwork => {
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     _ = super::nm_add_wired().await;
                     // TODO: Update when iced is rebased to use then method.
                     Message::Refresh
@@ -326,7 +326,7 @@ impl Page {
             Message::Settings(uuid) => {
                 self.close_popup_and_apply_updates();
 
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     _ = super::nm_edit_connection(uuid.as_ref()).await;
                     // TODO: Update when iced is rebased to use then method.
                     Message::Refresh
@@ -335,7 +335,7 @@ impl Page {
 
             Message::Refresh => {
                 if let Some(NmState { ref conn, .. }) = self.nm_state {
-                    return cosmic::Task::batch(vec![
+                    return lingmo::Task::batch(vec![
                         update_state(conn.clone()),
                         update_devices(conn.clone()),
                     ]);
@@ -448,7 +448,7 @@ impl Page {
     #[allow(clippy::too_many_arguments)]
     fn device_view<'a>(
         &'a self,
-        spacing: cosmic::cosmic_theme::Spacing,
+        spacing: lingmo::cosmic_theme::Spacing,
         nm_state: &'a NmState,
         connect_txt: &'a str,
         connected_txt: &'a str,
@@ -528,8 +528,8 @@ impl Page {
                                     }))
                                     .width(Length::Fixed(200.0))
                                     .apply(widget::container)
-                                    .padding(cosmic::theme::spacing().space_xxs)
-                                    .class(cosmic::theme::Container::Dropdown),
+                                    .padding(lingmo::theme::spacing().space_xxs)
+                                    .class(lingmo::theme::Container::Dropdown),
                             )
                             .apply(|e| Some(Element::from(e)))
                     } else {
@@ -572,10 +572,10 @@ fn devices_view() -> Section<crate::pages::Message> {
         .descriptions(descriptions)
         .view::<Page>(move |_binder, page, section| {
             let Some(ref nm_state) = page.nm_state else {
-                return cosmic::widget::space().into();
+                return lingmo::widget::space().into();
             };
 
-            let spacing = cosmic::theme::spacing();
+            let spacing = lingmo::theme::spacing();
 
             let mut view = widget::column::with_capacity(4);
 
@@ -609,19 +609,19 @@ fn devices_view() -> Section<crate::pages::Message> {
 }
 
 fn popup_button(message: Message, text: &str) -> Element<'_, Message> {
-    let spacing = cosmic::theme::spacing();
+    let spacing = lingmo::theme::spacing();
     widget::text::body(text)
         .align_y(Alignment::Center)
         .apply(widget::button::custom)
         .padding([spacing.space_xxxs, spacing.space_xs])
         .width(Length::Fill)
-        .class(cosmic::theme::Button::MenuItem)
+        .class(lingmo::theme::Button::MenuItem)
         .on_press(message)
         .into()
 }
 
 fn update_state(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    cosmic::task::future(async move {
+    lingmo::task::future(async move {
         match NetworkManagerState::new(&conn).await {
             Ok(state) => Message::UpdateState(state),
             Err(why) => Message::Error(why.to_string()),
@@ -630,7 +630,7 @@ fn update_state(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
 }
 
 fn update_devices(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    cosmic::task::future(async move {
+    lingmo::task::future(async move {
         let filter =
             |device_type| matches!(device_type, network_manager::devices::DeviceType::Ethernet);
 

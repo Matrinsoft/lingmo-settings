@@ -22,7 +22,7 @@ pub mod sound;
 pub mod system;
 pub mod time;
 
-pub type Element<'a> = cosmic::Element<'a, Message>;
+pub type Element<'a> = lingmo::Element<'a, Message>;
 
 #[derive(Clone, Debug)]
 pub enum Message {

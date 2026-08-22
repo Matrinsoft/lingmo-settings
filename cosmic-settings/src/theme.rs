@@ -1,19 +1,19 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use cosmic::iced::Border;
-use cosmic::theme;
+use lingmo::iced::Border;
+use lingmo::theme;
 
 #[must_use]
-pub fn display_container_frame() -> cosmic::theme::Container<'static> {
+pub fn display_container_frame() -> lingmo::theme::Container<'static> {
     theme::Container::custom(|theme| {
         let cosmic = theme.cosmic();
-        cosmic::widget::container::Style {
+        lingmo::widget::container::Style {
             icon_color: None,
             text_color: None,
-            background: Some(cosmic::iced::Background::Color(cosmic::iced::Color::WHITE)),
+            background: Some(lingmo::iced::Background::Color(lingmo::iced::Color::WHITE)),
             border: Border {
-                color: cosmic::iced::Color::WHITE,
+                color: lingmo::iced::Color::WHITE,
                 radius: cosmic.corner_radii.radius_xs.into(),
                 width: 3.0,
             },
@@ -24,15 +24,15 @@ pub fn display_container_frame() -> cosmic::theme::Container<'static> {
 }
 
 #[must_use]
-pub fn display_container_screen() -> cosmic::theme::Container<'static> {
+pub fn display_container_screen() -> lingmo::theme::Container<'static> {
     theme::Container::custom(|theme| {
         let cosmic = theme.cosmic();
-        cosmic::widget::container::Style {
+        lingmo::widget::container::Style {
             icon_color: None,
             text_color: None,
-            background: Some(cosmic::iced::Background::Color(cosmic::iced::Color::BLACK)),
+            background: Some(lingmo::iced::Background::Color(lingmo::iced::Color::BLACK)),
             border: Border {
-                color: cosmic::iced::Color::BLACK,
+                color: lingmo::iced::Color::BLACK,
                 radius: cosmic.corner_radii.radius_0.into(),
                 width: 0.0,
             },

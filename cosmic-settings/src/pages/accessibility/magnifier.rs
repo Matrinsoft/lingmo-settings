@@ -1,10 +1,10 @@
 use std::collections::HashSet;
 use std::fmt::Write;
 
-use cosmic::iced::core::text::Wrapping;
-use cosmic::iced::{Element, Length, stream};
-use cosmic::widget::{self, icon, settings, svg, text};
-use cosmic::{Apply, surface};
+use lingmo::iced::core::text::Wrapping;
+use lingmo::iced::{Element, Length, stream};
+use lingmo::widget::{self, icon, settings, svg, text};
+use lingmo::{Apply, surface};
 use cosmic_comp_config::{ZoomConfig, ZoomMovement};
 use cosmic_config::{ConfigGet, ConfigSet};
 use cosmic_settings_config::{Action, Binding, shortcuts};
@@ -118,13 +118,13 @@ impl page::Page<crate::pages::Message> for Page {
         ])
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         if self.wayland_thread.is_none() {
             match wayland::spawn_wayland_connection(1) {
                 Ok((tx, mut rx)) => {
                     self.wayland_thread = Some(tx);
 
-                    return cosmic::Task::stream(stream::channel(
+                    return lingmo::Task::stream(stream::channel(
                         1,
                         |mut sender: futures::channel::mpsc::Sender<crate::pages::Message>| async move {
                             while let Some(event) = rx.recv().await {
@@ -148,20 +148,20 @@ impl page::Page<crate::pages::Message> for Page {
                         "Failed to spawn wayland connection for magnifier page: {}",
                         err
                     );
-                    return cosmic::Task::done(crate::pages::Message::Accessibility(
+                    return lingmo::Task::done(crate::pages::Message::Accessibility(
                         super::Message::Return,
                     ));
                 }
             }
         }
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
-    fn on_leave(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_leave(&mut self) -> lingmo::Task<crate::pages::Message> {
         let _ = self.wayland_thread.take();
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 }
 
@@ -232,7 +232,7 @@ pub fn magnifier(
                         &page.increment_values,
                         page.increment_idx,
                         Message::SetIncrement,
-                        cosmic::iced::window::Id::RESERVED,
+                        lingmo::iced::window::Id::RESERVED,
                         Message::Surface,
                         |a| {
                             crate::app::Message::PageMessage(
@@ -319,7 +319,7 @@ impl Page {
         &mut self,
         active_page: page::Entity,
         message: Message,
-    ) -> cosmic::iced::Task<crate::app::Message> {
+    ) -> lingmo::iced::Task<crate::app::Message> {
         match message {
             Message::CompConfigUpdate(comp_config) => {
                 if self.zoom_config.show_overlay != comp_config.accessibility_zoom.show_overlay {
@@ -409,17 +409,17 @@ impl Page {
             // We shouldn't have gotten into this page in that case
             Message::Event(AccessibilityEvent::Closed) | Message::ProtocolUnavailable => {
                 if active_page == self.entity {
-                    return cosmic::iced::Task::done(crate::app::Message::PageMessage(
+                    return lingmo::iced::Task::done(crate::app::Message::PageMessage(
                         crate::pages::Message::Accessibility(super::Message::Return),
                     ));
                 }
             }
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
         }
 
-        cosmic::iced::Task::none()
+        lingmo::iced::Task::none()
     }
 }
 

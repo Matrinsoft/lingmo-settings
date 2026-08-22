@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 use crate::widget::selection_context_item;
-use cosmic::app::ContextDrawer;
-use cosmic::cosmic_config::{self, ConfigGet, ConfigSet};
-use cosmic::iced::core::text::Wrapping;
-use cosmic::widget::{self, dropdown, settings};
-use cosmic::{Apply, Element, Task, surface};
+use lingmo::app::ContextDrawer;
+use lingmo::cosmic_config::{self, ConfigGet, ConfigSet};
+use lingmo::iced::core::text::Wrapping;
+use lingmo::widget::{self, dropdown, settings};
+use lingmo::{Apply, Element, Task, surface};
 use cosmic_settings_page::{self as page, Section, section};
 use icu::calendar::types::Weekday;
 use icu::calendar::{Gregorian, week};
@@ -136,7 +136,7 @@ impl page::Page<crate::pages::Message> for Page {
     }
 
     fn on_enter(&mut self) -> Task<crate::pages::Message> {
-        cosmic::Task::future(async move {
+        lingmo::Task::future(async move {
             let client = match zbus::Connection::system().await {
                 Ok(client) => client,
                 Err(why) => {
@@ -175,7 +175,7 @@ impl page::Page<crate::pages::Message> for Page {
                 .map(crate::pages::Message::DateAndTime);
 
             return Some(
-                cosmic::app::context_drawer(
+                lingmo::app::context_drawer(
                     self.timezone_context_view()
                         .map(crate::pages::Message::from),
                     crate::pages::Message::CloseContextDrawer,
@@ -195,7 +195,7 @@ impl Page {
             Message::TimezoneContext => {
                 self.timezone_search.clear();
                 self.timezone_context = true;
-                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity));
+                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::MilitaryTime(enable) => {
@@ -243,7 +243,7 @@ impl Page {
                 self.timezone = Some(timezone_id);
 
                 if let Some(timezone) = self.timezone_list.get(timezone_id).cloned() {
-                    return cosmic::Task::future(async move {
+                    return lingmo::Task::future(async move {
                         let client = match zbus::Connection::system().await {
                             Ok(client) => client,
                             Err(why) => {
@@ -271,14 +271,14 @@ impl Page {
             Message::Error(why) => {
                 tracing::error!(why, "failed to set timezone");
                 self.timezone_context = false;
-                return cosmic::task::message(crate::pages::Message::CloseContextDrawer);
+                return lingmo::task::message(crate::pages::Message::CloseContextDrawer);
             }
 
             Message::UpdateTime => {
                 self.set_ntp(true);
                 self.update_local_time();
                 self.timezone_context = false;
-                return cosmic::task::message(crate::pages::Message::CloseContextDrawer);
+                return lingmo::task::message(crate::pages::Message::CloseContextDrawer);
             }
 
             Message::Refresh(info) => {
@@ -290,7 +290,7 @@ impl Page {
             }
 
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
 
             Message::None => (),
@@ -386,7 +386,7 @@ fn date() -> Section<crate::pages::Message> {
                         .description(fl!("time-date", "auto-ntp"))
                         .control(widget::text::body(&page.formatted_date)),
                 )
-                .apply(cosmic::Element::from)
+                .apply(lingmo::Element::from)
                 .map(crate::pages::Message::DateAndTime)
         })
 }
@@ -434,7 +434,7 @@ fn format() -> Section<crate::pages::Message> {
                                     _ => Message::FirstDayOfWeek(6), // sunday
                                 }
                             },
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(
@@ -449,7 +449,7 @@ fn format() -> Section<crate::pages::Message> {
                     settings::item::builder(&section.descriptions[show_date])
                         .toggler(page.show_date_in_top_panel, Message::ShowDate),
                 )
-                .apply(cosmic::Element::from)
+                .apply(lingmo::Element::from)
                 .map(crate::pages::Message::DateAndTime)
         })
 }
@@ -476,7 +476,7 @@ fn timezone() -> Section<crate::pages::Message> {
                     .wrapping(Wrapping::Word),
                     Message::TimezoneContext,
                 ))
-                .apply(cosmic::Element::from)
+                .apply(lingmo::Element::from)
                 .map(crate::pages::Message::DateAndTime)
         })
 }

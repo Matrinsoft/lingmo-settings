@@ -1,13 +1,13 @@
-use cosmic::cosmic_config::{Config, ConfigSet, CosmicConfigEntry};
-use cosmic::cosmic_theme::palette::{Srgb, Srgba};
-use cosmic::cosmic_theme::{
+use lingmo::cosmic_config::{Config, ConfigSet, CosmicConfigEntry};
+use lingmo::cosmic_theme::palette::{Srgb, Srgba};
+use lingmo::cosmic_theme::{
     AlphaMap, BlurStrength, CornerRadii, DARK_THEME_BUILDER_ID, LIGHT_THEME_BUILDER_ID, Spacing,
     Theme, ThemeBuilder, ThemeMode,
 };
-use cosmic::iced::core::Color;
+use lingmo::iced::core::Color;
 
-use cosmic::Task;
-use cosmic::theme::ThemeType;
+use lingmo::Task;
+use lingmo::theme::ThemeType;
 use std::sync::Arc;
 
 use crate::app;
@@ -182,7 +182,7 @@ impl Manager {
 
         let mut data = std::iter::once(current).chain(other);
 
-        cosmic::task::future(async move {
+        lingmo::task::future(async move {
             for (builder, config) in data.by_ref() {
                 if let Some(config) = config {
                     let cur = match Theme::get_entry(&config) {
@@ -262,7 +262,7 @@ impl Manager {
                 }
             }
 
-            app::Message::SetTheme(cosmic::theme::system_preference())
+            app::Message::SetTheme(lingmo::theme::system_preference())
         })
     }
 
@@ -339,7 +339,7 @@ impl Manager {
             (LIGHT_THEME_BUILDER_ID, ThemeBuilder::light)
         };
 
-        let builder = cosmic::cosmic_config::Config::system(theme_id, ThemeBuilder::VERSION)
+        let builder = lingmo::cosmic_config::Config::system(theme_id, ThemeBuilder::VERSION)
             .map_or_else(
                 |_| builder_fn(),
                 |config| match ThemeBuilder::get_entry(&config) {
@@ -466,10 +466,10 @@ impl Manager {
         }
     }
 
-    pub fn cosmic_theme(&self) -> cosmic::Theme {
-        cosmic::Theme {
+    pub fn cosmic_theme(&self) -> lingmo::Theme {
+        lingmo::Theme {
             theme_type: ThemeType::Custom(Arc::new(self.theme().clone())),
-            ..cosmic::Theme::default()
+            ..lingmo::Theme::default()
         }
     }
 }

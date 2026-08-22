@@ -4,11 +4,11 @@
 mod getent;
 
 use crate::pages;
-use cosmic::dialog::file_chooser;
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::space::horizontal;
-use cosmic::widget::{self, column, icon, list, row, settings, text};
-use cosmic::{Apply, Element};
+use lingmo::dialog::file_chooser;
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::space::horizontal;
+use lingmo::widget::{self, column, icon, list, row, settings, text};
+use lingmo::{Apply, Element};
 use cosmic_settings_page::{self as page, Section, section};
 use image::GenericImageView;
 use pwhash::{bcrypt, md5_crypt, sha256_crypt, sha512_crypt};
@@ -61,7 +61,7 @@ pub enum Dialog {
 
 #[derive(Clone, Debug)]
 pub struct Page {
-    on_enter_handle: Option<cosmic::iced::task::Handle>,
+    on_enter_handle: Option<lingmo::iced::task::Handle>,
     current_user_id: u64,
     entity: page::Entity,
     users: Vec<User>,
@@ -401,22 +401,22 @@ impl page::Page<crate::pages::Message> for Page {
         dialog_element.map(crate::pages::Message::User).into()
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         if let Some(handle) = self.on_enter_handle.take() {
             handle.abort();
         }
 
-        let (task, handle) = cosmic::task::future(async { Self::reload().await }).abortable();
+        let (task, handle) = lingmo::task::future(async { Self::reload().await }).abortable();
         self.on_enter_handle = Some(handle);
         task
     }
 
-    fn on_leave(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_leave(&mut self) -> lingmo::Task<crate::pages::Message> {
         if let Some(handle) = self.on_enter_handle.take() {
             handle.abort();
         }
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 }
 
@@ -464,7 +464,7 @@ impl Page {
         Message::LoadPage(uid, users)
     }
 
-    pub fn update(&mut self, message: Message) -> cosmic::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> lingmo::Task<crate::app::Message> {
         match message {
             Message::None => (),
 
@@ -472,7 +472,7 @@ impl Page {
                 for user in &mut self.users {
                     if user.id == uid {
                         user.is_admin = is_admin;
-                        return cosmic::Task::none();
+                        return lingmo::Task::none();
                     }
                 }
             }
@@ -481,13 +481,13 @@ impl Page {
                 for user in &mut self.users {
                     if user.id == uid {
                         user.profile_icon = Some(handle);
-                        return cosmic::Task::none();
+                        return lingmo::Task::none();
                     }
                 }
             }
 
             Message::SelectProfileImage(uid) => {
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     let dialog_result = file_chooser::open::Dialog::new()
                         .title(fl!("users", "profile-add"))
                         .accept_label(fl!("dialog-add"))
@@ -505,11 +505,11 @@ impl Page {
                     Ok(url) => url,
                     Err(why) => {
                         tracing::error!(?why, "failed to get image file");
-                        return cosmic::Task::none();
+                        return lingmo::Task::none();
                     }
                 };
 
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     let Ok(conn) = zbus::Connection::system().await else {
                         return Message::None;
                     };
@@ -580,7 +580,7 @@ impl Page {
                             if user.full_name_edit {
                                 let full_name = user.full_name.clone();
 
-                                return cosmic::Task::future(async move {
+                                return lingmo::Task::future(async move {
                                     let Ok(conn) = zbus::Connection::system().await else {
                                         return;
                                     };
@@ -604,7 +604,7 @@ impl Page {
                             if user.username_edit {
                                 let username = user.username.clone();
 
-                                return cosmic::Task::future(async move {
+                                return lingmo::Task::future(async move {
                                     let Ok(conn) = zbus::Connection::system().await else {
                                         return;
                                     };
@@ -633,7 +633,7 @@ impl Page {
                 let uid = user.id;
                 let password_hashed = hash_password(&user.password);
 
-                return cosmic::Task::future(async move {
+                return lingmo::Task::future(async move {
                     let Ok(conn) = zbus::Connection::system().await else {
                         return;
                     };
@@ -670,7 +670,7 @@ impl Page {
             }
 
             Message::SelectedUserDelete(uid) => {
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     let Ok(conn) = zbus::Connection::system().await else {
                         return Message::None;
                     };
@@ -704,7 +704,7 @@ impl Page {
             Message::NewUser(username, full_name, password, is_admin) => {
                 self.dialog = None;
 
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     let Ok(conn) = zbus::Connection::system().await else {
                         return Message::None;
                     };
@@ -742,7 +742,7 @@ impl Page {
             }
 
             Message::SelectedUserSetAdmin(uid, is_admin) => {
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     let Ok(conn) = zbus::Connection::system().await else {
                         return Message::None;
                     };
@@ -766,7 +766,7 @@ impl Page {
             }
         };
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 }
 
@@ -782,7 +782,7 @@ fn user_list() -> Section<crate::pages::Message> {
         .descriptions(descriptions)
         .view::<Page>(move |_binder, page, section| {
             let descriptions = &section.descriptions;
-            let space_xxs = cosmic::theme::spacing().space_xxs;
+            let space_xxs = lingmo::theme::spacing().space_xxs;
 
             let users_list = page
                 .users
@@ -834,7 +834,7 @@ fn user_list() -> Section<crate::pages::Message> {
                     let profile_icon = widget::button::icon(profile_icon_handle)
                         .large()
                         .padding(0)
-                        .class(cosmic::theme::Button::Standard)
+                        .class(lingmo::theme::Button::Standard)
                         .on_press(Message::SelectProfileImage(user.id));
 
                     let account_details_content = settings::item_row(vec![

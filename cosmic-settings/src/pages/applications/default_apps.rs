@@ -2,9 +2,9 @@
 // Copyright 2024 bbb651 <bar.ye651@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::{self, dropdown, icon, settings};
-use cosmic::{Apply, Element, Task, surface};
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::{self, dropdown, icon, settings};
+use lingmo::{Apply, Element, Task, surface};
 use cosmic_config::{ConfigGet, ConfigSet};
 use cosmic_settings_config::shortcuts::SystemActions;
 use cosmic_settings_config::shortcuts::action::System;
@@ -80,7 +80,7 @@ pub struct AppMeta {
 
 #[derive(Debug, Default)]
 pub struct Page {
-    on_enter_handle: Option<cosmic::iced::task::Handle>,
+    on_enter_handle: Option<lingmo::iced::task::Handle>,
     mime_apps: Option<CachedMimeApps>,
     shortcuts_config: Option<cosmic_config::Config>,
     update_config: Option<tokio::task::JoinHandle<()>>,
@@ -286,7 +286,7 @@ impl Page {
             }
             Message::Update(mime_apps) => self.mime_apps = Arc::into_inner(mime_apps),
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
         }
 
@@ -306,7 +306,7 @@ fn app_item(meta: &AppMeta, label: String, category: Category) -> widget::FlexRo
                 &meta.apps,
                 Some(meta.selected.unwrap_or(0)),
                 move |id| Message::SetDefault(category, id),
-                cosmic::iced::window::Id::RESERVED,
+                lingmo::iced::window::Id::RESERVED,
                 Message::Surface,
                 |a| crate::app::Message::PageMessage(crate::pages::Message::DefaultApps(a)),
             )

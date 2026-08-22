@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 use crate::app;
-use cosmic::Task;
-use cosmic::cosmic_config::{self, ConfigGet, ConfigSet};
+use lingmo::Task;
+use lingmo::cosmic_config::{self, ConfigGet, ConfigSet};
 use cosmic_comp_config::input::{
     AccelConfig, AccelProfile, ClickMethod, InputConfig, ScrollConfig, ScrollMethod, TapButtonMap,
     TapConfig,
@@ -19,7 +19,7 @@ pub mod touchpad;
 pub enum Message {
     // seperate close message, to make sure another isn't closed?
     DisableWhileTyping(bool, bool),
-    PrimaryButtonSelected(cosmic::widget::segmented_button::Entity, bool),
+    PrimaryButtonSelected(lingmo::widget::segmented_button::Entity, bool),
     SetAcceleration(bool, bool),
     SetMouseSpeed(f64, bool),
     SetNaturalScroll(bool, bool),
@@ -36,10 +36,10 @@ pub struct Page {
     input_touchpad: InputConfig,
 
     // Mouse
-    primary_button: cosmic::widget::segmented_button::SingleSelectModel,
+    primary_button: lingmo::widget::segmented_button::SingleSelectModel,
 
     // Touchpad
-    touchpad_primary_button: cosmic::widget::segmented_button::SingleSelectModel,
+    touchpad_primary_button: lingmo::widget::segmented_button::SingleSelectModel,
 }
 
 fn get_config<T: Default + serde::de::DeserializeOwned>(

@@ -1,8 +1,8 @@
-use cosmic::app::ContextDrawer;
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::text_input::focus;
-use cosmic::widget::{button, icon, settings, text};
-use cosmic::{Apply, Element, Task, task, widget};
+use lingmo::app::ContextDrawer;
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::text_input::focus;
+use lingmo::widget::{button, icon, settings, text};
+use lingmo::{Apply, Element, Task, task, widget};
 use cosmic_settings_page::section::Entity;
 use cosmic_settings_page::{self as page, Content, Info, Section};
 use freedesktop_desktop_entry::DesktopEntry;
@@ -25,7 +25,7 @@ pub struct CachedApps {
 #[derive(Clone, Debug)]
 pub struct Page {
     entity: page::Entity,
-    on_enter_handle: Option<cosmic::iced::task::Handle>,
+    on_enter_handle: Option<lingmo::iced::task::Handle>,
     cached_startup_apps: Option<CachedApps>,
     application_search: String,
     context: Option<Context>,
@@ -126,7 +126,7 @@ impl page::Page<crate::pages::Message> for Page {
                     .apply(Element::from);
 
                 Some(
-                    cosmic::app::context_drawer(
+                    lingmo::app::context_drawer(
                         self.add_application_context_view(directory_type.clone()),
                         crate::pages::Message::CloseContextDrawer,
                     )
@@ -227,7 +227,7 @@ impl Page {
             }
             Message::ShowApplicationSidebar(directory_type) => {
                 self.context = Some(Context::AddApplication(directory_type));
-                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity))
+                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity))
                     .chain(task::message(Message::FocusAddApplicationSearch));
             }
             Message::AddStartupApplication(directory_type, app) => {
@@ -280,7 +280,7 @@ impl Page {
                 if !confirm {
                     self.app_to_remove = Some(app);
                     self.target_directory_type = Some(directory_type);
-                    return cosmic::task::message(crate::app::Message::Page(self.entity));
+                    return lingmo::task::message(crate::app::Message::Page(self.entity));
                 } else {
                     let mut file_name = app.clone().appid;
                     file_name.push_str(".desktop");
@@ -330,8 +330,8 @@ impl Page {
             Message::FocusAddApplicationSearch => {
                 // retry until the widget is in the tree and focused or the dialog is removed.
                 if matches!(self.context, Some(Context::AddApplication(_))) {
-                    return cosmic::iced::runtime::task::widget(
-                        cosmic::iced::core::widget::operation::focusable::find_focused(),
+                    return lingmo::iced::runtime::task::widget(
+                        lingmo::iced::core::widget::operation::focusable::find_focused(),
                     )
                     .collect()
                     .then(|id| {
@@ -357,7 +357,7 @@ impl Page {
         &self,
         directory_type: DirectoryType,
     ) -> crate::pages::Element<'_> {
-        let cosmic::cosmic_theme::Spacing { space_xs, .. } = cosmic::theme::spacing();
+        let lingmo::cosmic_theme::Spacing { space_xs, .. } = lingmo::theme::spacing();
 
         let mut list = widget::list_column();
         let search_input = &self.application_search.trim().to_lowercase();
@@ -397,11 +397,11 @@ impl Page {
 }
 
 fn apps() -> Section<crate::pages::Message> {
-    let cosmic::cosmic_theme::Spacing {
+    let lingmo::cosmic_theme::Spacing {
         space_xxs,
         space_xs,
         ..
-    } = cosmic::theme::spacing();
+    } = lingmo::theme::spacing();
 
     Section::default()
         .title(fl!("startup-apps"))

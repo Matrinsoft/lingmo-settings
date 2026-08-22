@@ -1,9 +1,9 @@
-use cosmic::cosmic_theme::{CosmicPalette, ThemeBuilder};
-use cosmic::iced::core::text::Wrapping;
-use cosmic::iced::stream;
-use cosmic::theme::CosmicTheme;
-use cosmic::widget::{dropdown, settings, text};
-use cosmic::{Apply, Element, Task, surface};
+use lingmo::cosmic_theme::{CosmicPalette, ThemeBuilder};
+use lingmo::iced::core::text::Wrapping;
+use lingmo::iced::stream;
+use lingmo::theme::CosmicTheme;
+use lingmo::widget::{dropdown, settings, text};
+use lingmo::{Apply, Element, Task, surface};
 pub use cosmic_comp_config::ZoomMovement;
 use cosmic_config::CosmicConfigEntry;
 use cosmic_settings_a11y_manager_subscription as cosmic_a11y_manager;
@@ -30,7 +30,7 @@ pub struct Page {
 
     wayland_available: Option<u32>,
     wayland_thread: Option<cosmic_a11y_manager::Sender>,
-    theme: Box<cosmic::cosmic_theme::Theme>,
+    theme: Box<lingmo::cosmic_theme::Theme>,
     high_contrast: Option<bool>,
     daemon_config: CosmicSettingsDaemonConfig,
     daemon_helper: cosmic_config::Config,
@@ -82,7 +82,7 @@ pub enum Message {
     SetScreenInverted(bool),
     SetSoundMono(bool),
     Surface(surface::Action),
-    SystemTheme(Box<cosmic::cosmic_theme::Theme>),
+    SystemTheme(Box<lingmo::cosmic_theme::Theme>),
 }
 
 impl From<Message> for crate::pages::Message {
@@ -117,13 +117,13 @@ impl page::Page<crate::pages::Message> for Page {
         Some(vec![sections.insert(vision()), sections.insert(hearing())])
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         if self.wayland_thread.is_none() {
             match cosmic_a11y_manager::spawn_wayland_connection(1) {
                 Ok((tx, mut rx)) => {
                     self.wayland_thread = Some(tx);
 
-                    return cosmic::Task::stream(stream::channel(
+                    return lingmo::Task::stream(stream::channel(
                         1,
                         |mut sender: futures::channel::mpsc::Sender<super::Message>| async move {
                             while let Some(event) = rx.recv().await {
@@ -152,19 +152,19 @@ impl page::Page<crate::pages::Message> for Page {
             }
         }
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
-    fn on_leave(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_leave(&mut self) -> lingmo::Task<crate::pages::Message> {
         let _ = self.wayland_thread.take();
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
     fn subscription(
         &self,
-        _core: &cosmic::Core,
-    ) -> cosmic::iced::Subscription<crate::pages::Message> {
+        _core: &lingmo::Core,
+    ) -> lingmo::iced::Subscription<crate::pages::Message> {
         a11y_bus::subscription().map(|m| super::Message::Accessibility(Message::A11yBus(m)))
     }
 }
@@ -257,14 +257,14 @@ pub fn vision() -> section::Section<crate::pages::Message> {
                         &page.screen_filter_selections[0..4]
                     };
 
-                    let dropdown = cosmic::Element::from(dropdown::popup_dropdown(
+                    let dropdown = lingmo::Element::from(dropdown::popup_dropdown(
                         selections,
                         Some(page.screen_filter_selection as usize),
                         move |idx| {
                             let filter = ColorFilter::from_usize(idx).unwrap_or_default();
                             Message::SetScreenFilterSelection(filter)
                         },
-                        cosmic::iced::window::Id::RESERVED,
+                        lingmo::iced::window::Id::RESERVED,
                         Message::Surface,
                         |a| {
                             crate::app::Message::PageMessage(crate::pages::Message::Accessibility(
@@ -304,7 +304,7 @@ pub fn hearing() -> section::Section<crate::pages::Message> {
 }
 
 impl Page {
-    pub fn update(&mut self, message: Message) -> cosmic::iced::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> lingmo::iced::Task<crate::app::Message> {
         match message {
             Message::Event(AccessibilityEvent::Bound(version)) => {
                 self.wayland_available = Some(version);
@@ -324,7 +324,7 @@ impl Page {
                 self.screen_filter_active = false;
             }
             Message::Return => {
-                return cosmic::iced::Task::done(crate::app::Message::Page(self.entity));
+                return lingmo::iced::Task::done(crate::app::Message::Page(self.entity));
             }
             Message::SystemTheme(theme) => {
                 self.theme = theme;
@@ -414,7 +414,7 @@ impl Page {
                 }
             }
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
             Message::SetSoundMono(active) => {
                 if let Err(err) = self
@@ -448,6 +448,6 @@ impl Page {
                 }
             }
         }
-        cosmic::iced::Task::none()
+        lingmo::iced::Task::none()
     }
 }

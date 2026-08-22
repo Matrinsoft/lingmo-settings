@@ -4,10 +4,10 @@
 pub mod applications;
 pub mod device_profiles;
 
-use cosmic::iced::{self, Alignment, Length, window};
-use cosmic::widget::space::horizontal as horizontal_space;
-use cosmic::widget::{self, settings};
-use cosmic::{Apply, Element, Task, surface};
+use lingmo::iced::{self, Alignment, Length, window};
+use lingmo::widget::space::horizontal as horizontal_space;
+use lingmo::widget::{self, settings};
+use lingmo::{Apply, Element, Task, surface};
 use cosmic_config::{Config, ConfigGet, ConfigSet};
 use cosmic_settings_audio_client::{self as audio_client, Client, CosmicAudioProxy};
 use cosmic_settings_page::{self as page, Section, section};
@@ -101,7 +101,7 @@ impl Default for Page {
 }
 
 impl page::Page<crate::pages::Message> for Page {
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
         match Config::new(AUDIO_CONFIG, 1) {
             Ok(config) => {
                 self.amplification_sink = config.get::<bool>(AMPLIFICATION_SINK).unwrap_or(true);
@@ -140,7 +140,7 @@ impl page::Page<crate::pages::Message> for Page {
         self.entity = entity;
     }
 
-    fn subscription(&self, _core: &cosmic::Core) -> iced::Subscription<crate::pages::Message> {
+    fn subscription(&self, _core: &lingmo::Core) -> iced::Subscription<crate::pages::Message> {
         iced::Subscription::run(|| {
             iced::stream::channel(
                 1,
@@ -180,7 +180,7 @@ impl Page {
     pub fn update(&mut self, message: Message) -> Task<crate::app::Message> {
         tracing::debug!(target: "sound", ?message, "update");
         match message {
-            Message::Surface(a) => return cosmic::task::message(crate::app::Message::Surface(a)),
+            Message::Surface(a) => return lingmo::task::message(crate::app::Message::Surface(a)),
 
             Message::Model(cosmic_settings_sound::Message::Subscription(message)) => {
                 self.model.update(message);
@@ -250,7 +250,7 @@ impl Page {
                 self.model.active_sink.volume_text = volume.to_string();
                 if let Some(mut client) = self.client.take() {
                     let volume = Arc::clone(&self.applied_sink_volume);
-                    return cosmic::Task::future(async move {
+                    return lingmo::Task::future(async move {
                         tokio::time::sleep(Duration::from_millis(128)).await;
                         _ = client
                             .conn
@@ -268,7 +268,7 @@ impl Page {
                 self.model.active_source.volume_text = volume.to_string();
                 if let Some(mut client) = self.client.take() {
                     let volume = Arc::clone(&self.applied_source_volume);
-                    return cosmic::Task::future(async move {
+                    return lingmo::Task::future(async move {
                         tokio::time::sleep(Duration::from_millis(128)).await;
                         _ = client
                             .conn
@@ -286,7 +286,7 @@ impl Page {
                 if let Some((mut client, sink_id)) = self.client.take().zip(self.model.default_sink)
                 {
                     let balance = Arc::clone(&self.applied_sink_volume_balance);
-                    return cosmic::Task::future(async move {
+                    return lingmo::Task::future(async move {
                         tokio::time::sleep(Duration::from_millis(128)).await;
                         _ = client
                             .conn

@@ -6,13 +6,13 @@ pub mod arrangement;
 
 use crate::{app, pages};
 use arrangement::Arrangement;
-use cosmic::iced::core::text::{Ellipsize, EllipsizeHeightLimit};
-use cosmic::iced::widget::scrollable::RelativeOffset;
-use cosmic::iced::{Alignment, Length, stream, time};
-use cosmic::widget::{
+use lingmo::iced::core::text::{Ellipsize, EllipsizeHeightLimit};
+use lingmo::iced::widget::scrollable::RelativeOffset;
+use lingmo::iced::{Alignment, Length, stream, time};
+use lingmo::widget::{
     self, column, container, dropdown, list_column, segmented_button, tab_bar, text,
 };
-use cosmic::{Apply, Element, Task, surface};
+use lingmo::{Apply, Element, Task, surface};
 use cosmic_randr_shell::{
     AdaptiveSyncAvailability, AdaptiveSyncState, List, Output, OutputKey, Transform,
 };
@@ -139,8 +139,8 @@ pub struct Page {
     mirror_map: SecondaryMap<OutputKey, OutputKey>,
     mirror_menu: widget::dropdown::multi::Model<String, Mirroring>,
     active_display: OutputKey,
-    randr_handle: Option<(oneshot::Sender<()>, cosmic::iced::task::Handle)>,
-    hotplug_handle: Option<(oneshot::Sender<()>, cosmic::iced::task::Handle)>,
+    randr_handle: Option<(oneshot::Sender<()>, lingmo::iced::task::Handle)>,
+    hotplug_handle: Option<(oneshot::Sender<()>, lingmo::iced::task::Handle)>,
     config: Config,
     cache: ViewCache,
     // context: Option<ContextDrawer>,
@@ -247,7 +247,7 @@ impl page::Page<crate::pages::Message> for Page {
         ];
 
         let mut tasks = Vec::with_capacity(3);
-        tasks.push(cosmic::task::future(on_enter()));
+        tasks.push(lingmo::task::future(on_enter()));
 
         if let Some((canceller, handle)) = self.randr_handle.take() {
             _ = canceller.send(());
@@ -372,7 +372,7 @@ impl page::Page<crate::pages::Message> for Page {
         tasks.push(hotplug_task);
         self.hotplug_handle = Some((hotplug_cancel_tx, hotplug_handle));
 
-        cosmic::task::batch(tasks)
+        lingmo::task::batch(tasks)
     }
 
     fn on_leave(&mut self) -> Task<crate::pages::Message> {
@@ -391,7 +391,7 @@ impl page::Page<crate::pages::Message> for Page {
 
     #[cfg(feature = "test")]
     fn on_enter(&mut self) -> Task<crate::pages::Message> {
-        cosmic::task::future(async move {
+        lingmo::task::future(async move {
             let mut randr = List::default();
 
             let test_mode = randr.modes.insert(cosmic_randr_shell::Mode {
@@ -535,11 +535,11 @@ impl Page {
             Message::DialogCountdown => {
                 if self.dialog_countdown == 0 {
                     if self.dialog.is_some() {
-                        return cosmic::task::message(app::Message::from(Message::DialogCancel));
+                        return lingmo::task::message(app::Message::from(Message::DialogCancel));
                     }
                 } else {
                     self.dialog_countdown -= 1;
-                    return cosmic::task::future(async move {
+                    return lingmo::task::future(async move {
                         tokio::time::sleep(time::Duration::from_secs(1)).await;
                         Message::DialogCountdown
                     });
@@ -596,7 +596,7 @@ impl Page {
             //
             // Message::NightLightContext => {
             //     self.context = Some(ContextDrawer::NightLight);
-            //     return cosmic::task::message(app::Message::OpenContextDrawer(
+            //     return lingmo::task::message(app::Message::OpenContextDrawer(
             //         text::NIGHT_LIGHT.clone().into(),
             //     ));
             // }
@@ -608,7 +608,7 @@ impl Page {
                     arrangement::Pan::Right => self.last_pan = 1.0f32.min(self.last_pan + 0.01),
                 }
 
-                return cosmic::iced::widget::scrollable::snap_to(
+                return lingmo::iced::widget::scrollable::snap_to(
                     self.display_arrangement_scrollable.clone(),
                     RelativeOffset {
                         x: Some(self.last_pan),
@@ -657,12 +657,12 @@ impl Page {
             }
 
             Message::Surface(a) => {
-                return cosmic::task::message(crate::app::Message::Surface(a));
+                return lingmo::task::message(crate::app::Message::Surface(a));
             }
         }
 
         self.last_pan = 0.5;
-        cosmic::iced::widget::scrollable::snap_to(
+        lingmo::iced::widget::scrollable::snap_to(
             self.display_arrangement_scrollable.clone(),
             RelativeOffset {
                 x: Some(0.5),
@@ -733,7 +733,7 @@ impl Page {
         }
         self.dialog = Some(revert_request);
         self.dialog_countdown = 10;
-        cosmic::task::future(async {
+        lingmo::task::future(async {
             tokio::time::sleep(time::Duration::from_secs(1)).await;
             app::Message::from(Message::DialogCountdown)
         })
@@ -1076,7 +1076,7 @@ impl Page {
 
         // Removes the dialog if no change is being made
         if Some(request) == self.dialog {
-            tasks.push(cosmic::task::message(app::Message::from(
+            tasks.push(lingmo::task::message(app::Message::from(
                 Message::DialogComplete,
             )));
         }
@@ -1177,7 +1177,7 @@ impl Page {
             }
         }
 
-        tasks.push(cosmic::task::future(async move {
+        tasks.push(lingmo::task::future(async move {
             tracing::debug!(?task, "executing");
             app::Message::from(Message::RandrResult(Arc::new(task.status().await)))
         }));
@@ -1199,9 +1199,9 @@ pub fn display_arrangement() -> Section<crate::pages::Message> {
         .show_while::<Page>(|page| page.list.outputs.len() > 1)
         .view::<Page>(move |_binder, page, section| {
             let descriptions = &section.descriptions;
-            let cosmic::cosmic_theme::Spacing {
+            let lingmo::cosmic_theme::Spacing {
                 space_xxs, space_m, ..
-            } = cosmic::theme::spacing();
+            } = lingmo::theme::spacing();
 
             column::with_capacity(2)
                 .push(
@@ -1223,7 +1223,7 @@ pub fn display_arrangement() -> Section<crate::pages::Message> {
                         .center_x(Length::Fill)
                 })
                 .apply(container)
-                .class(cosmic::theme::Container::List)
+                .class(lingmo::theme::Container::List)
                 .width(Length::Fill)
                 .into()
         })
@@ -1263,7 +1263,7 @@ pub fn display_configuration() -> Section<crate::pages::Message> {
                             &page.cache.resolutions,
                             page.cache.resolution_selected,
                             Message::Resolution,
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(crate::pages::Message::Displays(a))
@@ -1276,7 +1276,7 @@ pub fn display_configuration() -> Section<crate::pages::Message> {
                             &page.cache.refresh_rates,
                             page.cache.refresh_rate_selected,
                             Message::RefreshRate,
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(crate::pages::Message::Displays(a))
@@ -1292,7 +1292,7 @@ pub fn display_configuration() -> Section<crate::pages::Message> {
                             &page.cache.vrr_modes,
                             Some(vrr_selected),
                             Message::VariableRefreshRate,
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(crate::pages::Message::Displays(a))
@@ -1308,7 +1308,7 @@ pub fn display_configuration() -> Section<crate::pages::Message> {
                             DPI_SCALE_LABELS.as_slice(),
                             page.cache.scale_selected,
                             Message::Scale,
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(crate::pages::Message::Displays(a))
@@ -1340,7 +1340,7 @@ pub fn display_configuration() -> Section<crate::pages::Message> {
                                     _ => Transform::Rotate270,
                                 })
                             },
-                            cosmic::iced::window::Id::RESERVED,
+                            lingmo::iced::window::Id::RESERVED,
                             Message::Surface,
                             |a| {
                                 crate::app::Message::PageMessage(crate::pages::Message::Displays(a))
@@ -1352,7 +1352,7 @@ pub fn display_configuration() -> Section<crate::pages::Message> {
                 items
             });
 
-            let mut content = column::with_capacity(2).spacing(cosmic::theme::spacing().space_xs);
+            let mut content = column::with_capacity(2).spacing(lingmo::theme::spacing().space_xs);
 
             if page.list.outputs.len() > 1 {
                 let display_switcher = tab_bar::horizontal(&page.display_tabs)

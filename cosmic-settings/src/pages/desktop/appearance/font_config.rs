@@ -3,8 +3,8 @@
 
 use std::sync::{Arc, LazyLock};
 
-use cosmic::config::{CosmicTk, FontConfig};
-use cosmic::{Apply, Element, Task, widget};
+use lingmo::config::{CosmicTk, FontConfig};
+use lingmo::{Apply, Element, Task, widget};
 use cosmic_config::ConfigSet;
 
 use crate::app;
@@ -18,7 +18,7 @@ const INTERFACE_FONT: &str = "interface_font";
 const MONOSPACE_FONT: &str = "monospace_font";
 
 pub fn load_font_families() -> (Vec<Arc<str>>, Vec<Arc<str>>) {
-    let mut font_system = cosmic::iced::advanced::graphics::text::font_system()
+    let mut font_system = lingmo::iced::advanced::graphics::text::font_system()
         .write()
         .unwrap();
 
@@ -82,9 +82,9 @@ impl Model {
             font_filter: Vec::new(),
             font_search: String::new(),
             interface_font_families: Vec::new(),
-            interface_font: cosmic::config::interface_font(),
+            interface_font: lingmo::config::interface_font(),
             monospace_font_families: Vec::new(),
-            monospace_font: cosmic::config::monospace_font(),
+            monospace_font: lingmo::config::monospace_font(),
         }
     }
 
@@ -118,9 +118,9 @@ impl Model {
             ContextView::MonospaceFont => {
                 self.monospace_font = FontConfig {
                     family: font.to_string(),
-                    weight: cosmic::iced::font::Weight::Normal,
-                    style: cosmic::iced::font::Style::Normal,
-                    stretch: cosmic::iced::font::Stretch::Normal,
+                    weight: lingmo::iced::font::Weight::Normal,
+                    style: lingmo::iced::font::Style::Normal,
+                    stretch: lingmo::iced::font::Stretch::Normal,
                 };
 
                 update_config(MONOSPACE_FONT, self.monospace_font.clone());
@@ -129,9 +129,9 @@ impl Model {
             ContextView::SystemFont => {
                 self.interface_font = FontConfig {
                     family: font.to_string(),
-                    weight: cosmic::iced::font::Weight::Normal,
-                    style: cosmic::iced::font::Style::Normal,
-                    stretch: cosmic::iced::font::Stretch::Normal,
+                    weight: lingmo::iced::font::Weight::Normal,
+                    style: lingmo::iced::font::Style::Normal,
+                    stretch: lingmo::iced::font::Stretch::Normal,
                 };
                 update_config(INTERFACE_FONT, self.interface_font.clone());
                 tokio::spawn(async move {

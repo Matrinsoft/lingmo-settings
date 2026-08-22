@@ -1,12 +1,12 @@
-use cosmic::app::{ContextDrawer, context_drawer};
-use cosmic::config::CosmicTk;
-use cosmic::cosmic_config::{Config, ConfigSet};
-use cosmic::cosmic_theme::Spacing;
-use cosmic::iced::Alignment;
-use cosmic::iced::core::{Color, Length};
-use cosmic::widget::color_picker::ColorPickerUpdate;
-use cosmic::widget::{ColorPickerModel, container, flex_row, row, settings, slider, text};
-use cosmic::{Apply, Element, Task, task, widget};
+use lingmo::app::{ContextDrawer, context_drawer};
+use lingmo::config::CosmicTk;
+use lingmo::cosmic_config::{Config, ConfigSet};
+use lingmo::cosmic_theme::Spacing;
+use lingmo::iced::Alignment;
+use lingmo::iced::core::{Color, Length};
+use lingmo::widget::color_picker::ColorPickerUpdate;
+use lingmo::widget::{ColorPickerModel, container, flex_row, row, settings, slider, text};
+use lingmo::{Apply, Element, Task, task, widget};
 use cosmic_config::ConfigGet;
 use std::sync::Arc;
 use tracing::error;
@@ -29,7 +29,7 @@ pub struct Content {
     font_config: font_config::Model,
 
     icons_fetched: bool,
-    icon_fetch_handle: Option<cosmic::iced::task::Handle>,
+    icon_fetch_handle: Option<lingmo::iced::task::Handle>,
 
     icon_theme_active: Option<usize>,
     icon_global: bool,
@@ -131,7 +131,7 @@ impl From<&theme_manager::Manager> for Content {
             frosted_panel: theme.frosted_panel,
             frosted_applets: theme.frosted_applets,
             icons_fetched: false,
-            icon_global: cosmic::config::apply_theme_global(),
+            icon_global: lingmo::config::apply_theme_global(),
             icon_fetch_handle: None,
             icon_theme_active: None,
             icon_themes: Vec::new(),
@@ -203,14 +203,14 @@ impl Content {
             ColorPickerUpdate::AppliedColor | ColorPickerUpdate::Reset => {
                 needs_update = true;
                 self.context_view = None;
-                tasks.push(cosmic::task::message(
+                tasks.push(lingmo::task::message(
                     crate::pages::Message::CloseContextDrawer,
                 ));
             }
 
             ColorPickerUpdate::Cancel => {
                 self.context_view = None;
-                tasks.push(cosmic::task::message(
+                tasks.push(lingmo::task::message(
                     crate::pages::Message::CloseContextDrawer,
                 ));
             }
@@ -257,7 +257,7 @@ impl Content {
                 }
             }
             IconMessage::IconLoaded((icon_themes, icon_handles)) => {
-                let active_icon_theme = cosmic::config::icon_theme();
+                let active_icon_theme = lingmo::config::icon_theme();
 
                 // Set the icon themes, and define the active icon theme.
                 self.icon_themes = icon_themes;
@@ -267,8 +267,8 @@ impl Content {
                     .position(|theme| theme.id == active_icon_theme);
                 self.icon_handles = icon_handles;
 
-                return cosmic::task::message(app::Message::SetTheme(
-                    cosmic::theme::system_preference(),
+                return lingmo::task::message(app::Message::SetTheme(
+                    lingmo::theme::system_preference(),
                 ));
             }
         }
@@ -345,7 +345,7 @@ impl Content {
                 }
 
                 self.icons_fetched = true;
-                let (task, handle) = cosmic::task::future(icon_themes::fetch()).abortable();
+                let (task, handle) = lingmo::task::future(icon_themes::fetch()).abortable();
                 self.icon_fetch_handle = Some(handle);
 
                 return task;
@@ -541,11 +541,11 @@ impl Content {
             space_xs,
             space_m,
             ..
-        } = cosmic::theme::spacing();
+        } = lingmo::theme::spacing();
 
         let active = self.icon_theme_active;
 
-        cosmic::iced::widget::column![
+        lingmo::iced::widget::column![
             // Export theme choice
             settings::section().add(
                 settings::item::builder(fl!("enable-export"))
@@ -586,9 +586,9 @@ impl Content {
 
     #[cfg(feature = "cosmic-comp-config")]
     pub fn shadow_and_corners(&self) -> Element<'_, crate::pages::Message> {
-        let Spacing { space_m, .. } = cosmic::theme::spacing();
+        let Spacing { space_m, .. } = lingmo::theme::spacing();
 
-        cosmic::iced::widget::column![
+        lingmo::iced::widget::column![
             settings::section().title(fl!("shadows-floating")).add(
                 settings::item::builder(fl!("shadows-floating", "clip"))
                     .toggler(self.appearance_conf.clip_floating_windows, |b| {
@@ -647,7 +647,7 @@ impl Content {
                         text::body(fl!("style", "less")).into(),
                         slider(0..=13, self.frosted, Message::Blur)
                             .width(Length::Fill)
-                            .apply(cosmic::widget::container)
+                            .apply(lingmo::widget::container)
                             .max_width(250)
                             .into(),
                         text::body(fl!("style", "more")).into(),
@@ -664,7 +664,7 @@ impl Content {
                         slider(0.0..=1.0, self.glass, Message::Glass)
                             .step(0.05)
                             .width(Length::Fill)
-                            .apply(cosmic::widget::container)
+                            .apply(lingmo::widget::container)
                             .max_width(250)
                             .into(),
                         text::body(fl!("style", "more")).into(),

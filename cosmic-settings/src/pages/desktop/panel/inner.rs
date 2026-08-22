@@ -1,13 +1,13 @@
-use cosmic::cctk::sctk::reexports::client::Proxy;
-use cosmic::cctk::sctk::reexports::client::backend::ObjectId;
-use cosmic::cctk::sctk::reexports::client::protocol::wl_output::WlOutput;
-use cosmic::cosmic_config::{self, CosmicConfigEntry};
-use cosmic::cosmic_theme::{Density, Roundness};
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::{button, container, dropdown, row, settings, slider, space, text};
-use cosmic::{Element, Task, surface};
+use lingmo::cctk::sctk::reexports::client::Proxy;
+use lingmo::cctk::sctk::reexports::client::backend::ObjectId;
+use lingmo::cctk::sctk::reexports::client::protocol::wl_output::WlOutput;
+use lingmo::cosmic_config::{self, CosmicConfigEntry};
+use lingmo::cosmic_theme::{Density, Roundness};
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::{button, container, dropdown, row, settings, slider, space, text};
+use lingmo::{Element, Task, surface};
 
-use cosmic::Apply;
+use lingmo::Apply;
 use cosmic_config::ConfigSet;
 use cosmic_panel_config::{
     AutoHide, CosmicPanelBackground, CosmicPanelConfig, CosmicPanelContainerConfig,
@@ -56,7 +56,7 @@ impl Default for PageInner {
             container_config: Option::default(),
             outputs_map: HashMap::default(),
             system_default: None,
-            system_container: cosmic::cosmic_config::Config::system(
+            system_container: lingmo::cosmic_config::Config::system(
                 cosmic_panel_config::NAME,
                 CosmicPanelConfig::VERSION,
             )
@@ -126,7 +126,7 @@ pub(crate) fn behavior_and_position<
                         page.anchors.as_slice(),
                         Some(panel_config.anchor as usize),
                         Message::PanelAnchor,
-                        cosmic::iced::window::Id::RESERVED,
+                        lingmo::iced::window::Id::RESERVED,
                         Message::Surface,
                         move |a| crate::app::Message::PageMessage(msg_map(a)),
                     ),
@@ -141,7 +141,7 @@ pub(crate) fn behavior_and_position<
                             CosmicPanelOuput::Name(n) => page.outputs.iter().position(|o| o == n),
                         },
                         Message::Output,
-                        cosmic::iced::window::Id::RESERVED,
+                        lingmo::iced::window::Id::RESERVED,
                         Message::Surface,
                         move |a| crate::app::Message::PageMessage(msg_map(a)),
                     ),
@@ -196,7 +196,7 @@ pub(crate) fn style<
                             CosmicPanelBackground::Color(_) => None,
                         },
                         Message::Appearance,
-                        cosmic::iced::window::Id::RESERVED,
+                        lingmo::iced::window::Id::RESERVED,
                         Message::Surface,
                         move |a| crate::app::Message::PageMessage(msg_map(a)),
                     ),
@@ -231,7 +231,7 @@ pub(crate) fn style<
                         )
                         .on_release(Message::PanelSizeCommit)
                         .width(Length::Fill)
-                        .apply(cosmic::widget::container)
+                        .apply(lingmo::widget::container)
                         .max_width(250)
                         .into(),
                         text::body(fl!("large")).into(),
@@ -436,7 +436,7 @@ pub enum Message {
 
 impl PageInner {
     pub(crate) fn update_defaults(&mut self) {
-        let theme = cosmic::theme::system_preference();
+        let theme = lingmo::theme::system_preference();
         let theme = theme.cosmic();
 
         let Some(default) = self.system_default.as_mut() else {
@@ -485,7 +485,7 @@ impl PageInner {
                     .as_mut()
                     .zip(self.config_helper.as_ref())
                 {
-                    let theme = cosmic::theme::system_preference();
+                    let theme = lingmo::theme::system_preference();
                     let theme = theme.cosmic();
                     let radius = theme.corner_radii;
                     let roundness: Roundness = radius.into();
@@ -516,7 +516,7 @@ impl PageInner {
                     tracing::error!(?err, "Error fully resetting the panel config.");
                 }
                 // update the padding and spacing based on appearance
-                let theme = cosmic::theme::system_preference();
+                let theme = lingmo::theme::system_preference();
                 let theme = theme.cosmic();
 
                 let radius = theme.corner_radii;
@@ -577,7 +577,7 @@ impl PageInner {
                 } else {
                     _ = panel_config.set_margin(helper, 0);
                 }
-                let theme = cosmic::theme::system_preference();
+                let theme = lingmo::theme::system_preference();
                 let theme = theme.cosmic();
                 let radius = theme.corner_radii.radius_xl[0] as u32;
                 let new_radius = if enabled {
@@ -609,7 +609,7 @@ impl PageInner {
             Message::ExtendToEdge(enabled) => {
                 _ = panel_config.set_expand_to_edges(helper, enabled);
 
-                let theme = cosmic::theme::system_preference();
+                let theme = lingmo::theme::system_preference();
                 let theme = theme.cosmic();
                 let radius = theme.corner_radii.radius_xl[0] as u32;
                 let new_radius = if panel_config.anchor_gap {
@@ -629,7 +629,7 @@ impl PageInner {
                 }
 
                 self.opacity_changing = true;
-                return cosmic::Task::future(async move {
+                return lingmo::Task::future(async move {
                     tokio::time::sleep(Duration::from_millis(125)).await;
                     Message::OpacityApply
                 });

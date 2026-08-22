@@ -5,9 +5,9 @@ use std::collections::BTreeMap;
 use std::path::PathBuf;
 
 use super::Message;
-use cosmic::Element;
-use cosmic::iced::{Background, Length};
-use cosmic::widget::{button, icon, text};
+use lingmo::Element;
+use lingmo::iced::{Background, Length};
+use lingmo::widget::{button, icon, text};
 use tokio::io::AsyncBufReadExt;
 
 const ICON_PREV_N: usize = 6;
@@ -27,15 +27,15 @@ pub fn button(
     selected: bool,
     callback: impl Fn(usize) -> super::Message,
 ) -> Element<'static, Message> {
-    let theme = cosmic::theme::active();
+    let theme = lingmo::theme::active();
     let theme = theme.cosmic();
     let background = Background::Color(theme.palette.neutral_4.into());
 
-    cosmic::widget::column::with_capacity(2)
+    lingmo::widget::column::with_capacity(2)
         .push(
-            cosmic::widget::button::custom_image_button(
-                cosmic::widget::column::with_children([
-                    cosmic::widget::row::with_capacity(ICON_PREV_ROW)
+            lingmo::widget::button::custom_image_button(
+                lingmo::widget::column::with_children([
+                    lingmo::widget::row::with_capacity(ICON_PREV_ROW)
                         .extend(
                             handles
                                 .iter()
@@ -46,7 +46,7 @@ pub fn button(
                         )
                         .spacing(theme.space_xxxs())
                         .into(),
-                    cosmic::widget::row::with_capacity(ICON_PREV_ROW)
+                    lingmo::widget::row::with_capacity(ICON_PREV_ROW)
                         .extend(
                             handles
                                 .iter()
@@ -67,39 +67,39 @@ pub fn button(
             // Image button's style mostly works, but it needs a background to fit the design
             .class(button::ButtonClass::Custom {
                 active: Box::new(move |focused, theme| {
-                    let mut appearance = <cosmic::theme::Theme as button::Catalog>::active(
+                    let mut appearance = <lingmo::theme::Theme as button::Catalog>::active(
                         theme,
                         focused,
                         selected,
-                        &cosmic::theme::Button::Image,
+                        &lingmo::theme::Button::Image,
                     );
                     appearance.background = Some(background);
                     appearance
                 }),
                 disabled: Box::new(move |theme| {
-                    let mut appearance = <cosmic::theme::Theme as button::Catalog>::disabled(
+                    let mut appearance = <lingmo::theme::Theme as button::Catalog>::disabled(
                         theme,
-                        &cosmic::theme::Button::Image,
+                        &lingmo::theme::Button::Image,
                     );
                     appearance.background = Some(background);
                     appearance
                 }),
                 hovered: Box::new(move |focused, theme| {
-                    let mut appearance = <cosmic::theme::Theme as button::Catalog>::hovered(
+                    let mut appearance = <lingmo::theme::Theme as button::Catalog>::hovered(
                         theme,
                         focused,
                         selected,
-                        &cosmic::theme::Button::Image,
+                        &lingmo::theme::Button::Image,
                     );
                     appearance.background = Some(background);
                     appearance
                 }),
                 pressed: Box::new(move |focused, theme| {
-                    let mut appearance = <cosmic::theme::Theme as button::Catalog>::pressed(
+                    let mut appearance = <lingmo::theme::Theme as button::Catalog>::pressed(
                         theme,
                         focused,
                         selected,
-                        &cosmic::theme::Button::Image,
+                        &lingmo::theme::Button::Image,
                     );
                     appearance.background = Some(background);
                     appearance
@@ -247,8 +247,8 @@ pub struct IconTheme {
 /// Generate [icon::Handle]s to use for icon theme previews.
 fn preview_handles(theme: String, inherits: Vec<String>) -> [icon::Handle; ICON_PREV_N] {
     // Cache current default and set icon theme as a temporary default
-    let default = cosmic::icon_theme::default();
-    cosmic::icon_theme::set_default(theme);
+    let default = lingmo::icon_theme::default();
+    lingmo::icon_theme::set_default(theme);
 
     // Evaluate handles with the temporary theme
     let handles = [
@@ -261,7 +261,7 @@ fn preview_handles(theme: String, inherits: Vec<String>) -> [icon::Handle; ICON_
     ];
 
     // Reset default icon theme.
-    cosmic::icon_theme::set_default(default);
+    lingmo::icon_theme::set_default(default);
     handles
 }
 
@@ -290,7 +290,7 @@ fn icon_handle(icon_name: &str, alternate: &str, valid_dirs: &[String]) -> icon:
                 // Without the exact path, the handles will all resolve to icons from the same theme in
                 // [`icon_theme_button`] rather than the icons for each different theme
                 .path()
-                // `libcosmic` should always return a path if the default theme is installed
+                // `liblingmo` should always return a path if the default theme is installed
                 // The returned path has to be verified as an icon from the set theme or an
                 // inherited theme
                 .and_then(|path| {

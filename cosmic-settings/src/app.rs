@@ -21,18 +21,18 @@ use crate::pages::sound;
 use crate::pages::{self, applications, system, time};
 use crate::subscription::desktop_files;
 use crate::widget::{page_title, search_header};
-use cosmic::app::context_drawer::ContextDrawer;
-use cosmic::app::{Core, Task};
+use lingmo::app::context_drawer::ContextDrawer;
+use lingmo::app::{Core, Task};
 #[cfg(feature = "wayland")]
-use cosmic::cctk::{sctk::output::OutputInfo, wayland_client::protocol::wl_output::WlOutput};
-use cosmic::iced::event::{self, PlatformSpecific};
-use cosmic::iced::{self, Length, Subscription, keyboard, window};
-use cosmic::prelude::*;
-use cosmic::widget::{
+use lingmo::cctk::{sctk::output::OutputInfo, wayland_client::protocol::wl_output::WlOutput};
+use lingmo::iced::event::{self, PlatformSpecific};
+use lingmo::iced::{self, Length, Subscription, keyboard, window};
+use lingmo::prelude::*;
+use lingmo::widget::{
     button, column, container, icon, id_container, nav_bar, row, scrollable, segmented_button,
     settings, text_input,
 };
-use cosmic::{Element, surface};
+use lingmo::{Element, surface};
 #[cfg(feature = "cosmic-comp-config")]
 use cosmic_comp_config::CosmicCompConfig;
 #[cfg(feature = "wayland")]
@@ -62,7 +62,7 @@ pub struct SettingsApp {
     nav_model: nav_bar::Model,
     pages: page::Binder<crate::pages::Message>,
     search_active: bool,
-    search_id: cosmic::widget::Id,
+    search_id: lingmo::widget::Id,
     search_input: String,
     search_selections: Vec<(page::Entity, section::Entity)>,
     context_title: Option<String>,
@@ -143,9 +143,9 @@ impl SettingsApp {
         }
     }
 
-    fn id(&self) -> cosmic::iced::id::Id {
+    fn id(&self) -> lingmo::iced::id::Id {
         let cur_page_name = self.pages.info[self.active_page].id.as_ref();
-        cosmic::iced::id::Id::new(cur_page_name.to_owned())
+        lingmo::iced::id::Id::new(cur_page_name.to_owned())
     }
 }
 
@@ -171,13 +171,13 @@ pub enum Message {
     SearchChanged(String),
     SearchClear,
     SearchSubmit,
-    SetTheme(cosmic::theme::Theme),
+    SetTheme(lingmo::theme::Theme),
     SetWindowTitle,
     Surface(surface::Action),
 }
 
-impl cosmic::Application for SettingsApp {
-    type Executor = cosmic::executor::single::Executor;
+impl lingmo::Application for SettingsApp {
+    type Executor = lingmo::executor::single::Executor;
     type Flags = crate::Args;
     type Message = Message;
 
@@ -204,7 +204,7 @@ impl cosmic::Application for SettingsApp {
             nav_model: nav_bar::Model::default(),
             pages: page::Binder::default(),
             search_active: false,
-            search_id: cosmic::widget::Id::unique(),
+            search_id: lingmo::widget::Id::unique(),
             search_input: String::new(),
             search_selections: Vec::default(),
             context_title: None,
@@ -239,7 +239,7 @@ impl cosmic::Application for SettingsApp {
         .unwrap_or(desktop_id);
 
         let task = Task::batch([
-            cosmic::command::set_theme(cosmic::theme::system_preference()),
+            lingmo::command::set_theme(lingmo::theme::system_preference()),
             app.activate_page(active_id),
         ]);
         (app, task)
@@ -295,7 +295,7 @@ impl cosmic::Application for SettingsApp {
 
     fn on_search(&mut self) -> Task<Self::Message> {
         self.search_active = true;
-        cosmic::widget::text_input::focus(self.search_id.clone())
+        lingmo::widget::text_input::focus(self.search_id.clone())
     }
 
     fn subscription(&self) -> Subscription<Message> {
@@ -847,7 +847,7 @@ impl cosmic::Application for SettingsApp {
             }
 
             Message::SetTheme(t) => {
-                return cosmic::command::set_theme(t);
+                return lingmo::command::set_theme(t);
             }
             Message::OpenContextDrawer(page) => {
                 self.core.window.show_context = true;
@@ -858,8 +858,8 @@ impl cosmic::Application for SettingsApp {
                 tracing::error!(error, "error occurred");
             }
             Message::Surface(a) => {
-                return cosmic::task::message(cosmic::Action::Cosmic(
-                    cosmic::app::Action::Surface(a),
+                return lingmo::task::message(lingmo::Action::Cosmic(
+                    lingmo::app::Action::Surface(a),
                 ));
             }
         }
@@ -868,11 +868,11 @@ impl cosmic::Application for SettingsApp {
     }
 
     #[cfg(feature = "single-instance")]
-    fn dbus_activation(&mut self, msg: cosmic::dbus_activation::Message) -> Task<Self::Message> {
+    fn dbus_activation(&mut self, msg: lingmo::dbus_activation::Message) -> Task<Self::Message> {
         match msg.msg {
-            cosmic::dbus_activation::Details::Activate
-            | cosmic::dbus_activation::Details::Open { .. } => None,
-            cosmic::dbus_activation::Details::ActivateAction { action, .. } => {
+            lingmo::dbus_activation::Details::Activate
+            | lingmo::dbus_activation::Details::Open { .. } => None,
+            lingmo::dbus_activation::Details::ActivateAction { action, .. } => {
                 PageCommands::from_str(&action)
                     .ok()
                     .and_then(|action| self.subtask_to_page(&action))
@@ -890,7 +890,7 @@ impl cosmic::Application for SettingsApp {
         } else if let Some(sub_pages) = self.pages.sub_pages(self.active_page) {
             self.sub_page_view(sub_pages)
         } else {
-            return self.page_container(cosmic::widget::space());
+            return self.page_container(lingmo::widget::space());
         };
 
         container(view).into()
@@ -929,7 +929,7 @@ impl cosmic::Application for SettingsApp {
     fn system_theme_update(
         &mut self,
         _keys: &[&'static str],
-        new_theme: &cosmic::cosmic_theme::Theme,
+        new_theme: &lingmo::cosmic_theme::Theme,
     ) -> Task<Self::Message> {
         let mut tasks = Vec::new();
         #[cfg(feature = "page-accessibility")]
@@ -985,7 +985,7 @@ impl SettingsApp {
             leave_task,
             page_task,
             close_context_drawer_task,
-            cosmic::task::future(async { Message::SetWindowTitle }),
+            lingmo::task::future(async { Message::SetWindowTitle }),
         ])
     }
 
@@ -1045,7 +1045,7 @@ impl SettingsApp {
     }
 
     /// Displays the view of a page.
-    fn page_view(&self, content: &[section::Entity]) -> cosmic::Element<'_, Message> {
+    fn page_view(&self, content: &[section::Entity]) -> lingmo::Element<'_, Message> {
         let page = &self.pages.page[self.active_page];
         let page_info = &self.pages.info[self.active_page];
         let mut sections_column = Vec::with_capacity(content.len());
@@ -1059,7 +1059,7 @@ impl SettingsApp {
                 Message::Page(parent),
             );
 
-            let mut page_header_content: cosmic::iced::widget::Row<'_, Message, Theme> =
+            let mut page_header_content: lingmo::iced::widget::Row<'_, Message, Theme> =
                 row::with_capacity(2)
                     .align_y(iced::Alignment::End)
                     .push(page_header);
@@ -1070,7 +1070,7 @@ impl SettingsApp {
 
             page_header_content.into()
         } else {
-            cosmic::widget::text::title3(&page_info.title).into()
+            lingmo::widget::text::title3(&page_info.title).into()
         };
 
         for id in content.iter().copied() {
@@ -1166,7 +1166,7 @@ impl SettingsApp {
         if tasks.is_empty() {
             Task::none()
         } else {
-            cosmic::task::batch(tasks)
+            lingmo::task::batch(tasks)
                 .map(Message::PageMessage)
                 .map(Into::into)
         }
@@ -1179,8 +1179,8 @@ impl SettingsApp {
     }
 
     /// Displays the search view.
-    fn search_view(&self) -> cosmic::Element<'_, Message> {
-        let mut sections: Vec<cosmic::Element<Message>> = Vec::new();
+    fn search_view(&self) -> lingmo::Element<'_, Message> {
+        let mut sections: Vec<lingmo::Element<Message>> = Vec::new();
 
         let mut current_page = page::Entity::default();
         for (page, section) in self.search_selections.iter().copied() {
@@ -1200,7 +1200,7 @@ impl SettingsApp {
                 let section = (section.view_fn)(&self.pages, model.as_ref(), section)
                     .map(Message::PageMessage)
                     .apply(container)
-                    .padding([0, 0, 0, cosmic::theme::active().cosmic().space_l()]);
+                    .padding([0, 0, 0, lingmo::theme::active().cosmic().space_l()]);
 
                 sections.push(section.into());
             }
@@ -1212,7 +1212,7 @@ impl SettingsApp {
     }
 
     /// Displays the sub-pages view of a page.
-    fn sub_page_view(&self, sub_pages: &[page::Entity]) -> cosmic::Element<'_, Message> {
+    fn sub_page_view(&self, sub_pages: &[page::Entity]) -> lingmo::Element<'_, Message> {
         let page_list = sub_pages
             .iter()
             .copied()
@@ -1230,7 +1230,7 @@ impl SettingsApp {
                     ))
                 },
             )
-            .spacing(cosmic::theme::spacing().space_s)
+            .spacing(lingmo::theme::spacing().space_s)
             .apply(|widget| scrollable(self.page_container(widget)).height(Length::Fill))
             .apply(Element::from)
             .map(Message::Page);
@@ -1244,9 +1244,9 @@ impl SettingsApp {
 
     fn page_container<'a, Message: 'static>(
         &self,
-        content: impl Into<cosmic::Element<'a, Message>>,
-    ) -> cosmic::Element<'a, Message> {
-        let theme = cosmic::theme::active();
+        content: impl Into<lingmo::Element<'a, Message>>,
+    ) -> lingmo::Element<'a, Message> {
+        let theme = lingmo::theme::active();
 
         let padding = if self.core.is_condensed() {
             theme.cosmic().space_s()

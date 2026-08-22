@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 use super::model;
-use cosmic::iced::futures;
-use cosmic::{Apply, iced, widget};
+use lingmo::iced::futures;
+use lingmo::{Apply, iced, widget};
 use cosmic_settings_audio_client::{self as audio_client, CosmicAudioProxy};
 use cosmic_settings_page::{self as page, Section, section};
 use futures::executor::block_on;
@@ -19,7 +19,7 @@ pub enum Message {
     /// Set the profile of a sound device.
     SetProfile(u32, u32),
     /// Surface Action
-    Surface(cosmic::surface::Action),
+    Surface(lingmo::surface::Action),
 }
 
 impl From<Message> for crate::pages::Message {
@@ -60,15 +60,15 @@ impl page::Page<crate::pages::Message> for Page {
         self.entity = entity;
     }
 
-    fn on_leave(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_leave(&mut self) -> lingmo::Task<crate::pages::Message> {
         *self = Page {
             entity: self.entity,
             ..Page::default()
         };
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
-    fn subscription(&self, _core: &cosmic::Core) -> iced::Subscription<crate::pages::Message> {
+    fn subscription(&self, _core: &lingmo::Core) -> iced::Subscription<crate::pages::Message> {
         iced::Subscription::run(|| {
             iced::stream::channel(
                 1,
@@ -81,7 +81,7 @@ impl page::Page<crate::pages::Message> for Page {
 }
 
 impl Page {
-    pub fn update(&mut self, message: Message) -> cosmic::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> lingmo::Task<crate::app::Message> {
         match message {
             Message::Model(cosmic_settings_sound::Message::Subscription(message)) => {
                 self.model.update(message);
@@ -100,7 +100,7 @@ impl Page {
                 }
             }
 
-            Message::Surface(a) => return cosmic::task::message(crate::app::Message::Surface(a)),
+            Message::Surface(a) => return lingmo::task::message(crate::app::Message::Surface(a)),
 
             Message::SetProfile(id, index) => {
                 if let Some(client) = self.client.clone() {
@@ -111,7 +111,7 @@ impl Page {
             }
         }
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 }
 
@@ -123,11 +123,11 @@ pub fn view() -> Section<crate::pages::Message> {
                     descriptions,
                     active_profile,
                     move |id| Message::SetProfile(device_id, indexes[id]),
-                    cosmic::iced::window::Id::RESERVED,
+                    lingmo::iced::window::Id::RESERVED,
                     Message::Surface,
                     crate::Message::from,
                 )
-                .apply(cosmic::Element::from)
+                .apply(lingmo::Element::from)
                 .map(crate::pages::Message::from);
 
                 widget::settings::item::builder(name).control(dropdown)

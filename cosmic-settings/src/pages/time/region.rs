@@ -5,10 +5,10 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::sync::Arc;
 
 use crate::widget::selection_context_item;
-use cosmic::app::{ContextDrawer, context_drawer};
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::{self, button};
-use cosmic::{Apply, Element};
+use lingmo::app::{ContextDrawer, context_drawer};
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::{self, button};
+use lingmo::{Apply, Element};
 use cosmic_config::{ConfigGet, ConfigSet};
 use cosmic_settings_page::{self as page, Section, section};
 use eyre::Context;
@@ -142,11 +142,11 @@ impl page::Page<crate::pages::Message> for Page {
             .description(fl!("xdg-entry-region-language-comment"))
     }
 
-    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
-        cosmic::task::future(async move { Message::Refresh(Arc::new(page_reload().await)) })
+    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
+        lingmo::task::future(async move { Message::Refresh(Arc::new(page_reload().await)) })
     }
 
-    fn on_leave(&mut self) -> cosmic::Task<crate::pages::Message> {
+    fn on_leave(&mut self) -> lingmo::Task<crate::pages::Message> {
         self.add_language_search = String::new();
         self.available_languages = SlotMap::new();
         self.config = None;
@@ -156,7 +156,7 @@ impl page::Page<crate::pages::Message> for Page {
         self.region = None;
         self.registry = None;
         self.system_locales = BTreeMap::new();
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
     fn context_drawer(&self) -> Option<ContextDrawer<'_, crate::pages::Message>> {
@@ -208,7 +208,7 @@ impl page::Page<crate::pages::Message> for Page {
 }
 
 impl Page {
-    pub fn update(&mut self, message: Message) -> cosmic::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> lingmo::Task<crate::app::Message> {
         match message {
             Message::AddLanguage(id) => {
                 if let Some(language) = self.available_languages.get(id)
@@ -239,7 +239,7 @@ impl Page {
                     let lang = language.lang_code.clone();
                     let region = region.lang_code.clone();
 
-                    return cosmic::task::future(async move {
+                    return lingmo::task::future(async move {
                         if set_locale(lang, region.clone()).await.is_ok() {
                             update_time_settings_after_region_change(region);
                         }
@@ -251,7 +251,7 @@ impl Page {
 
             Message::AddLanguageContext => {
                 self.context = Some(ContextView::AddLanguage);
-                return cosmic::Task::done(crate::app::Message::OpenContextDrawer(self.entity));
+                return lingmo::Task::done(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::AddLanguageSearch(search) => {
@@ -263,7 +263,7 @@ impl Page {
             }
 
             Message::InstallAdditionalLanguages => {
-                return cosmic::task::future(async move {
+                return lingmo::task::future(async move {
                     _ = tokio::process::Command::new(GNOME_LANGUAGE_SELECTOR)
                         .status()
                         .await;
@@ -292,7 +292,7 @@ impl Page {
 
             Message::RegionContext => {
                 self.context = Some(ContextView::Region);
-                return cosmic::Task::done(crate::app::Message::OpenContextDrawer(self.entity));
+                return lingmo::Task::done(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::SourceContext(context_message) => {
@@ -352,10 +352,10 @@ impl Page {
             }
         }
 
-        cosmic::Task::none()
+        lingmo::Task::none()
     }
 
-    fn add_language_view(&self) -> cosmic::Element<'_, crate::pages::Message> {
+    fn add_language_view(&self) -> lingmo::Element<'_, crate::pages::Message> {
         let mut list = widget::list_column::with_capacity(self.available_languages.len());
         let search_input = &self.add_language_search.trim().to_lowercase();
 
@@ -459,7 +459,7 @@ impl Page {
         formatter.format(&value).to_string()
     }
 
-    fn region_view(&self) -> cosmic::Element<'_, crate::pages::Message> {
+    fn region_view(&self) -> lingmo::Element<'_, crate::pages::Message> {
         let mut list = widget::list_column::with_capacity(self.available_languages.len());
 
         let search_input = &self.add_language_search.trim().to_lowercase();
@@ -494,8 +494,8 @@ mod preferred_languages {
     use crate::pages::time::region::localized_iso_codes;
 
     use super::Message;
-    use cosmic::iced::{Alignment, Length};
-    use cosmic::{Apply, widget};
+    use lingmo::iced::{Alignment, Length};
+    use lingmo::{Apply, widget};
     use cosmic_settings_page::Section;
 
     pub fn section() -> Section<crate::pages::Message> {
@@ -508,7 +508,7 @@ mod preferred_languages {
             .title(fl!("preferred-languages"))
             .descriptions(descriptions)
             .view::<super::Page>(move |_binder, page, section| {
-                let title = widget::text::body(&section.title).font(cosmic::font::bold());
+                let title = widget::text::body(&section.title).font(lingmo::font::bold());
 
                 let description = widget::text::body(&section.descriptions[pref_lang_desc]);
 
@@ -542,8 +542,8 @@ mod preferred_languages {
                     .push(description)
                     .push(content)
                     .push(add_language_button)
-                    .spacing(cosmic::theme::spacing().space_xxs)
-                    .apply(cosmic::Element::from)
+                    .spacing(lingmo::theme::spacing().space_xxs)
+                    .apply(lingmo::Element::from)
                     .map(Into::into)
             })
     }
@@ -551,7 +551,7 @@ mod preferred_languages {
 
 mod formatting {
     use super::Message;
-    use cosmic::{Apply, widget};
+    use lingmo::{Apply, widget};
     use cosmic_settings_page::Section;
 
     pub fn section() -> Section<crate::pages::Message> {
@@ -572,37 +572,37 @@ mod formatting {
 
                 let dates = widget::row::with_capacity(2)
                     .push(widget::text::body(&desc[dates_txt]))
-                    .push(widget::text::body(page.formatted_date()).font(cosmic::font::bold()))
+                    .push(widget::text::body(page.formatted_date()).font(lingmo::font::bold()))
                     .spacing(4);
 
                 let time = widget::row::with_capacity(2)
                     .push(widget::text::body(&desc[time_txt]))
-                    .push(widget::text::body(page.formatted_time()).font(cosmic::font::bold()))
+                    .push(widget::text::body(page.formatted_time()).font(lingmo::font::bold()))
                     .spacing(4);
 
                 let dates_and_times = widget::row::with_capacity(2)
                     .push(widget::text::body(&desc[date_and_time_txt]))
                     .push(
                         widget::text::body(page.formatted_dates_and_times())
-                            .font(cosmic::font::bold()),
+                            .font(lingmo::font::bold()),
                     )
                     .spacing(4);
 
                 let numbers = widget::row::with_capacity(2)
                     .push(widget::text::body(&desc[numbers_txt]))
-                    .push(widget::text::body(page.formatted_numbers()).font(cosmic::font::bold()))
+                    .push(widget::text::body(page.formatted_numbers()).font(lingmo::font::bold()))
                     .spacing(4);
 
                 // TODO: Display measurement and paper demos
 
                 // let measurement = widget::row::with_capacity(2)
                 //     .push(widget::text::body(measurement_label.clone()))
-                //     .push(widget::text::body("").font(cosmic::font::bold()))
+                //     .push(widget::text::body("").font(lingmo::font::bold()))
                 //     .spacing(4);
 
                 // let paper = widget::row::with_capacity(2)
                 //     .push(widget::text::body(paper_label.clone()))
-                //     .push(widget::text::body("").font(cosmic::font::bold()))
+                //     .push(widget::text::body("").font(lingmo::font::bold()))
                 //     .spacing(4);
 
                 let formatted_demo = widget::column::with_capacity(6)
@@ -632,7 +632,7 @@ mod formatting {
                     .title(&desc[formatting_txt])
                     .add(formatted_demo)
                     .add(select_region)
-                    .apply(cosmic::Element::from)
+                    .apply(lingmo::Element::from)
                     .map(Into::into)
             })
     }
@@ -748,7 +748,7 @@ fn language_element(
     id: usize,
     description: String,
     expanded_source_popover: Option<usize>,
-) -> cosmic::Element<'static, Message> {
+) -> lingmo::Element<'static, Message> {
     let expanded = expanded_source_popover.is_some_and(|expanded_id| expanded_id == id);
 
     widget::settings::item(description, popover_button(id, expanded)).into()
@@ -819,8 +819,8 @@ fn popover_menu(id: usize) -> Element<'static, Message> {
     ])
     .width(Length::Fixed(200.0))
     .apply(widget::container)
-    .padding(cosmic::theme::spacing().space_xxs)
-    .class(cosmic::theme::Container::Dropdown)
+    .padding(lingmo::theme::spacing().space_xxs)
+    .class(lingmo::theme::Container::Dropdown)
     .into()
 }
 
@@ -828,14 +828,14 @@ fn popover_menu_row(
     id: usize,
     label: String,
     message: impl Fn(usize) -> SourceContext + 'static,
-) -> cosmic::Element<'static, Message> {
-    let spacing = cosmic::theme::spacing();
+) -> lingmo::Element<'static, Message> {
+    let spacing = lingmo::theme::spacing();
     widget::text::body(label)
         .align_y(Alignment::Center)
         .apply(button::custom)
         .padding([spacing.space_xxxs, spacing.space_xs])
         .width(Length::Fill)
-        .class(cosmic::theme::Button::MenuItem)
+        .class(lingmo::theme::Button::MenuItem)
         .on_press(Message::SourceContext(message(id)))
         .apply(Element::from)
 }

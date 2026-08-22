@@ -6,14 +6,14 @@ use std::time::Duration;
 
 use super::{ShortcutBinding, ShortcutMessage, ShortcutModel};
 
-use cosmic::app::ContextDrawer;
-use cosmic::iced::keyboard::key::Named;
-use cosmic::iced::keyboard::{Key, Location, Modifiers};
-use cosmic::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
-use cosmic::iced::platform_specific::shell::wayland::keymap;
-use cosmic::iced::{Alignment, Length};
-use cosmic::widget::{self, button, icon};
-use cosmic::{Apply, Element, Task};
+use lingmo::app::ContextDrawer;
+use lingmo::iced::keyboard::key::Named;
+use lingmo::iced::keyboard::{Key, Location, Modifiers};
+use lingmo::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
+use lingmo::iced::platform_specific::shell::wayland::keymap;
+use lingmo::iced::{Alignment, Length};
+use lingmo::widget::{self, button, icon};
+use lingmo::{Apply, Element, Task};
 use cosmic_settings_config::Binding;
 use cosmic_settings_config::shortcuts::{Action, Shortcuts};
 use cosmic_settings_page::{self as page, Section, section};
@@ -219,9 +219,9 @@ impl Page {
                 let name_id = self.name_id.clone();
                 self.add_shortcut.enable();
                 return Task::batch(vec![
-                    cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity)),
+                    lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity)),
                     // XX hack: wait a bit before focusing the input to avoid it being ignored before it exists
-                    cosmic::task::future(async move {
+                    lingmo::task::future(async move {
                         tokio::time::sleep(Duration::from_millis(10)).await;
                     })
                     .then(move |_: ()| widget::text_input::focus(name_id.clone())),
@@ -298,7 +298,7 @@ impl Page {
                     }
                 }
             }
-            // libcosmic requires we set on_tab() and manually process here
+            // liblingmo requires we set on_tab() and manually process here
             // otherwise it'll consume the tab key event for navigation
             Message::TabPressed => {
                 if self.add_shortcut.editing.is_some() && self.add_shortcut.active {
@@ -555,7 +555,7 @@ impl page::Page<crate::pages::Message> for Page {
     fn context_drawer(&self) -> Option<ContextDrawer<'_, crate::pages::Message>> {
         if self.add_shortcut.active {
             Some(
-                cosmic::app::context_drawer(
+                lingmo::app::context_drawer(
                     self.add_keybinding_context()
                         .map(crate::pages::Message::CustomShortcuts),
                     crate::pages::Message::CloseContextDrawer,
@@ -588,12 +588,12 @@ impl page::Page<crate::pages::Message> for Page {
     #[cfg(feature = "wayland")]
     fn subscription(
         &self,
-        core: &cosmic::Core,
-    ) -> cosmic::iced::Subscription<crate::pages::Message> {
-        use cosmic::iced::event::listen_with;
-        use cosmic::iced::{self};
+        core: &lingmo::Core,
+    ) -> lingmo::iced::Subscription<crate::pages::Message> {
+        use lingmo::iced::event::listen_with;
+        use lingmo::iced::{self};
 
-        cosmic::iced::Subscription::batch(vec![
+        lingmo::iced::Subscription::batch(vec![
             if self.add_shortcut.active
                 && self.add_shortcut.editing.is_some()
                 && self.replace_dialog.is_empty()
@@ -606,8 +606,8 @@ impl page::Page<crate::pages::Message> for Page {
                         modifiers,
                         ..
                     }) => {
-                        use cosmic::iced::keyboard::Key;
-                        use cosmic::iced::keyboard::key::Named;
+                        use lingmo::iced::keyboard::Key;
+                        use lingmo::iced::keyboard::key::Named;
                         if matches!(
                             key,
                             Key::Named(Named::Super | Named::Alt | Named::Control | Named::Shift)
@@ -626,8 +626,8 @@ impl page::Page<crate::pages::Message> for Page {
                         location,
                         ..
                     }) => {
-                        use cosmic::iced::keyboard::Key;
-                        use cosmic::iced::keyboard::key::Named;
+                        use lingmo::iced::keyboard::Key;
+                        use lingmo::iced::keyboard::key::Named;
                         if matches!(
                             key,
                             Key::Named(Named::Super | Named::Alt | Named::Control | Named::Shift)
@@ -649,7 +649,7 @@ impl page::Page<crate::pages::Message> for Page {
                     _ => None,
                 })
             } else {
-                cosmic::iced::Subscription::none()
+                lingmo::iced::Subscription::none()
             },
             self.model
                 .subscription(core)

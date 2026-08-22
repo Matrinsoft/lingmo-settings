@@ -1,7 +1,7 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use cosmic::cosmic_config::{self, ConfigGet, ConfigSet};
+use lingmo::cosmic_config::{self, ConfigGet, ConfigSet};
 use cosmic_bg_config::Source;
 use cosmic_settings_wallpaper as wallpaper;
 use std::collections::VecDeque;
