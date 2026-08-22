@@ -5,14 +5,14 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::sync::{Arc, LazyLock};
 
 use anyhow::Context;
-use lingmo::app::ContextDrawer;
-use lingmo::iced::core::text::Wrapping;
-use lingmo::iced::widget::operation::focus_next;
-use lingmo::iced::{Alignment, Length};
-use lingmo::widget::space::horizontal;
-use lingmo::widget::text_input::focus;
-use lingmo::widget::{self, column, icon};
-use lingmo::{Apply, Element, Task, task};
+use cosmic::app::ContextDrawer;
+use cosmic::iced::core::text::Wrapping;
+use cosmic::iced::widget::operation::focus_next;
+use cosmic::iced::{Alignment, Length};
+use cosmic::widget::space::horizontal;
+use cosmic::widget::text_input::focus;
+use cosmic::widget::{self, column, icon};
+use cosmic::{Apply, Element, Task, task};
 use cosmic_settings_page::{self as page, Section, section};
 use futures::{SinkExt, StreamExt};
 use secure_string::SecureString;
@@ -237,7 +237,7 @@ impl page::Page<crate::pages::Message> for Page {
 
     fn context_drawer(&self) -> Option<ContextDrawer<'_, crate::pages::Message>> {
         let drawer = self.qr_drawer.as_ref()?;
-        let spacing = lingmo::theme::spacing();
+        let spacing = cosmic::theme::spacing();
 
         let qr_section = if let Some(ref qr_data) = self.qr_code_data {
             widget::container(widget::qr_code(qr_data).cell_size(5)).center_x(Length::Fill)
@@ -267,7 +267,7 @@ impl page::Page<crate::pages::Message> for Page {
             .push(info_items);
 
         Some(
-            lingmo::app::context_drawer(
+            cosmic::app::context_drawer(
                 content
                     .apply(Element::from)
                     .map(crate::pages::Message::WiFi),
@@ -277,7 +277,7 @@ impl page::Page<crate::pages::Message> for Page {
         )
     }
 
-    fn header_view(&self) -> Option<lingmo::Element<'_, crate::pages::Message>> {
+    fn header_view(&self) -> Option<cosmic::Element<'_, crate::pages::Message>> {
         Some(
             widget::button::standard(fl!("add-network"))
                 .trailing_icon(icon::from_name("window-pop-out-symbolic"))
@@ -290,12 +290,12 @@ impl page::Page<crate::pages::Message> for Page {
         )
     }
 
-    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
         let (tx, rx) = tokio::sync::mpsc::channel(4);
         self.secret_tx = Some(tx);
         if self.nm_task.is_none() {
             return Task::batch(vec![
-                lingmo::Task::future(async move {
+                cosmic::Task::future(async move {
                     nmrs::NetworkManager::new()
                         .await
                         .context("failed to connect to NetworkManager")
@@ -305,7 +305,7 @@ impl page::Page<crate::pages::Message> for Page {
                         )
                         .apply(crate::pages::Message::WiFi)
                 }),
-                lingmo::Task::stream(nm_secret_agent::secret_agent_stream(
+                cosmic::Task::stream(nm_secret_agent::secret_agent_stream(
                     "com.system76.CosmicSettings.WiFi.NetworkManager.SecretAgent",
                     rx,
                 ))
@@ -428,7 +428,7 @@ impl Page {
                 | network_manager::Event::WirelessAccessPoints,
             ) => {
                 if let Some(NmState { ref conn, .. }) = self.nm_state {
-                    return lingmo::Task::batch(vec![
+                    return cosmic::Task::batch(vec![
                         update_state(conn.clone()),
                         update_devices(conn.clone()),
                     ]);
@@ -484,7 +484,7 @@ impl Page {
                 });
 
                 // Open the context drawer
-                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity));
+                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity));
             }
             Message::AddNetwork => {
                 tokio::task::spawn(super::nm_add_wifi());
@@ -695,7 +695,7 @@ impl Page {
             }
 
             Message::NetworkManagerConnect(conn) => {
-                return lingmo::task::batch(vec![
+                return cosmic::task::batch(vec![
                     self.connect(conn.clone()),
                     connection_settings(conn),
                 ]);
@@ -780,8 +780,8 @@ impl Page {
             Message::FocusSecureInput => {
                 // retry until the widget is in the tree and focused or the dialog is removed.
                 if matches!(self.dialog, Some(WiFiDialog::Password { .. })) {
-                    return lingmo::iced::runtime::task::widget(
-                        lingmo::iced::core::widget::operation::focusable::find_focused(),
+                    return cosmic::iced::runtime::task::widget(
+                        cosmic::iced::core::widget::operation::focusable::find_focused(),
                     )
                     .collect()
                     .then(|id| {
@@ -907,10 +907,10 @@ fn devices_view() -> Section<crate::pages::Message> {
         .descriptions(descriptions)
         .view::<Page>(move |_binder, page, section| {
             let Some(NmState { ref state, .. }) = page.nm_state else {
-                return lingmo::widget::space().into();
+                return cosmic::widget::space().into();
             };
 
-            let spacing = lingmo::theme::spacing();
+            let spacing = cosmic::theme::spacing();
 
             let wifi_enable = widget::settings::item::builder(&section.descriptions[wifi_txt])
                 .toggler(state.wifi_enabled, Message::WiFiEnable);
@@ -1031,8 +1031,8 @@ fn devices_view() -> Section<crate::pages::Message> {
                                         }))
                                         .width(Length::Fixed(200.0))
                                         .apply(widget::container)
-                                        .padding(lingmo::theme::spacing().space_xxs)
-                                        .class(lingmo::theme::Container::Dropdown),
+                                        .padding(cosmic::theme::spacing().space_xxs)
+                                        .class(cosmic::theme::Container::Dropdown),
                                 )
                                 .apply(|e| Some(Element::from(e)))
                         } else {
@@ -1136,8 +1136,8 @@ fn devices_view() -> Section<crate::pages::Message> {
                                         }))
                                         .width(Length::Fixed(200.0))
                                         .apply(widget::container)
-                                        .padding(lingmo::theme::spacing().space_xxs)
-                                        .class(lingmo::theme::Container::Dropdown),
+                                        .padding(cosmic::theme::spacing().space_xxs)
+                                        .class(cosmic::theme::Container::Dropdown),
                                 )
                                 .into()
                         } else {
@@ -1293,19 +1293,19 @@ fn is_connected(state: &NetworkManagerState, network: &AccessPoint) -> bool {
 }
 
 fn popup_button(message: Message, text: &str) -> Element<'_, Message> {
-    let spacing = lingmo::theme::spacing();
+    let spacing = cosmic::theme::spacing();
     widget::text::body(text)
         .align_y(Alignment::Center)
         .apply(widget::button::custom)
         .padding([spacing.space_xxxs, spacing.space_xs])
         .width(Length::Fill)
-        .class(lingmo::theme::Button::MenuItem)
+        .class(cosmic::theme::Button::MenuItem)
         .on_press(message)
         .into()
 }
 
 fn connection_settings(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    lingmo::task::future(async move {
+    cosmic::task::future(async move {
         network_manager::wifi_connection_settings(conn)
             .await
             .context("failed to get connection settings")
@@ -1318,7 +1318,7 @@ fn connection_settings(conn: nmrs::NetworkManager) -> Task<crate::app::Message> 
 }
 
 pub fn update_state(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    lingmo::task::future(async move {
+    cosmic::task::future(async move {
         match NetworkManagerState::new(&conn).await {
             Ok(state) => Message::UpdateState(state),
             Err(why) => Message::Error(why.to_string()),
@@ -1327,7 +1327,7 @@ pub fn update_state(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
 }
 
 pub fn update_devices(conn: nmrs::NetworkManager) -> Task<crate::app::Message> {
-    lingmo::task::future(async move {
+    cosmic::task::future(async move {
         let filter =
             |device_type| matches!(device_type, network_manager::devices::DeviceType::Wifi);
         match network_manager::devices::list(&conn, filter).await {

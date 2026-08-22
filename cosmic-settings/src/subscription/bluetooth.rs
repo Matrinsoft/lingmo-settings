@@ -2,7 +2,7 @@ use crate::pages::bluetooth;
 use std::{any::TypeId, pin::Pin};
 
 use bluez_zbus::BluetoothDevice;
-use lingmo::iced::{
+use cosmic::iced::{
     self,
     futures::{SinkExt, StreamExt},
 };

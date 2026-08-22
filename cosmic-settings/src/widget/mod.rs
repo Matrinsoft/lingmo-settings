@@ -4,15 +4,15 @@
 use std::borrow::Cow;
 use std::rc::Rc;
 
-use lingmo::cosmic_theme::Spacing;
-use lingmo::iced::core::text::Wrapping;
-use lingmo::iced::{Alignment, Length};
-use lingmo::widget::color_picker::ColorPickerUpdate;
-use lingmo::widget::space::{horizontal, vertical};
-use lingmo::widget::{
+use cosmic::cosmic_theme::Spacing;
+use cosmic::iced::core::text::Wrapping;
+use cosmic::iced::{Alignment, Length};
+use cosmic::widget::color_picker::ColorPickerUpdate;
+use cosmic::widget::space::{horizontal, vertical};
+use cosmic::widget::{
     self, ColorPickerModel, button, column, container, divider, icon, list, row, settings, text,
 };
-use lingmo::{Apply, Element, theme};
+use cosmic::{Apply, Element, theme};
 use cosmic_settings_page as page;
 
 pub fn color_picker_context_view<'a, Message: Clone + 'static>(
@@ -53,7 +53,7 @@ pub fn color_picker_context_view<'a, Message: Clone + 'static>(
 pub fn search_header<Message>(
     pages: &page::Binder<Message>,
     page: page::Entity,
-) -> lingmo::Element<'_, crate::Message> {
+) -> cosmic::Element<'_, crate::Message> {
     let page_meta = &pages.info[page];
 
     let mut column_children = Vec::with_capacity(4);
@@ -125,9 +125,9 @@ pub fn page_list_item<'a, Message: 'static + Clone>(
         space_s,
         space_m,
         ..
-    } = lingmo::theme::spacing();
+    } = cosmic::theme::spacing();
 
-    let mut builder = lingmo::widget::settings::item::builder(title);
+    let mut builder = cosmic::widget::settings::item::builder(title);
 
     let description = description.into();
 
@@ -201,7 +201,7 @@ pub fn go_next_item<Msg: 'static>(
 
 pub fn go_next_with_item<'a, Msg: 'static>(
     description: &'a str,
-    item: impl Into<lingmo::Element<'a, Msg>>,
+    item: impl Into<cosmic::Element<'a, Msg>>,
     msg_opt: impl Into<Option<Msg>>,
 ) -> list::ListButton<'a, Msg> {
     settings::item_row(vec![
@@ -225,7 +225,7 @@ pub fn selection_context_item<'a, Msg: 'static>(
     selected: bool,
     msg_opt: impl Into<Option<Msg>>,
 ) -> list::ListButton<'a, Msg> {
-    let svg_accent = Rc::new(|theme: &lingmo::Theme| widget::svg::Style {
+    let svg_accent = Rc::new(|theme: &cosmic::Theme| widget::svg::Style {
         color: Some(theme.cosmic().accent_text_color().into()),
     });
 

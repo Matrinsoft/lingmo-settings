@@ -5,9 +5,9 @@ mod binder;
 pub use binder::{AutoBind, Binder};
 
 mod insert;
-use lingmo::app::ContextDrawer;
-use lingmo::iced::Subscription;
-use lingmo::{Element, Task};
+use cosmic::app::ContextDrawer;
+use cosmic::iced::Subscription;
+use cosmic::{Element, Task};
 use downcast_rs::{Downcast, impl_downcast};
 pub use insert::Insert;
 
@@ -93,7 +93,7 @@ pub trait Page<Message: Clone + 'static>: Downcast {
 
     /// Subscription unique to the page when it is active.
     #[inline]
-    fn subscription(&self, _core: &lingmo::Core) -> Subscription<Message> {
+    fn subscription(&self, _core: &cosmic::Core) -> Subscription<Message> {
         Subscription::none()
     }
 

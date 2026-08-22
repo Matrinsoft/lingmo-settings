@@ -1,11 +1,11 @@
 use crate::pages::desktop::wallpaper::widgets::color_image;
-use lingmo::cosmic_theme::Spacing;
-use lingmo::cosmic_theme::palette::Srgba;
-use lingmo::iced::ContentFit;
-use lingmo::iced::core::{Alignment, Length};
-use lingmo::widget::icon::{from_name, icon};
-use lingmo::widget::{self, button, container, list, settings, text};
-use lingmo::{Apply, Element};
+use cosmic::cosmic_theme::Spacing;
+use cosmic::cosmic_theme::palette::Srgba;
+use cosmic::iced::ContentFit;
+use cosmic::iced::core::{Alignment, Length};
+use cosmic::widget::icon::{from_name, icon};
+use cosmic::widget::{self, button, container, list, settings, text};
+use cosmic::{Apply, Element};
 use cosmic_settings_page::Section;
 use cosmic_settings_wallpaper as wallpaper;
 use std::collections::HashMap;
@@ -198,7 +198,7 @@ fn accent_color_palette<'a>(
     section: &'a Section<crate::pages::Message>,
     labels: &HashMap<String, usize>,
 ) -> impl Into<Element<'a, Message>> {
-    let Spacing { space_xxs, .. } = lingmo::theme::spacing();
+    let Spacing { space_xxs, .. } = cosmic::theme::spacing();
     let descriptions = &section.descriptions;
     let accent = page.theme_manager.accent_palette().as_ref().unwrap();
     let cur_accent = page.theme_manager.builder().accent.map_or_else(
@@ -222,7 +222,7 @@ fn accent_color_palette<'a>(
             container(color_button(
                 Some(Message::DrawerOpen(ContextView::CustomAccent)),
                 c,
-                lingmo::iced::Color::from(cur_accent) == c,
+                cosmic::iced::Color::from(cur_accent) == c,
                 48,
                 48,
             ))
@@ -238,7 +238,7 @@ fn accent_color_palette<'a>(
         .into(),
     );
 
-    lingmo::iced::widget::column![
+    cosmic::iced::widget::column![
         text::body(&descriptions[labels["accent_color"]]),
         widget::flex_row(accent_palette_row).spacing(16)
     ]
@@ -255,8 +255,8 @@ fn theme_mode<'a>(
     let light_mode_illustration = from_name("illustration-appearance-mode-light").handle();
 
     container(
-        lingmo::iced::widget::row![
-            lingmo::iced::widget::column![
+        cosmic::iced::widget::row![
+            cosmic::iced::widget::column![
                 button::custom_image_button(
                     icon(dark_mode_illustration)
                         .content_fit(ContentFit::Contain)
@@ -275,7 +275,7 @@ fn theme_mode<'a>(
             .spacing(8)
             .width(Length::FillPortion(1))
             .align_x(Alignment::Center),
-            lingmo::iced::widget::column![
+            cosmic::iced::widget::column![
                 button::custom_image_button(
                     icon(light_mode_illustration)
                         .content_fit(ContentFit::Contain)
@@ -305,7 +305,7 @@ fn theme_mode<'a>(
 /// A button for selecting a color or gradient.
 pub fn color_button<'a, Message: 'a + Clone>(
     on_press: Option<Message>,
-    color: lingmo::iced::Color,
+    color: cosmic::iced::Color,
     selected: bool,
     width: u16,
     height: u16,

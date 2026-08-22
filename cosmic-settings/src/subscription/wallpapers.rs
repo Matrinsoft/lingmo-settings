@@ -1,8 +1,8 @@
 use std::path::PathBuf;
 
-use lingmo::iced::futures::channel::mpsc::Sender;
-use lingmo::iced::futures::{SinkExt, StreamExt, future};
-use lingmo::iced::{Subscription, stream};
+use cosmic::iced::futures::channel::mpsc::Sender;
+use cosmic::iced::futures::{SinkExt, StreamExt, future};
+use cosmic::iced::{Subscription, stream};
 use image::{ImageBuffer, Rgba};
 
 #[derive(Clone, Debug)]
@@ -22,7 +22,7 @@ pub enum WallpaperEvent {
     Error(String),
 }
 
-pub fn wallpapers(current_dir: PathBuf) -> lingmo::iced::Subscription<WallpaperEvent> {
+pub fn wallpapers(current_dir: PathBuf) -> cosmic::iced::Subscription<WallpaperEvent> {
     Subscription::run_with(current_dir, |current_dir: &PathBuf| {
         let current_dir = current_dir.clone();
         stream::channel(2, move |tx: Sender<WallpaperEvent>| async move {

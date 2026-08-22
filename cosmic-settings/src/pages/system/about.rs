@@ -1,12 +1,12 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use lingmo::iced::Alignment;
+use cosmic::iced::Alignment;
 use cosmic_settings_page::{self as page, Section, section};
 
 use super::info::Info;
-use lingmo::widget::{editable_input, list_column, settings, text};
-use lingmo::{Apply, Task};
+use cosmic::widget::{editable_input, list_column, settings, text};
+use cosmic::{Apply, Task};
 use slotmap::SlotMap;
 
 #[derive(Clone, Debug)]
@@ -37,7 +37,7 @@ pub struct Page {
     editing_device_name: bool,
     hostname_input: String,
     info: Info,
-    on_enter_handle: Option<lingmo::iced::task::Handle>,
+    on_enter_handle: Option<cosmic::iced::task::Handle>,
 }
 
 impl page::AutoBind<crate::pages::Message> for Page {}
@@ -85,7 +85,7 @@ impl page::Page<crate::pages::Message> for Page {
 }
 
 impl Page {
-    pub fn update(&mut self, message: Message) -> lingmo::app::Task<crate::Message> {
+    pub fn update(&mut self, message: Message) -> cosmic::app::Task<crate::Message> {
         match message {
             Message::HostnameEdit(editing) => {
                 self.editing_device_name = editing;
@@ -115,7 +115,7 @@ impl Page {
         Task::none()
     }
 
-    fn hostname_submit(&mut self) -> lingmo::app::Task<crate::app::Message> {
+    fn hostname_submit(&mut self) -> cosmic::app::Task<crate::app::Message> {
         if self.hostname_input == self.info.device_name {
             return Task::none();
         }
@@ -127,7 +127,7 @@ impl Page {
         self.editing_device_name = false;
         let hostname = self.hostname_input.clone();
 
-        lingmo::Task::future(async move { set_hostname(hostname).await })
+        cosmic::Task::future(async move { set_hostname(hostname).await })
             .map(crate::app::Message::from)
             .map(Into::into)
     }
@@ -190,7 +190,7 @@ fn device() -> Section<crate::pages::Message> {
 
             list_column()
                 .add(device_name)
-                .apply(lingmo::Element::from)
+                .apply(cosmic::Element::from)
                 .map(crate::pages::Message::About)
         })
 }

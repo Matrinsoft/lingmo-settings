@@ -31,8 +31,8 @@ pub mod widget;
 use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
-use lingmo::app::CosmicFlags;
-use lingmo::iced::Limits;
+use cosmic::app::CosmicFlags;
+use cosmic::iced::Limits;
 use i18n_embed::DesktopLanguageRequester;
 use ron::error::SpannedError;
 use serde::{Deserialize, Serialize};
@@ -213,16 +213,16 @@ pub fn main() -> color_eyre::Result<()> {
         };
     }
 
-    let settings = lingmo::app::Settings::default()
+    let settings = cosmic::app::Settings::default()
         .size_limits(Limits::NONE.min_width(360.0).min_height(300.0));
 
     #[cfg(feature = "single-instance")]
     {
-        lingmo::app::run_single_instance::<app::SettingsApp>(settings, args)?;
+        cosmic::app::run_single_instance::<app::SettingsApp>(settings, args)?;
     }
     #[cfg(not(feature = "single-instance"))]
     {
-        lingmo::app::run::<app::SettingsApp>(settings, args)?;
+        cosmic::app::run::<app::SettingsApp>(settings, args)?;
     }
     Ok(())
 }

@@ -13,11 +13,11 @@ pub mod nav;
 pub mod system;
 pub mod tiling;
 
-use lingmo::app::ContextDrawer;
-use lingmo::iced::Length;
-use lingmo::widget::list::ListButton;
-use lingmo::widget::{self, settings, text};
-use lingmo::{Apply, Element, Task};
+use cosmic::app::ContextDrawer;
+use cosmic::iced::Length;
+use cosmic::widget::list::ListButton;
+use cosmic::widget::{self, settings, text};
+use cosmic::{Apply, Element, Task};
 use cosmic_config::ConfigGet;
 use cosmic_settings_config::Binding;
 use cosmic_settings_config::shortcuts::action::{
@@ -167,8 +167,8 @@ impl page::Page<crate::pages::Message> for Page {
     #[cfg(feature = "wayland")]
     fn subscription(
         &self,
-        core: &lingmo::Core,
-    ) -> lingmo::iced::Subscription<crate::pages::Message> {
+        core: &cosmic::Core,
+    ) -> cosmic::iced::Subscription<crate::pages::Message> {
         self.search_model
             .subscription(core)
             .map(|m| crate::pages::Message::KeyboardShortcuts(Message::SearchShortcut(m)))
@@ -180,31 +180,31 @@ impl Page {
         match message {
             Message::Category(category) => match category {
                 Category::Accessibility => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.accessibility))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.accessibility))
                 }
 
                 Category::Custom => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.custom))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.custom))
                 }
 
                 Category::ManageWindow => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.manage_window))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.manage_window))
                 }
 
                 Category::MoveWindow => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.move_window))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.move_window))
                 }
 
                 Category::Nav => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.nav))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.nav))
                 }
 
                 Category::System => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.system))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.system))
                 }
 
                 Category::WindowTiling => {
-                    lingmo::task::message(crate::app::Message::Page(self.sub_pages.window_tiling))
+                    cosmic::task::message(crate::app::Message::Page(self.sub_pages.window_tiling))
                 }
             },
 

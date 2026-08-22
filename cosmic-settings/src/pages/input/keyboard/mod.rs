@@ -5,11 +5,11 @@ pub mod shortcuts;
 
 use std::cmp;
 
-use lingmo::app::{ContextDrawer, context_drawer};
-use lingmo::cosmic_config::{self, ConfigSet};
-use lingmo::iced::{Alignment, Length};
-use lingmo::widget::{self, ListColumn, button, container, icon, list, row, settings};
-use lingmo::{Apply, Element, Task, theme};
+use cosmic::app::{ContextDrawer, context_drawer};
+use cosmic::cosmic_config::{self, ConfigSet};
+use cosmic::iced::{Alignment, Length};
+use cosmic::widget::{self, ListColumn, button, container, icon, list, row, settings};
+use cosmic::{Apply, Element, Task, theme};
 use cosmic_comp_config::{KeyboardConfig, NumlockState, XkbConfig};
 use cosmic_settings_page::{self as page, Section, section};
 use itertools::Itertools;
@@ -211,7 +211,7 @@ fn popover_menu_row(
     id: DefaultKey,
     label: String,
     message: impl Fn(DefaultKey) -> SourceContext + 'static,
-) -> lingmo::Element<'static, Message> {
+) -> cosmic::Element<'static, Message> {
     let spacing = theme::spacing();
     widget::text::body(label)
         .align_y(Alignment::Center)
@@ -223,7 +223,7 @@ fn popover_menu_row(
         .apply(Element::from)
 }
 
-fn popover_menu(id: DefaultKey) -> lingmo::Element<'static, Message> {
+fn popover_menu(id: DefaultKey) -> cosmic::Element<'static, Message> {
     widget::column::with_children([
         popover_menu_row(
             id,
@@ -258,7 +258,7 @@ fn popover_menu(id: DefaultKey) -> lingmo::Element<'static, Message> {
     .into()
 }
 
-fn popover_button(id: DefaultKey, expanded: bool) -> lingmo::Element<'static, Message> {
+fn popover_button(id: DefaultKey, expanded: bool) -> cosmic::Element<'static, Message> {
     let on_press = Message::ExpandInputSourcePopover(if expanded { None } else { Some(id) });
 
     let button = button::icon(icon::from_name("view-more-symbolic"))
@@ -280,7 +280,7 @@ fn input_source(
     id: DefaultKey,
     description: &str,
     expanded_source_popover: Option<DefaultKey>,
-) -> lingmo::Element<'_, Message> {
+) -> cosmic::Element<'_, Message> {
     let expanded = expanded_source_popover.is_some_and(|expanded_id| expanded_id == id);
 
     settings::item(description, popover_button(id, expanded)).into()
@@ -535,7 +535,7 @@ impl Page {
 
             Message::ShowInputSourcesContext => {
                 self.context = Some(Context::ShowInputSourcesContext);
-                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity));
+                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::ExpandInputSourcePopover(value) => {
@@ -544,12 +544,12 @@ impl Page {
 
             Message::OpenSpecialCharacterContext(key) => {
                 self.context = Some(Context::SpecialCharacter(key));
-                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity));
+                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::OpenNumlockContext => {
                 self.context = Some(Context::NumlockState);
-                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity));
+                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::SpecialCharacterSelect(id) => {
@@ -645,7 +645,7 @@ impl Page {
         }
     }
 
-    fn special_character_key_view(&self, special_key: SpecialKey) -> lingmo::Element<'_, Message> {
+    fn special_character_key_view(&self, special_key: SpecialKey) -> cosmic::Element<'_, Message> {
         let (options, description) = match special_key {
             SpecialKey::Compose => (
                 COMPOSE_OPTIONS,
@@ -664,7 +664,7 @@ impl Page {
 
         // TODO layout default
 
-        let mut list = lingmo::widget::list_column();
+        let mut list = cosmic::widget::list_column();
 
         if matches!(special_key, SpecialKey::CapsLock) {
             list = list.add(special_char_radio_row(
@@ -692,7 +692,7 @@ impl Page {
             .into()
     }
 
-    fn numlock_state_view(&self) -> lingmo::Element<'_, Message> {
+    fn numlock_state_view(&self) -> cosmic::Element<'_, Message> {
         let current = self.keyboard_config.numlock_state;
         let options = [
             (fl!("keyboard-numlock-boot", "off"), NumlockState::BootOff),
@@ -703,7 +703,7 @@ impl Page {
             ),
         ];
 
-        let mut list = lingmo::widget::list_column();
+        let mut list = cosmic::widget::list_column();
         for (desc, state) in options {
             list = list.add(settings::item::builder(desc).radio(
                 Some(state),
@@ -799,7 +799,7 @@ fn special_character_entry() -> Section<crate::pages::Message> {
                     &descriptions[caps],
                     Message::OpenSpecialCharacterContext(SpecialKey::CapsLock),
                 ))
-                .apply(lingmo::Element::from)
+                .apply(cosmic::Element::from)
                 .map(crate::pages::Message::Keyboard)
         })
 }
@@ -826,7 +826,7 @@ fn keyboard_shortcuts() -> Section<crate::pages::Message> {
                     crate::pages::Message::Page(shortcuts_entity),
                 ));
             }
-            section.apply(lingmo::Element::from)
+            section.apply(cosmic::Element::from)
         })
 }
 
@@ -852,7 +852,7 @@ fn keyboard_typing_assist() -> Section<crate::pages::Message> {
                     settings::item::builder(&descriptions[repeat_delay])
                         .flex_control({
                             // Delay
-                            let delay_slider = lingmo::widget::slider(
+                            let delay_slider = cosmic::widget::slider(
                                 KB_REPEAT_DELAY_MIN..=KB_REPEAT_DELAY_MAX,
                                 page.xkb.repeat_delay,
                                 Message::SetRepeatKeysDelay,
@@ -876,7 +876,7 @@ fn keyboard_typing_assist() -> Section<crate::pages::Message> {
                     settings::item::builder(&descriptions[repeat_rate])
                         .flex_control({
                             // Repeat rate
-                            let rate_slider = lingmo::widget::slider(
+                            let rate_slider = cosmic::widget::slider(
                                 KB_REPEAT_RATE_MIN..=KB_REPEAT_RATE_MAX,
                                 page.xkb.repeat_rate,
                                 Message::SetRepeatKeysRate,
@@ -896,7 +896,7 @@ fn keyboard_typing_assist() -> Section<crate::pages::Message> {
                         })
                         .align_items(Alignment::Center),
                 )
-                .apply(lingmo::Element::from)
+                .apply(cosmic::Element::from)
                 .map(crate::pages::Message::Keyboard)
         })
 }
@@ -918,7 +918,7 @@ fn keyboard_num_lock() -> Section<crate::pages::Message> {
                     &descriptions[boot_state],
                     Message::OpenNumlockContext,
                 ))
-                .apply(lingmo::Element::from)
+                .apply(cosmic::Element::from)
                 .map(crate::pages::Message::Keyboard)
         })
 }

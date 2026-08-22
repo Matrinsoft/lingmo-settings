@@ -1,11 +1,11 @@
 // Copyright 2024 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use lingmo::iced::core::text::Wrapping;
-use lingmo::iced::{Alignment, Length, color};
-use lingmo::widget::space::horizontal as horizontal_space;
-use lingmo::widget::{self, settings, text};
-use lingmo::{Apply, Element, Task, theme};
+use cosmic::iced::core::text::Wrapping;
+use cosmic::iced::{Alignment, Length, color};
+use cosmic::widget::space::horizontal as horizontal_space;
+use cosmic::widget::{self, settings, text};
+use cosmic::{Apply, Element, Task, theme};
 use cosmic_settings_bluetooth_subscription::*;
 use cosmic_settings_page::{self as page, Section, section};
 use futures::channel::oneshot;
@@ -185,15 +185,15 @@ impl page::Page<crate::pages::Message> for Page {
         ])
     }
 
-    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
         // TODO start stream for new device
-        lingmo::task::future(async move {
+        cosmic::task::future(async move {
             match zbus::Connection::system().await {
                 Ok(connection) => Message::DBusConnect(connection),
                 Err(why) => Message::DBusConnectFailed(why),
             }
         })
-        .chain(lingmo::Task::done(Message::SelectAdapter(None).into()))
+        .chain(cosmic::Task::done(Message::SelectAdapter(None).into()))
     }
 
     fn on_leave(&mut self) -> Task<crate::pages::Message> {
@@ -392,7 +392,7 @@ impl From<Event> for Message {
 }
 
 impl Page {
-    pub fn update(&mut self, message: Message) -> lingmo::Task<crate::Message> {
+    pub fn update(&mut self, message: Message) -> cosmic::Task<crate::Message> {
         let span = tracing::span!(tracing::Level::INFO, "bluetooth::update");
         let _span = span.enter();
 
@@ -425,7 +425,7 @@ impl Page {
                     tracing::warn!("Failed operation on device {path}");
                     if let Some(device) = self.model.devices.get_mut(&path) {
                         if matches!(device.enabled, Active::Disabled | Active::Disabling) {
-                            return lingmo::Task::none();
+                            return cosmic::Task::none();
                         }
                         device.enabled = match device.enabled {
                             Active::Disabling => Active::Enabled,
@@ -461,7 +461,7 @@ impl Page {
                     }
 
                     if let Some(adapter) = select_adapter {
-                        return lingmo::task::message(Message::SelectAdapter(Some(adapter)));
+                        return cosmic::task::message(Message::SelectAdapter(Some(adapter)));
                     }
                 }
 
@@ -476,7 +476,7 @@ impl Page {
                         if let Some(discovery_future) =
                             self.model.updated_adapter(path, update, connection)
                         {
-                            return lingmo::task::future(discovery_future);
+                            return cosmic::task::future(discovery_future);
                         }
                     } else {
                         tracing::warn!("No DBus connection ready");
@@ -525,7 +525,7 @@ impl Page {
                     tracing::debug!("Adapter {} added", adapter.address);
                     self.model.adapters.insert(path.clone(), adapter);
                     if self.model.selected_adapter.is_none() {
-                        return lingmo::task::message(Message::SelectAdapter(Some(path)));
+                        return cosmic::task::message(Message::SelectAdapter(Some(path)));
                     }
                 }
 
@@ -635,7 +635,7 @@ impl Page {
                             Active::Disabling
                         };
 
-                        return lingmo::task::future(change_adapter_status(
+                        return cosmic::task::future(change_adapter_status(
                             connection.clone(),
                             path,
                             active,
@@ -659,7 +659,7 @@ impl Page {
                             } else {
                                 Active::Disabling
                             };
-                            lingmo::task::future(change_adapter_status(
+                            cosmic::task::future(change_adapter_status(
                                 connection.clone(),
                                 path.clone(),
                                 active,
@@ -674,7 +674,7 @@ impl Page {
                         })
                         .collect();
 
-                    return lingmo::task::batch(tasks)
+                    return cosmic::task::batch(tasks)
                         .chain(Task::done(Message::UpdateStatus.into()));
                 }
                 tracing::warn!("No DBus connection ready");
@@ -724,9 +724,9 @@ impl Page {
                         });
 
                     self.subscription = Some(cancellation);
-                    return lingmo::task::batch(vec![lingmo::task::future(get_adapters_fut), task]);
+                    return cosmic::task::batch(vec![cosmic::task::future(get_adapters_fut), task]);
                 } else {
-                    return lingmo::task::future(get_adapters_fut);
+                    return cosmic::task::future(get_adapters_fut);
                 }
             }
 
@@ -749,18 +749,18 @@ impl Page {
 
                 let connection = connection.clone();
                 if let Some((path, adapter)) = self.model.get_selected_adapter_mut() {
-                    let mut fut: Vec<Task<Message>> = vec![lingmo::task::future(get_devices(
+                    let mut fut: Vec<Task<Message>> = vec![cosmic::task::future(get_devices(
                         connection.clone(),
                         path.clone(),
                     ))];
                     if adapter.enabled == Active::Enabled && adapter.scanning == Active::Disabled {
-                        fut.push(lingmo::task::future(start_discovery(
+                        fut.push(cosmic::task::future(start_discovery(
                             connection,
                             path.clone(),
                         )));
                     }
 
-                    return lingmo::task::batch(fut);
+                    return cosmic::task::batch(fut);
                 }
             }
 
@@ -768,13 +768,13 @@ impl Page {
                 tracing::debug!("Forgetting to device {path}");
                 self.model.popup_device = None;
                 if self.connection.is_none() {
-                    return lingmo::Task::none();
+                    return cosmic::Task::none();
                 }
                 if let Some(connection) = self.connection.as_ref() {
                     let connection = connection.clone();
                     if let Some(device) = self.model.devices.get_mut(&path) {
                         device.enabled = Active::Disabling;
-                        return lingmo::task::future(forget_device(connection, path.clone()));
+                        return cosmic::task::future(forget_device(connection, path.clone()));
                     }
                 } else {
                     tracing::warn!("No DBus connection ready");
@@ -784,16 +784,16 @@ impl Page {
             Message::ConnectDevice(path) => {
                 tracing::debug!("Connecting device {path}");
                 if self.connection.is_none() {
-                    return lingmo::Task::none();
+                    return cosmic::Task::none();
                 }
                 if let Some(connection) = self.connection.as_ref() {
                     let connection = connection.clone();
                     if let Some(device) = self.model.devices.get_mut(&path) {
                         if matches!(device.enabled, Active::Enabled | Active::Enabling) {
-                            return lingmo::Task::none();
+                            return cosmic::Task::none();
                         }
                         device.enabled = Active::Enabling;
-                        return lingmo::task::future(connect_device(connection, path));
+                        return cosmic::task::future(connect_device(connection, path));
                     }
                 } else {
                     tracing::warn!("No DBus connection ready");
@@ -807,10 +807,10 @@ impl Page {
                     let connection = connection.clone();
                     if let Some(device) = self.model.devices.get_mut(&path) {
                         if matches!(device.enabled, Active::Disabled | Active::Disabling) {
-                            return lingmo::Task::none();
+                            return cosmic::Task::none();
                         }
                         device.enabled = Active::Disabling;
-                        return lingmo::task::future(disconnect_device(connection, path));
+                        return cosmic::task::future(disconnect_device(connection, path));
                     }
                 } else {
                     tracing::warn!("No DBus connection ready");
@@ -819,7 +819,7 @@ impl Page {
 
             Message::ServiceActivate => {
                 let activate_future = self.service_manager.activate();
-                return lingmo::task::future(async move {
+                return cosmic::task::future(async move {
                     activate_future.await;
                     tokio::time::sleep(Duration::from_secs(3)).await;
 
@@ -832,7 +832,7 @@ impl Page {
 
             Message::ServiceEnable => {
                 let enable_future = self.service_manager.enable();
-                return lingmo::task::future(async move {
+                return cosmic::task::future(async move {
                     enable_future.await;
                     tokio::time::sleep(Duration::from_secs(3)).await;
 
@@ -854,7 +854,7 @@ impl Page {
             }
         };
 
-        lingmo::Task::none()
+        cosmic::Task::none()
     }
 }
 

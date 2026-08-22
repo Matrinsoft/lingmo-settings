@@ -1,14 +1,14 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: MPL-2.0
 
-use lingmo::Renderer;
-use lingmo::iced::core::renderer::Quad;
-use lingmo::iced::core::widget::{Tree, tree};
-use lingmo::iced::core::{
+use cosmic::Renderer;
+use cosmic::iced::core::renderer::Quad;
+use cosmic::iced::core::widget::{Tree, tree};
+use cosmic::iced::core::{
     self as core, Border, Clipboard, Element, Layout, Length, Point, Rectangle,
     Renderer as IcedRenderer, Shell, Size, Widget, alignment, layout, mouse, renderer, text, touch,
 };
-use lingmo::widget::segmented_button::{self, SingleSelectModel};
+use cosmic::widget::segmented_button::{self, SingleSelectModel};
 use cosmic_randr_shell::{self as randr, OutputKey};
 use randr::Transform;
 
@@ -77,7 +77,7 @@ impl<'a, Message> Arrangement<'a, Message> {
     }
 }
 
-impl<Message: Clone> Widget<Message, lingmo::Theme, Renderer> for Arrangement<'_, Message> {
+impl<Message: Clone> Widget<Message, cosmic::Theme, Renderer> for Arrangement<'_, Message> {
     fn tag(&self) -> tree::Tag {
         tree::Tag::of::<State>()
     }
@@ -158,7 +158,7 @@ impl<Message: Clone> Widget<Message, lingmo::Theme, Renderer> for Arrangement<'_
     fn update(
         &mut self,
         tree: &mut Tree,
-        event: &lingmo::iced::Event,
+        event: &cosmic::iced::Event,
         layout: Layout<'_>,
         cursor: mouse::Cursor,
         _renderer: &Renderer,
@@ -288,7 +288,7 @@ impl<Message: Clone> Widget<Message, lingmo::Theme, Renderer> for Arrangement<'_
         &self,
         tree: &Tree,
         renderer: &mut Renderer,
-        _theme: &lingmo::Theme,
+        _theme: &cosmic::Theme,
         _style: &renderer::Style,
         layout: Layout<'_>,
         _cursor: mouse::Cursor,
@@ -297,7 +297,7 @@ impl<Message: Clone> Widget<Message, lingmo::Theme, Renderer> for Arrangement<'_
         let state = tree.state.downcast_ref::<State>();
 
         let bounds = layout.bounds();
-        let theme = lingmo::theme::active();
+        let theme = cosmic::theme::active();
         let cosmic_theme = theme.cosmic();
 
         let border_color = cosmic_theme.palette.neutral_7;
@@ -363,7 +363,7 @@ impl<Message: Clone> Widget<Message, lingmo::Theme, Renderer> for Arrangement<'_
                     content: itoa::Buffer::new().format(id + 1).to_string(),
                     size: core::Pixels(24.0),
                     line_height: core::text::LineHeight::Relative(1.2),
-                    font: lingmo::font::bold(),
+                    font: cosmic::font::bold(),
                     bounds: id_bounds.size(),
                     align_x: text::Alignment::Center,
                     align_y: alignment::Vertical::Center,
@@ -382,7 +382,7 @@ impl<Message: Clone> Widget<Message, lingmo::Theme, Renderer> for Arrangement<'_
     }
 }
 
-impl<'a, Message: 'static + Clone> From<Arrangement<'a, Message>> for lingmo::Element<'a, Message> {
+impl<'a, Message: 'static + Clone> From<Arrangement<'a, Message>> for cosmic::Element<'a, Message> {
     fn from(display_positioner: Arrangement<'a, Message>) -> Self {
         Element::new(display_positioner)
     }

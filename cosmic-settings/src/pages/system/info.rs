@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #[cfg(feature = "wgpu")]
-use lingmo::iced::wgpu;
+use cosmic::iced::wgpu;
 use std::collections::{HashMap, HashSet};
 use std::ffi::OsStr;
 use std::process::Command;

@@ -11,19 +11,19 @@ use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
-use lingmo::app::ContextDrawer;
+use cosmic::app::ContextDrawer;
 #[cfg(feature = "xdg-portal")]
-use lingmo::dialog::file_chooser;
-use lingmo::iced::core::text::{Ellipsize, EllipsizeHeightLimit};
-use lingmo::iced::runtime::core::image::Handle as ImageHandle;
-use lingmo::iced::{Alignment, Color, Length, Subscription, window};
-use lingmo::widget::color_picker::ColorPickerUpdate;
-use lingmo::widget::segmented_button::{self, SingleSelectModel};
-use lingmo::widget::space::horizontal as horizontal_space;
-use lingmo::widget::{
+use cosmic::dialog::file_chooser;
+use cosmic::iced::core::text::{Ellipsize, EllipsizeHeightLimit};
+use cosmic::iced::runtime::core::image::Handle as ImageHandle;
+use cosmic::iced::{Alignment, Color, Length, Subscription, window};
+use cosmic::widget::color_picker::ColorPickerUpdate;
+use cosmic::widget::segmented_button::{self, SingleSelectModel};
+use cosmic::widget::space::horizontal as horizontal_space;
+use cosmic::widget::{
     ColorPickerModel, button, dropdown, icon, list_column, row, settings, tab_bar, text,
 };
-use lingmo::{Apply, Element, Task, surface};
+use cosmic::{Apply, Element, Task, surface};
 use cosmic_bg_config::Source;
 use cosmic_settings_page::{self as page, Section, section};
 use cosmic_settings_wallpaper::{self as wallpaper, Entry, ScalingMode};
@@ -136,7 +136,7 @@ pub struct Page {
     entity: page::Entity,
 
     /// Abort handle to the on_enter task.
-    on_enter_handle: Option<lingmo::iced::task::Handle>,
+    on_enter_handle: Option<cosmic::iced::task::Handle>,
 
     /// Whether to show a context drawer.
     context_view: Option<ContextView>,
@@ -240,7 +240,7 @@ impl page::Page<crate::pages::Message> for Page {
 
     fn context_drawer(&self) -> Option<ContextDrawer<'_, crate::pages::Message>> {
         self.context_view.map(|view| {
-            lingmo::app::context_drawer(
+            cosmic::app::context_drawer(
                 match view {
                     ContextView::AddColor => crate::widget::color_picker_context_view(
                         None,
@@ -259,8 +259,8 @@ impl page::Page<crate::pages::Message> for Page {
     /// Watch for state changes from the cosmic-bg session service.
     fn subscription(
         &self,
-        core: &lingmo::Core,
-    ) -> lingmo::iced::Subscription<crate::pages::Message> {
+        core: &cosmic::Core,
+    ) -> cosmic::iced::Subscription<crate::pages::Message> {
         let subscriptions = vec![
             core.watch_state::<cosmic_bg_config::state::State>(cosmic_bg_config::NAME)
                 .map(|update| {
@@ -595,7 +595,7 @@ impl Page {
 
             Category::AddFolder => {
                 #[cfg(feature = "xdg-portal")]
-                return lingmo::task::future(async {
+                return cosmic::task::future(async {
                     let dialog_result = file_chooser::open::Dialog::new()
                         .title(fl!("wallpaper", "folder-dialog"))
                         .accept_label(fl!("dialog-add"))
@@ -676,13 +676,13 @@ impl Page {
     }
 
     #[must_use]
-    pub fn display_image_view(&self) -> lingmo::Element<'_, Message> {
+    pub fn display_image_view(&self) -> cosmic::Element<'_, Message> {
         match self.cached_display_handle {
-            Some(ref handle) => lingmo::widget::image(handle.clone())
+            Some(ref handle) => cosmic::widget::image(handle.clone())
                 .width(Length::Fixed(SIMULATED_WIDTH as f32))
                 .into(),
 
-            None => lingmo::widget::Space::new()
+            None => cosmic::widget::Space::new()
                 .width(Length::Fixed(SIMULATED_WIDTH as f32))
                 .height(Length::Fixed(SIMULATED_HEIGHT as f32))
                 .into(),
@@ -735,7 +735,7 @@ impl Page {
             Message::ColorAddContext => {
                 self.context_view = Some(ContextView::AddColor);
                 self.selection.active = Choice::Color(wallpaper::Color::Single([0., 0., 0.]));
-                return lingmo::task::message(crate::app::Message::OpenContextDrawer(self.entity));
+                return cosmic::task::message(crate::app::Message::OpenContextDrawer(self.entity));
             }
 
             Message::ColorRemove(color) => {
@@ -782,7 +782,7 @@ impl Page {
 
             Message::ImageAddDialog => {
                 #[cfg(feature = "xdg-portal")]
-                return lingmo::Task::future(async {
+                return cosmic::Task::future(async {
                     let dialog_result = file_chooser::open::Dialog::new()
                         .title(fl!("wallpaper", "image-dialog"))
                         .accept_label(fl!("dialog-add"))
@@ -906,7 +906,7 @@ impl Page {
                     tracing::info!(?path, "opening custom image");
 
                     // Loads a single custom image and its thumbnail for display in the backgrounds view.
-                    lingmo::Task::future(async move {
+                    cosmic::Task::future(async move {
                         let result = wallpaper::load_image_with_thumbnail(path);
 
                         let message = Message::ImageAdd(result.map(Arc::new));
@@ -1005,20 +1005,20 @@ impl Page {
                 }
 
                 // Load preview images concurrently for each custom image stored in the on-disk config.
-                return lingmo::task::batch(
+                return cosmic::task::batch(
                     self.config
                         .custom_images()
                         .iter()
                         .cloned()
                         .map(|path| {
-                            lingmo::task::future(async move {
+                            cosmic::task::future(async move {
                                 let result = wallpaper::load_image_with_thumbnail(path);
 
                                 Message::ImageAdd(result.map(Arc::new))
                             })
                         })
                         // Cache wallpaper preview early to prevent blank previews on reload
-                        .chain(std::iter::once(lingmo::task::message::<
+                        .chain(std::iter::once(cosmic::task::message::<
                             _,
                             crate::app::Message,
                         >(
@@ -1027,7 +1027,7 @@ impl Page {
                 );
             }
             Message::Surface(a) => {
-                return lingmo::task::message(crate::app::Message::Surface(a));
+                return cosmic::task::message(crate::app::Message::Surface(a));
             }
         }
 
@@ -1246,7 +1246,7 @@ pub fn settings() -> Section<crate::pages::Message> {
                     .align_y(Alignment::Center)
                     .width(Length::Fill)
                     .height(Length::Fill)
-                    .apply(lingmo::widget::container)
+                    .apply(cosmic::widget::container)
                     .width(Length::Fill)
                     .height(Length::Fixed(32.0));
 
@@ -1260,7 +1260,7 @@ pub fn settings() -> Section<crate::pages::Message> {
                 children.push(element.into());
             }
 
-            let wallpaper_fit = lingmo::widget::dropdown::popup_dropdown(
+            let wallpaper_fit = cosmic::widget::dropdown::popup_dropdown(
                 &page.fit_options,
                 Some(page.selected_fit),
                 Message::Fit,
@@ -1296,7 +1296,7 @@ pub fn settings() -> Section<crate::pages::Message> {
                             #[cfg(feature = "wayland")]
                             let dropdown = {
                                 dropdown.with_popup(
-                                    lingmo::iced::window::Id::RESERVED,
+                                    cosmic::iced::window::Id::RESERVED,
                                     Message::Surface,
                                     |a| {
                                         crate::app::Message::PageMessage(
@@ -1378,7 +1378,7 @@ pub fn settings() -> Section<crate::pages::Message> {
                 _ => (),
             }
 
-            lingmo::widget::column::with_children(children)
+            cosmic::widget::column::with_children(children)
                 .spacing(22)
                 .apply(Element::from)
                 .map(crate::pages::Message::DesktopWallpaper)
@@ -1391,12 +1391,12 @@ pub fn settings() -> Section<crate::pages::Message> {
 //     on_drag: Message,
 //     on_message: fn(ColorPickerUpdate) -> Message,
 // ) -> Element<Message> {
-//     let header = lingmo::widget::header_bar()
+//     let header = cosmic::widget::header_bar()
 //         .title(fl!("color-picker"))
 //         .on_close(on_message(ColorPickerUpdate::AppliedColor))
 //         .on_drag(on_drag);
 
-//     let content = lingmo::widget::container(
+//     let content = cosmic::widget::container(
 //         model
 //             .builder(on_message)
 //             .width(Length::Fixed(254.0))
@@ -1411,9 +1411,9 @@ pub fn settings() -> Section<crate::pages::Message> {
 //     .width(Length::Fill)
 //     .height(Length::Fill)
 //     .center_x()
-//     .class(lingmo::theme::style::Container::Background);
+//     .class(cosmic::theme::style::Container::Background);
 
-//     lingmo::widget::column::with_capacity(2)
+//     cosmic::widget::column::with_capacity(2)
 //         .push(header)
 //         .push(content)
 //         .width(Length::Fill)

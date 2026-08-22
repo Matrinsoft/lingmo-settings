@@ -1,24 +1,24 @@
-use lingmo::app::ContextDrawer;
-use lingmo::cosmic_theme::palette::WithAlpha;
-use lingmo::iced::clipboard::dnd::{
+use cosmic::app::ContextDrawer;
+use cosmic::cosmic_theme::palette::WithAlpha;
+use cosmic::iced::clipboard::dnd::{
     DndAction, DndDestinationRectangle, DndEvent, OfferEvent, SourceEvent,
 };
-use lingmo::iced::clipboard::mime::AsMimeTypes;
-use lingmo::iced::id::Internal;
+use cosmic::iced::clipboard::mime::AsMimeTypes;
+use cosmic::iced::id::Internal;
 
-use lingmo::iced;
-use lingmo::iced::core::clipboard::IconSurface;
-use lingmo::widget::{Column, button, column, container, icon, list_column, row, text, text_input};
+use cosmic::iced;
+use cosmic::iced::core::clipboard::IconSurface;
+use cosmic::widget::{Column, button, column, container, icon, list_column, row, text, text_input};
 
-use lingmo::cosmic_config::{Config, CosmicConfigEntry};
-use lingmo::iced::core::widget::{Operation, Tree, tree};
-use lingmo::iced::core::{Clipboard, Shell, Widget, layout, renderer, window};
-use lingmo::iced::runtime::Task;
-use lingmo::iced::runtime::core::id::Id;
-use lingmo::iced::{
+use cosmic::cosmic_config::{Config, CosmicConfigEntry};
+use cosmic::iced::core::widget::{Operation, Tree, tree};
+use cosmic::iced::core::{Clipboard, Shell, Widget, layout, renderer, window};
+use cosmic::iced::runtime::Task;
+use cosmic::iced::runtime::core::id::Id;
+use cosmic::iced::{
     Alignment, Border, Color, Length, Point, Rectangle, Size, Vector, event, mouse, overlay, touch,
 };
-use lingmo::{Apply, Element, theme};
+use cosmic::{Apply, Element, theme};
 
 use std::borrow::Cow;
 use std::fmt::Debug;
@@ -138,7 +138,7 @@ impl page::Page<crate::pages::Message> for Page {
                     .apply(Element::from)
                     .map(crate::pages::Message::PanelApplet);
 
-                lingmo::app::context_drawer(
+                cosmic::app::context_drawer(
                     self.add_applet_view(crate::pages::Message::PanelApplet),
                     crate::pages::Message::CloseContextDrawer,
                 )
@@ -228,7 +228,7 @@ impl Page {
         &self,
         msg_map: T,
     ) -> Element<'_, crate::pages::Message> {
-        let lingmo::cosmic_theme::Spacing {
+        let cosmic::cosmic_theme::Spacing {
             space_xxxs,
             space_xs,
             ..
@@ -412,7 +412,7 @@ impl Page {
             }
             Message::AddAppletDrawer => {
                 self.context = Some(ContextDrawerVariant::AddApplet);
-                return lingmo::task::message(app::Message::OpenContextDrawer(self.entity));
+                return cosmic::task::message(app::Message::OpenContextDrawer(self.entity));
             }
         };
         Task::none()
@@ -427,7 +427,7 @@ pub fn lists<
     msg_map: T,
 ) -> Section<crate::pages::Message> {
     Section::default().view::<P>(move |_binder, page, _section| {
-        let lingmo::cosmic_theme::Spacing {
+        let cosmic::cosmic_theme::Spacing {
             space_xxs,
             space_xs,
             ..
@@ -634,7 +634,7 @@ impl<'a, Message: 'static + Clone> AppletReorderList<'a, Message> {
         on_cancel: Message,
         active_dnd: Option<Applet<'a>>,
     ) -> Self {
-        let lingmo::cosmic_theme::Spacing {
+        let cosmic::cosmic_theme::Spacing {
             space_xxxs,
             space_xxs,
             space_xs,
@@ -871,7 +871,7 @@ pub fn dnd_icon(info: Applet<'static>, layout: &layout::Layout) -> AppletReorder
     }
 }
 
-impl<Message: 'static> Widget<Message, lingmo::Theme, lingmo::Renderer>
+impl<Message: 'static> Widget<Message, cosmic::Theme, cosmic::Renderer>
     for AppletReorderList<'_, Message>
 where
     Message: Clone,
@@ -899,7 +899,7 @@ where
     fn layout(
         &mut self,
         tree: &mut Tree,
-        renderer: &lingmo::Renderer,
+        renderer: &cosmic::Renderer,
         limits: &layout::Limits,
     ) -> layout::Node {
         let inner_layout =
@@ -913,7 +913,7 @@ where
         &mut self,
         tree: &mut Tree,
         layout: layout::Layout<'_>,
-        renderer: &lingmo::Renderer,
+        renderer: &cosmic::Renderer,
         operation: &mut dyn Operation<()>,
     ) {
         operation.container(Some(&self.id), layout.bounds());
@@ -933,7 +933,7 @@ where
         event: &event::Event,
         layout: layout::Layout<'_>,
         cursor_position: mouse::Cursor,
-        renderer: &lingmo::Renderer,
+        renderer: &cosmic::Renderer,
         clipboard: &mut dyn Clipboard,
         shell: &mut Shell<'_, Message>,
         viewport: &Rectangle,
@@ -1019,8 +1019,8 @@ where
 
                                     let p = applet.path.to_path_buf();
                                     iced::core::clipboard::start_dnd::<
-                                        lingmo::Theme,
-                                        lingmo::Renderer,
+                                        cosmic::Theme,
+                                        cosmic::Renderer,
                                     >(
                                         clipboard,
                                         false,
@@ -1162,8 +1162,8 @@ where
     fn draw(
         &self,
         state: &Tree,
-        renderer: &mut lingmo::Renderer,
-        theme: &lingmo::Theme,
+        renderer: &mut cosmic::Renderer,
+        theme: &cosmic::Theme,
         style: &renderer::Style,
         layout: layout::Layout<'_>,
         cursor_position: mouse::Cursor,
@@ -1184,10 +1184,10 @@ where
         &'b mut self,
         tree: &'b mut Tree,
         layout: layout::Layout<'b>,
-        renderer: &lingmo::Renderer,
+        renderer: &cosmic::Renderer,
         viewport: &Rectangle,
         translation: Vector,
-    ) -> Option<overlay::Element<'b, Message, lingmo::Theme, lingmo::Renderer>> {
+    ) -> Option<overlay::Element<'b, Message, cosmic::Theme, cosmic::Renderer>> {
         self.inner.as_widget_mut().overlay(
             &mut tree.children[0],
             layout.children().next().unwrap(),
@@ -1203,7 +1203,7 @@ where
         layout: layout::Layout<'_>,
         cursor_position: mouse::Cursor,
         viewport: &Rectangle,
-        renderer: &lingmo::Renderer,
+        renderer: &cosmic::Renderer,
     ) -> mouse::Interaction {
         match self.inner.as_widget().mouse_interaction(
             &state.children[0],
@@ -1238,8 +1238,8 @@ where
         &self,
         _state: &Tree,
         layout: layout::Layout<'_>,
-        _renderer: &lingmo::Renderer,
-        dnd_rectangles: &mut lingmo::iced::core::clipboard::DndDestinationRectangles,
+        _renderer: &cosmic::Renderer,
+        dnd_rectangles: &mut cosmic::iced::core::clipboard::DndDestinationRectangles,
     ) {
         let Rectangle {
             x,
@@ -1249,7 +1249,7 @@ where
         } = layout.bounds();
         dnd_rectangles.push(DndDestinationRectangle {
             id: self.get_drag_id(),
-            rectangle: lingmo::iced::clipboard::dnd::Rectangle {
+            rectangle: cosmic::iced::clipboard::dnd::Rectangle {
                 x: x as f64,
                 y: y as f64,
                 width: width as f64,

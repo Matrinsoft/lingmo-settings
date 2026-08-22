@@ -1,8 +1,8 @@
 use std::collections::HashMap;
 
-use lingmo::cosmic_config::{ConfigSet, CosmicConfigEntry};
-use lingmo::widget::{settings, text};
-use lingmo::{Apply, Element, Task};
+use cosmic::cosmic_config::{ConfigSet, CosmicConfigEntry};
+use cosmic::widget::{settings, text};
+use cosmic::{Apply, Element, Task};
 use cosmic_panel_config::{CosmicPanelConfig, CosmicPanelContainerConfig};
 use cosmic_settings_page::{self as page, Section, section};
 use slotmap::SlotMap;
@@ -64,7 +64,7 @@ impl Page {
             }
             Message::Inner(inner) => {
                 if let inner::Message::Surface(a) = inner {
-                    lingmo::task::message(crate::app::Message::Surface(a))
+                    cosmic::task::message(crate::app::Message::Surface(a))
                 } else {
                     self.inner
                         .update(inner)
@@ -124,7 +124,7 @@ impl Default for Page {
             (panel_config.name == "Dock").then_some(panel_config)
         });
 
-        let system_default = lingmo::cosmic_config::Config::system(
+        let system_default = cosmic::cosmic_config::Config::system(
             &format!("{}.Dock", cosmic_panel_config::NAME),
             CosmicPanelConfig::VERSION,
         )

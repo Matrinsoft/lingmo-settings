@@ -2,13 +2,13 @@ use std::any::TypeId;
 
 use ashpd::desktop::location::{Location, LocationProxy};
 use chrono::NaiveDate;
-use lingmo::iced::futures::channel::mpsc::Sender;
-use lingmo::iced::futures::{SinkExt, StreamExt, future};
-use lingmo::iced::{Subscription, stream};
+use cosmic::iced::futures::channel::mpsc::Sender;
+use cosmic::iced::futures::{SinkExt, StreamExt, future};
+use cosmic::iced::{Subscription, stream};
 use sunrise::{Coordinates, SolarDay, SolarEvent};
 use tokio::select;
 
-pub fn daytime() -> lingmo::iced::Subscription<bool> {
+pub fn daytime() -> cosmic::iced::Subscription<bool> {
     struct Sunset;
     Subscription::run_with(TypeId::of::<Sunset>(), |_| {
         stream::channel(2, |tx: Sender<bool>| async {

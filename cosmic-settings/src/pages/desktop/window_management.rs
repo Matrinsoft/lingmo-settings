@@ -1,9 +1,9 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use lingmo::iced::Length;
-use lingmo::widget::{self, settings};
-use lingmo::{Apply, Element, surface};
+use cosmic::iced::Length;
+use cosmic::widget::{self, settings};
+use cosmic::{Apply, Element, surface};
 
 use cosmic_comp_config::CosmicCompConfig;
 use cosmic_config::{ConfigGet, ConfigSet};
@@ -106,7 +106,7 @@ impl Default for Page {
 }
 
 impl Page {
-    pub fn update(&mut self, message: Message) -> lingmo::iced::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> cosmic::iced::Task<crate::app::Message> {
         match message {
             Message::SuperKey(id) => {
                 let action = match id {
@@ -114,7 +114,7 @@ impl Page {
                     1 => Some(shortcuts::action::System::WorkspaceOverview),
                     2 => Some(shortcuts::action::System::AppLibrary),
                     3 => None,
-                    _ => return lingmo::iced::Task::none(),
+                    _ => return cosmic::iced::Task::none(),
                 };
 
                 self.super_key_active = Some(id);
@@ -158,16 +158,16 @@ impl Page {
                 }
             }
             Message::ShowMaximizeButton(value) => {
-                if let Ok(config) = lingmo::config::CosmicTk::config() {
-                    let _res = lingmo::config::COSMIC_TK
+                if let Ok(config) = cosmic::config::CosmicTk::config() {
+                    let _res = cosmic::config::COSMIC_TK
                         .write()
                         .unwrap()
                         .set_show_maximize(&config, value);
                 }
             }
             Message::ShowMinimizeButton(value) => {
-                if let Ok(config) = lingmo::config::CosmicTk::config() {
-                    let _res = lingmo::config::COSMIC_TK
+                if let Ok(config) = cosmic::config::CosmicTk::config() {
+                    let _res = cosmic::config::COSMIC_TK
                         .write()
                         .unwrap()
                         .set_show_minimize(&config, value);
@@ -191,10 +191,10 @@ impl Page {
                 }
             }
             Message::Surface(a) => {
-                return lingmo::task::message(crate::app::Message::Surface(a));
+                return cosmic::task::message(crate::app::Message::Surface(a));
             }
         };
-        lingmo::iced::Task::none()
+        cosmic::iced::Task::none()
     }
 }
 
@@ -245,7 +245,7 @@ pub fn window_management() -> Section<crate::pages::Message> {
                         &page.super_key_selections,
                         page.super_key_active,
                         Message::SuperKey,
-                        lingmo::iced::window::Id::RESERVED,
+                        cosmic::iced::window::Id::RESERVED,
                         Message::Surface,
                         |a| {
                             crate::app::Message::PageMessage(
@@ -286,11 +286,11 @@ pub fn window_controls() -> Section<crate::pages::Message> {
                 )
                 .add(
                     settings::item::builder(&descriptions[maximize])
-                        .toggler(lingmo::config::show_maximize(), Message::ShowMaximizeButton),
+                        .toggler(cosmic::config::show_maximize(), Message::ShowMaximizeButton),
                 )
                 .add(
                     settings::item::builder(&descriptions[minimize])
-                        .toggler(lingmo::config::show_minimize(), Message::ShowMinimizeButton),
+                        .toggler(cosmic::config::show_minimize(), Message::ShowMinimizeButton),
                 )
                 .apply(Element::from)
                 .map(crate::pages::Message::WindowManagement)

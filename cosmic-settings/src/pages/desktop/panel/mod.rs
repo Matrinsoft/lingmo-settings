@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
-use lingmo::Task;
-use lingmo::cosmic_config::CosmicConfigEntry;
+use cosmic::Task;
+use cosmic::cosmic_config::CosmicConfigEntry;
 use cosmic_panel_config::{CosmicPanelConfig, CosmicPanelContainerConfig};
 use cosmic_settings_page::{self as page, Section, section};
 use slotmap::SlotMap;
@@ -25,7 +25,7 @@ pub struct Message(pub inner::Message);
 impl Page {
     pub fn update(&mut self, message: Message) -> Task<crate::app::Message> {
         if let inner::Message::Surface(a) = message.0 {
-            lingmo::task::message(crate::app::Message::Surface(a))
+            cosmic::task::message(crate::app::Message::Surface(a))
         } else {
             self.inner
                 .update(message.0)
@@ -80,7 +80,7 @@ impl Default for Page {
             // If the config is not present, it will be created with the default values and the name will not match
             (panel_config.name == "Panel").then_some(panel_config)
         });
-        let system_default = lingmo::cosmic_config::Config::system(
+        let system_default = cosmic::cosmic_config::Config::system(
             &format!("{}.Panel", cosmic_panel_config::NAME),
             CosmicPanelConfig::VERSION,
         )

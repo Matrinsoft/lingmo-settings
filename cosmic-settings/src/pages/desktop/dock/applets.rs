@@ -1,8 +1,8 @@
-use lingmo::app::ContextDrawer;
-use lingmo::cosmic_config::CosmicConfigEntry;
-use lingmo::iced::{Alignment, Length};
-use lingmo::widget::{button, container, row};
-use lingmo::{Apply, Element, Task};
+use cosmic::app::ContextDrawer;
+use cosmic::cosmic_config::CosmicConfigEntry;
+use cosmic::iced::{Alignment, Length};
+use cosmic::widget::{button, container, row};
+use cosmic::{Apply, Element, Task};
 use cosmic_panel_config::CosmicPanelConfig;
 use cosmic_settings_page::{self as page, Section, section};
 use slotmap::{Key, SlotMap};
@@ -77,7 +77,7 @@ impl page::Page<crate::pages::Message> for Page {
     }
 
     fn header_view(&self) -> Option<Element<'_, crate::pages::Message>> {
-        let space_xxs = lingmo::theme::active().cosmic().spacing.space_xxs;
+        let space_xxs = cosmic::theme::active().cosmic().spacing.space_xxs;
         let content = row::with_capacity(2)
             .spacing(space_xxs)
             .push(
@@ -94,7 +94,7 @@ impl page::Page<crate::pages::Message> for Page {
     }
 
     fn context_drawer(&self) -> Option<ContextDrawer<'_, crate::pages::Message>> {
-        Some(lingmo::app::context_drawer(
+        Some(cosmic::app::context_drawer(
             match self.inner.context {
                 Some(ContextDrawerVariant::AddApplet) => self
                     .inner

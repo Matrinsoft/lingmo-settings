@@ -3,11 +3,11 @@
 
 use super::{Message, NightLight};
 use crate::pages;
-use lingmo::iced::core::{Alignment, Length};
-use lingmo::widget::{
+use cosmic::iced::core::{Alignment, Length};
+use cosmic::widget::{
     button, column, container, icon, list_column, row, settings, text, toggler, vertical_space,
 };
-use lingmo::{Apply, Element, Task};
+use cosmic::{Apply, Element, Task};
 use std::sync::Arc;
 
 pub fn view(
@@ -15,9 +15,9 @@ pub fn view(
     description: &'static str,
     button: Option<(&'static str, Message)>,
 ) -> Element<'static, Message> {
-    let lingmo::cosmic_theme::Spacing {
+    let cosmic::cosmic_theme::Spacing {
         space_xxs, space_l, ..
-    } = lingmo::theme::active().cosmic().spacing;
+    } = cosmic::theme::active().cosmic().spacing;
     let has_checkmark = button.is_none();
 
     let content = column::with_capacity(4)
@@ -27,7 +27,7 @@ pub fn view(
         .push(vertical_space().height(12))
         .push_maybe(button.map(|(text, message)| {
             button::text(text)
-                .class(lingmo::theme::Button::Link)
+                .class(cosmic::theme::Button::Link)
                 .trailing_icon(icon::from_name("go-next-symbolic").size(16))
                 .on_press(message)
         }));
@@ -39,13 +39,13 @@ pub fn view(
             .push(icon::from_name("object-select-symbolic").size(24))
             .apply(Element::from)
             .apply(container)
-            .class(lingmo::theme::Container::List)
+            .class(cosmic::theme::Container::List)
             .padding(8)
             .width(Length::Fill)
             .into()
     } else {
         container(content)
-            .class(lingmo::theme::Container::List)
+            .class(cosmic::theme::Container::List)
             .padding(8)
             .width(Length::Fill)
             .into()

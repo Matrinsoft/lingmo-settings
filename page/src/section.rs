@@ -19,7 +19,7 @@ pub type ViewFn<Message> = Box<
         &'a Binder<Message>,
         &'a dyn Page<Message>,
         &'a Section<Message>,
-    ) -> lingmo::Element<'a, Message>,
+    ) -> cosmic::Element<'a, Message>,
 >;
 
 /// A searchable sub-component of a page.
@@ -101,7 +101,7 @@ impl<Message: Clone + 'static> Section<Message> {
             &'a Binder<Message>,
             &'a Model,
             &'a Section<Message>,
-        ) -> lingmo::Element<'a, Message>
+        ) -> cosmic::Element<'a, Message>
         + 'static,
     ) -> Self {
         self.view_fn = Box::new(move |binder, model: &dyn Page<Message>, section| {
@@ -124,6 +124,6 @@ pub fn unimplemented<'a, Message: Clone + 'static>(
     _binder: &'a Binder<Message>,
     _page: &'a dyn Page<Message>,
     _section: &'a Section<Message>,
-) -> lingmo::Element<'a, Message> {
-    lingmo::widget::settings::view_column(vec![lingmo::widget::settings::section().into()]).into()
+) -> cosmic::Element<'a, Message> {
+    cosmic::widget::settings::view_column(vec![cosmic::widget::settings::section().into()]).into()
 }

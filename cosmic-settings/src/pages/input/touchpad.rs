@@ -1,10 +1,10 @@
 // Copyright 2023 System76 <info@system76.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-use lingmo::cosmic_config::ConfigGet;
-use lingmo::iced::{Alignment, Length};
-use lingmo::widget::{self, row, settings, text};
-use lingmo::{Apply, Element};
+use cosmic::cosmic_config::ConfigGet;
+use cosmic::iced::{Alignment, Length};
+use cosmic::widget::{self, row, settings, text};
+use cosmic::{Apply, Element};
 use cosmic_comp_config::CosmicCompConfig;
 use cosmic_comp_config::input::{AccelProfile, ClickMethod, ScrollMethod};
 use cosmic_comp_config::workspace::{WorkspaceConfig, WorkspaceLayout};
@@ -78,7 +78,7 @@ fn touchpad() -> Section<crate::pages::Message> {
                     settings::item::builder(&descriptions[primary_button])
                         .description(&descriptions[primary_button_desc])
                         .flex_control(
-                            lingmo::widget::segmented_control::horizontal(
+                            cosmic::widget::segmented_control::horizontal(
                                 &input.touchpad_primary_button,
                             )
                             .minimum_button_width(0)

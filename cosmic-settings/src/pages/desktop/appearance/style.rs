@@ -1,8 +1,8 @@
-use lingmo::iced::core::text::Wrapping;
-use lingmo::iced::core::{Alignment, Length};
-use lingmo::widget::icon::{from_name, icon};
-use lingmo::widget::{button, container, settings, text};
-use lingmo::{Apply, Element};
+use cosmic::iced::core::text::Wrapping;
+use cosmic::iced::core::{Alignment, Length};
+use cosmic::widget::icon::{from_name, icon};
+use cosmic::widget::{button, container, settings, text};
+use cosmic::{Apply, Element};
 use cosmic_settings_page::Section;
 
 use crate::pages::desktop::appearance::ContextView;
@@ -29,13 +29,13 @@ pub fn section() -> Section<crate::pages::Message> {
     let dark_square_style = from_name("illustration-appearance-dark-style-square").handle();
     let light_square_style = from_name("illustration-appearance-light-style-square").handle();
 
-    fn style_container() -> lingmo::theme::Container<'static> {
-        lingmo::theme::Container::custom(|theme| {
+    fn style_container() -> cosmic::theme::Container<'static> {
+        cosmic::theme::Container::custom(|theme| {
             let mut background = theme.cosmic().palette.neutral_9;
             background.alpha = 0.1;
             container::Style {
-                background: Some(lingmo::iced::Background::Color(background.into())),
-                border: lingmo::iced::Border {
+                background: Some(cosmic::iced::Background::Color(background.into())),
+                border: cosmic::iced::Border {
                     radius: theme.cosmic().radius_s().into(),
                     ..Default::default()
                 },
@@ -54,8 +54,8 @@ pub fn section() -> Section<crate::pages::Message> {
                 .title(&section.title)
                 .add(
                     container(
-                        lingmo::iced::widget::row![
-                            lingmo::iced::widget::column![
+                        cosmic::iced::widget::row![
+                            cosmic::iced::widget::column![
                                 button::custom_image_button(
                                     icon(
                                         if page.theme_manager.mode().is_dark {
@@ -81,7 +81,7 @@ pub fn section() -> Section<crate::pages::Message> {
                             .spacing(8)
                             .width(Length::FillPortion(1))
                             .align_x(Alignment::Center),
-                            lingmo::iced::widget::column![
+                            cosmic::iced::widget::column![
                                 button::custom_image_button(
                                     icon(
                                         if page.theme_manager.mode().is_dark {
@@ -107,7 +107,7 @@ pub fn section() -> Section<crate::pages::Message> {
                             .spacing(8)
                             .width(Length::FillPortion(1))
                             .align_x(Alignment::Center),
-                            lingmo::iced::widget::column![
+                            cosmic::iced::widget::column![
                                 button::custom_image_button(
                                     icon(
                                         if page.theme_manager.mode().is_dark {

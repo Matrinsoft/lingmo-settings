@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 use super::model;
-use lingmo::desktop::{
+use cosmic::desktop::{
     DesktopEntryCache, DesktopLookupContext, DesktopResolveOptions, resolve_desktop_entry,
 };
-use lingmo::iced::futures;
-use lingmo::iced::{self, Alignment, Length, window};
-use lingmo::widget::space::horizontal as horizontal_space;
-use lingmo::{Apply, Element, surface, widget};
+use cosmic::iced::futures;
+use cosmic::iced::{self, Alignment, Length, window};
+use cosmic::widget::space::horizontal as horizontal_space;
+use cosmic::{Apply, Element, surface, widget};
 use cosmic_config::{Config, ConfigGet};
 use cosmic_settings_audio_client::{self as audio_client, CosmicAudioProxy};
 use cosmic_settings_page::{self as page, Section, section};
@@ -59,12 +59,12 @@ pub struct Page {
 impl page::AutoBind<crate::pages::Message> for Page {}
 
 impl page::Page<crate::pages::Message> for Page {
-    fn on_enter(&mut self) -> lingmo::Task<crate::pages::Message> {
+    fn on_enter(&mut self) -> cosmic::Task<crate::pages::Message> {
         self.amplification_sink = Config::new(AUDIO_CONFIG, 1)
             .ok()
             .and_then(|config| config.get::<bool>(AMPLIFICATION_SINK).ok())
             .unwrap_or(true);
-        lingmo::Task::none()
+        cosmic::Task::none()
     }
 
     fn info(&self) -> page::Info {
@@ -83,15 +83,15 @@ impl page::Page<crate::pages::Message> for Page {
         self.entity = entity;
     }
 
-    fn on_leave(&mut self) -> lingmo::Task<crate::pages::Message> {
+    fn on_leave(&mut self) -> cosmic::Task<crate::pages::Message> {
         *self = Page {
             entity: self.entity,
             ..Page::default()
         };
-        lingmo::Task::none()
+        cosmic::Task::none()
     }
 
-    fn subscription(&self, _core: &lingmo::Core) -> iced::Subscription<crate::pages::Message> {
+    fn subscription(&self, _core: &cosmic::Core) -> iced::Subscription<crate::pages::Message> {
         iced::Subscription::run(|| {
             iced::stream::channel(
                 1,
@@ -143,7 +143,7 @@ impl Page {
         self.playback_icons.insert(node_id, icon_name.to_owned());
     }
 
-    pub fn update(&mut self, message: Message) -> lingmo::Task<crate::app::Message> {
+    pub fn update(&mut self, message: Message) -> cosmic::Task<crate::app::Message> {
         match message {
             Message::Model(cosmic_settings_sound::Message::Subscription(message)) => {
                 match &message {
@@ -232,10 +232,10 @@ impl Page {
 
             Message::SetSink(playback_id, sorted_pos) => {
                 let Some(&sink_pos) = self.model.sinks.sorted_index.get(sorted_pos) else {
-                    return lingmo::Task::none();
+                    return cosmic::Task::none();
                 };
                 let Some(&sink_id) = self.model.sinks.id.get(sink_pos as usize) else {
-                    return lingmo::Task::none();
+                    return cosmic::Task::none();
                 };
 
                 if let Some(client) = &self.client {
@@ -307,7 +307,7 @@ impl Page {
             }
 
             Message::Surface(action) => {
-                return lingmo::task::message(crate::app::Message::Surface(action));
+                return cosmic::task::message(crate::app::Message::Surface(action));
             }
 
             Message::ToggleExpanded(node_id) => {
@@ -319,7 +319,7 @@ impl Page {
             }
         }
 
-        lingmo::Task::none()
+        cosmic::Task::none()
     }
 }
 

@@ -5,10 +5,10 @@ use std::process::ExitStatus;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
 
-use lingmo::cosmic_config::{self, ConfigGet, ConfigSet};
-use lingmo::iced::stream;
-use lingmo::widget::{self, dropdown, settings, text};
-use lingmo::{Apply, Element, Task, surface};
+use cosmic::cosmic_config::{self, ConfigGet, ConfigSet};
+use cosmic::iced::stream;
+use cosmic::widget::{self, dropdown, settings, text};
+use cosmic::{Apply, Element, Task, surface};
 use cosmic_comp_config::{EavesdroppingKeyboardMode, XwaylandDescaling, XwaylandEavesdropping};
 use cosmic_randr_shell::List;
 use cosmic_settings_page::{self as page, Section, section};
@@ -36,7 +36,7 @@ impl From<Message> for crate::pages::Message {
 
 pub struct Page {
     refresh_pending: Arc<AtomicBool>,
-    randr_handle: Option<(oneshot::Sender<()>, lingmo::iced::task::Handle)>,
+    randr_handle: Option<(oneshot::Sender<()>, cosmic::iced::task::Handle)>,
     output_options: Vec<String>,
     output_options_selected: usize,
     comp_config: cosmic_config::Config,
@@ -101,7 +101,7 @@ impl page::Page<crate::pages::Message> for Page {
     fn on_enter(&mut self) -> Task<crate::pages::Message> {
         let mut tasks = Vec::new();
 
-        tasks.push(lingmo::task::future(on_enter()));
+        tasks.push(cosmic::task::future(on_enter()));
 
         let refresh_pending = self.refresh_pending.clone();
         let (tx, rx) = cosmic_randr::channel();
@@ -144,7 +144,7 @@ impl page::Page<crate::pages::Message> for Page {
         tasks.push(randr_task);
         self.randr_handle = Some((canceller, randr_handle));
 
-        lingmo::task::batch(tasks)
+        cosmic::task::batch(tasks)
     }
 
     fn on_leave(&mut self) -> Task<crate::pages::Message> {
@@ -239,7 +239,7 @@ impl Page {
                     task.arg("--primary").arg(&self.output_options[idx]);
                 }
 
-                return lingmo::task::future(async move {
+                return cosmic::task::future(async move {
                     tracing::debug!(?task, "executing");
                     crate::app::Message::PageMessage(crate::pages::Message::LegacyApplications(
                         Message::RandrResult(Arc::new(task.status().await)),
@@ -247,7 +247,7 @@ impl Page {
                 });
             }
             Message::Surface(a) => {
-                return lingmo::task::message(crate::app::Message::Surface(a));
+                return cosmic::task::message(crate::app::Message::Surface(a));
             }
         }
 
@@ -269,7 +269,7 @@ pub fn legacy_application_global_shortcuts() -> Section<crate::pages::Message> {
         .title(fl!("legacy-app-global-shortcuts"))
         .descriptions(descriptions)
         .view::<Page>(move |_binder, page, section| {
-            let title = text::body(&section.title).font(lingmo::font::bold());
+            let title = text::body(&section.title).font(cosmic::font::bold());
             let description = text::body(&section.descriptions[desc]);
 
             let content = settings::section::<'_, crate::pages::Message>()
@@ -308,8 +308,8 @@ pub fn legacy_application_global_shortcuts() -> Section<crate::pages::Message> {
                 .push(title)
                 .push(description)
                 .push(content)
-                .spacing(lingmo::theme::spacing().space_xxs)
-                .apply(lingmo::Element::from)
+                .spacing(cosmic::theme::spacing().space_xxs)
+                .apply(cosmic::Element::from)
                 .map(Into::into)
         })
 }
@@ -366,7 +366,7 @@ pub fn legacy_application_scaling() -> Section<crate::pages::Message> {
                         &page.output_options,
                         Some(page.output_options_selected),
                         Message::SetXwaylandPrimaryOutput,
-                        lingmo::iced::window::Id::RESERVED,
+                        cosmic::iced::window::Id::RESERVED,
                         Message::Surface,
                         |a| {
                             crate::app::Message::PageMessage(
