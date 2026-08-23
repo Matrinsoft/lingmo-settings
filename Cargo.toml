@@ -83,11 +83,11 @@ cosmic-client-toolkit = { git = "https://github.com/Matrinsoft/lingmo-protocols/
 # cosmic-theme = { path = "../libcosmic/cosmic-theme" }
 # iced_futures = { path = "../libcosmic/iced/futures" }
 # iced_winit = { path = "../libcosmic/iced/winit" }
-# iced_futures = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# libcosmic = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
-# iced_winit = { git = "https://github.com/Matrinsoft/libcosmic//", branch = "theme-v2" }
+# iced_futures = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# libcosmic = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# cosmic-config = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# cosmic-theme = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
+# iced_winit = { git = "https://github.com/Matrinsoft/liblingmo//", branch = "theme-v2" }
 
 # [patch.'https://github.com/pop-os/dbus-settings-bindings']
 # upower_dbus = { path = "../dbus-settings-bindings/upower" }
