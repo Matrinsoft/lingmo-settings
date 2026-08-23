@@ -12,5 +12,5 @@ iced_futures = { git = "https://github.com/Matrinsoft/liblingmo" }
 num-derive = "0.4.2"
 num-traits = "0.2.19"
 sctk.workspace = true
-tokio = "1.53.1"
+tokio = "1.49"
 tracing = "0.1.44"
