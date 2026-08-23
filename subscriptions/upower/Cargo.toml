@@ -7,7 +7,7 @@ rust-version.workspace = true
 publish = true
 
 [dependencies]
-futures = "0.3.33"
+futures = "0.3.32"
 iced_futures = { git = "https://github.com/Matrinsoft/liblingmo" }
 log = "0.4.33"
 tokio = "1.49"

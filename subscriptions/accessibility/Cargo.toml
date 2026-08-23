@@ -8,7 +8,7 @@ publish = true
 
 [dependencies]
 cosmic-dbus-a11y = { git = "https://github.com/pop-os/dbus-settings-bindings" }
-futures = "0.3.33"
+futures = "0.3.32"
 iced_futures = { git = "https://github.com/Matrinsoft/liblingmo" }
 tokio = { version = "1.49", features = ["sync", "time"] }
 tracing = "0.1.44"
