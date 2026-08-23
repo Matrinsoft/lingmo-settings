@@ -12,4 +12,4 @@ futures = "0.3.33"
 iced_futures = { git = "https://github.com/Matrinsoft/liblingmo" }
 tokio = { version = "1.53.1", features = ["sync", "time"] }
 tracing = "0.1.44"
-zbus = "5.18"
+zbus = "5.14"
