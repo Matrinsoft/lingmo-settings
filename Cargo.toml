@@ -70,8 +70,8 @@ debug = true
 # cosmic-text = { git = "https://github.com/Matrinsoft/lingmo-text//", rev = "b017d7c" }
 
 [patch.'https://github.com/Matrinsoft/lingmo-protocols']
-cosmic-protocols = { git = "https://github.com/Matrinsoft/lingmo-protocols//", rev = "26b46f1" }
-cosmic-client-toolkit = { git = "https://github.com/Matrinsoft/lingmo-protocols//", rev = "26b46f1" }
+cosmic-protocols = { git = "https://github.com/Matrinsoft/lingmo-protocols//", rev = "693c176" }
+cosmic-client-toolkit = { git = "https://github.com/Matrinsoft/lingmo-protocols//", rev = "693c176" }
 
 # [patch.'https://github.com/Matrinsoft/lingmo-settings-daemon']
 # cosmic-settings-config = { git = "https://github.com/Matrinsoft/lingmo-settings-daemon//", branch = "input_nobuild" }
