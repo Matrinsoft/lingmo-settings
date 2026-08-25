@@ -14,8 +14,8 @@ use cosmic::iced::platform_specific::shell::wayland::keymap;
 use cosmic::iced::{Alignment, Length};
 use cosmic::widget::{self, button, icon};
 use cosmic::{Apply, Element, Task};
-use lingmo_settings_config::Binding;
-use lingmo_settings_config::shortcuts::{Action, Shortcuts};
+use cosmic_settings_config::Binding;
+use cosmic_settings_config::shortcuts::{Action, Shortcuts};
 use lingmo_settings_page::{self as page, Section, section};
 use iced_winit::conversion;
 use slab::Slab;
@@ -230,7 +230,7 @@ impl Page {
 
             Message::ModifiersChanged(modifiers) => {
                 if self.add_shortcut.active {
-                    let mut cfg_modifiers = lingmo_settings_config::shortcuts::Modifiers::new();
+                    let mut cfg_modifiers = cosmic_settings_config::shortcuts::Modifiers::new();
                     if modifiers.alt() {
                         cfg_modifiers = cfg_modifiers.alt()
                     }
@@ -329,9 +329,9 @@ impl Page {
                         .keycode
                         .is_some_and(|k| k == keycode)
                     && self.add_shortcut.binding.modifiers
-                        != lingmo_settings_config::shortcuts::Modifiers::new()
+                        != cosmic_settings_config::shortcuts::Modifiers::new()
                     || self.add_shortcut.binding.key.is_some_and(|key| {
-                        !lingmo_settings_config::shortcuts::is_forbidden_unmodified_keysym(key)
+                        !cosmic_settings_config::shortcuts::is_forbidden_unmodified_keysym(key)
                     })
                 {
                     // XX for now avoid applying the keycode

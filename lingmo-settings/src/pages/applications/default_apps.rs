@@ -6,8 +6,8 @@ use cosmic::iced::{Alignment, Length};
 use cosmic::widget::{self, dropdown, icon, settings};
 use cosmic::{Apply, Element, Task, surface};
 use cosmic_config::{ConfigGet, ConfigSet};
-use lingmo_settings_config::shortcuts::SystemActions;
-use lingmo_settings_config::shortcuts::action::System;
+use cosmic_settings_config::shortcuts::SystemActions;
+use cosmic_settings_config::shortcuts::action::System;
 use lingmo_settings_page::{self as page, Section, section};
 use freedesktop_desktop_entry::{DesktopEntry, default_paths, get_languages_from_env};
 use mime::Mime;
@@ -110,7 +110,7 @@ impl page::Page<crate::pages::Message> for Page {
         let config_update_handle = self.update_config.take();
 
         if self.shortcuts_config.is_none() {
-            self.shortcuts_config = lingmo_settings_config::shortcuts::context().ok();
+            self.shortcuts_config = cosmic_settings_config::shortcuts::context().ok();
         }
 
         let (task, on_enter_handle) = Task::future(async move {

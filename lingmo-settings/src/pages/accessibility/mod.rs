@@ -8,7 +8,7 @@ pub use cosmic_comp_config::ZoomMovement;
 use cosmic_config::CosmicConfigEntry;
 use lingmo_settings_a11y_manager_subscription as cosmic_a11y_manager;
 use lingmo_settings_accessibility_subscription as a11y_bus;
-use lingmo_settings_daemon_config::CosmicSettingsDaemonConfig;
+use cosmic_settings_daemon_config::CosmicSettingsDaemonConfig;
 use lingmo_settings_page::section::{self, Section};
 use lingmo_settings_page::{self as page, Insert};
 use futures::SinkExt;

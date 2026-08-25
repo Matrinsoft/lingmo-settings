@@ -1,182 +1,183 @@
-app = LINGMO Ayarlar谋
-dbus-connection-error = DBus'a ba臒lan谋lamad谋
+app = COSMIC Ayarları
+dbus-connection-error = DBus'a bağlanılamadı
 ok = Tamam
 unknown = Bilinmiyor
 number = { $number }
 
 ## Network & Wireless
 
-add-network = A臒 ekle
+add-network = Ağ ekle
     .profile = Profil ekle
 add-vpn = VPN ekle
-airplane-on = U莽ak modu a莽谋k.
-cable-unplugged = Kablo tak谋l谋 de臒il
-connect = Ba臒lan
-connected = Ba臒land谋
-connecting = Ba臒lan谋l谋yor鈥?disconnect = Ba臒lant谋y谋 kes
+airplane-on = Uçak modu açık.
+cable-unplugged = Kablo takılı değil
+connect = Bağlan
+connected = Bağlandı
+connecting = Bağlanılıyor…
+disconnect = Bağlantıyı kes
 forget = Unut
-known-networks = Bilinen a臒lar
-network-and-wireless = A臒 & kablosuz
-no-networks = Herhangi bir a臒 bulunamad谋.
-no-vpn = Herhangi bir VPN ba臒lant谋s谋 bulunmamaktad谋r.
+known-networks = Bilinen ağlar
+network-and-wireless = Ağ & kablosuz
+no-networks = Herhangi bir ağ bulunamadı.
+no-vpn = Herhangi bir VPN bağlantısı bulunmamaktadır.
 password = Parola
-password-confirm = Parolay谋 onayla
-remove = Kald谋r
+password-confirm = Parolayı onayla
+remove = Kaldır
 settings = Ayarlar
-username = Kullan谋c谋 Ad谋
-visible-networks = G枚r眉nen a臒lar
+username = Kullanıcı Adı
+visible-networks = Görünen ağlar
 identity = Kimlik
-auth-dialog = Kimlik Do臒rulama gerekli
-    .vpn-description = VPN hizmeti taraf谋ndan istenilen kullan谋c谋 ad谋 ve parolay谋 girin.
-    .wifi-description = Parola veya 艧ifreleme anahtar谋n谋 girin. Y枚nlendiricinin "WPS" d眉臒mesine basarak da ba臒lanabilirsiniz.
-forget-dialog = Bu Wi-Fi a臒谋 unutulsun mu?
-    .description = Gelecekte bu Wi-Fi a臒谋n谋 kullanmak i莽in tekrar bir parola girmeniz gerekecektir.
+auth-dialog = Kimlik Doğrulama gerekli
+    .vpn-description = VPN hizmeti tarafından istenilen kullanıcı adı ve parolayı girin.
+    .wifi-description = Parola veya şifreleme anahtarını girin. Yönlendiricinin "WPS" düğmesine basarak da bağlanabilirsiniz.
+forget-dialog = Bu Wi-Fi ağı unutulsun mu?
+    .description = Gelecekte bu Wi-Fi ağını kullanmak için tekrar bir parola girmeniz gerekecektir.
 network-device-state =
-    .activated = Ba臒lan谋ld谋
-    .config = Ba臒lan谋l谋yor
-    .deactivating = Ba臒lant谋 kesiliyor
-    .disconnected = Ba臒lant谋 kesildi
-    .failed = Ba臒lant谋 ba艧ar谋s谋z
-    .ip-check = Ba臒lant谋 kontrol ediliyor
-    .ip-config = IP ve y枚nlendirme bilgisi isteniyor
-    .need-auth = Kimlik do臒rulama gerekiyor
-    .prepare = Ba臒lanmaya haz谋rlan谋yor
-    .secondaries = 陌kincil ba臒lant谋 bekleniyor
-    .unavailable = Mevcut de臒il
+    .activated = Bağlanıldı
+    .config = Bağlanılıyor
+    .deactivating = Bağlantı kesiliyor
+    .disconnected = Bağlantı kesildi
+    .failed = Bağlantı başarısız
+    .ip-check = Bağlantı kontrol ediliyor
+    .ip-config = IP ve yönlendirme bilgisi isteniyor
+    .need-auth = Kimlik doğrulama gerekiyor
+    .prepare = Bağlanmaya hazırlanıyor
+    .secondaries = İkincil bağlantı bekleniyor
+    .unavailable = Mevcut değil
     .unknown = Bilinmeyen durum
-    .unmanaged = Y枚netilmiyor
-    .unplugged = Kablo ba臒l谋 de臒il
-remove-connection-dialog = Ba臒lant谋 profili silinsin mi?
-    .vpn-description = Gelecekte bu a臒谋 kullanabilmek i莽in tekrardan parola girmeniz gerekecek.
-    .wired-description = Gelecekte bu profili kullanabilmek i莽in tekrardan olu艧turman谋z gerekecek.
+    .unmanaged = Yönetilmiyor
+    .unplugged = Kablo bağlı değil
+remove-connection-dialog = Bağlantı profili silinsin mi?
+    .vpn-description = Gelecekte bu ağı kullanabilmek için tekrardan parola girmeniz gerekecek.
+    .wired-description = Gelecekte bu profili kullanabilmek için tekrardan oluşturmanız gerekecek.
 vpn = VPN
-    .connections = VPN ba臒lant谋lar谋
-    .error = VPN yap谋land谋rmas谋 eklenemedi
-    .remove = Ba臒lant谋 profilini kald谋r
-    .select-file = Bir VPN yap谋land谋rma dosyas谋 se莽in
-vpn-error = VPN Hatas谋
-    .config = VPN yap谋land谋rmas谋 eklenemedi
-    .connect = VPN'e ba臒lan谋lamad谋
-    .connection-editor = Ba臒lant谋 d眉zenleyici ba艧ar谋s谋z oldu
-    .connection-settings = Aktif ba臒lant谋lar i莽in ayarlar al谋namad谋
-    .updating-state = A臒 y枚neticisi durumu al谋namad谋
-    .wireguard-config-path = WireGuard yap谋land谋rmas谋 i莽in ge莽ersiz dosya yolu
-    .wireguard-config-path-desc = Se莽ilen dosya yerel dosya sisteminde olmal谋.
-    .wireguard-device = WireGuard cihaz谋 olu艧turulamad谋
+    .connections = VPN bağlantıları
+    .error = VPN yapılandırması eklenemedi
+    .remove = Bağlantı profilini kaldır
+    .select-file = Bir VPN yapılandırma dosyası seçin
+vpn-error = VPN Hatası
+    .config = VPN yapılandırması eklenemedi
+    .connect = VPN'e bağlanılamadı
+    .connection-editor = Bağlantı düzenleyici başarısız oldu
+    .connection-settings = Aktif bağlantılar için ayarlar alınamadı
+    .updating-state = Ağ yöneticisi durumu alınamadı
+    .wireguard-config-path = WireGuard yapılandırması için geçersiz dosya yolu
+    .wireguard-config-path-desc = Seçilen dosya yerel dosya sisteminde olmalı.
+    .wireguard-device = WireGuard cihazı oluşturulamadı
     .with-password =
-        VPN ayarlanamad谋 { $field ->
-           *[username] kullan谋c谋 ad谋
+        VPN ayarlanamadı { $field ->
+           *[username] kullanıcı adı
             [password] parola
-            [password-flags] parola-bayraklar谋
+            [password-flags] parola-bayrakları
         } nmcli ile
 wired = Kablolu
-    .adapter = Kablolu adapt枚r { $id }
-    .connections = Kablolu ba臒lant谋lar
+    .adapter = Kablolu adaptör { $id }
+    .connections = Kablolu bağlantılar
     .devices = Kablolu cihazlar
-    .remove = Ba臒lant谋 profilini kald谋r
+    .remove = Bağlantı profilini kaldır
 wifi = Kablosuz
-    .adapter = Kablosuz adapt枚r { $id }
-    .forget = A臒谋 unut
-wireguard-dialog = WireGuard cihaz谋 ekle
-    .description = WireGuard yap谋land谋rmas谋 i莽in cihaz ad谋 belirleyin.
+    .adapter = Kablosuz adaptör { $id }
+    .forget = Ağı unut
+wireguard-dialog = WireGuard cihazı ekle
+    .description = WireGuard yapılandırması için cihaz adı belirleyin.
 
 ## Networking: Online Accounts
 
-online-accounts = 脟evrimi莽i hesaplar
-    .desc = Hesap, IMAP ve SMTP, kurumsal giri艧 ekleyin
+online-accounts = Çevrimiçi hesaplar
+    .desc = Hesap, IMAP ve SMTP, kurumsal giriş ekleyin
 
 # Bluetooth
 
-activate = Aktifle艧tir
+activate = Aktifleştir
 confirm = Onayla
-enable = Etkinle艧tir
+enable = Etkinleştir
 bluetooth = Bluetooth
-    .status = Bu sistem bluetooth ayarlar谋 a莽谋k oldu臒u s眉rede { $aliases } olarak g枚r眉n眉r.
-    .connected = Ba臒land谋
-    .connecting = Ba臒lan谋l谋yor
-    .disconnecting = Ba臒lant谋 kesiliyor
-    .connect = Ba臒lan
-    .disconnect = Ba臒lant谋y谋 kes
+    .status = Bu sistem bluetooth ayarları açık olduğu sürede { $aliases } olarak görünür.
+    .connected = Bağlandı
+    .connecting = Bağlanılıyor
+    .disconnecting = Bağlantı kesiliyor
+    .connect = Bağlan
+    .disconnect = Bağlantıyı kes
     .forget = Unut
-    .dbus-error = DBus ile etkile艧irken bir hata meydana geldi: { $why }
-    .disabled = Bluetooth hizmeti devre d谋艧谋
-    .inactive = Bluetooth hizmeti aktif de臒il
-    .unknown = Bluetooth hizmeti aktifle艧tirilemedi. BlueZ kurulu mu?
-bluetooth-paired = 脰nceden ba臒lan谋lan cihazlar
-    .connect = Ba臒lan
-    .battery = %{ $percentage } 艧arj
+    .dbus-error = DBus ile etkileşirken bir hata meydana geldi: { $why }
+    .disabled = Bluetooth hizmeti devre dışı
+    .inactive = Bluetooth hizmeti aktif değil
+    .unknown = Bluetooth hizmeti aktifleştirilemedi. BlueZ kurulu mu?
+bluetooth-paired = Önceden bağlanılan cihazlar
+    .connect = Bağlan
+    .battery = %{ $percentage } şarj
 bluetooth-confirm-pin = Bluetooth PIN'ini Onayla
-    .description = L眉tfen a艧a臒谋daki PIN'in { $device } cihaz谋nda g枚z眉ken ile e艧le艧ti臒ini onaylay谋n
-bluetooth-available = Yak谋ndaki cihazlar
-bluetooth-adapters = Bluetooth adapt枚rleri
+    .description = Lütfen aşağıdaki PIN'in { $device } cihazında gözüken ile eşleştiğini onaylayın
+bluetooth-available = Yakındaki cihazlar
+bluetooth-adapters = Bluetooth adaptörleri
 
 ## Accessibility
 
-accessibility = Eri艧ilebilirlik
-    .vision = G枚rme
-    .on = A莽谋k
-    .off = Kapal谋
-    .unavailable = Mevcut de臒il
+accessibility = Erişilebilirlik
+    .vision = Görme
+    .on = Açık
+    .off = Kapalı
+    .unavailable = Mevcut değil
     .screen-reader = Ekran okuyucu
-    .high-contrast = Y眉ksek kontrast modu
-    .invert-colors = Renkleri ters 莽evir
+    .high-contrast = Yüksek kontrast modu
+    .invert-colors = Renkleri ters çevir
     .color-filters = Renk filtreleri
 hearing = Duyma
-    .mono = Stereo sesi mono olarak 莽al
-default = Varsay谋lan
-magnifier = B眉y眉te莽
+    .mono = Stereo sesi mono olarak çal
+default = Varsayılan
+magnifier = Büyüteç
     .controls =
-        Veya bu k谋sayollar谋 kullan谋n: { $zoom_in ->
+        Veya bu kısayolları kullanın: { $zoom_in ->
             [zero] { "" }
            *[other]
                 { "" }
-                Yak谋nla艧t谋rmak i莽in { $zoom_in },
+                Yakınlaştırmak için { $zoom_in },
         }{ $zoom_out ->
             [zero] { "" }
            *[other]
                 { "" }
-                Uzakla艧t谋rmak i莽in { $zoom_out },
+                Uzaklaştırmak için { $zoom_out },
         }
         Fareniz ile Super + fare tekeri
-    .scroll_controls = Super + Fare tekeri kullanarak fare veya dokunmatik y眉zey ile kayd谋rmay谋 etkinle艧tir.
-    .show_overlay = B眉y眉te莽 Overlay'ini g枚ster.
-    .increment = Yak谋nla艧t谋rma miktar谋
-    .signin = B眉y眉teci a莽谋l谋艧ta ba艧lat
-    .applet = B眉y眉teci panel eklentisinden a莽谋p kapat
-    .movement = B眉y眉t眉lm眉艧 g枚r眉n眉mde gezinim
-    .continuous = 陌mle莽 ile beraber
-    .onedge = 陌mle莽 kenara ula艧t谋臒谋nda
-    .centered = 陌mleci merkezde tutarak
+    .scroll_controls = Super + Fare tekeri kullanarak fare veya dokunmatik yüzey ile kaydırmayı etkinleştir.
+    .show_overlay = Büyüteç Overlay'ini göster.
+    .increment = Yakınlaştırma miktarı
+    .signin = Büyüteci açılışta başlat
+    .applet = Büyüteci panel eklentisinden açıp kapat
+    .movement = Büyütülmüş görünümde gezinim
+    .continuous = İmleç ile beraber
+    .onedge = İmleç kenara ulaştığında
+    .centered = İmleci merkezde tutarak
 color-filter = Renk filtresi tipi
     .unknown = Bilinmeyen filtre etkin
     .greyscale = Gri tonlama
-    .deuteranopia = Ye艧il/K谋rm谋z谋 (ye艧il zay谋fl谋臒谋, D枚teranopi)
-    .protanopia = K谋rm谋z谋/Ye艧il (k谋rm谋z谋 zay谋fl谋臒谋, Protanopi)
-    .tritanopia = Mavi/Sar谋 (mavi zay谋fl谋臒谋, Tritanopi)
+    .deuteranopia = Yeşil/Kırmızı (yeşil zayıflığı, Döteranopi)
+    .protanopia = Kırmızı/Yeşil (kırmızı zayıflığı, Protanopi)
+    .tritanopia = Mavi/Sarı (mavi zayıflığı, Tritanopi)
 
 ## Desktop
 
-desktop = Masa眉st眉
+desktop = Masaüstü
 
 ## Desktop: Wallpaper
 
-wallpaper = Duvar Ka臒谋d谋
-    .change = Belirli aral谋klarda resmi de臒i艧tir
-    .fit = Duvar ka臒谋d谋 yerle艧imi
-    .folder-dialog = Duvar ka臒谋d谋 klas枚r眉 se莽in
-    .image-dialog = Duvar ka臒谋d谋 resmi se莽in
-    .plural = Duvar ka臒谋tlar谋
-    .same = B眉t眉n ekranlarda ayn谋 duvar ka臒谋d谋
-    .slide = Slayt g枚sterisi
+wallpaper = Duvar Kağıdı
+    .change = Belirli aralıklarda resmi değiştir
+    .fit = Duvar kağıdı yerleşimi
+    .folder-dialog = Duvar kağıdı klasörü seçin
+    .image-dialog = Duvar kağıdı resmi seçin
+    .plural = Duvar kağıtları
+    .same = Bütün ekranlarda aynı duvar kağıdı
+    .slide = Slayt gösterisi
 add-color = Renk ekle
 add-image = Resim ekle
-all-displays = T眉m ekranlar
+all-displays = Tüm ekranlar
 colors = Renkler
 dialog-add = Ekle
 fill = Doldur
-fit-to-screen = Ekrana s谋臒d谋r
-open-new-folder = Yeni klas枚r a莽
-recent-folders = Son kullan谋lan klas枚rler
+fit-to-screen = Ekrana sığdır
+open-new-folder = Yeni klasör aç
+recent-folders = Son kullanılan klasörler
 x-minutes =
     { $number } { $number ->
         [one] dakika
@@ -191,62 +192,62 @@ never = Asla
 
 ## Desktop: Appearance
 
-appearance = G枚r眉n眉m
+appearance = Görünüm
 accent-color = Vurgu rengi
-app-background = Pencere arka plan谋
+app-background = Pencere arka planı
 auto = Otomatik
 close = Kapat
-color-picker = Renk Se莽ici
-copied-to-clipboard = Panoya kopyaland谋
+color-picker = Renk Seçici
+copied-to-clipboard = Panoya kopyalandı
 copy-to-clipboard = Panoya kopyala
-dark = Karanl谋k
-export = D谋艧a aktar
+dark = Karanlık
+export = Dışa aktar
 hex = Hex
-import = 陌莽e aktar
-light = Ayd谋nl谋k
+import = İçe aktar
+light = Aydınlık
 mode-and-colors = Mod ve renkler
-recent-colors = Son kullan谋lan renkler
-reset-to-default = Varsay谋lana d枚n
+recent-colors = Son kullanılan renkler
+reset-to-default = Varsayılana dön
 rgb = RGB
 window-hint-accent = Etkin pencere vurgu rengi
 window-hint-accent-toggle = Tema vurgu rengini etkin pencere vurgu rengi olarak kullan
-auto-switch = Otomatik olarak Ayd谋nl谋k ve Karanl谋k modlar aras谋nda ge莽i艧 yap
-    .sunrise = G眉n do臒umunda Ayd谋nl谋k moda ge莽er
-    .sunset = G眉n bat谋m谋nda Karanl谋k moda ge莽er
-    .next-sunrise = Bir dahaki g眉n do臒umunda Ayd谋nl谋k moda ge莽er
-    .next-sunset = Bir dahaki g眉n do臒umunda Karanl谋k moda ge莽er
-container-background = Konteyner arka plan谋
-    .desc-detail = Konteyner arka plan谋 gezinti yan 莽ubu臒u, yan 莽ekmece, diyaloglar ve benzeri ara莽lar i莽in kullan谋l谋r. Varsay谋landa otomatik olarak Uygulama veya pencere arka plan谋ndan belirlenir.
-    .reset = Otomati臒e d枚n
-    .desc = Birincil konteyner rengi gezinti yan 莽ubu臒u, yan 莽ekmece, diyaloglar ve benzeri ara莽lar i莽in kullan谋l谋r
-control-tint = Bile艧en tonlamas谋n谋 ayarla
-    .desc = Standart d眉臒melerin, arama ve metin girdilerinin ve benzeri bile艧enlerin arka planlar谋 i莽in kullan谋l谋r
-frosted = Sistem aray眉z眉nde buzlu cam efekti
-    .desc = Panel, dock, eklentiler, ba艧lat谋c谋 ve uygulama k眉t眉phanesi arka plan谋na flu ekler
-enable-export = Bu temay谋 GNOME uygulamalar谋na uygula
-    .desc = B眉t眉n toolkitler otomatik tema de臒i艧imi desteklemez. LINGMO d谋艧谋 uygulamalar谋n tema de臒i艧imi i莽in uygulaman谋n yeniden ba艧lat谋lmas谋 gerekebilir.
-icon-theme = Simge temas谋
-    .desc = Uygulamalara farkl谋 birtak谋m simgeler uygular
-text-tint = Aray眉z metin tonlamas谋
-    .desc = 脟e艧itli y眉zeylerde yeterli kontrast sa臒layan aray眉z metin renklerini elde etmek i莽in kullan谋l谋r
+auto-switch = Otomatik olarak Aydınlık ve Karanlık modlar arasında geçiş yap
+    .sunrise = Gün doğumunda Aydınlık moda geçer
+    .sunset = Gün batımında Karanlık moda geçer
+    .next-sunrise = Bir dahaki gün doğumunda Aydınlık moda geçer
+    .next-sunset = Bir dahaki gün doğumunda Karanlık moda geçer
+container-background = Konteyner arka planı
+    .desc-detail = Konteyner arka planı gezinti yan çubuğu, yan çekmece, diyaloglar ve benzeri araçlar için kullanılır. Varsayılanda otomatik olarak Uygulama veya pencere arka planından belirlenir.
+    .reset = Otomatiğe dön
+    .desc = Birincil konteyner rengi gezinti yan çubuğu, yan çekmece, diyaloglar ve benzeri araçlar için kullanılır
+control-tint = Bileşen tonlamasını ayarla
+    .desc = Standart düğmelerin, arama ve metin girdilerinin ve benzeri bileşenlerin arka planları için kullanılır
+frosted = Sistem arayüzünde buzlu cam efekti
+    .desc = Panel, dock, eklentiler, başlatıcı ve uygulama kütüphanesi arka planına flu ekler
+enable-export = Bu temayı GNOME uygulamalarına uygula
+    .desc = Bütün toolkitler otomatik tema değişimi desteklemez. COSMIC dışı uygulamaların tema değişimi için uygulamanın yeniden başlatılması gerekebilir.
+icon-theme = Simge teması
+    .desc = Uygulamalara farklı birtakım simgeler uygular
+text-tint = Arayüz metin tonlaması
+    .desc = Çeşitli yüzeylerde yeterli kontrast sağlayan arayüz metin renklerini elde etmek için kullanılır
 style = Stil
     .round = Yuvarlak
     .slightly-round = Hafif yuvarlak
     .square = Kare
-interface-density = Aray眉z yo臒unlu臒u
+interface-density = Arayüz yoğunluğu
     .comfortable = Rahat
-    .compact = S谋k谋艧谋k
-    .spacious = Geni艧
-window-management-appearance = Pencere Y枚netimi
+    .compact = Sıkışık
+    .spacious = Geniş
+window-management-appearance = Pencere Yönetimi
     .active-hint = Etkin pencere belirten boyutu
-    .gaps = Dizili pencerelerin etraf谋ndaki bo艧luk
+    .gaps = Dizili pencerelerin etrafındaki boşluk
 
 ### Experimental
 
 experimental-settings = Deneysel ayarlar
-icons-and-toolkit = Simge ve ara莽 seti temas谋
-interface-font = Sistem yaz谋 tipi
-monospace-font = Tek aral谋kl谋 yaz谋 tipi
+icons-and-toolkit = Simge ve araç seti teması
+interface-font = Sistem yazı tipi
+monospace-font = Tek aralıklı yazı tipi
 
 ## Desktop: Notifications
 
@@ -257,42 +258,42 @@ notifications = Bildirimler
 panel = Panel
 add = Ekle
 add-applet = Eklenti ekle
-all = T眉m眉
+all = Tümü
 applets = Eklentiler
-center-segment = Orta b枚l眉m
-end-segment = Son b枚l眉m
-large = B眉y眉k
-no-applets-found = eklenti bulunamad谋...
-panel-bottom = A艧a臒谋
+center-segment = Orta bölüm
+end-segment = Son bölüm
+large = Büyük
+no-applets-found = eklenti bulunamadı...
+panel-bottom = Aşağı
 panel-left = Sol
-panel-right = Sa臒
-panel-top = Yukar谋
+panel-right = Sağ
+panel-top = Yukarı
 search-applets = Eklenti ara...
-small = K眉莽眉k
-start-segment = Ba艧lang谋莽 B枚l眉m眉
-panel-appearance = G枚r眉n眉m
-    .match = Masa眉st眉 ile ayn谋
-    .light = Ayd谋nl谋k
-    .dark = Karanl谋k
-panel-behavior-and-position = Davran谋艧 ve Konumlar
+small = Küçük
+start-segment = Başlangıç Bölümü
+panel-appearance = Görünüm
+    .match = Masaüstü ile aynı
+    .light = Aydınlık
+    .dark = Karanlık
+panel-behavior-and-position = Davranış ve Konumlar
     .autohide = Paneli otomatik gizle
     .dock-autohide = Docku otomatik gizle
     .position = Ekrandaki konum
-    .display = Ekranda g枚ster
+    .display = Ekranda göster
 panel-style = Stil
-    .anchor-gap = Ekran kenarlar谋 ve panel aras谋ndaki bo艧luk
-    .dock-anchor-gap = Ekran kenarlar谋 ve dock aras谋ndaki bo艧luk
-    .extend = Paneli ekran kenarlar谋na geni艧let
-    .dock-extend = Docku ekran kenarlar谋na geni艧let
-    .appearance = G枚r眉n眉m
+    .anchor-gap = Ekran kenarları ve panel arasındaki boşluk
+    .dock-anchor-gap = Ekran kenarları ve dock arasındaki boşluk
+    .extend = Paneli ekran kenarlarına genişlet
+    .dock-extend = Docku ekran kenarlarına genişlet
+    .appearance = Görünüm
     .size = Boyut
-    .background-opacity = Arka plan opakl谋臒谋
-panel-applets = Yap谋land谋rma
-    .dock-desc = Dock eklentilerini yap谋land谋r
-    .desc = Panel eklentilerini yap谋land谋r
-panel-missing = Panel Yap谋land谋rmas谋 Eksik
-    .desc = Panel yap谋land谋rma dosyas谋 枚zel bir yap谋land谋rmas谋 kullan谋ld谋臒谋ndan veya bozuldu臒undan dolay谋 eksik.
-    .fix = Varsay谋lana d枚n
+    .background-opacity = Arka plan opaklığı
+panel-applets = Yapılandırma
+    .dock-desc = Dock eklentilerini yapılandır
+    .desc = Panel eklentilerini yapılandır
+panel-missing = Panel Yapılandırması Eksik
+    .desc = Panel yapılandırma dosyası özel bir yapılandırması kullanıldığından veya bozulduğundan dolayı eksik.
+    .fix = Varsayılana dön
 
 ## Desktop: Dock
 
@@ -300,120 +301,120 @@ dock = Dock
 
 ## Desktop: Window management
 
-window-management = Pencere y枚netimi
-super-key = Super tu艧u davran谋艧谋
-    .launcher = Ba艧lat谋c谋y谋 A莽
-    .workspaces = 脟al谋艧ma Alanlar谋n谋 A莽
-    .applications = Uygulamalar谋 A莽
-    .disable = Devre d谋艧谋 b谋rak
-edge-gravity = Kayan pencereler kenarlara yap谋艧谋r
+window-management = Pencere yönetimi
+super-key = Super tuşu davranışı
+    .launcher = Başlatıcıyı Aç
+    .workspaces = Çalışma Alanlarını Aç
+    .applications = Uygulamaları Aç
+    .disable = Devre dışı bırak
+edge-gravity = Kayan pencereler kenarlara yapışır
 window-controls = Pencere kontrolleri
-    .minimize = K眉莽眉ltme tu艧unu g枚ster
-    .maximize = B眉y眉tme tu艧unu g枚ster
-    .active-window-hint = Etkin pencere belirtmesini g枚ster
+    .minimize = Küçültme tuşunu göster
+    .maximize = Büyütme tuşunu göster
+    .active-window-hint = Etkin pencere belirtmesini göster
 focus-navigation = Odak gezinimi
     .focus-follows-cursor = Odak imleci takip eder
     .focus-follows-cursor-delay = Odak imleci milisaniye gecikme ile takip eder
-    .cursor-follows-focus = 陌mle莽 oda臒谋 takip eder
+    .cursor-follows-focus = İmleç odağı takip eder
 
 ## Desktop: Workspaces
 
-workspaces = 脟al谋艧ma Alanlar谋
-workspaces-behavior = 脟al谋艧ma alan谋 davran谋艧谋
-    .dynamic = Dinamik 莽al谋艧ma alanlar谋
-    .dynamic-desc = Bo艧 莽al谋艧ma alanlar谋n谋 otomatik olarak siler.
-    .fixed = Sabit say谋da 莽al谋艧ma alan谋
-    .fixed-desc = 脟al谋艧ma alanlar谋n谋 genel g枚r眉n眉mde ekle veya 莽谋kar.
-workspaces-multi-behavior = 脟oklu-ekran davran谋艧谋
-    .span = 脟al谋艧ma alanlar谋 ekranlara yay谋l谋r
-    .separate = Ekranlar谋n ayr谋 莽al谋艧ma alanlar谋 olur
-workspaces-overview-thumbnails = 脟al谋艧ma alanlar谋 genel g枚r眉n眉m眉 k眉莽眉k resimleri
-    .show-number = 脟al谋艧ma alan谋 numaras谋n谋 g枚ster
-    .show-name = 脟al谋艧ma alan谋 ad谋n谋 g枚ster
-workspaces-orientation = 脟al谋艧ma alanlar谋 y枚nelimi
+workspaces = Çalışma Alanları
+workspaces-behavior = Çalışma alanı davranışı
+    .dynamic = Dinamik çalışma alanları
+    .dynamic-desc = Boş çalışma alanlarını otomatik olarak siler.
+    .fixed = Sabit sayıda çalışma alanı
+    .fixed-desc = Çalışma alanlarını genel görünümde ekle veya çıkar.
+workspaces-multi-behavior = Çoklu-ekran davranışı
+    .span = Çalışma alanları ekranlara yayılır
+    .separate = Ekranların ayrı çalışma alanları olur
+workspaces-overview-thumbnails = Çalışma alanları genel görünümü küçük resimleri
+    .show-number = Çalışma alanı numarasını göster
+    .show-name = Çalışma alanı adını göster
+workspaces-orientation = Çalışma alanları yönelimi
     .vertical = Dikey
     .horizontal = Yatay
-hot-corner = H谋zl谋 K枚艧e
-    .top-left-corner = 脟al谋艧ma Alanlar谋 i莽in sol 眉st h谋zl谋 k枚艧eyi etkinle艧tir
+hot-corner = Hızlı Köşe
+    .top-left-corner = Çalışma Alanları için sol üst hızlı köşeyi etkinleştir
 
 ## Displays
 
--requires-restart = Yeniden ba艧latma gerektirir
+-requires-restart = Yeniden başlatma gerektirir
 color = Renk
-    .depth = Renk derinli臒i
+    .depth = Renk derinliği
     .profile = Renk profili
     .sidebar = Renk Profilleri
-    .temperature = Renk s谋cakl谋臒谋
+    .temperature = Renk sıcaklığı
 display = Ekranlar
     .arrangement = Ekran Dizilimi
-    .arrangement-desc = Ekranlar谋 yeniden dizmek i莽in s眉r眉kleyin.
-    .enable = Ekran谋 etkinle艧tir.
+    .arrangement-desc = Ekranları yeniden dizmek için sürükleyin.
+    .enable = Ekranı etkinleştir.
     .external = { $size } { $output } Harici Ekran
-    .laptop = { $size } Diz眉st眉 Ekran谋
-    .options = Ekran Se莽enekleri
-    .refresh-rate = Yenileme H谋z谋
-    .resolution = 脟枚z眉n眉rl眉k
-    .scale = 脰l莽ek
-    .additional-scale-options = Ek 枚l莽ek se莽enekleri
-mirroring = Ekran Yans谋tma
-    .id = Yans谋t { $id }
-    .dont = Yans谋tma
-    .mirror = { $display } ekran谋n谋 yans谋t
+    .laptop = { $size } Dizüstü Ekranı
+    .options = Ekran Seçenekleri
+    .refresh-rate = Yenileme Hızı
+    .resolution = Çözünürlük
+    .scale = Ölçek
+    .additional-scale-options = Ek ölçek seçenekleri
+mirroring = Ekran Yansıtma
+    .id = Yansıt { $id }
+    .dont = Yansıtma
+    .mirror = { $display } ekranını yansıt
     .project =
-        Yans谋t { $display ->
-            [all] t眉m ekranlar
+        Yansıt { $display ->
+            [all] tüm ekranlar
            *[other] { $display } ekrana
         }
     .project-count =
-        Yans谋t谋l谋yor { $count } di臒er { $count ->
+        Yansıtılıyor { $count } diğer { $count ->
             [1] ekran
            *[other] ekranlara
         }
-night-light = Gece I艧谋臒谋
-    .auto = Otomatik (g眉n do臒umundan bat谋艧谋na)
-    .desc = Daha s谋cak renklerle mavi 谋艧谋臒谋 azalt
-orientation = Y枚nelim
+night-light = Gece Işığı
+    .auto = Otomatik (gün doğumundan batışına)
+    .desc = Daha sıcak renklerle mavi ışığı azalt
+orientation = Yönelim
     .standard = Standart
-    .rotate-90 = 90掳 莽evir
-    .rotate-180 = 180掳 莽evir
-    .rotate-270 = 270掳 莽evir
-vrr = De臒i艧ken yenileme h谋z谋
+    .rotate-90 = 90° çevir
+    .rotate-180 = 180° çevir
+    .rotate-270 = 270° çevir
+vrr = Değişken yenileme hızı
     .enabled = Etkin
     .force = Her zaman
     .auto = Otomatik
-    .disabled = Devre d谋艧谋
+    .disabled = Devre dışı
 scheduling = Programlama
     .manual = Manuel Program
 dialog = Diyalog
-    .title = G枚r眉nt眉 ayarlar谋 korunsun mu?
-    .keep-changes = De臒i艧iklikleri koru
-    .change-prompt = { $time } saniye i莽inde 枚nceki g枚r眉nt眉 ayarlar谋na d枚n眉lecek.
-    .revert-settings = Ayarlar谋 geri al
+    .title = Görüntü ayarları korunsun mu?
+    .keep-changes = Değişiklikleri koru
+    .change-prompt = { $time } saniye içinde önceki görüntü ayarlarına dönülecek.
+    .revert-settings = Ayarları geri al
 
 ## Sound
 
 sound = Ses
-sound-output = 脟谋k谋艧
-    .volume = 脟谋k谋艧 sesi
-    .device = 脟谋k谋艧 cihaz谋
-    .level = 脟谋k谋艧 d眉zeyi
-    .config = Yap谋land谋rma
+sound-output = Çıkış
+    .volume = Çıkış sesi
+    .device = Çıkış cihazı
+    .level = Çıkış düzeyi
+    .config = Yapılandırma
     .balance = Denge
     .left = Sol
-    .right = Sa臒
-sound-input = Giri艧
-    .volume = Giri艧 sesi
-    .device = Giri艧 cihaz谋
-    .level = Giri艧 seviyesi
-sound-alerts = Uyar谋lar
-    .volume = Uyar谋 seviyesi
-    .sound = Uyar谋 sesi
+    .right = Sağ
+sound-input = Giriş
+    .volume = Giriş sesi
+    .device = Giriş cihazı
+    .level = Giriş seviyesi
+sound-alerts = Uyarılar
+    .volume = Uyarı seviyesi
+    .sound = Uyarı sesi
 sound-applications = Uygulamalar
-    .desc = Uygulama sesleri ve ayarlar谋
+    .desc = Uygulama sesleri ve ayarları
 
 ## Power
 
-power = G眉莽 & pil
+power = Güç & pil
 battery = Pil
     .minute =
         { $value } { $value ->
@@ -427,279 +428,279 @@ battery = Pil
         }
     .day =
         { $value } { $value ->
-            [one] g眉n
-           *[other] g眉n
+            [one] gün
+           *[other] gün
         }
     .less-than-minute = Bir dakikadan az
     .and = ve
     .remaining-time =
         { $time } e kadar { $action ->
             [full] dolu
-           *[other] bo艧
+           *[other] boş
         }
-connected-devices = Ba臒l谋 cihazlar
+connected-devices = Bağlı cihazlar
     .unknown = Bilinmeyen cihaz
-power-mode = G眉莽 modu
-    .battery = Uzat谋lm谋艧 pil 枚mr眉
-    .battery-desc = Azalt谋lm谋艧 g眉莽 kullan谋m谋 ve performans
+power-mode = Güç modu
+    .battery = Uzatılmış pil ömrü
+    .battery-desc = Azaltılmış güç kullanımı ve performans
     .balanced = Dengeli
-    .balanced-desc = Orta d眉zey performans ve g眉莽 kullan谋m谋
-    .performance = Y眉ksek performans
-    .performance-desc = Maksimum performans ve g眉莽 kullan谋m谋
-    .no-backend = Arka u莽 bulunamad谋. system76-power veya power-profiles-daemon kurun.
-power-saving = G眉莽 tasarrufu se莽enekleri
-    .turn-off-screen-after = Ekran谋 belirli s眉reden sonra kapat
-    .auto-suspend = Otomatik ask谋ya al
-    .auto-suspend-ac = 艦arjdayken otomatik ask谋ya al
-    .auto-suspend-battery = Pildeyken otomatik ask谋ya al
+    .balanced-desc = Orta düzey performans ve güç kullanımı
+    .performance = Yüksek performans
+    .performance-desc = Maksimum performans ve güç kullanımı
+    .no-backend = Arka uç bulunamadı. system76-power veya power-profiles-daemon kurun.
+power-saving = Güç tasarrufu seçenekleri
+    .turn-off-screen-after = Ekranı belirli süreden sonra kapat
+    .auto-suspend = Otomatik askıya al
+    .auto-suspend-ac = Şarjdayken otomatik askıya al
+    .auto-suspend-battery = Pildeyken otomatik askıya al
 
 ## Input
 
-acceleration-desc = Otomatik olarak takip hassasiyetini h谋za ba臒l谋 olarak d眉zenle
-disable-while-typing = Yazarken devre d谋艧谋 b谋rak
-input-devices = Giri艧 cihazlar谋
+acceleration-desc = Otomatik olarak takip hassasiyetini hıza bağlı olarak düzenle
+disable-while-typing = Yazarken devre dışı bırak
+input-devices = Giriş cihazları
 primary-button = Birincil buton
-    .desc = Fiziksel butonlar谋n s谋ras谋n谋 belirler
+    .desc = Fiziksel butonların sırasını belirler
     .left = Sol
-    .right = Sa臒
-scrolling = Kayd谋rma
-    .two-finger = 陌ki parmak ile kayd谋r
-    .edge = Kenardan tek parmak ile kayd谋r
-    .speed = Kayd谋rma h谋z谋
-    .natural = Do臒al kayd谋rma
-    .natural-desc = G枚r眉nt眉 yerine i莽eri臒i kayd谋r
+    .right = Sağ
+scrolling = Kaydırma
+    .two-finger = İki parmak ile kaydır
+    .edge = Kenardan tek parmak ile kaydır
+    .speed = Kaydırma hızı
+    .natural = Doğal kaydırma
+    .natural-desc = Görüntü yerine içeriği kaydır
 
 ## Input: Keyboard
 
-slow = Yava艧
-fast = H谋zl谋
-short = K谋sa
+slow = Yavaş
+fast = Hızlı
+short = Kısa
 long = Uzun
 keyboard = Klavye
-keyboard-sources = Giri艧 Kaynaklar谋
-    .desc = Giri艧 kaynaklar谋 aras谋nda Super+Space tu艧 kombinasyonu ile ge莽i艧 yap谋labilir. Bu klavye k谋sayollar谋 ayarlar谋ndan ki艧ile艧tirilebilir.
-    .move-up = Yukar谋 莽谋kar
-    .move-down = A艧a臒谋 indir
+keyboard-sources = Giriş Kaynakları
+    .desc = Giriş kaynakları arasında Super+Space tuş kombinasyonu ile geçiş yapılabilir. Bu klavye kısayolları ayarlarından kişileştirilebilir.
+    .move-up = Yukarı çıkar
+    .move-down = Aşağı indir
     .settings = Ayarlar
-    .view-layout = Klavye d眉zenini g枚r眉nt眉le
-    .remove = Kald谋r
-    .add = Giri艧 kayna臒谋 ekle
-keyboard-special-char = 脰zel Karakter Giri艧i
-    .alternate = Alternatif karakter tu艧u
-    .compose = 脰zel karakter tu艧u
-    .compose-desc = 脰zel karakter tu艧u, 莽ok 莽e艧itli karakterlerin girilmesine olanak tan谋r. Kullanmak i莽in, 枚zel karakter tu艧una ve ard谋ndan bir karakter dizisine bas谋n. 脰rne臒in, 枚zel karakter tu艧una bas谋p ard谋ndan C ve o tu艧lar谋na basmak 漏 karakterini, 枚zel karakter tu艧una bas谋p ard谋ndan a ve 鈥?tu艧lar谋na basmak ise 谩 karakterini girecektir.
-    .caps = Caps Lock tu艧u
+    .view-layout = Klavye düzenini görüntüle
+    .remove = Kaldır
+    .add = Giriş kaynağı ekle
+keyboard-special-char = Özel Karakter Girişi
+    .alternate = Alternatif karakter tuşu
+    .compose = Özel karakter tuşu
+    .compose-desc = Özel karakter tuşu, çok çeşitli karakterlerin girilmesine olanak tanır. Kullanmak için, özel karakter tuşuna ve ardından bir karakter dizisine basın. Örneğin, özel karakter tuşuna basıp ardından C ve o tuşlarına basmak © karakterini, özel karakter tuşuna basıp ardından a ve ‘ tuşlarına basmak ise á karakterini girecektir.
+    .caps = Caps Lock tuşu
 keyboard-typing-assist = Yazma
-    .repeat-rate = Tekrar h谋z谋
-    .repeat-delay = Tekrar gecikme s眉resi
+    .repeat-rate = Tekrar hızı
+    .repeat-delay = Tekrar gecikme süresi
 keyboard-numlock-boot = Numlock
-    .boot-state = Ba艧lang谋莽 durumu
-    .last-boot = Son ba艧lang谋莽
-    .on = A莽谋k
-    .off = Kapal谋
-    .set = Numlock ba艧lang谋莽 durumunu ayarla
+    .boot-state = Başlangıç durumu
+    .last-boot = Son başlangıç
+    .on = Açık
+    .off = Kapalı
+    .set = Numlock başlangıç durumunu ayarla
 added = Eklendi
-type-to-search = Aramak i莽in yaz谋n...
-show-extended-input-sources = Geni艧letilmi艧 giri艧 kaynaklar谋n谋 g枚ster
+type-to-search = Aramak için yazın...
+show-extended-input-sources = Genişletilmiş giriş kaynaklarını göster
 
 ## Input: Keyboard: Shortcuts
 
-keyboard-shortcuts = Klavye k谋sayollar谋
-    .desc = K谋sayollar谋 g枚r眉nt眉le ve ki艧ile艧tir
-cancel = Vazge莽
+keyboard-shortcuts = Klavye kısayolları
+    .desc = Kısayolları görüntüle ve kişileştir
+cancel = Vazgeç
 command = Komut
-custom = 脰zel
-debug = Hata ay谋klama
-disabled = Devre d谋艧谋
-input-source-switch = Klavye dili giri艧 kayna臒谋n谋 de臒i艧tir
-migrate-workspace-prev = 脟al谋艧ma alan谋n谋 枚nceki 莽谋kt谋ya ta艧谋
-migrate-workspace-next = 脟al谋艧ma alan谋n谋 sonraki 莽谋kt谋ya ta艧谋
+custom = Özel
+debug = Hata ayıklama
+disabled = Devre dışı
+input-source-switch = Klavye dili giriş kaynağını değiştir
+migrate-workspace-prev = Çalışma alanını önceki çıktıya taşı
+migrate-workspace-next = Çalışma alanını sonraki çıktıya taşı
 migrate-workspace =
-    脟al谋艧ma alan谋n谋 { $direction ->
-       *[down] a艧a臒谋
+    Çalışma alanını { $direction ->
+       *[down] aşağı
         [left] sol
-        [right] sa臒
-        [up] 眉st
-    } 莽谋k谋艧a ta艧谋
+        [right] sağ
+        [up] üst
+    } çıkışa taşı
 navigate = Gezin
-replace = De臒i艧tir
-shortcut-name = K谋sayol ad谋
+replace = Değiştir
+shortcut-name = Kısayol adı
 system-controls = Sistem kontrolleri
-terminate = Sonland谋r
-toggle-stacking = Pencere istiflemeyi a莽/kapat
-type-key-combination = Tu艧 kombinasyonu girin
-custom-shortcuts = 脰zel k谋sayollar
-    .add = K谋sayol ekle
-    .context = 脰zel k谋sayol ekle
-    .none = 脰zel k谋sayol yok
-modified = { $count } d眉zenlenmi艧
+terminate = Sonlandır
+toggle-stacking = Pencere istiflemeyi aç/kapat
+type-key-combination = Tuş kombinasyonu girin
+custom-shortcuts = Özel kısayollar
+    .add = Kısayol ekle
+    .context = Özel kısayol ekle
+    .none = Özel kısayol yok
+modified = { $count } düzenlenmiş
 nav-shortcuts = Gezinim
-    .prev-output = 脰nceki 莽谋kt谋ya odaklan
-    .next-output = Sonraki 莽谋kt谋ya odaklan
-    .last-workspace = Son 莽al谋艧ma alan谋na odaklan
-    .prev-workspace = 脰nceki 莽al谋艧ma alan谋na odaklan
-    .next-workspace = Sonraki 莽al谋艧ma alan谋na odaklan
+    .prev-output = Önceki çıktıya odaklan
+    .next-output = Sonraki çıktıya odaklan
+    .last-workspace = Son çalışma alanına odaklan
+    .prev-workspace = Önceki çalışma alanına odaklan
+    .next-workspace = Sonraki çalışma alanına odaklan
     .focus =
         { $direction ->
-           *[down] A艧a臒谋daki
-            [in] 陌莽erideki
+           *[down] Aşağıdaki
+            [in] İçerideki
             [left] Soldaki
-            [out] D谋艧ar谋daki
-            [right] Sa臒daki
-            [up] 脺stteki
+            [out] Dışarıdaki
+            [right] Sağdaki
+            [up] Üstteki
         } pencereye odaklan
     .output =
         { $direction ->
-           *[down] A艧a臒谋daki
+           *[down] Aşağıdaki
             [left] Soldaki
-            [right] Sa臒daki
-            [up] 脺stteki
-        } 莽谋kt谋ya ge莽
-    .workspace = { $num }. 莽al谋艧ma alan谋na ge莽
-manage-windows = Pencereleri y枚net
+            [right] Sağdaki
+            [up] Üstteki
+        } çıktıya geç
+    .workspace = { $num }. çalışma alanına geç
+manage-windows = Pencereleri yönet
     .close = Pencereyi kapat
-    .maximize = Pencereyi b眉y眉t
+    .maximize = Pencereyi büyüt
     .fullscreen = Pencereyi tam ekrana al
-    .minimize = Pencereyi k眉莽眉lt
-    .resize-inwards = Pencereyi i莽e do臒ru yeniden boyutland谋r
-    .resize-outwards = Pencereyi d谋艧a do臒ru yeniden boyutland谋r
-    .toggle-sticky = Yap谋艧kan pencereyi a莽/kapat
-move-windows = Pencereyi Ta艧谋
+    .minimize = Pencereyi küçült
+    .resize-inwards = Pencereyi içe doğru yeniden boyutlandır
+    .resize-outwards = Pencereyi dışa doğru yeniden boyutlandır
+    .toggle-sticky = Yapışkan pencereyi aç/kapat
+move-windows = Pencereyi Taşı
     .direction =
         Pencereyi { $direction ->
-           *[down] a艧a臒谋
+           *[down] aşağı
             [left] sola
-            [right] sa臒a
-            [up] yukar谋
-        } ta艧谋
+            [right] sağa
+            [up] yukarı
+        } taşı
     .display =
-        Pencereyi bir monit枚r { $direction ->
-           *[down] a艧a臒谋
+        Pencereyi bir monitör { $direction ->
+           *[down] aşağı
             [left] sola
-            [right] sa臒a
-            [up] yukar谋
-        } ta艧谋
+            [right] sağa
+            [up] yukarı
+        } taşı
     .workspace =
-        Pencereyi bir 莽al谋艧ma alan谋 { $direction ->
-           *[below] a艧a臒谋
+        Pencereyi bir çalışma alanı { $direction ->
+           *[below] aşağı
             [left] sola
-            [right] sa臒a
-            [above] yukar谋
-        } ta艧谋
-    .workspace-num = Pencereyi { $num }. 莽al谋艧ma alan谋na ta艧谋
-    .prev-workspace = Pencereyi 枚nceki 莽al谋艧ma alan谋na ta艧谋
-    .next-workspace = Pencereyi sonraki 莽al谋艧ma alan谋na ta艧谋
-    .last-workspace = Pencereyi son 莽al谋艧ma alan谋na ta艧谋
-    .next-display = Pencereyi sonraki ekrana ta艧谋
-    .prev-display = Pencereyi 枚nceki ekrana ta艧谋
-    .send-to-prev-workspace = Pencereyi 枚nceki 莽al谋艧ma alan谋na ta艧谋
-    .send-to-next-workspace = Pencereyi sonraki 莽al谋艧ma alan谋na ta艧谋
+            [right] sağa
+            [above] yukarı
+        } taşı
+    .workspace-num = Pencereyi { $num }. çalışma alanına taşı
+    .prev-workspace = Pencereyi önceki çalışma alanına taşı
+    .next-workspace = Pencereyi sonraki çalışma alanına taşı
+    .last-workspace = Pencereyi son çalışma alanına taşı
+    .next-display = Pencereyi sonraki ekrana taşı
+    .prev-display = Pencereyi önceki ekrana taşı
+    .send-to-prev-workspace = Pencereyi önceki çalışma alanına taşı
+    .send-to-next-workspace = Pencereyi sonraki çalışma alanına taşı
 system-shortcut = Sistem
-    .app-library = Uygulama k眉t眉phanesini a莽
-    .brightness-down = Ekran parlakl谋臒谋n谋 azalt
-    .brightness-up = Ekran parlakl谋臒谋n谋 artt谋r
-    .display-toggle = Dahili ekran谋 a莽/kapat
-    .home-folder = Ev dizinini a莽
-    .keyboard-brightness-down = Klavye parlakl谋臒谋n谋 azalt
-    .keyboard-brightness-up = Klavye parlakl谋臒谋n谋 artt谋r
-    .launcher = Ba艧lat谋y谋c谋 a莽
-    .log-out = 脟谋k谋艧 Yap
-    .lock-screen = Ekran谋 kitle
-    .mute = Ses 莽谋k谋艧谋n谋 sustur
-    .mute-mic = Mikrofon giri艧ini sustur
+    .app-library = Uygulama kütüphanesini aç
+    .brightness-down = Ekran parlaklığını azalt
+    .brightness-up = Ekran parlaklığını arttır
+    .display-toggle = Dahili ekranı aç/kapat
+    .home-folder = Ev dizinini aç
+    .keyboard-brightness-down = Klavye parlaklığını azalt
+    .keyboard-brightness-up = Klavye parlaklığını arttır
+    .launcher = Başlatıyıcı aç
+    .log-out = Çıkış Yap
+    .lock-screen = Ekranı kitle
+    .mute = Ses çıkışını sustur
+    .mute-mic = Mikrofon girişini sustur
     .play-pause = Oynat/Duraklat
-    .play-next = Sonraki par莽a
-    .play-prev = 脰nceki par莽a
-    .poweroff = G眉c眉 kapat
-    .screenshot = Ekran g枚r眉nt眉s眉 al
-    .suspend = Ask谋ya al
-    .terminal = Bir u莽birim a莽
-    .touchpad-toggle = Dokunmatik y眉zeyi a莽/kapat
-    .volume-lower = 脟谋k谋艧 ses d眉zeyini azalt
-    .volume-raise = 脟谋k谋艧 ses d眉zeyini artt谋r
-    .web-browser = Bir web taray谋c谋s谋 a莽
-    .window-switcher = A莽谋k pencereler aras谋nda ge莽i艧 yap
-    .window-switcher-previous = A莽谋k pencereler aras谋nda ters y枚nde ge莽i艧 yap
-    .workspace-overview = 脟al谋艧ma alanlar谋 genel g枚r眉n眉m眉n眉 a莽
-window-tiling = Pencere d枚艧eme
-    .horizontal = Yatay y枚nelimi ayarla
-    .vertical = Dikey y枚nelimi ayarla
-    .swap-window = Pencereyi de臒i艧tir
-    .toggle-tiling = Pencere d枚艧emeyi a莽/kapat
-    .toggle-stacking = Pencere istiflemeyi a莽/kapat
-    .toggle-floating = Pencere kayd谋rmay谋 a莽/kapat
-    .toggle-orientation = Y枚nelimi de臒i艧tir
-replace-shortcut-dialog = K谋sayol de臒i艧tirilsin mi?
-    .desc = { $shortcut }, { $name } taraf谋ndan kullan谋lmakta. E臒er de臒i艧tirirseniz, { $name } devre d谋艧谋 b谋rak谋lacak.
-zoom-in = Yak谋nla艧t谋r
-zoom-out = Uzakla艧t谋r
+    .play-next = Sonraki parça
+    .play-prev = Önceki parça
+    .poweroff = Gücü kapat
+    .screenshot = Ekran görüntüsü al
+    .suspend = Askıya al
+    .terminal = Bir uçbirim aç
+    .touchpad-toggle = Dokunmatik yüzeyi aç/kapat
+    .volume-lower = Çıkış ses düzeyini azalt
+    .volume-raise = Çıkış ses düzeyini arttır
+    .web-browser = Bir web tarayıcısı aç
+    .window-switcher = Açık pencereler arasında geçiş yap
+    .window-switcher-previous = Açık pencereler arasında ters yönde geçiş yap
+    .workspace-overview = Çalışma alanları genel görünümünü aç
+window-tiling = Pencere döşeme
+    .horizontal = Yatay yönelimi ayarla
+    .vertical = Dikey yönelimi ayarla
+    .swap-window = Pencereyi değiştir
+    .toggle-tiling = Pencere döşemeyi aç/kapat
+    .toggle-stacking = Pencere istiflemeyi aç/kapat
+    .toggle-floating = Pencere kaydırmayı aç/kapat
+    .toggle-orientation = Yönelimi değiştir
+replace-shortcut-dialog = Kısayol değiştirilsin mi?
+    .desc = { $shortcut }, { $name } tarafından kullanılmakta. Eğer değiştirirseniz, { $name } devre dışı bırakılacak.
+zoom-in = Yakınlaştır
+zoom-out = Uzaklaştır
 
 ## Input: Mouse
 
 mouse = Fare
-    .speed = Fare h谋z谋
-    .acceleration = Fare ivmesini etkinle艧tir
+    .speed = Fare hızı
+    .acceleration = Fare ivmesini etkinleştir
 
 ## Input: Touchpad
 
-click-behavior = T谋klama davran谋艧谋
-    .click-finger = 陌ki parmak ile ikincil t谋klama ve 眉莽 parmak ile orta t谋klama
-    .button-areas = Sa臒 alt k枚艧ede ikincil t谋klama ve orta alt kenar谋nda orta t谋klama
-pinch-to-zoom = 陌ki parmakla yak谋nla艧t谋rma
-    .desc = Yak谋nla艧t谋rma 枚zelli臒i bulunan uygulamalarda i莽eri臒i yak谋nla艧t谋rmak i莽in iki parma臒谋n谋z谋 kullan谋n
-tap-to-click = T谋klamak i莽in dokun
-    .desc = Birincil t谋klama i莽in tek parmakla dokunmay谋, ikincil t谋klama i莽in iki parmakla dokunmay谋 ve orta t谋klama i莽in 眉莽 parmakla dokunmay谋 sa臒lar
-touchpad = Dokunmatik y眉zey
-    .acceleration = Dokunmatik y眉zey ivmesini etkinle艧tir
-    .speed = Dokunmatik y眉zey h谋z谋
+click-behavior = Tıklama davranışı
+    .click-finger = İki parmak ile ikincil tıklama ve üç parmak ile orta tıklama
+    .button-areas = Sağ alt köşede ikincil tıklama ve orta alt kenarında orta tıklama
+pinch-to-zoom = İki parmakla yakınlaştırma
+    .desc = Yakınlaştırma özelliği bulunan uygulamalarda içeriği yakınlaştırmak için iki parmağınızı kullanın
+tap-to-click = Tıklamak için dokun
+    .desc = Birincil tıklama için tek parmakla dokunmayı, ikincil tıklama için iki parmakla dokunmayı ve orta tıklama için üç parmakla dokunmayı sağlar
+touchpad = Dokunmatik yüzey
+    .acceleration = Dokunmatik yüzey ivmesini etkinleştir
+    .speed = Dokunmatik yüzey hızı
 
 ## Input: Gestures
 
 gestures = Hareketler
-    .four-finger-down = D枚rt parmak ile a艧a臒谋 kayd谋rma
-    .four-finger-left = D枚rt parmak ile sola kayd谋rma
-    .four-finger-right = D枚rt parmak ile sa臒a kayd谋rma
-    .four-finger-up = D枚rt parmak ile yukar谋 kayd谋rma
-    .three-finger-any = 脺莽 parmak ile herhangi y枚ne kayd谋rma
-switch-workspaces = 脟al谋艧ma alanlar谋 aras谋nda ge莽i艧 yapma
-    .horizontal = D枚rt parmak ile sola/sa臒a kayd谋rma
-    .vertical = D枚rt parmak ile yukar谋/a艧a臒谋 kayd谋rma
-switch-between-windows = Pencereler aras谋nda ge莽i艧 yapma
-open-application-library = Uygulama K眉t眉phanesini A莽
-open-workspaces-view = 脟al谋艧ma Alanlar谋 Genel G枚r眉n眉m眉n眉 a莽
+    .four-finger-down = Dört parmak ile aşağı kaydırma
+    .four-finger-left = Dört parmak ile sola kaydırma
+    .four-finger-right = Dört parmak ile sağa kaydırma
+    .four-finger-up = Dört parmak ile yukarı kaydırma
+    .three-finger-any = Üç parmak ile herhangi yöne kaydırma
+switch-workspaces = Çalışma alanları arasında geçiş yapma
+    .horizontal = Dört parmak ile sola/sağa kaydırma
+    .vertical = Dört parmak ile yukarı/aşağı kaydırma
+switch-between-windows = Pencereler arasında geçiş yapma
+open-application-library = Uygulama Kütüphanesini Aç
+open-workspaces-view = Çalışma Alanları Genel Görünümünü aç
 
 ## Time & Language
 
 time = Zaman & dil
 time-date = Tarih & saat
     .auto = Otomatik ayarla
-    .auto-ntp = Tarih & saat, saat dilimi ayarland谋臒谋nda otomatik olarak g眉ncellenir
+    .auto-ntp = Tarih & saat, saat dilimi ayarlandığında otomatik olarak güncellenir
 time-zone = Saat dilimi
     .auto = Otomatik saat dilimi
-    .auto-info = Konum hizmetlerine ve internet eri艧imine gereksim duyar
-time-format = Tarih & Saat Bi莽imi
-    .twenty-four = 24-saat bi莽imi
+    .auto-info = Konum hizmetlerine ve internet erişimine gereksim duyar
+time-format = Tarih & Saat Biçimi
+    .twenty-four = 24-saat biçimi
     .show-seconds = Show seconds
-    .first = Haftan谋n ilk g眉n眉
-    .show-date = Zaman eklentisinde tarihi g枚ster
+    .first = Haftanın ilk günü
+    .show-date = Zaman eklentisinde tarihi göster
     .friday = Cuma
     .saturday = Cumartesi
     .sunday = Pazar
     .monday = Pazartesi
-time-region = B枚lge & dil
-formatting = Bi莽imlendirme
+time-region = Bölge & dil
+formatting = Biçimlendirme
     .dates = Tarihler
     .time = Saat
     .date-and-time = Tarih & saat
-    .numbers = Say谋lar
-    .measurement = 脰l莽眉m
-    .paper = Ka臒谋t
+    .numbers = Sayılar
+    .measurement = Ölçüm
+    .paper = Kağıt
 preferred-languages = Tercih edilen diller
-    .desc = Dillerin s谋ras谋 masa眉st眉n眉n 莽evirisinde hangi dilin kullan谋laca臒谋n谋 belirler. De臒i艧iklikler bir dahaki giri艧inizde ge莽erli olur.
+    .desc = Dillerin sırası masaüstünün çevirisinde hangi dilin kullanılacağını belirler. Değişiklikler bir dahaki girişinizde geçerli olur.
 add-language = Dil ekle
     .context = Dil Ekle
 install-additional-languages = Ek dil kur
-region = B枚lge
+region = Bölge
 
 ## Applications
 
@@ -707,48 +708,48 @@ applications = Uygulamalar
 
 ## Applications: Default Applications
 
-default-apps = Varsay谋lan Uygulamalar
-    .web-browser = 陌nternet taray谋c谋s谋
+default-apps = Varsayılan Uygulamalar
+    .web-browser = İnternet tarayıcısı
     .file-manager = Dosya gezgini
     .mail-client = E-posta istemcisi
-    .music = M眉zik
+    .music = Müzik
     .video = Video
-    .photos = G枚rseller
+    .photos = Görseller
     .calendar = Takvim
-    .terminal = U莽birim
-    .other-associations = Di臒er ili艧kiler
-    .text-editor = Metin D眉zenleyici
-    .not-installed = kurulu de臒il
+    .terminal = Uçbirim
+    .other-associations = Diğer ilişkiler
+    .text-editor = Metin Düzenleyici
+    .not-installed = kurulu değil
 
 ## Applications: Startup Applications
 
-startup-apps = Ba艧lang谋莽 uygulamalar谋
+startup-apps = Başlangıç uygulamaları
     .add = Uygulama ekle
-    .user = Oturum a莽t谋臒谋n谋zda ba艧lat谋lan uygulamalar
-    .none = Ba艧lang谋莽 uygulamas谋 eklenmedi
-    .remove-dialog-title = { $name } 枚gesi kald谋r谋ls谋n m谋?
-    .remove-dialog-description = Bu ba艧lang谋莽 uygulamas谋n谋 kald谋rmak ister misiniz?
-    .add-startup-app = Ba艧lang谋莽 uygulamas谋 ekle
+    .user = Oturum açtığınızda başlatılan uygulamalar
+    .none = Başlangıç uygulaması eklenmedi
+    .remove-dialog-title = { $name } ögesi kaldırılsın mı?
+    .remove-dialog-description = Bu başlangıç uygulamasını kaldırmak ister misiniz?
+    .add-startup-app = Başlangıç uygulaması ekle
 
 ## Applications: Legacy Applications
 
-legacy-applications = X11 uygulamalar谋 uyumlulu臒u
-legacy-app-global-shortcuts = X11 Uygulamalar谋nda genel k谋sayollar
-    .desc = Genel k谋sayollar, uygulamalarda ger莽ekle艧tirilen klavye tu艧 vuru艧lar谋n谋n ve fare d眉臒mesi olaylar谋n谋n, bas konu艧 veya bas sessize al gibi 枚zellikler i莽in di臒er uygulamalar taraf谋ndan tan谋nmas谋n谋 sa臒lar. Varsay谋lan olarak, di臒er uygulamalar谋n hassas bilgiler i莽eren klavye ve fare olaylar谋n谋 izlemesini engellemek i莽in X11 uygulamalar谋nda Genel k谋sayollar devre d谋艧谋d谋r.
-    .none = Hi莽bir tu艧
+legacy-applications = X11 uygulamaları uyumluluğu
+legacy-app-global-shortcuts = X11 Uygulamalarında genel kısayollar
+    .desc = Genel kısayollar, uygulamalarda gerçekleştirilen klavye tuş vuruşlarının ve fare düğmesi olaylarının, bas konuş veya bas sessize al gibi özellikler için diğer uygulamalar tarafından tanınmasını sağlar. Varsayılan olarak, diğer uygulamaların hassas bilgiler içeren klavye ve fare olaylarını izlemesini engellemek için X11 uygulamalarında Genel kısayollar devre dışıdır.
+    .none = Hiçbir tuş
     .modifiers = Modifierlar (Super, Shift, Control, Alt)
-    .combination = Super, Control veya Alt tu艧lar谋 bas谋l谋 tutuldu臒u s眉rece t眉m tu艧lar
-    .all = T眉m tu艧lar
-    .mouse = X11 uygulamalar谋nda fare tu艧 olaylar谋
-legacy-app-scaling = X11 pencere sistemi uygulama 枚l莽eklemesi
-    .scaled-gaming = Oyun ve tam ekran uygulamalar i莽in uyarla
-    .gaming-description = X11 uygulamalar谋 Wayland uygulamalar谋na g枚re biraz b眉y眉k veya k眉莽眉k g枚r眉nebilir
-    .scaled-applications = Uygulamalar i莽in uyarla
-    .applications-description = Oyunlar ve tam ekran X11 uygulamalar谋 ekran 莽枚z眉n眉rl眉臒眉n眉ze uymayabilir
+    .combination = Super, Control veya Alt tuşları basılı tutulduğu sürece tüm tuşlar
+    .all = Tüm tuşlar
+    .mouse = X11 uygulamalarında fare tuş olayları
+legacy-app-scaling = X11 pencere sistemi uygulama ölçeklemesi
+    .scaled-gaming = Oyun ve tam ekran uygulamalar için uyarla
+    .gaming-description = X11 uygulamaları Wayland uygulamalarına göre biraz büyük veya küçük görünebilir
+    .scaled-applications = Uygulamalar için uyarla
+    .applications-description = Oyunlar ve tam ekran X11 uygulamaları ekran çözünürlüğünüze uymayabilir
     .scaled-compatibility = Maksimum uyumluluk modu
-    .compatibility-description = X11 uygulamalar谋 HiDPI ekranlarda bulan谋k g枚z眉kebilir
-    .preferred-display = Oyunlar ve tam ekran X11 uygulamalar谋 i莽in tercih edilen ekran
-    .no-display = Hi莽biri
+    .compatibility-description = X11 uygulamaları HiDPI ekranlarda bulanık gözükebilir
+    .preferred-display = Oyunlar ve tam ekran X11 uygulamaları için tercih edilen ekran
+    .no-display = Hiçbiri
 
 ## System
 
@@ -756,156 +757,156 @@ system = Sistem & hesaplar
 
 ## System: About
 
-about = Hakk谋nda
-about-device = Cihaz ad谋
-    .desc = Bu ad, Bluetooth cihazlar谋na ve a臒daki di臒er cihazlara g枚z眉k眉r
-about-hardware = Donan谋m
-    .model = Donan谋m modeli
+about = Hakkında
+about-device = Cihaz adı
+    .desc = Bu ad, Bluetooth cihazlarına ve ağdaki diğer cihazlara gözükür
+about-hardware = Donanım
+    .model = Donanım modeli
     .memory = Bellek
-    .processor = 陌艧lemci
+    .processor = İşlemci
     .graphics = Grafik
     .disk-capacity = Disk kapasitesi
-about-os = 陌艧letim sistemi
-    .os = 陌艧letim sistemi
-    .os-architecture = 陌艧letim sistemi mimarisi
-    .kernel = 脟ekirdek s眉r眉m眉
-    .desktop-environment = Masa眉st眉 ortam谋
+about-os = İşletim sistemi
+    .os = İşletim sistemi
+    .os-architecture = İşletim sistemi mimarisi
+    .kernel = Çekirdek sürümü
+    .desktop-environment = Masaüstü ortamı
     .windowing-system = Pencere sistemi
-about-related = 陌lgili ayarlar
+about-related = İlgili ayarlar
     .support = Destek al
 
 ## System: Firmware
 
-firmware = Cihaz yaz谋l谋m谋
+firmware = Cihaz yazılımı
 
 ## System: Users
 
-users = Kullan谋c谋lar
-    .admin = Y枚netici
+users = Kullanıcılar
+    .admin = Yönetici
     .standard = Standart
-    .profile-add = Profil resmi se莽in
-administrator = Y枚netici
-    .desc = Y枚neticiler t眉m kullan谋c谋lar i莽in ayarlar谋 de臒i艧tirebilir, ba艧ka kullan谋c谋lar ekleyebilir ve onlar谋 kald谋rabilir
-add-user = Kullan谋c谋 ekle
-change-password = Parolay谋 de臒i艧tir
-remove-user = Kullan谋c谋y谋 kald谋r
+    .profile-add = Profil resmi seçin
+administrator = Yönetici
+    .desc = Yöneticiler tüm kullanıcılar için ayarları değiştirebilir, başka kullanıcılar ekleyebilir ve onları kaldırabilir
+add-user = Kullanıcı ekle
+change-password = Parolayı değiştir
+remove-user = Kullanıcıyı kaldır
 full-name = Tam ad
-invalid-username = Ge莽ersiz kullan谋c谋 ad谋
-password-mismatch = Parola ve do臒rulama e艧le艧melidir
+invalid-username = Geçersiz kullanıcı adı
+password-mismatch = Parola ve doğrulama eşleşmelidir
 save = Kaydet
 amplification = Amplifikasyon
-    .desc = Sesi %150'ye kadar y眉kseltmeye olanak tan谋r
-add-another-keybinding = Ba艧ka bir tu艧 atamas谋 ekle
-xdg-entry-mouse-keywords = LINGMO;Fare; H谋zlanma; Kayd谋rma;
-xdg-entry-bluetooth-comment = Bluetooth cihazlar谋n谋 y枚netin
-xdg-entry-notifications-keywords = LINGMO;Bildirim;Kilit;
-xdg-entry-default-apps-comment = Varsay谋lan web taray谋c谋s谋, e-posta istemcisi, dosya y枚neticisi ve di臒er uygulamalar
-xdg-entry-keyboard-comment = Giri艧 kaynaklar谋, ge莽i艧, 枚zel karakter giri艧i, k谋sayollar
-xdg-entry-power = G眉莽 & Pil
-xdg-entry-appearance-keywords = LINGMO;Vurgu;Renk;Simge;Yaz谋 Tipi;Tema
+    .desc = Sesi %150'ye kadar yükseltmeye olanak tanır
+add-another-keybinding = Başka bir tuş ataması ekle
+xdg-entry-mouse-keywords = COSMIC;Fare; Hızlanma; Kaydırma;
+xdg-entry-bluetooth-comment = Bluetooth cihazlarını yönetin
+xdg-entry-notifications-keywords = COSMIC;Bildirim;Kilit;
+xdg-entry-default-apps-comment = Varsayılan web tarayıcısı, e-posta istemcisi, dosya yöneticisi ve diğer uygulamalar
+xdg-entry-keyboard-comment = Giriş kaynakları, geçiş, özel karakter girişi, kısayollar
+xdg-entry-power = Güç & Pil
+xdg-entry-appearance-keywords = COSMIC;Vurgu;Renk;Simge;Yazı Tipi;Tema
 xdg-entry-mouse = Fare
-xdg-entry-dock-keywords = LINGMO;Dock;Panel;Eklenti
-xdg-entry-mouse-comment = Fare h谋z谋, ivme ve do臒al kayd谋rma
-xdg-entry-panel-keywords = LINGMO;Panel;Eklenti
-xdg-entry-a11y = Eri艧ilebilirlik
-xdg-entry-desktop-keywords = LINGMO;Masa眉st眉;
-xdg-entry-displays-comment = Ekran yap谋land谋rma ayarlar谋n谋 y枚netin
-xdg-entry-default-apps = Varsay谋lan Uygulamalar
-xdg-entry-applications-comment = Varsay谋lan uygulamalar, ba艧lang谋莽 uygulamalar谋 ve X11 uygulama uyumluluk ayarlar谋
-xdg-entry-about-keywords = LINGMO;Hakk谋nda
+xdg-entry-dock-keywords = COSMIC;Dock;Panel;Eklenti
+xdg-entry-mouse-comment = Fare hızı, ivme ve doğal kaydırma
+xdg-entry-panel-keywords = COSMIC;Panel;Eklenti
+xdg-entry-a11y = Erişilebilirlik
+xdg-entry-desktop-keywords = COSMIC;Masaüstü;
+xdg-entry-displays-comment = Ekran yapılandırma ayarlarını yönetin
+xdg-entry-default-apps = Varsayılan Uygulamalar
+xdg-entry-applications-comment = Varsayılan uygulamalar, başlangıç uygulamaları ve X11 uygulama uyumluluk ayarları
+xdg-entry-about-keywords = COSMIC;Hakkında
 xdg-entry-panel = Panel
 xdg-entry-notifications = Bildirimler
-xdg-entry-a11y-keywords = LINGMO;Eri艧ilebilirlik;A11y;Ekran;Okuyucu;B眉y眉te莽;Kontrast;Renk;
-xdg-entry-desktop = Masa眉st眉
-xdg-entry-date-time-keywords = LINGMO;Saat;Zaman Dilimi;
-xdg-entry-desktop-comment = Duvar ka臒谋d谋, g枚r眉n眉m, panel, dock, pencere y枚netimi ve 莽al谋艧ma alan谋 ayarlar谋
+xdg-entry-a11y-keywords = COSMIC;Erişilebilirlik;A11y;Ekran;Okuyucu;Büyüteç;Kontrast;Renk;
+xdg-entry-desktop = Masaüstü
+xdg-entry-date-time-keywords = COSMIC;Saat;Zaman Dilimi;
+xdg-entry-desktop-comment = Duvar kağıdı, görünüm, panel, dock, pencere yönetimi ve çalışma alanı ayarları
 xdg-entry-keyboard = Klavye
-xdg-entry-a11y-comment = Ekran okuyucu, b眉y眉te莽, y眉ksek kontrast ve renk filtreleri
+xdg-entry-a11y-comment = Ekran okuyucu, büyüteç, yüksek kontrast ve renk filtreleri
 xdg-entry-displays = Ekranlar
-xdg-entry-network = A臒 & Kablosuz
+xdg-entry-network = Ağ & Kablosuz
 xdg-entry-date-time = Tarih & Saat
-xdg-entry-input-comment = Klavye ve fare ayarlar谋
-xdg-entry-bluetooth-keywords = LINGMO;Bluetooth;
-xdg-entry-dock-comment = Uygulamalar ve eklentiler i莽in iste臒e ba臒l谋 bir 莽ubuk
-xdg-entry-network-keywords = LINGMO;A臒;Kablosuz;WiFi;VPN;
+xdg-entry-input-comment = Klavye ve fare ayarları
+xdg-entry-bluetooth-keywords = COSMIC;Bluetooth;
+xdg-entry-dock-comment = Uygulamalar ve eklentiler için isteğe bağlı bir çubuk
+xdg-entry-network-keywords = COSMIC;Ağ;Kablosuz;WiFi;VPN;
 xdg-entry-dock = Dock
-xdg-entry-about-comment = Cihaz ad谋, donan谋m bilgileri, i艧letim sistemi varsay谋lan ayarlar谋
+xdg-entry-about-comment = Cihaz adı, donanım bilgileri, işletim sistemi varsayılan ayarları
 xdg-entry-appearance-comment = Vurgu renkleri ve tema
-xdg-entry-input-keywords = LINGMO;Giri艧;Klavye;Fare;Fareler;
-xdg-entry-comment = LINGMO masa眉st眉 i莽in ayarlar uygulamas谋
-xdg-entry-notifications-comment = Rahats谋z Etme modu, kilit ekran谋 bildirimleri ve uygulama bazl谋 ayarlar
+xdg-entry-input-keywords = COSMIC;Giriş;Klavye;Fare;Fareler;
+xdg-entry-comment = COSMIC masaüstü için ayarlar uygulaması
+xdg-entry-notifications-comment = Rahatsız Etme modu, kilit ekranı bildirimleri ve uygulama bazlı ayarlar
 xdg-entry-applications = Uygulamalar
-xdg-entry-default-apps-keywords = LINGMO;Varsay谋lan;Uygulama
-xdg-entry-keywords = LINGMO;Ayarlar;
-xdg-entry-about = Hakk谋nda
-xdg-entry-input = Giri艧 Cihazlar谋
-xdg-entry-applications-keywords = LINGMO;Varsay谋lan;Uygulama;Ba艧lang谋莽;X11;Uyumluluk
-xdg-entry-keyboard-keywords = LINGMO;Klavye;Giri艧;Kaynak;K谋sayollar;
-xdg-entry-appearance = G枚r眉n眉m
-xdg-entry-network-comment = A臒 ba臒lant谋lar谋n谋 y枚netin
-xdg-entry-panel-comment = Men眉ler ve eklentiler i莽in birincil sistem 莽ubu臒u
-xdg-entry-power-comment = G眉莽 modlar谋 ve g眉莽 tasarrufu se莽enekleri
-xdg-entry-displays-keywords = LINGMO;Ekran;
-xdg-entry-date-time-comment = Saat dilimi, otomatik saat ayarlar谋 ve zaman bi莽imlendirme
-xdg-entry-touchpad = Dokunmatik y眉zey
+xdg-entry-default-apps-keywords = COSMIC;Varsayılan;Uygulama
+xdg-entry-keywords = COSMIC;Ayarlar;
+xdg-entry-about = Hakkında
+xdg-entry-input = Giriş Cihazları
+xdg-entry-applications-keywords = COSMIC;Varsayılan;Uygulama;Başlangıç;X11;Uyumluluk
+xdg-entry-keyboard-keywords = COSMIC;Klavye;Giriş;Kaynak;Kısayollar;
+xdg-entry-appearance = Görünüm
+xdg-entry-network-comment = Ağ bağlantılarını yönetin
+xdg-entry-panel-comment = Menüler ve eklentiler için birincil sistem çubuğu
+xdg-entry-power-comment = Güç modları ve güç tasarrufu seçenekleri
+xdg-entry-displays-keywords = COSMIC;Ekran;
+xdg-entry-date-time-comment = Saat dilimi, otomatik saat ayarları ve zaman biçimlendirme
+xdg-entry-touchpad = Dokunmatik yüzey
 xdg-entry-wired = Kablolu
-xdg-entry-startup-apps-comment = Oturum a莽谋ld谋臒谋nda 莽al谋艧an uygulamalar谋 yap谋land谋r谋n
-xdg-entry-region-language = B枚lge & Dil
-xdg-entry-startup-apps-keywords = LINGMO;Ba艧lang谋莽;Uygulama;
-xdg-entry-wired-keywords = LINGMO;Kablolu; Yerel A臒; A臒; Ba臒lant谋;
+xdg-entry-startup-apps-comment = Oturum açıldığında çalışan uygulamaları yapılandırın
+xdg-entry-region-language = Bölge & Dil
+xdg-entry-startup-apps-keywords = COSMIC;Başlangıç;Uygulama;
+xdg-entry-wired-keywords = COSMIC;Kablolu; Yerel Ağ; Ağ; Bağlantı;
 xdg-entry-system = Sistem & Hesaplar
-xdg-entry-window-management = Pencere Y枚netimi
-xdg-entry-time-language-comment = Sistem tarihini, saatini, b枚lgesini ve dilini y枚netin
-xdg-entry-x11-applications-keywords = LINGMO;X11;Uygulama;Oyun;Uyumluluk;
-xdg-entry-touchpad-keywords = LINGMO;Dokunmatik y眉zey; Hareket;
+xdg-entry-window-management = Pencere Yönetimi
+xdg-entry-time-language-comment = Sistem tarihini, saatini, bölgesini ve dilini yönetin
+xdg-entry-x11-applications-keywords = COSMIC;X11;Uygulama;Oyun;Uyumluluk;
+xdg-entry-touchpad-keywords = COSMIC;Dokunmatik yüzey; Hareket;
 xdg-entry-time-language = Zaman & Dil
-xdg-entry-users = Kullan谋c谋lar
-xdg-entry-system-keywords = LINGMO;Sistem;Bilgi;Hesaplar;Cihaz Yaz谋l谋m谋;
-xdg-entry-wireless-keywords = LINGMO;WiFi;Wi-Fi;A臒; Ba臒lant谋;
-xdg-entry-wireless-comment = Wi-Fi ba臒lant谋lar谋 ve ba臒lant谋 profilleri
-xdg-entry-wallpaper = Duvar Ka臒谋d谋
-xdg-entry-users-comment = Kimlik do臒rulama ve kullan谋c谋 hesaplar谋
-xdg-entry-wallpaper-comment = Duvar ka臒谋d谋 resimleri, renkleri ve slayt g枚sterisi se莽enekleri
-xdg-entry-startup-apps = Ba艧lang谋莽 Uygulamalar谋
+xdg-entry-users = Kullanıcılar
+xdg-entry-system-keywords = COSMIC;Sistem;Bilgi;Hesaplar;Cihaz Yazılımı;
+xdg-entry-wireless-keywords = COSMIC;WiFi;Wi-Fi;Ağ; Bağlantı;
+xdg-entry-wireless-comment = Wi-Fi bağlantıları ve bağlantı profilleri
+xdg-entry-wallpaper = Duvar Kağıdı
+xdg-entry-users-comment = Kimlik doğrulama ve kullanıcı hesapları
+xdg-entry-wallpaper-comment = Duvar kağıdı resimleri, renkleri ve slayt gösterisi seçenekleri
+xdg-entry-startup-apps = Başlangıç Uygulamaları
 xdg-entry-wireless = Wi-Fi
-xdg-entry-workspaces-keywords = LINGMO;脟al谋艧ma Alan谋; Y枚nlendirme; Genel Bak谋艧; Monit枚r;
-xdg-entry-system-comment = Sistem bilgileri, hesaplar ve cihaz yaz谋l谋m谋 g眉ncellemeleri
-xdg-entry-x11-applications-comment = X11 pencere sistemi uygulama 枚l莽eklendirmesi, birincil ekran ve genel k谋sayollar
-xdg-entry-region-language-comment = Tarihleri, saatleri ve say谋lar谋 b枚lgenize g枚re bi莽imlendirin
-xdg-entry-wallpaper-keywords = LINGMO;Duvar ka臒谋d谋; Arka plan; Slayt g枚sterisi;
-xdg-entry-users-keywords = LINGMO;Kullan谋c谋;Hesap;
-xdg-entry-vpn-keywords = LINGMO;VPN;A臒;Ba臒lant谋;OpenVPN;OpenConnect;
-xdg-entry-time-language-keywords = LINGMO;Sistem;Saat;Tarih;B枚lge;Dil;
-xdg-entry-sound-keywords = LINGMO;Ses;Sesli;Uyar谋;Kablolu Sistem;
-xdg-entry-power-keywords = LINGMO;G眉莽;Pil
-xdg-entry-region-language-keywords = LINGMO;B枚lge;Dil;Tarih;Bi莽im;Saat;Yerel Ayar;Yerelle艧tirme;
-xdg-entry-sound-comment = Cihazlar, uyar谋lar ve uygulamalar i莽in ses ayarlar谋
-xdg-entry-touchpad-comment = Dokunmatik y眉zey h谋z谋, t谋klama se莽enekleri ve hareketler
-xdg-entry-vpn-comment = VPN ba臒lant谋lar谋 ve ba臒lant谋 profilleri
-xdg-entry-window-management-keywords = LINGMO;Pencere;Y枚netim;D枚艧eme;S眉per;Anahtar;
-xdg-entry-workspaces-comment = 脟al谋艧ma alan谋 y枚nlendirmesi, genel bak谋艧 ve 莽oklu monit枚r davran谋艧谋
+xdg-entry-workspaces-keywords = COSMIC;Çalışma Alanı; Yönlendirme; Genel Bakış; Monitör;
+xdg-entry-system-comment = Sistem bilgileri, hesaplar ve cihaz yazılımı güncellemeleri
+xdg-entry-x11-applications-comment = X11 pencere sistemi uygulama ölçeklendirmesi, birincil ekran ve genel kısayollar
+xdg-entry-region-language-comment = Tarihleri, saatleri ve sayıları bölgenize göre biçimlendirin
+xdg-entry-wallpaper-keywords = COSMIC;Duvar kağıdı; Arka plan; Slayt gösterisi;
+xdg-entry-users-keywords = COSMIC;Kullanıcı;Hesap;
+xdg-entry-vpn-keywords = COSMIC;VPN;Ağ;Bağlantı;OpenVPN;OpenConnect;
+xdg-entry-time-language-keywords = COSMIC;Sistem;Saat;Tarih;Bölge;Dil;
+xdg-entry-sound-keywords = COSMIC;Ses;Sesli;Uyarı;Kablolu Sistem;
+xdg-entry-power-keywords = COSMIC;Güç;Pil
+xdg-entry-region-language-keywords = COSMIC;Bölge;Dil;Tarih;Biçim;Saat;Yerel Ayar;Yerelleştirme;
+xdg-entry-sound-comment = Cihazlar, uyarılar ve uygulamalar için ses ayarları
+xdg-entry-touchpad-comment = Dokunmatik yüzey hızı, tıklama seçenekleri ve hareketler
+xdg-entry-vpn-comment = VPN bağlantıları ve bağlantı profilleri
+xdg-entry-window-management-keywords = COSMIC;Pencere;Yönetim;Döşeme;Süper;Anahtar;
+xdg-entry-workspaces-comment = Çalışma alanı yönlendirmesi, genel bakış ve çoklu monitör davranışı
 xdg-entry-sound = Ses
-xdg-entry-workspaces = 脟al谋艧ma Alanlar谋
-xdg-entry-x11-applications = X11 Uygulamalar谋 Uyumlulu臒u
-xdg-entry-window-management-comment = S眉per tu艧 i艧levi, pencere kontrol se莽enekleri ve ek pencere d枚艧eme se莽enekleri
-xdg-entry-wired-comment = Kablolu ba臒lant谋lar ve ba臒lant谋 profilleri
-place-here = Eklentileri buraya yerle艧tir
+xdg-entry-workspaces = Çalışma Alanları
+xdg-entry-x11-applications = X11 Uygulamaları Uyumluluğu
+xdg-entry-window-management-comment = Süper tuş işlevi, pencere kontrol seçenekleri ve ek pencere döşeme seçenekleri
+xdg-entry-wired-comment = Kablolu bağlantılar ve bağlantı profilleri
+place-here = Eklentileri buraya yerleştir
 sound-usb-audio = USB Ses
 sound-device-profiles = Cihaz profilleri
 sound-hd-audio = HD Ses
-qr-code-unavailable = QR kodu mevcut de臒il
-shadow-and-corners = Pencere g枚lgesi ve k枚艧eler
-workspaces-overview = 脟al谋艧ma alanlar谋na genel bak谋艧
-    .action-on-typing = Yazma i艧lemi
-    .none = Hi莽biri
-    .launcher = Ba艧lat谋c谋y谋 A莽
-    .applications = Uygulamalar谋 A莽
-network-name = A臒 Ad谋
-shadows-tiling = D枚艧emeli pencereler
-    .clip = Sistem k枚艧elerini e艧le艧tir
-    .shadow = G枚lgeleri uygula
+qr-code-unavailable = QR kodu mevcut değil
+shadow-and-corners = Pencere gölgesi ve köşeler
+workspaces-overview = Çalışma alanlarına genel bakış
+    .action-on-typing = Yazma işlemi
+    .none = Hiçbiri
+    .launcher = Başlatıcıyı Aç
+    .applications = Uygulamaları Aç
+network-name = Ağ Adı
+shadows-tiling = Döşemeli pencereler
+    .clip = Sistem köşelerini eşleştir
+    .shadow = Gölgeleri uygula
 shadows-floating = Kayan pencereler
-    .clip = Sistem k枚艧elerini e艧le艧tirin ve g枚lgeleri uygulay谋n
-share = A臒谋 payla艧
-sound-device-port-unplugged = Tak谋l谋 de臒il
-scan-to-connect-description = Bu a臒a ba臒lanmak i莽in QR kodunu taray谋n.
+    .clip = Sistem köşelerini eşleştirin ve gölgeleri uygulayın
+share = Ağı paylaş
+sound-device-port-unplugged = Takılı değil
+scan-to-connect-description = Bu ağa bağlanmak için QR kodunu tarayın.

@@ -5,8 +5,8 @@ use super::{ShortcutMessage, ShortcutModel};
 use cosmic::app::ContextDrawer;
 use cosmic::iced::platform_specific::shell::wayland::commands::keyboard_shortcuts_inhibit;
 use cosmic::{Element, Task};
-use lingmo_settings_config::shortcuts::Action;
-use lingmo_settings_config::shortcuts::action::System as SystemAction;
+use cosmic_settings_config::shortcuts::Action;
+use cosmic_settings_config::shortcuts::action::System as SystemAction;
 use lingmo_settings_page::{self as page, Section, section};
 use slab::Slab;
 

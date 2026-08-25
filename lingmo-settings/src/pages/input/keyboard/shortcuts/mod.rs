@@ -19,11 +19,11 @@ use cosmic::widget::list::ListButton;
 use cosmic::widget::{self, settings, text};
 use cosmic::{Apply, Element, Task};
 use cosmic_config::ConfigGet;
-use lingmo_settings_config::Binding;
-use lingmo_settings_config::shortcuts::action::{
+use cosmic_settings_config::Binding;
+use cosmic_settings_config::shortcuts::action::{
     Direction, FocusDirection, Orientation, ResizeDirection,
 };
-use lingmo_settings_config::shortcuts::{self, Action, Shortcuts};
+use cosmic_settings_config::shortcuts::{self, Action, Shortcuts};
 use lingmo_settings_page::{self as page, Section, section};
 use itertools::Itertools;
 use shortcuts::action::System as SystemAction;
@@ -151,7 +151,7 @@ impl page::Page<crate::pages::Message> for Page {
 
     fn on_enter(&mut self) -> Task<crate::pages::Message> {
         if self.shortcuts_context.is_none() {
-            self.shortcuts_context = lingmo_settings_config::shortcuts::context().ok();
+            self.shortcuts_context = cosmic_settings_config::shortcuts::context().ok();
         }
 
         self.reload_search();

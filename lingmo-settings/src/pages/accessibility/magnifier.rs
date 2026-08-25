@@ -7,7 +7,7 @@ use cosmic::widget::{self, icon, settings, svg, text};
 use cosmic::{Apply, surface};
 use cosmic_comp_config::{ZoomConfig, ZoomMovement};
 use cosmic_config::{ConfigGet, ConfigSet};
-use lingmo_settings_config::{Action, Binding, shortcuts};
+use cosmic_settings_config::{Action, Binding, shortcuts};
 use lingmo_settings_page::section::{self, Section};
 use lingmo_settings_page::{self as page, Entity};
 use futures::SinkExt;

@@ -1,4 +1,4 @@
-app = LINGMO Indstillinger
+app = COSMIC Indstillinger
 dbus-connection-error = Kunne ikke oprette forbindelse til DBus
 ok = OK
 unknown = Ukendt
@@ -6,28 +6,29 @@ number = { $number }
 
 ## Network & Wireless
 
-add-network = Tilf酶j Netv忙rk
-    .profile = Tilf酶j profil
-add-vpn = Tilf酶j VPN
-airplane-on = Airplane mode is on. Flytilstand er sl氓et til
+add-network = Tilføj Netværk
+    .profile = Tilføj profil
+add-vpn = Tilføj VPN
+airplane-on = Airplane mode is on. Flytilstand er slået til
 cable-unplugged = Kabel frakoblet
 connect = Opret forbindelse
 connected = Forbundet
-connecting = Tilslutter鈥?disconnect = Afbryd
+connecting = Tilslutter…
+disconnect = Afbryd
 forget = Glem
-known-networks = Kendte Netv忙rk
-network-and-wireless = Netv忙rk & tr氓dl酶st
-no-networks = Der blev ikke fundet nogen netv忙rk.
-no-vpn = Ingen VPN-forbindelser tilg忙ngelige.
+known-networks = Kendte Netværk
+network-and-wireless = Netværk & trådløst
+no-networks = Der blev ikke fundet nogen netværk.
+no-vpn = Ingen VPN-forbindelser tilgængelige.
 password = Adgangskode
-password-confirm = Bekr忙ft adgangskode
+password-confirm = Bekræft adgangskode
 remove = Fjern
 settings = Indstillinger
 username = Brugernavn
-visible-networks = Synlige Netv忙rk
+visible-networks = Synlige Netværk
 identity = Identitet
-forget-dialog = Glem dette Wi-Fi-netv忙rk?
-    .description = Du skal indtaste adgangskoden igen for at bruge dette Wi-Fi-netv忙rk i fremtiden.
+forget-dialog = Glem dette Wi-Fi-netværk?
+    .description = Du skal indtaste adgangskoden igen for at bruge dette Wi-Fi-netværk i fremtiden.
 network-device-state =
     .activated = Tilsluttet
     .config = Opretter forbindelse
@@ -38,27 +39,27 @@ network-device-state =
     .ip-config = Anmoder om IP- og routinginformation
     .need-auth = Har brug for godkendelse
     .prepare = Forbereder tilslutning
-    .secondaries = Venter p氓 sekund忙r forbindelse
-    .unavailable = Ikke tilg忙ngelig
+    .secondaries = Venter på sekundær forbindelse
+    .unavailable = Ikke tilgængelig
     .unknown = Ukendt tilstand
     .unmanaged = Ikke administreret
     .unplugged = Kabel taget ud
 remove-connection-dialog = Fjern forbindelsesprofil?
-    .vpn-description = Du skal indtaste en adgangskode igen for at bruge dette netv忙rk i fremtiden.
+    .vpn-description = Du skal indtaste en adgangskode igen for at bruge dette netværk i fremtiden.
     .wired-description = Du skal oprette denne profil for at bruge den i fremtiden.
 vpn = VPN
     .connections = VPN forbindelser
-    .error = Det lykkedes ikke at tilf酶je VPN konfiguration
+    .error = Det lykkedes ikke at tilføje VPN konfiguration
     .remove = Fjern forbindelsesprofilen
-    .select-file = V忙lg en VPN konfigurationsfil
+    .select-file = Vælg en VPN konfigurationsfil
 vpn-error = VPN Fejl
-    .config = Kunne ikke tilf酶je VPN konfiguration
+    .config = Kunne ikke tilføje VPN konfiguration
     .connect = Kunne ikke oprette forbindelse til VPN
     .connection-editor = Forbindelsesredigering mislykkedes
     .connection-settings = Indstillingerne for aktive forbindelser kunne ikke hentes
-    .updating-state = Kunne ikke opdatere netv忙rksadministrators tilstand
+    .updating-state = Kunne ikke opdatere netværksadministrators tilstand
     .wireguard-config-path = Ugyldig filsti for WireGuard-konfigurationen
-    .wireguard-config-path-desc = Valgt fil skal v忙re p氓 et lokalt filsystem.
+    .wireguard-config-path-desc = Valgt fil skal være på et lokalt filsystem.
     .wireguard-device = Kunne ikke oprette WireGuard-enhed
     .with-password =
         Det lykkedes ikke at indstille VPN { $field ->
@@ -73,19 +74,19 @@ wired = Kablet
     .remove = Fjern forbindelsesprofil
 wifi = Wi-Fi
     .adapter = Wi-Fi adapter { $id }
-    .forget = Glem dette netv忙rk
-wireguard-dialog = Tilf酶j WireGuard enhed
-    .description = V忙lg et enhedsnavn til WireGuard konfigurationen.
+    .forget = Glem dette netværk
+wireguard-dialog = Tilføj WireGuard enhed
+    .description = Vælg et enhedsnavn til WireGuard konfigurationen.
 
 ## Networking: Online konti
 
 online-accounts = Online konti
-    .desc = Tilf酶j konti, IMAP og SMTP, enterprise logins
+    .desc = Tilføj konti, IMAP og SMTP, enterprise logins
 
 # Bluetooth
 
 activate = Aktiver
-confirm = Bekr忙ft
+confirm = Bekræft
 enable = Enable
 bluetooth = Bluetooth
     .desc = Administrer Bluetooth enheder
@@ -103,26 +104,26 @@ bluetooth = Bluetooth
 bluetooth-paired = Tidligere forbundne enheder
     .connect = Tilslut
     .battery = { $percentage }% batteri
-bluetooth-confirm-pin = Bekr忙ft Bluetooth PIN-kode
-    .description = Bekr忙ft venligst, at f酶lgende PIN-kode svarer til den, der vises p氓 { $device }
-bluetooth-available = Enheder i n忙rheden
+bluetooth-confirm-pin = Bekræft Bluetooth PIN-kode
+    .description = Bekræft venligst, at følgende PIN-kode svarer til den, der vises på { $device }
+bluetooth-available = Enheder i nærheden
 bluetooth-adapters = Bluetooth Enheder
 
 ## Accessibility
 
-accessibility = Tilg忙ngelighed
+accessibility = Tilgængelighed
     .vision = Syn
     .on = Til
     .off = Fra
-    .unavailable = Ikke tilg忙ngelig
-    .screen-reader = Sk忙rml忙ser
-    .high-contrast = H酶j kontrast
+    .unavailable = Ikke tilgængelig
+    .screen-reader = Skærmlæser
+    .high-contrast = Høj kontrast
     .invert-colors = Inverter farver
     .color-filters = Farvefiltre
-hearing = H酶relse
+hearing = Hørelse
     .mono = Afspil stereolyd som mono
 default = Standard
-magnifier = Forst酶rrelsesglas
+magnifier = Forstørrelsesglas
     .controls =
         Eller brug disse genveje: { $zoom_in ->
             [zero] { "" }
@@ -136,21 +137,21 @@ magnifier = Forst酶rrelsesglas
                 { $zoom_out } for at zoome ud,
         }
         Super + scroll med din mus
-    .scroll_controls = Aktiv茅r zoom med mus eller touchpad med Super + Scroll
-    .show_overlay = Vis forst酶rrelsesglas-overlay
+    .scroll_controls = Aktivér zoom med mus eller touchpad med Super + Scroll
+    .show_overlay = Vis forstørrelsesglas-overlay
     .increment = Zoom-trin
-    .signin = Start forst酶rrelsesglas ved login
-    .applet = Skift forst酶rrelsesglas til/fra i panelets applet
-    .movement = Forst酶rret visning bev忙ger sig
-    .continuous = Kontinuerligt med mark酶ren
-    .onedge = N氓r mark酶ren n氓r kanten
-    .centered = For at holde mark酶ren centreret
+    .signin = Start forstørrelsesglas ved login
+    .applet = Skift forstørrelsesglas til/fra i panelets applet
+    .movement = Forstørret visning bevæger sig
+    .continuous = Kontinuerligt med markøren
+    .onedge = Når markøren når kanten
+    .centered = For at holde markøren centreret
 color-filter = Farvefiltertype
     .unknown = Ukendt filter aktivt
-    .greyscale = Gr氓toner
-    .deuteranopia = Gr酶n/R酶d (gr酶n-svaghed, Deuteranopia)
-    .protanopia = R酶d/Gr酶n (r酶d-svaghed, Protanopia)
-    .tritanopia = Bl氓/Gul (bl氓-svaghed, Tritanopia)
+    .greyscale = Gråtoner
+    .deuteranopia = Grøn/Rød (grøn-svaghed, Deuteranopia)
+    .protanopia = Rød/Grøn (rød-svaghed, Protanopia)
+    .tritanopia = Blå/Gul (blå-svaghed, Tritanopia)
 
 ## Desktop
 
@@ -162,19 +163,19 @@ wallpaper = Baggrundbillede
     .change = Skift billede hvert
     .desc = Baggrundbilleder, farver, og slideshow indstillinger
     .fit = Tilpas baggrundbillede
-    .folder-dialog = V忙lg baggrundbillede mappe
-    .image-dialog = V忙lg baggrundbillede
+    .folder-dialog = Vælg baggrundbillede mappe
+    .image-dialog = Vælg baggrundbillede
     .plural = Baggrundbillede
-    .same = Samme baggrundbillede p氓 alle sk忙rme
+    .same = Samme baggrundbillede på alle skærme
     .slide = Slideshow
-add-color = Tilf酶j farve
-add-image = Tilf酶j billede
-all-displays = Alle Sk忙rme
+add-color = Tilføj farve
+add-image = Tilføj billede
+all-displays = Alle Skærme
 colors = Farver
-dialog-add = Tilf酶j
+dialog-add = Tilføj
 fill = Fyld
-fit-to-screen = Tilpas til Sk忙rm
-open-new-folder = 脜ben ny mappe
+fit-to-screen = Tilpas til Skærm
+open-new-folder = Åben ny mappe
 recent-folders = Seneste Mapper
 x-minutes =
     { $number } { $number ->
@@ -195,10 +196,10 @@ accent-color = Accentfarve
 app-background = Applikation eller vinduesbaggrund
 auto = Auto
 close = Luk
-color-picker = Farvev忙lger
+color-picker = Farvevælger
 copied-to-clipboard = Kopieret til udklipsholder
-copy-to-clipboard = Kopi茅r til udklipsholder
-dark = M酶rkt
+copy-to-clipboard = Kopiér til udklipsholder
+dark = Mørkt
 export = Eksporter
 hex = Hex
 import = Importer
@@ -209,35 +210,35 @@ reset-to-default = Nulstil til standard
 rgb = RGB
 window-hint-accent = Aktivt vinduestip farve
 window-hint-accent-toggle = Brug temaaccentfarve som aktivt vinduestip
-auto-switch = Skift automatisk mellem Lys og M酶rk tilstande
+auto-switch = Skift automatisk mellem Lys og Mørk tilstande
     .sunrise = Skifter til Lystilstand ved solopgang
-    .sunset = Skifter til M酶rk tilstand ved solnedgang
-    .next-sunrise = Skifter til Lystilstand ved n忙ste solopgang
-    .next-sunset = Skifter til M酶rk tilstand ved n忙ste solnedgang
+    .sunset = Skifter til Mørk tilstand ved solnedgang
+    .next-sunrise = Skifter til Lystilstand ved næste solopgang
+    .next-sunset = Skifter til Mørk tilstand ved næste solnedgang
 container-background = Baggrund for beholder
-    .desc-detail = Beholderbaggrundsfarve bruges til navigationssidebj忙lke, sideskuffe, dialogbokse og lignende widgets. Som standard er det automatisk afledt fra programmet eller vinduets baggrund.
+    .desc-detail = Beholderbaggrundsfarve bruges til navigationssidebjælke, sideskuffe, dialogbokse og lignende widgets. Som standard er det automatisk afledt fra programmet eller vinduets baggrund.
     .reset = Nulstil til auto
-    .desc = Prim忙r beholderfarve bruges til navigationssidebj忙lken, sideskuffe, dialogbokse og lignende widgets.
+    .desc = Primær beholderfarve bruges til navigationssidebjælken, sideskuffe, dialogbokse og lignende widgets.
 control-tint = Kontrolkomponent toning
-    .desc = Anvendes til baggrunde af standardknapper, s酶geinput, tekstinput og lignende komponenter.
+    .desc = Anvendes til baggrunde af standardknapper, søgeinput, tekstinput og lignende komponenter.
 frosted = Frosted glass effect on system interface
-    .desc = Anvender baggrundssl酶ring p氓 panel, dock, applets, launcher og applikationsbibliotek.
+    .desc = Anvender baggrundssløring på panel, dock, applets, launcher og applikationsbibliotek.
 enable-export = Anvend dette tema til GNOME apps.
-    .desc = Ikke alle v忙rkt酶jss忙t underst酶tter automatisk skift. Ikke-LINGMO apps skal muligvis genstartes efter et temaskift.
+    .desc = Ikke alle værktøjssæt understøtter automatisk skift. Ikke-COSMIC apps skal muligvis genstartes efter et temaskift.
 icon-theme = Ikon tema
-    .desc = Anvender et andet s忙t ikoner til applikationer.
+    .desc = Anvender et andet sæt ikoner til applikationer.
 text-tint = Interface text tint
     .desc = Color used to derive interface text colors that have sufficient contrast on various surfaces.
 style = Stil
     .round = Rund
     .slightly-round = Let afrundet
     .square = Firkant
-interface-density = Gr忙nsefladerdensitet
+interface-density = Grænsefladerdensitet
     .comfortable = Komfortabel
     .compact = Kompakt
     .spacious = Rummelig
 window-management-appearance = Window Management
-    .active-hint = Aktiv vinduestip st酶rrelse
+    .active-hint = Aktiv vinduestip størrelse
     .gaps = Mellemrum omkring flisevinduer
 
 ### Experimental
@@ -250,14 +251,14 @@ monospace-font = Monospace skrifttype
 ## Desktop: Notifikationer
 
 notifications = Notifikationer
-    .desc = Forstyr ikke, meddelelser p氓 l氓sesk忙rm og indstillinger pr. applikation.
+    .desc = Forstyr ikke, meddelelser på låseskærm og indstillinger pr. applikation.
 
 ## Desktop: Panel
 
 panel = Panel
-    .desc = 脴verste bj忙lke med skrivebordskontroller og menuer.
-add = Tilf酶j
-add-applet = Tilf酶j Applet
+    .desc = Øverste bjælke med skrivebordskontroller og menuer.
+add = Tilføj
+add-applet = Tilføj Applet
 all = Alle
 applets = Appletter
 center-segment = Center segment
@@ -266,33 +267,33 @@ large = Stor
 no-applets-found = Der blev ikke fundet nogen applets...
 panel-bottom = Bund
 panel-left = Venstre
-panel-right = H酶jre
+panel-right = Højre
 panel-top = Top
-search-applets = S酶g efter appletter...
+search-applets = Søg efter appletter...
 small = Lille
 start-segment = Start Segment
 panel-appearance = Udseende
     .match = Match skrivebordet
     .light = Lys
-    .dark = M酶rk
-panel-behavior-and-position = Adf忙rd og Positioner
+    .dark = Mørk
+panel-behavior-and-position = Adfærd og Positioner
     .autohide = Skjul automatisk panelet
     .dock-autohide = Skjul automatisk dock
-    .position = Position p氓 sk忙rmen
-    .display = Vis p氓 sk忙rmen
+    .position = Position på skærmen
+    .display = Vis på skærmen
 panel-style = Stil
-    .anchor-gap = Mellemrum mellem panel og sk忙rmkanter
-    .dock-anchor-gap = Mellemrum mellem dock og sk忙rmkanter
-    .extend = Udvid panelet til sk忙rmens kanter
-    .dock-extend = Forl忙ng docken til sk忙rmens kanter
+    .anchor-gap = Mellemrum mellem panel og skærmkanter
+    .dock-anchor-gap = Mellemrum mellem dock og skærmkanter
+    .extend = Udvid panelet til skærmens kanter
+    .dock-extend = Forlæng docken til skærmens kanter
     .appearance = Udseende
-    .size = St酶relse
+    .size = Størelse
     .background-opacity = Baggrundens uigennemsigtighed
 panel-applets = Konfiguration
     .dock-desc = Konfigurer dock appletter
     .desc = Konfigurer panel appletter
 panel-missing = Panelkonfiguration mangler
-    .desc = Panelkonfigurationsfilen mangler p氓 grund af brug af en brugerdefineret konfiguration, eller den er beskadiget.
+    .desc = Panelkonfigurationsfilen mangler på grund af brug af en brugerdefineret konfiguration, eller den er beskadiget.
     .fix = Nulstil til standard
 
 ## Desktop: Dock
@@ -305,59 +306,59 @@ dock = Dock
 window-management = Vinduesstyring
     .desc = Super tast handling, vindue kontrolmuligheder og yderligere muligheder for fliser.
 super-key = Super tast handling
-    .launcher = 脜ben Starter
-    .workspaces = 脜ben Arbejdsomr氓der
-    .applications = 脜ben Applikationer
+    .launcher = Åben Starter
+    .workspaces = Åben Arbejdsområder
+    .applications = Åben Applikationer
     .disable = Deaktiver
-edge-gravity = Flydende vinduer bev忙ger sig mod n忙rmeste kant
+edge-gravity = Flydende vinduer bevæger sig mod nærmeste kant
 window-controls = Vinduesstyring
     .maximize = Vis maksimer knap
     .minimize = Vis minimer knap
     .active-window-hint = Vis aktive vinduestip
 focus-navigation = Fokus navigation
-    .focus-follows-cursor = Fokus f酶lger mark酶ren
-    .cursor-follows-focus = Mark酶ren f酶lger fokus
+    .focus-follows-cursor = Fokus følger markøren
+    .cursor-follows-focus = Markøren følger fokus
 
-## Desktop: Arbejdsomr氓der
+## Desktop: Arbejdsområder
 
-workspaces = Arbejdsomr氓der
-    .desc = Arbejdsomr氓de orientering og adf忙rd.
-workspaces-behavior = Opf酶rsel for Arbejdsomr氓der
-    .dynamic = Dynamiske Arbejdsomr氓der
-    .dynamic-desc = Fjerner automatisk tomme Arbejdsomr氓der.
-    .fixed = Fast antal Arbejdsomr氓der
-    .fixed-desc = Tilf酶j eller fjern Arbejdsomr氓der i oversigten.
-workspaces-multi-behavior = Adf忙r for flere sk忙rme
-    .span = Arbejdsomr氓der spr忙der sig over flere sk忙rme
-    .separate = Sk忙rme har separate Arbejdsomr氓der
-workspaces-overview-thumbnails = Oversigt over Arbejdsomr氓de Miniaturer
-    .show-number = Vis Arbejdsomr氓denummer
-    .show-name = Vis navnet p氓 Arbejdsomr氓det
-workspaces-orientation = Arbejdsomr氓de Orientering
+workspaces = Arbejdsområder
+    .desc = Arbejdsområde orientering og adfærd.
+workspaces-behavior = Opførsel for Arbejdsområder
+    .dynamic = Dynamiske Arbejdsområder
+    .dynamic-desc = Fjerner automatisk tomme Arbejdsområder.
+    .fixed = Fast antal Arbejdsområder
+    .fixed-desc = Tilføj eller fjern Arbejdsområder i oversigten.
+workspaces-multi-behavior = Adfær for flere skærme
+    .span = Arbejdsområder spræder sig over flere skærme
+    .separate = Skærme har separate Arbejdsområder
+workspaces-overview-thumbnails = Oversigt over Arbejdsområde Miniaturer
+    .show-number = Vis Arbejdsområdenummer
+    .show-name = Vis navnet på Arbejdsområdet
+workspaces-orientation = Arbejdsområde Orientering
     .vertical = Lodret
     .horizontal = Vandret
-hot-corner = Varmt Hj酶rne
-    .top-left-corner = Aktiver det 酶verste venstre varme hj酶rne for Arbejdsomr氓der
+hot-corner = Varmt Hjørne
+    .top-left-corner = Aktiver det øverste venstre varme hjørne for Arbejdsområder
 
-## Sk忙rme
+## Skærme
 
--requires-restart = Kr忙ver genstart
+-requires-restart = Kræver genstart
 color = Farve
     .depth = Farvedybde
     .profile = Farveprofil
     .sidebar = Farveprofiler
     .temperature = Farvetemperatur
 display = Displays
-    .desc = Administrer sk忙rme, grafikskift og natlys
+    .desc = Administrer skærme, grafikskift og natlys
     .arrangement = Display Arrangement
-    .arrangement-desc = Tr忙k sk忙rme for at omarrangere dem.
-    .enable = Aktiver sk忙rm
-    .external = { $size } { $output } Ekstern sk忙rm
-    .laptop = { $size } B忙rbar sk忙rm
-    .options = Sk忙rm indstillinger
+    .arrangement-desc = Træk skærme for at omarrangere dem.
+    .enable = Aktiver skærm
+    .external = { $size } { $output } Ekstern skærm
+    .laptop = { $size } Bærbar skærm
+    .options = Skærm indstillinger
     .refresh-rate = Opdateringshastighed
-    .resolution = Opl酶sning
-    .scale = Skall茅r
+    .resolution = Opløsning
+    .scale = Skallér
     .additional-scale-options = Ydeligere skalerings indstillinger
 mirroring = Spejling
     .id = Spejling { $id }
@@ -365,33 +366,33 @@ mirroring = Spejling
     .mirror = Spejl { $display }
     .project =
         Projekter til { $display ->
-            [all] alle sk忙rme
+            [all] alle skærme
            *[other] { $display }
         }
     .project-count =
         Projektere til { $count } andre { $count ->
-            [1] sk忙rm
-           *[other] sk忙rme
+            [1] skærm
+           *[other] skærme
         }
 night-light = Natlys
     .auto = Automatisk (solnedgang til solopgang)
-    .desc = Reducer bl氓t lys med varmere farver.
+    .desc = Reducer blåt lys med varmere farver.
 orientation = Orientering
     .standard = Standard
-    .rotate-90 = Roter 90掳
-    .rotate-180 = Roter 180掳
-    .rotate-270 = Roter 270掳
+    .rotate-90 = Roter 90°
+    .rotate-180 = Roter 180°
+    .rotate-270 = Roter 270°
 vrr = Variable refresh rate
-    .enabled = Sl氓 til
+    .enabled = Slå til
     .force = Altid
     .auto = Automatisk
     .disabled = Deaktiveret
-scheduling = Planl忙gning
-    .manual = Manuel planl忙gning
+scheduling = Planlægning
+    .manual = Manuel planlægning
 dialog = Dialog
-    .title = Behold disse sk忙rmindstillinger?
-    .keep-changes = Behold 忙ndringer
-    .change-prompt = 脝ndringer af indstillinger vil automatisk vende tilbage om { $time } sekunder.
+    .title = Behold disse skærmindstillinger?
+    .keep-changes = Behold ændringer
+    .change-prompt = Ændringer af indstillinger vil automatisk vende tilbage om { $time } sekunder.
     .revert-settings = Gendan indstillinger
 
 ## Sound
@@ -405,7 +406,7 @@ sound-output = Udgang
     .config = Konfiguration
     .balance = Balance
     .left = Venstre
-    .right = H酶jre
+    .right = Højre
 sound-input = Input
     .volume = Input Lydstyrke
     .device = Input Enhed
@@ -418,8 +419,8 @@ sound-applications = Applikationer
 
 ## Power
 
-power = Str酶m & Batteri
-    .desc = Administrer str酶mindstillinger
+power = Strøm & Batteri
+    .desc = Administrer strømindstillinger
 battery = Batteri
     .minute =
         { $value } { $value ->
@@ -445,30 +446,30 @@ battery = Batteri
         }
 connected-devices = Tilsluttede enheder
     .unknown = Ukendt enhed
-power-mode = Str酶mtilstand
-    .battery = Forl忙nget batterilevetid
-    .battery-desc = Reduceret str酶mforbrug og lydl酶s ydeevne.
+power-mode = Strømtilstand
+    .battery = Forlænget batterilevetid
+    .battery-desc = Reduceret strømforbrug og lydløs ydeevne.
     .balanced = Balanceret
-    .balanced-desc = St酶jsvag ydeevne og moderat str酶mforbrug.
-    .performance = H酶j ydeevne
-    .performance-desc = Maksimal ydeevne og str酶mforbrug.
+    .balanced-desc = Støjsvag ydeevne og moderat strømforbrug.
+    .performance = Høj ydeevne
+    .performance-desc = Maksimal ydeevne og strømforbrug.
     .no-backend = Backend blev ikke fundet. Installer system76-power or power-profiles-daemon.
-power-saving = Str酶mstyrings Indstillinger
-    .turn-off-screen-after = Sluk sk忙rmen efter
+power-saving = Strømstyrings Indstillinger
+    .turn-off-screen-after = Sluk skærmen efter
     .auto-suspend = Automatisk slumre
-    .auto-suspend-ac = Automatisk slumre n氓r den er tilsluttet
-    .auto-suspend-battery = Automatisk slumre p氓 batteri
+    .auto-suspend-ac = Automatisk slumre når den er tilsluttet
+    .auto-suspend-battery = Automatisk slumre på batteri
 
 ## Input
 
-acceleration-desc = Justerer automatisk sporingsf酶lsomhed baseret p氓 hastighed.
+acceleration-desc = Justerer automatisk sporingsfølsomhed baseret på hastighed.
 disable-while-typing = Deaktiver under indtastning
 input-devices = Indgangsenheder
     .desc = Indgangsenheder
-primary-button = Prim忙r knap
-    .desc = Indstiller r忙kkef酶lgen af 鈥嬧€媐ysiske knapper.
+primary-button = Primær knap
+    .desc = Indstiller rækkefølgen af ​​fysiske knapper.
     .left = Venstre
-    .right = H酶jre
+    .right = Højre
 scrolling = Rulning
     .two-finger = Rul med to fingre
     .edge = Rul langs kanten med en finger
@@ -485,13 +486,13 @@ long = Lang
 keyboard = Tastatur
     .desc = Indtastningskilder, skift, indtastning af specialtegn, genveje.
 keyboard-sources = Inputkilder
-    .desc = Inputkilder kan skiftes ved hj忙lp af Super+Mellemrumstastekombinationen. Dette kan tilpasses i indstillingerne for tastaturgenveje.
+    .desc = Inputkilder kan skiftes ved hjælp af Super+Mellemrumstastekombinationen. Dette kan tilpasses i indstillingerne for tastaturgenveje.
     .move-up = Flyt op
     .move-down = Flyt ned
     .settings = Indstillinger
     .view-layout = Vis tastaturlayout
     .remove = Fjern
-    .add = Tilf酶j inputkilde
+    .add = Tilføj inputkilde
 keyboard-special-char = Indtastning af specialtegn
     .alternate = Tast for alternative tegn
     .compose = Skriv tast
@@ -505,8 +506,8 @@ keyboard-numlock-boot = Numlock
     .on = Til
     .off = Fra
     .set = Set numlock start tilstand
-added = Tilf酶jet
-type-to-search = Skriv for at s酶ge...
+added = Tilføjet
+type-to-search = Skriv for at søge...
 show-extended-input-sources = Vis udvidede inputkilder
 
 ## Input: Keyboard: Genveje
@@ -519,120 +520,120 @@ custom = Brugerdefineret
 debug = Debug
 disabled = Deaktiveret
 input-source-switch = Skift inputkilde for tastatursprog
-migrate-workspace-prev = Migrer arbejdsomr氓det til tidligere output
-migrate-workspace-next = Migrer arbejdsomr氓det til n忙ste output
+migrate-workspace-prev = Migrer arbejdsområdet til tidligere output
+migrate-workspace-next = Migrer arbejdsområdet til næste output
 migrate-workspace =
-    Migrer arbejdsomr氓det til output { $direction ->
+    Migrer arbejdsområdet til output { $direction ->
        *[down] ned
         [left] venstre
-        [right] h酶jre
+        [right] højre
         [up] op
     }
-navigate = Navig茅r
+navigate = Navigér
 replace = Erstat
 shortcut-name = Genvejsnavn
 system-controls = System controls
 terminate = Terminate
-toggle-stacking = Sl氓 vinduestabling til/fra
+toggle-stacking = Slå vinduestabling til/fra
 type-key-combination = Indtast tastekombination
 custom-shortcuts = Brugerdefinerede genveje
-    .add = Tilf酶j genvej
-    .context = Tilf酶j Brugerdefineret Genvej
+    .add = Tilføj genvej
+    .context = Tilføj Brugerdefineret Genvej
     .none = Ingen brugerdefinerede genveje
 modified = { $count } modificeret
 nav-shortcuts = Navigation
-    .prev-output = Fokus茅r forrige output
-    .next-output = Fokus茅r n忙ste output
-    .last-workspace = Fokus茅r sidste arbejdsomr氓de
-    .prev-workspace = Fokus茅r forrige arbejdsomr氓de
-    .next-workspace = Fokus茅r n忙ste arbejdsomr氓de
+    .prev-output = Fokusér forrige output
+    .next-output = Fokusér næste output
+    .last-workspace = Fokusér sidste arbejdsområde
+    .prev-workspace = Fokusér forrige arbejdsområde
+    .next-workspace = Fokusér næste arbejdsområde
     .focus =
         Fokus vindue { $direction ->
            *[down] ned
             [in] ind
             [left] venstre
             [out] ud
-            [right] h酶jre
+            [right] højre
             [up] op
         }
     .output =
         Skift til output { $direction ->
            *[down] ned
             [left] venstre
-            [right] h酶jre
+            [right] højre
             [up] op
         }
-    .workspace = Skift til arbejdsomr氓de { $num }
+    .workspace = Skift til arbejdsområde { $num }
 manage-windows = Administrer vinduer
     .close = Luk vindue
-    .maximize = Maksim茅r vindue
-    .fullscreen = Fuldsk忙rm vindue
-    .minimize = Minim茅r vindue
-    .resize-inwards = 脝ndr st酶rrelsen p氓 vinduet indad
-    .resize-outwards = 脝ndr st酶rrelsen p氓 vinduet udad
-    .toggle-sticky = Sl氓 kl忙brigt vindue til/fra
+    .maximize = Maksimér vindue
+    .fullscreen = Fuldskærm vindue
+    .minimize = Minimér vindue
+    .resize-inwards = Ændr størrelsen på vinduet indad
+    .resize-outwards = Ændr størrelsen på vinduet udad
+    .toggle-sticky = Slå klæbrigt vindue til/fra
 move-windows = Flyt vinduer
     .direction =
         Flyt vindue { $direction ->
            *[down] ned
             [left] venstre
-            [right] h酶jre
+            [right] højre
             [up] op
         }
     .display =
-        Flyt vindue 茅n sk忙rm { $direction ->
+        Flyt vindue én skærm { $direction ->
            *[down] ned
             [left] venstre
-            [right] h酶jre
+            [right] højre
             [up] op
         }
     .workspace =
-        Flyt vindue 茅t arbejdsomr氓de { $direction ->
+        Flyt vindue ét arbejdsområde { $direction ->
            *[below] under
             [left] venstre
-            [right] h酶jre
+            [right] højre
             [above] over
         }
-    .workspace-num = Flyt vindue til arbejdsomr氓de { $num }
-    .prev-workspace = Flyt vindue til det forrige arbejdsomr氓de
-    .next-workspace = Flyt vindue til n忙ste arbejdsomr氓de
-    .last-workspace = Flyt vindue til sidste arbejdsomr氓de
-    .next-display = Flyt vindue til n忙ste sk忙rm
-    .prev-display = Flyt vindue til forrige sk忙rm
-    .send-to-prev-workspace = Flyt vindue til forrige arbejdsomr氓de
-    .send-to-next-workspace = Flyt vindue til n忙ste arbejdsomr氓de
+    .workspace-num = Flyt vindue til arbejdsområde { $num }
+    .prev-workspace = Flyt vindue til det forrige arbejdsområde
+    .next-workspace = Flyt vindue til næste arbejdsområde
+    .last-workspace = Flyt vindue til sidste arbejdsområde
+    .next-display = Flyt vindue til næste skærm
+    .prev-display = Flyt vindue til forrige skærm
+    .send-to-prev-workspace = Flyt vindue til forrige arbejdsområde
+    .send-to-next-workspace = Flyt vindue til næste arbejdsområde
 system-shortcut = System
-    .app-library = 脜bn appbiblioteket
-    .brightness-down = Reducer sk忙rmens lysstyrke
-    .brightness-up = 脴g sk忙rmens lysstyrke
-    .home-folder = 脜bn hjemmemappe
+    .app-library = Åbn appbiblioteket
+    .brightness-down = Reducer skærmens lysstyrke
+    .brightness-up = Øg skærmens lysstyrke
+    .home-folder = Åbn hjemmemappe
     .keyboard-brightness-down = Reducer tastaturets lysstyrke
-    .keyboard-brightness-up = 脴g tastaturets lysstyrke
-    .launcher = 脜bn launcher
+    .keyboard-brightness-up = Øg tastaturets lysstyrke
+    .launcher = Åbn launcher
     .log-out = Log ud
-    .lock-screen = L氓s sk忙rmen
-    .mute = Sl氓 lydudgang fra
-    .mute-mic = Sl氓r mikrofonindgangen fra
+    .lock-screen = Lås skærmen
+    .mute = Slå lydudgang fra
+    .mute-mic = Slår mikrofonindgangen fra
     .play-pause = Afspil/Pause
-    .play-next = N忙ste nummer
+    .play-next = Næste nummer
     .play-prev = Forrige nummer
     .poweroff = Luk ned
-    .screenshot = Tag et sk忙rmbillede
-    .terminal = 脜bn en terminal
-    .volume-lower = S忙nk lydudgangs lydstyrken
-    .volume-raise = 脴g lydudgangs lydstyrken
-    .web-browser = 脜bner en webbrowser
-    .window-switcher = Skift mellem 氓bne vinduer
-    .window-switcher-previous = Skift mellem 氓bne vinduer omvendt
-    .workspace-overview = 脜bn oversigten over arbejdsomr氓det
+    .screenshot = Tag et skærmbillede
+    .terminal = Åbn en terminal
+    .volume-lower = Sænk lydudgangs lydstyrken
+    .volume-raise = Øg lydudgangs lydstyrken
+    .web-browser = Åbner en webbrowser
+    .window-switcher = Skift mellem åbne vinduer
+    .window-switcher-previous = Skift mellem åbne vinduer omvendt
+    .workspace-overview = Åbn oversigten over arbejdsområdet
 window-tiling = Vinduesfliser
     .horizontal = Indstil vandret orientering
     .vertical = Indstil lodret orientering
     .swap-window = Byt vindue
-    .toggle-tiling = Sl氓 vinduesfliser til/fra
-    .toggle-stacking = Sl氓 vinduestabling til/fra
-    .toggle-floating = Sl氓 sv忙vende vindue til/fra
-    .toggle-orientation = Sl氓 orientering til/fra
+    .toggle-tiling = Slå vinduesfliser til/fra
+    .toggle-stacking = Slå vinduestabling til/fra
+    .toggle-floating = Slå svævende vindue til/fra
+    .toggle-orientation = Slå orientering til/fra
 replace-shortcut-dialog = Erstat Genvej?
     .desc = { $shortcut } bruges af { $name }. Hvis du erstatter det, { $name } vil blive deaktiveret.
 zoom-in = Zoom Ind
@@ -647,16 +648,16 @@ mouse = Mouse
 
 ## Input: Touchpad
 
-click-behavior = Klik Adf忙rd
-    .click-finger = Sekund忙rt klik med to fingre og midterklik med tre fingre
-    .button-areas = Sekund忙rt klik i nederste h酶jre hj酶rne og midterste klik nederst i midten
+click-behavior = Klik Adfærd
+    .click-finger = Sekundært klik med to fingre og midterklik med tre fingre
+    .button-areas = Sekundært klik i nederste højre hjørne og midterste klik nederst i midten
 pinch-to-zoom = Knib sammen for at zoome
-    .desc = Brug to fingre til at zoome ind p氓 indhold, for applikationer, der underst酶tter zoom.
+    .desc = Brug to fingre til at zoome ind på indhold, for applikationer, der understøtter zoom.
 tap-to-click = Tryk for at klikke
-    .desc = Aktiverer tryk med 茅n finger for prim忙rt klik, tryk med to fingre for sekund忙rt klik og tryk med tre fingre for midterste klik.
+    .desc = Aktiverer tryk med én finger for primært klik, tryk med to fingre for sekundært klik og tryk med tre fingre for midterste klik.
 touchpad = Touchpad
     .acceleration = Aktiver acceleration af touchpad
-    .desc = Touchpad hastighed, klikindstillinger, bev忙gelser.
+    .desc = Touchpad hastighed, klikindstillinger, bevægelser.
     .speed = Touchpad hastighed
 
 ## Input: Gestures
@@ -664,15 +665,15 @@ touchpad = Touchpad
 gestures = Gestures
     .four-finger-down = Stryg ned med fire fingre
     .four-finger-left = Stryg til venstre med fire fingre
-    .four-finger-right = Stryg til h酶jre med fire fingre
+    .four-finger-right = Stryg til højre med fire fingre
     .four-finger-up = Stryg opad med fire fingre
     .three-finger-any = Stryg med tre fingre i enhver retning
-switch-workspaces = Skift arbejdsomr氓de
-    .horizontal = Stryg til venstre/h酶jre med fire fingre
+switch-workspaces = Skift arbejdsområde
+    .horizontal = Stryg til venstre/højre med fire fingre
     .vertical = Stryg op/ned med fire fingre
 switch-between-windows = Skift mellem vinduer
-open-application-library = 脜bn applikationsbiblioteket
-open-workspaces-view = 脜bn oversigt over arbejdsomr氓der
+open-application-library = Åbn applikationsbiblioteket
+open-workspaces-view = Åbn oversigt over arbejdsområder
 
 ## Time & Language
 
@@ -681,32 +682,32 @@ time = Tid & Sprog
 time-date = Dato & Tid
     .desc = Tidszone, automatiske urindstillinger og noget tidsformatering.
     .auto = Indstil automatisk
-    .auto-ntp = Dato og tid opdateres automatisk, n氓r tidszonen er indstillet.
+    .auto-ntp = Dato og tid opdateres automatisk, når tidszonen er indstillet.
 time-zone = Tidszone
     .auto = Automatisk tidszone
-    .auto-info = Kr忙ver lokationstjenester og internetadgang
+    .auto-info = Kræver lokationstjenester og internetadgang
 time-format = Dato & tidsformat
     .twenty-four = 24 timers ur
     .show-seconds = Vis sekunder
-    .first = F酶rste dag i ugen
-    .show-date = Vis Dato p氓 Toppanelet
+    .first = Første dag i ugen
+    .show-date = Vis Dato på Toppanelet
     .friday = Fredag
-    .saturday = L酶rdag
-    .sunday = S酶ndag
+    .saturday = Lørdag
+    .sunday = Søndag
     .monday = Mandag
 time-region = Region & Sprog
-    .desc = Formater datoer, klokkesl忙t og tal baseret p氓 din region
+    .desc = Formater datoer, klokkeslæt og tal baseret på din region
 formatting = Formatering
     .dates = Dates
     .time = Tid
     .date-and-time = Dato & Tid
     .numbers = Tal
-    .measurement = M氓l
+    .measurement = Mål
     .paper = Papir
 preferred-languages = Foretrukne sprog
-    .desc = R忙kkef酶lgen af 鈥嬧€媠prog bestemmer, hvilket sprog der bruges til overs忙ttelsen af 鈥嬧€媠krivebordet. 脝ndringer tr忙der i kraft ved n忙ste login.
-add-language = Tilf酶j sprog
-    .context = Tilf酶j Sprog
+    .desc = Rækkefølgen af ​​sprog bestemmer, hvilket sprog der bruges til oversættelsen af ​​skrivebordet. Ændringer træder i kraft ved næste login.
+add-language = Tilføj sprog
+    .context = Tilføj Sprog
 install-additional-languages = Installer yderligere sprog
 region = Region
 
@@ -717,9 +718,9 @@ applications = Programmer
 ## Applications: Default Applications
 
 default-apps = Standardapplikationer
-    .desc = Standard webbrowser, mailklient, filh氓ndtering og andre applikationer.
+    .desc = Standard webbrowser, mailklient, filhåndtering og andre applikationer.
     .web-browser = Webbrowser
-    .file-manager = Filh氓ndtering
+    .file-manager = Filhåndtering
     .mail-client = Mailklient
     .music = Musik
     .video = Video
@@ -733,32 +734,32 @@ default-apps = Standardapplikationer
 
 startup-apps = Startapplikationer
     .desc = Konfigurer applikationer der starter ved login.
-    .add = Tilf酶j app
-    .user = Applikationer der 氓bnes ved login
-    .none = Ingen startapplikationer tilf酶jet
+    .add = Tilføj app
+    .user = Applikationer der åbnes ved login
+    .none = Ingen startapplikationer tilføjet
     .remove-dialog-title = Fjern { $name }?
-    .remove-dialog-description = Er du sikker p氓, at du vil fjerne denne startapplikation?
-    .search-for-application = S酶g efter applikation
+    .remove-dialog-description = Er du sikker på, at du vil fjerne denne startapplikation?
+    .search-for-application = Søg efter applikation
 
 ## Applications: Legacy Applications
 
 legacy-applications = X11 applikationskompatibilitet
     .desc = Skalering af X11 vinduessystemapplikationer og globale genveje.
 legacy-app-global-shortcuts = Globale genveje i X11-applikationer
-    .desc = Globale genveje tillader tastetryk og museklik udf酶rt i applikationer at blive genkendt af andre applikationer, f.eks. til push-to-talk eller push-to-mute. Som standard er dette deaktiveret i X11-applikationer for at forhindre, at andre applikationer kan overv氓ge tastatur- og museevents, der indeholder f酶lsomme oplysninger.
+    .desc = Globale genveje tillader tastetryk og museklik udført i applikationer at blive genkendt af andre applikationer, f.eks. til push-to-talk eller push-to-mute. Som standard er dette deaktiveret i X11-applikationer for at forhindre, at andre applikationer kan overvåge tastatur- og museevents, der indeholder følsomme oplysninger.
     .none = Ingen taster
     .modifiers = Modifikatortaster (Super, Shift, Control, Alt)
     .combination = Alle taster, mens modifikatortasterne Super, Control eller Alt holdes nede
     .all = Alle taster
     .mouse = Museklik i X11-applikationer
 legacy-app-scaling = Skalering af X11 vinduessystemapplikationer
-    .scaled-gaming = Optimer til spil og fuldsk忙rmsapps
-    .gaming-description = X11-applikationer kan fremst氓 lidt st酶rre eller mindre sammenlignet med Wayland-apps.
+    .scaled-gaming = Optimer til spil og fuldskærmsapps
+    .gaming-description = X11-applikationer kan fremstå lidt større eller mindre sammenlignet med Wayland-apps.
     .scaled-applications = Optimer til applikationer
-    .applications-description = Spil og fuldsk忙rms X11-apps matcher m氓ske ikke din sk忙rmopl酶sning.
+    .applications-description = Spil og fuldskærms X11-apps matcher måske ikke din skærmopløsning.
     .scaled-compatibility = Maksimal kompatibilitetstilstand
-    .compatibility-description = X11-applikationer kan se sl酶rede ud p氓 HiDPI-sk忙rme.
-    .preferred-display = Foretrukken sk忙rm til spil og fuldsk忙rms X11-applikationer
+    .compatibility-description = X11-applikationer kan se slørede ud på HiDPI-skærme.
+    .preferred-display = Foretrukken skærm til spil og fuldskærms X11-applikationer
     .no-display = Ingen
 
 ## System
@@ -770,7 +771,7 @@ system = System & Konti
 about = Om
     .desc = Enhedsnavn, hardwareoplysninger, standardindstillinger for operativsystem.
 about-device = Enhed navn
-    .desc = Dette navn vises til andre netv忙rks eller bluetooth enheder.
+    .desc = Dette navn vises til andre netværks eller bluetooth enheder.
 about-hardware = Hardware
     .model = Hardware model
     .memory = Hukommelse
@@ -780,10 +781,10 @@ about-hardware = Hardware
 about-os = Operativsystem
     .os = Operativsystem
     .os-architecture = Operativsystems arkitektur
-    .desktop-environment = Skrivebordsmilj酶
+    .desktop-environment = Skrivebordsmiljø
     .windowing-system = Vinduessystem
 about-related = Relaterede indstillinger
-    .support = F氓 support
+    .support = Få support
 
 ## System: Firmware
 
@@ -796,13 +797,13 @@ users = Brugere
     .desc = Godkendelse og brugerkonti.
     .admin = Administrator
     .standard = Standard
-    .profile-add = V忙lg profilbillede
+    .profile-add = Vælg profilbillede
 administrator = Administrator
-    .desc = Administratorer kan 忙ndre indstillinger for alle brugere samt tilf酶je og fjerne andre brugere.
-add-user = Tilf酶j bruger
+    .desc = Administratorer kan ændre indstillinger for alle brugere samt tilføje og fjerne andre brugere.
+add-user = Tilføj bruger
 change-password = Skift adgangskode
 remove-user = Fjern bruger
 full-name = Fulde navn
 invalid-username = Ugyldigt brugernavn.
-password-mismatch = Adgangskode og bekr忙ftelse skal v忙re ens.
+password-mismatch = Adgangskode og bekræftelse skal være ens.
 save = Gem

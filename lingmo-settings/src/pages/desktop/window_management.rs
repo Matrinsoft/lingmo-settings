@@ -7,7 +7,7 @@ use cosmic::{Apply, Element, surface};
 
 use cosmic_comp_config::CosmicCompConfig;
 use cosmic_config::{ConfigGet, ConfigSet};
-use lingmo_settings_config::{Action, Binding, Shortcuts, shortcuts};
+use cosmic_settings_config::{Action, Binding, Shortcuts, shortcuts};
 use lingmo_settings_page::{self as page, Section, section};
 use slotmap::SlotMap;
 use tracing::error;

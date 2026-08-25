@@ -11,7 +11,7 @@ use cosmic::iced::{self, Alignment, Length};
 use cosmic::widget::{self, button, icon, list, settings, text};
 use cosmic::{Apply, Element, Task, theme};
 use cosmic_config::{ConfigGet, ConfigSet};
-use lingmo_settings_config::shortcuts::{self, Action, Binding, Shortcuts};
+use cosmic_settings_config::shortcuts::{self, Action, Binding, Shortcuts};
 use lingmo_settings_page as page;
 use iced_winit::conversion;
 use slab::Slab;
@@ -511,7 +511,7 @@ impl Model {
                     && let Some(model) = self.shortcut_models.get_mut(short_id)
                     && let Some(shortcut) = model.bindings.get_mut(id)
                 {
-                    let mut cfg_modifiers = lingmo_settings_config::shortcuts::Modifiers::new();
+                    let mut cfg_modifiers = cosmic_settings_config::shortcuts::Modifiers::new();
                     if modifiers.alt() {
                         cfg_modifiers = cfg_modifiers.alt()
                     }
@@ -580,9 +580,9 @@ impl Model {
                         && shortcut.pending.keycode.is_some_and(|k| k == keycode)
                     {
                         if shortcut.pending.modifiers
-                            != lingmo_settings_config::shortcuts::Modifiers::new()
+                            != cosmic_settings_config::shortcuts::Modifiers::new()
                             || shortcut.pending.key.is_some_and(|key| {
-                                !lingmo_settings_config::shortcuts::is_forbidden_unmodified_keysym(
+                                !cosmic_settings_config::shortcuts::is_forbidden_unmodified_keysym(
                                     key,
                                 )
                             })
