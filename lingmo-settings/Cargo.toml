@@ -35,7 +35,7 @@ lingmo-settings-bluetooth-subscription = { path = "../subscriptions/bluetooth", 
 lingmo-settings-sound = { path = "../pages/sound", optional = true }
 lingmo-settings-upower-subscription = { path = "../subscriptions/upower", optional = true }
 lingmo-settings-wallpaper = { path = "../pages/wallpapers" }
-lingmo-settings-daemon-config = { git = "https://github.com/Matrinsoft/lingmo-settings-daemon", optional = true }
+cosmic-settings-daemon-config = { git = "https://github.com/Matrinsoft/lingmo-settings-daemon", optional = true }
 derive_setters = "0.1.9"
 dirs = "6.0.0"
 eyre = "0.6.12"
@@ -92,7 +92,7 @@ which = "8.0.5"
 zlink = "0.5.0"
 intmap = "3.1.3"
 
-[dependencies.lingmo-settings-audio-client]
+[dependencies.cosmic-settings-audio-client]
 git = "https://github.com/Matrinsoft/lingmo-settings-daemon"
 features = ["codec"]
 optional = true
@@ -145,7 +145,7 @@ page-accessibility = [
     "dep:sctk",
     "dep:cosmic-protocols",
     "dep:cosmic-settings-config",
-    "dep:lingmo-settings-daemon-config",
+    "dep:cosmic-settings-daemon-config",
     "dep:lingmo-settings-accessibility-subscription",
     "dep:lingmo-settings-a11y-manager-subscription",
 ]
@@ -181,7 +181,7 @@ page-region = [
     "dep:zbus",
     "dep:accounts-zbus",
 ]
-page-sound = ["dep:lingmo-settings-audio-client", "dep:lingmo-settings-sound"]
+page-sound = ["dep:cosmic-settings-audio-client", "dep:lingmo-settings-sound"]
 page-users = ["xdg-portal", "dep:accounts-zbus", "dep:zbus", "dep:zbus_polkit"]
 page-window-management = ["cosmic-comp-config", "dep:cosmic-settings-config"]
 page-workspaces = ["cosmic-comp-config"]
