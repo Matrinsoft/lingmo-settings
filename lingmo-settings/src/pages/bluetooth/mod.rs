@@ -442,7 +442,7 @@ impl Page {
                         self.heading = fl!(
                             "bluetooth",
                             "status",
-                            aliases = format!("â€œ{}â€?, adapter.alias)
+                            aliases = format!("â€œ{}???, adapter.alias)
                         );
                     } else {
                         self.heading = fl!(
@@ -452,7 +452,7 @@ impl Page {
                                 .model
                                 .adapters
                                 .values()
-                                .map(|adapter| format!("â€œ{}â€?, adapter.alias))
+                                .map(|adapter| format!("â€œ{}???, adapter.alias))
                                 .collect::<HashSet<String>>()
                                 .into_iter()
                                 .collect::<Vec<String>>()
@@ -534,12 +534,12 @@ impl Page {
                     // means bluez isn't installed; on OpenRC it may be installed but lack
                     // the D-Bus service file.  Check the service manager to disambiguate.
                     if self.service_manager.is_installed() {
-                        // Service manager confirms the service exists â€?query its real state.
+                        // Service manager confirms the service exists ???query its real state.
                         self.bluez_service_unknown = false;
                         self.service_is_active = self.service_manager.is_active();
                         self.service_is_enabled = self.service_manager.is_enabled();
                     } else {
-                        // Genuinely not installed â€?let status() show the unknown message.
+                        // Genuinely not installed ???let status() show the unknown message.
                         self.bluez_service_unknown = true;
                     }
                 }

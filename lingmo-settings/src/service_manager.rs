@@ -350,12 +350,12 @@ pub fn create_default_service_manager(service_name: impl Into<String>) -> Box<dy
             "Using no-op service manager for '{}'. Service status will always report as enabled/active, but operations will not actually execute.",
             service_name
         );
-        // Graceful degradation â€?app continues but service management won't work
+        // Graceful degradation ???app continues but service management won't work
         Box::new(NoOpServiceManager)
     })
 }
 
-/// Fallback when no service manager is detected â€?reports everything as active but does nothing.
+/// Fallback when no service manager is detected ???reports everything as active but does nothing.
 struct NoOpServiceManager;
 
 impl ServiceManager for NoOpServiceManager {
@@ -586,7 +586,7 @@ mod tests {
 
     #[test]
     fn test_parse_rc_update_output_exact_service_name() {
-        // Must use exact matching, not prefix matching â€?"bluetoothd" must not match "bluetooth".
+        // Must use exact matching, not prefix matching ???"bluetoothd" must not match "bluetooth".
         let output = "  bluetoothd | default\n";
         let found = is_service_in_runlevel_output(output, "bluetooth");
         assert!(!found);
