@@ -51,7 +51,7 @@ pub async fn subscribe<T>(
 
 #[derive(Clone, Debug)]
 pub enum Message {
-    /// Connection to `com.system76.CosmicSettings`.
+    /// Connection to `com.lingmoos.LingmoSettings`.
     Client(Arc<audio_client::Client>),
     /// Messages from the varlink audio client,
     Subscription(audio_client::Event),
