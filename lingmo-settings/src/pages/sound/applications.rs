@@ -10,7 +10,7 @@ use cosmic::iced::{self, Alignment, Length, window};
 use cosmic::widget::space::horizontal as horizontal_space;
 use cosmic::{Apply, Element, surface, widget};
 use cosmic_config::{Config, ConfigGet};
-use lingmo_settings_audio_client::{self as audio_client, CosmicAudioProxy};
+use cosmic_settings_audio_client::{self as audio_client, CosmicAudioProxy};
 use lingmo_settings_page::{self as page, Section, section};
 use futures::executor::block_on;
 use intmap::IntMap;

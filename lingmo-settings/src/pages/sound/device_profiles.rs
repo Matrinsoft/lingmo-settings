@@ -4,7 +4,7 @@
 use super::model;
 use cosmic::iced::futures;
 use cosmic::{Apply, iced, widget};
-use lingmo_settings_audio_client::{self as audio_client, CosmicAudioProxy};
+use cosmic_settings_audio_client::{self as audio_client, CosmicAudioProxy};
 use lingmo_settings_page::{self as page, Section, section};
 use futures::executor::block_on;
 use slotmap::SlotMap;

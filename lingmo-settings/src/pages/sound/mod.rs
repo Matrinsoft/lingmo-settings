@@ -9,7 +9,7 @@ use cosmic::widget::space::horizontal as horizontal_space;
 use cosmic::widget::{self, settings};
 use cosmic::{Apply, Element, Task, surface};
 use cosmic_config::{Config, ConfigGet, ConfigSet};
-use lingmo_settings_audio_client::{self as audio_client, Client, CosmicAudioProxy};
+use cosmic_settings_audio_client::{self as audio_client, Client, CosmicAudioProxy};
 use lingmo_settings_page::{self as page, Section, section};
 use lingmo_settings_sound::model;
 use futures::executor::block_on;
