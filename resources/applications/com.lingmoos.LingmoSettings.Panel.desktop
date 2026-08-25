@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Panel
+Comment=Primary system bar for menus and applets.
+Type=Application
+Exec=lingmo-settings panel
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Panel;Applet
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-panel
+StartupNotify=true

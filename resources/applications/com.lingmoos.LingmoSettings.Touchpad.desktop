@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Touchpad
+Comment=Touchpad speed, click options, and gestures.
+Type=Application
+Exec=lingmo-settings touchpad
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;System;Time;Date;Region;Language;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-touchpad
+StartupNotify=true

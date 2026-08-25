@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.lingmoos.LingmoSettings</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <project_group>Lingmo</project_group>
+  <developer_name>Matrinsoft</developer_name>
+  <update_contact>jeremy@system76.com</update_contact>
+  <url type="homepage">https://github.com/Matrinsoft/lingmo-settings</url>
+  <url type="bugtracker">https://github.com/Matrinsoft/lingmo-settings</url>
+  <name>Lingmo Settings</name>
+  <name xml:lang="ar">إعدادات Lingmo</name>
+  <name xml:lang="cs">Nastavení Lingmo</name>
+  <name xml:lang="pl">Ustawienia Lingmo</name>
+  <name xml:lang="hu">Lingmo Beállítások</name>
+  <name xml:lang="pt">Configurações</name>
+  <name xml:lang="nl">Lingmo instellingen</name>
+  <name xml:lang="sk">Nastavenia Lingmo</name>
+  <name xml:lang="es">Configuración Lingmo</name>
+  <name xml:lang="sv">Lingmo Inställningar</name>
+  <summary>Settings application for the Lingmo desktop</summary>
+  <summary xml:lang="ar">تطبيق الإعدادات لسطح مكتب Lingmo</summary>
+  <summary xml:lang="cs">Aplikace nastavení pro pracovní prostředí Lingmo</summary>
+  <summary xml:lang="pl">Aplikacja ustawień pulpitu Lingmo</summary>
+  <summary xml:lang="hu">Beállítások a Lingmo asztali környezethez</summary>
+  <summary xml:lang="pt">Ajuste de configurações para o desktop Lingmo</summary>
+  <summary xml:lang="nl">Configuratiecentrum voor Lingmo desktop</summary>
+  <summary xml:lang="sk">Aplikácia nastavení pre pracovnú plochu Lingmo</summary>
+  <summary xml:lang="es">Aplicación de configuración para escritorio Lingmo</summary>
+  <summary xml:lang="sv">Inställningsprogram för skrivbordsmiljön Lingmo</summary>
+  <description>
+      <p>Settings application for the Lingmo desktop</p>
+      <p xml:lang="ar">تطبيق الإعدادات لسطح مكتب Lingmo</p>
+      <p xml:lang="cs">Aplikace nastavení pro pracovní prostředí Lingmo</p>
+      <p xml:lang="pl">Aplikacja ustawień pulpitu Lingmo</p>
+      <p xml:lang="hu">Beállítások a Lingmo asztali környezethez</p>
+      <p xml:lang="pt">Ajuste de configurações para o desktop Lingmo</p>
+      <p xml:lang="nl">Configuratiecentrum voor Lingmo desktop</p>
+      <p xml:lang="sk">Aplikácia nastavení pre pracovnú plochu Lingmo</p>
+      <p xml:lang="es">Aplicación de configuración para escritorio Lingmo</p>
+      <p xml:lang="sv">Inställningsprogram för skrivbordsmiljön Lingmo</p>
+  </description>
+  <launchable type="desktop-id">com.lingmoos.LingmoSettings.desktop</launchable>
+  <icon type="remote" height="256" width="256">https://raw.githubusercontent.com/pop-os/cosmic-settings/master/resources/icons/256x256/apps/com.lingmoos.LingmoSettings.svg</icon>
+  <provides>
+    <binaries>
+      <binary>lingmo-settings</binary>
+    </binaries>
+  </provides>
+</component>

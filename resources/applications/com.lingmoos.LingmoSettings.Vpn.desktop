@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=VPN
+Comment=VPN connections and connection profiles.
+Type=Application
+Exec=lingmo-settings vpn
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;VPN;Network;Connection;OpenVPN;OpenConnect;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-vpn
+StartupNotify=true

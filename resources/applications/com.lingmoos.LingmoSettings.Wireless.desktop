@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Wi-Fi
+Comment=Wi-Fi connections and connection profiles.
+Type=Application
+Exec=lingmo-settings wireless
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;WiFi;Wi-Fi;Network;Connection;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-wireless
+StartupNotify=true

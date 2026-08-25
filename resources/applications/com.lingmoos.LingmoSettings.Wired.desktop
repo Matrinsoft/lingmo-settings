@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Wired
+Comment=Wired connections and connection profiles.
+Type=Application
+Exec=lingmo-settings wired
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Wired;LAN;Network;Connection;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-wired
+StartupNotify=true

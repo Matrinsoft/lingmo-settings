@@ -36,5 +36,5 @@ Depends:
     network-manager-openvpn-gnome,
     xkb-data,
 Recommends: adw-gtk3
-Description: Settings application for the COSMIC desktop environment
- Settings application for the COSMIC desktop environment
+Description: Settings application for the Lingmo desktop environment
+ Settings application for the Lingmo desktop environment

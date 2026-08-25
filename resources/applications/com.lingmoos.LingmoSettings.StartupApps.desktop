@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Startup Applications
+Comment=Configure applications which run on login.
+Type=Application
+Exec=lingmo-settings startup-apps
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Startup;Application;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-startup-applications
+StartupNotify=true

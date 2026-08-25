@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Displays
+Comment=Manage display configuration settings.
+Type=Application
+Exec=lingmo-settings displays
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Display;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-displays
+StartupNotify=true

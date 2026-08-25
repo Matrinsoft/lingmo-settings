@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Lingmo Settings
+Comment=Settings application for Lingmo.
+Type=Application
+Exec=lingmo-settings
+Terminal=false
+Categories=Lingmo
+Keywords=Lingmo;Settings;
+OnlyShowIn=Lingmo
+Icon=com.lingmoos.LingmoSettings
+StartupNotify=true

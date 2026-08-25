@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=About
+Comment=Device name, hardware information, operating system defaults.
+Type=Application
+Exec=lingmo-settings about
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;About
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-about
+StartupNotify=true

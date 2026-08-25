@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Notifications
+Comment=Do Not Disturb, lockscreen notifications, and per-application settings.
+Type=Application
+Exec=lingmo-settings notifications
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Notification;Lock;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=com.lingmoos.LingmoSettings
+StartupNotify=true

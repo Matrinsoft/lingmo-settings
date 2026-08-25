@@ -1,5 +1,5 @@
 {
-  description = "Settings application for the COSMIC desktop environment";
+  description = "Settings application for the Lingmo desktop environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";

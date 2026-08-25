@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Dock
+Comment=An optional bar for apps and applets.
+Type=Application
+Exec=lingmo-settings dock
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Dock;Panel;Applet
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-dock
+StartupNotify=true

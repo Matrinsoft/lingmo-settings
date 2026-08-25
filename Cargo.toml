@@ -1,6 +1,6 @@
 [workspace]
-members = ["cosmic-settings", "page", "pages/*", "subscriptions/*"]
-default-members = ["cosmic-settings"]
+members = ["lingmo-settings", "page", "pages/*", "subscriptions/*"]
+default-members = ["lingmo-settings"]
 resolver = "3"
 
 [workspace.package]

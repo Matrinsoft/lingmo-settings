@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Time & Language
+Comment=Manage system date, time, region, and language.
+Type=Application
+Exec=lingmo-settings time
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;System;Time;Date;Region;Language;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-time-and-language
+StartupNotify=true

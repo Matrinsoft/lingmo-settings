@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Input Devices
+Comment=Keyboard and mouse settings.
+Type=Application
+Exec=lingmo-settings input
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Input;Keyboard;Mouse;Mice;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-input-devices
+StartupNotify=true

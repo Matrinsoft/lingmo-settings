@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Users
+Comment=Authentication and user accounts.
+Type=Application
+Exec=lingmo-settings users
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;User;Account;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-users
+StartupNotify=true

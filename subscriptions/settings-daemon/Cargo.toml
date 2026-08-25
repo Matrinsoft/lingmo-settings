@@ -1,5 +1,5 @@
 [package]
-name = "cosmic-settings-daemon-subscription"
+name = "lingmo-settings-daemon-subscription"
 version = "1.0.7"
 edition = "2024"
 rust-version.workspace = true

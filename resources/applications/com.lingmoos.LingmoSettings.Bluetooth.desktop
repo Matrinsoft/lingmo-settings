@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Bluetooth
+Comment=Manage Bluetooth devices.
+Type=Application
+Exec=lingmo-settings bluetooth
+Terminal=false
+Categories=Lingmo
+Keywords=COSMIC;Bluetooth;
+NoDisplay=true
+OnlyShowIn=Lingmo
+Icon=preferences-bluetooth
+StartupNotify=true
