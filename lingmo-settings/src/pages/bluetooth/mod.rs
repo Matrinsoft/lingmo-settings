@@ -6,8 +6,8 @@ use cosmic::iced::{Alignment, Length, color};
 use cosmic::widget::space::horizontal as horizontal_space;
 use cosmic::widget::{self, settings, text};
 use cosmic::{Apply, Element, Task, theme};
-use lingmo_settings_bluetooth_subscription::*;
-use lingmo_settings_page::{self as page, Section, section};
+use cosmic_settings_bluetooth_subscription::*;
+use cosmic_settings_page::{self as page, Section, section};
 use futures::channel::oneshot;
 use futures::{SinkExt, StreamExt};
 use slotmap::SlotMap;
@@ -442,7 +442,7 @@ impl Page {
                         self.heading = fl!(
                             "bluetooth",
                             "status",
-                            aliases = format!("“{}???, adapter.alias)
+                            aliases = format!("“{}”", adapter.alias)
                         );
                     } else {
                         self.heading = fl!(
@@ -452,7 +452,7 @@ impl Page {
                                 .model
                                 .adapters
                                 .values()
-                                .map(|adapter| format!("“{}???, adapter.alias))
+                                .map(|adapter| format!("“{}”", adapter.alias))
                                 .collect::<HashSet<String>>()
                                 .into_iter()
                                 .collect::<Vec<String>>()
@@ -534,12 +534,12 @@ impl Page {
                     // means bluez isn't installed; on OpenRC it may be installed but lack
                     // the D-Bus service file.  Check the service manager to disambiguate.
                     if self.service_manager.is_installed() {
-                        // Service manager confirms the service exists ???query its real state.
+                        // Service manager confirms the service exists — query its real state.
                         self.bluez_service_unknown = false;
                         self.service_is_active = self.service_manager.is_active();
                         self.service_is_enabled = self.service_manager.is_enabled();
                     } else {
-                        // Genuinely not installed ???let status() show the unknown message.
+                        // Genuinely not installed — let status() show the unknown message.
                         self.bluez_service_unknown = true;
                     }
                 }
