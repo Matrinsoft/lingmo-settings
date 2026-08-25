@@ -26,7 +26,7 @@ cosmic-panel-config = { workspace = true, optional = true }
 cosmic-protocols = { git = "https://github.com/Matrinsoft/lingmo-protocols", optional = true }
 cosmic-randr-shell.workspace = true
 cosmic-randr = { workspace = true, optional = true }
-lingmo-settings-config = { git = "https://github.com/Matrinsoft/lingmo-settings-daemon", optional = true }
+cosmic-settings-config = { git = "https://github.com/Matrinsoft/lingmo-settings-daemon", optional = true }
 lingmo-settings-page = { path = "../page" }
 lingmo-settings-accessibility-subscription = { path = "../subscriptions/accessibility", optional = true }
 lingmo-settings-a11y-manager-subscription = { path = "../subscriptions/a11y-manager", optional = true }
@@ -144,7 +144,7 @@ page-accessibility = [
     "cosmic-comp-config",
     "dep:sctk",
     "dep:cosmic-protocols",
-    "dep:lingmo-settings-config",
+    "dep:cosmic-settings-config",
     "dep:lingmo-settings-daemon-config",
     "dep:lingmo-settings-accessibility-subscription",
     "dep:lingmo-settings-a11y-manager-subscription",
@@ -156,12 +156,12 @@ page-bluetooth = [
     "dep:bluez-zbus",
 ]
 page-date = ["dep:timedate-zbus", "dep:zbus"]
-page-default-apps = ["dep:lingmo-settings-config", "dep:mime-apps"]
+page-default-apps = ["dep:cosmic-settings-config", "dep:mime-apps"]
 page-display = ["dep:udev"]
 page-input = [
     "cosmic-comp-config",
     "gettext",
-    "dep:lingmo-settings-config",
+    "dep:cosmic-settings-config",
     "dep:udev",
     "dep:xkeysym",
     "wayland",
@@ -183,7 +183,7 @@ page-region = [
 ]
 page-sound = ["dep:lingmo-settings-audio-client", "dep:lingmo-settings-sound"]
 page-users = ["xdg-portal", "dep:accounts-zbus", "dep:zbus", "dep:zbus_polkit"]
-page-window-management = ["cosmic-comp-config", "dep:lingmo-settings-config"]
+page-window-management = ["cosmic-comp-config", "dep:cosmic-settings-config"]
 page-workspaces = ["cosmic-comp-config"]
 
 # Other features
