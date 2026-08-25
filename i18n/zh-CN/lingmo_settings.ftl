@@ -1,953 +1,669 @@
-app = COSMIC 设置
-dbus-connection-error = 无法连接�?DBus
-ok = 确定
-unknown = 未知
+app = LINGMO 璁剧疆
+dbus-connection-error = 鏃犳硶杩炴帴鍒?DBus
+ok = 纭畾
+unknown = 鏈煡
 number = { $number }
 
 ## Freedesktop desktop entries
 
-xdg-entry-about = 关于
-xdg-entry-about-comment = 设备名称、硬件信息、操作系统默认设�?
-xdg-entry-a11y = 无障�?
-xdg-entry-a11y-comment = 屏幕阅读器、放大镜、高对比度以及色彩滤�?
-xdg-entry-appearance = 外观
-xdg-entry-appearance-comment = 主题色和个性化
-xdg-entry-applications = 应用程序
-xdg-entry-applications-comment = 默认应用程序、自动启动应用程序和 X11 应用程序兼容性设�?
-xdg-entry-bluetooth-comment = 管理蓝牙设备
-xdg-entry-date-time = 日期与时�?
-xdg-entry-date-time-comment = 时区、自动时钟设置和时间格式
-xdg-entry-default-apps = 默认应用程序
-xdg-entry-default-apps-comment = 默认网络浏览器、邮件客户端、文件管理器和其他应用程�?
-xdg-entry-desktop = 桌面
-xdg-entry-displays = 显示�?
-xdg-entry-displays-comment = 管理显示器设�?
-xdg-entry-dock = 程序�?
-xdg-entry-dock-comment = 可选的应用程序和小部件的工具栏
-xdg-entry-input = 输入设备
-xdg-entry-input-comment = 键盘与光标设�?
-xdg-entry-keyboard = 键盘
-xdg-entry-keyboard-comment = 输入源、切换、特殊字符输入、快捷键
-xdg-entry-mouse = 鼠标
-xdg-entry-mouse-comment = 鼠标速度、加速度和自然滚�?
-xdg-entry-network = 网络与无�?
-xdg-entry-network-comment = 管理网络连接
-xdg-entry-notifications = 通知
-xdg-entry-notifications-comment = 勿扰模式、锁屏通知和每个应用程序的设置
-xdg-entry-panel = 面板
-xdg-entry-panel-comment = 主系统栏，用于菜单和小部�?
-xdg-entry-power = 电源与电�?
-xdg-entry-power-comment = 电源模式和节能选项
-xdg-entry-region-language = 区域与语言
-xdg-entry-region-language-comment = 根据您的区域格式化日期、时间和数字
-xdg-entry-sound = 声音
-xdg-entry-sound-comment = 设备、警报和应用程序的音频设�?
-xdg-entry-startup-apps = 自动启动应用程序
-xdg-entry-startup-apps-comment = 配置登录时运行的应用程序
-xdg-entry-system = 系统与账�?
-xdg-entry-system-comment = 系统信息、账户和固件更新
-xdg-entry-time-language = 时间与语言
-xdg-entry-touchpad = 触摸�?
-xdg-entry-touchpad-comment = 触摸板速度、点击选项和手�?
-xdg-entry-users = 用户
-xdg-entry-users-comment = 身份验证和用户账�?
-xdg-entry-vpn-comment = VPN 连接和配置文�?
-xdg-entry-wallpaper = 壁纸
-xdg-entry-wallpaper-comment = 壁纸图片、颜色和幻灯片选项
-xdg-entry-window-management = 窗口管理
-xdg-entry-window-management-comment = Super 键操作、窗口控制选项和额外的窗口平铺选项
-xdg-entry-wired = 有线连接
-xdg-entry-wired-comment = 有线连接和配置文�?
-xdg-entry-wireless-comment = Wi-Fi 连接和配置文�?
-xdg-entry-workspaces = 工作�?
-xdg-entry-workspaces-comment = 工作区方向、总览和多显示屏行�?
-xdg-entry-x11-applications = X11 应用程序兼容�?
-xdg-entry-x11-applications-comment = X11 窗口系统应用程序缩放、主要显示器和全局快捷�?
-
+xdg-entry-about = 鍏充簬
+xdg-entry-about-comment = 璁惧鍚嶇О銆佺‖浠朵俊鎭€佹搷浣滅郴缁熼粯璁よ缃?xdg-entry-a11y = 鏃犻殰纰?xdg-entry-a11y-comment = 灞忓箷闃呰鍣ㄣ€佹斁澶ч暅銆侀珮瀵规瘮搴︿互鍙婅壊褰╂护闀?xdg-entry-appearance = 澶栬
+xdg-entry-appearance-comment = 涓婚鑹插拰涓€у寲
+xdg-entry-applications = 搴旂敤绋嬪簭
+xdg-entry-applications-comment = 榛樿搴旂敤绋嬪簭銆佽嚜鍔ㄥ惎鍔ㄥ簲鐢ㄧ▼搴忓拰 X11 搴旂敤绋嬪簭鍏煎鎬ц缃?xdg-entry-bluetooth-comment = 绠＄悊钃濈墮璁惧
+xdg-entry-date-time = 鏃ユ湡涓庢椂闂?xdg-entry-date-time-comment = 鏃跺尯銆佽嚜鍔ㄦ椂閽熻缃拰鏃堕棿鏍煎紡
+xdg-entry-default-apps = 榛樿搴旂敤绋嬪簭
+xdg-entry-default-apps-comment = 榛樿缃戠粶娴忚鍣ㄣ€侀偖浠跺鎴风銆佹枃浠剁鐞嗗櫒鍜屽叾浠栧簲鐢ㄧ▼搴?xdg-entry-desktop = 妗岄潰
+xdg-entry-displays = 鏄剧ず鍣?xdg-entry-displays-comment = 绠＄悊鏄剧ず鍣ㄨ缃?xdg-entry-dock = 绋嬪簭鍧?xdg-entry-dock-comment = 鍙€夌殑搴旂敤绋嬪簭鍜屽皬閮ㄤ欢鐨勫伐鍏锋爮
+xdg-entry-input = 杈撳叆璁惧
+xdg-entry-input-comment = 閿洏涓庡厜鏍囪缃?xdg-entry-keyboard = 閿洏
+xdg-entry-keyboard-comment = 杈撳叆婧愩€佸垏鎹€佺壒娈婂瓧绗﹁緭鍏ャ€佸揩鎹烽敭
+xdg-entry-mouse = 榧犳爣
+xdg-entry-mouse-comment = 榧犳爣閫熷害銆佸姞閫熷害鍜岃嚜鐒舵粴鍔?xdg-entry-network = 缃戠粶涓庢棤绾?xdg-entry-network-comment = 绠＄悊缃戠粶杩炴帴
+xdg-entry-notifications = 閫氱煡
+xdg-entry-notifications-comment = 鍕挎壈妯″紡銆侀攣灞忛€氱煡鍜屾瘡涓簲鐢ㄧ▼搴忕殑璁剧疆
+xdg-entry-panel = 闈㈡澘
+xdg-entry-panel-comment = 涓荤郴缁熸爮锛岀敤浜庤彍鍗曞拰灏忛儴浠?xdg-entry-power = 鐢垫簮涓庣數姹?xdg-entry-power-comment = 鐢垫簮妯″紡鍜岃妭鑳介€夐」
+xdg-entry-region-language = 鍖哄煙涓庤瑷€
+xdg-entry-region-language-comment = 鏍规嵁鎮ㄧ殑鍖哄煙鏍煎紡鍖栨棩鏈熴€佹椂闂村拰鏁板瓧
+xdg-entry-sound = 澹伴煶
+xdg-entry-sound-comment = 璁惧銆佽鎶ュ拰搴旂敤绋嬪簭鐨勯煶棰戣缃?xdg-entry-startup-apps = 鑷姩鍚姩搴旂敤绋嬪簭
+xdg-entry-startup-apps-comment = 閰嶇疆鐧诲綍鏃惰繍琛岀殑搴旂敤绋嬪簭
+xdg-entry-system = 绯荤粺涓庤处鎴?xdg-entry-system-comment = 绯荤粺淇℃伅銆佽处鎴峰拰鍥轰欢鏇存柊
+xdg-entry-time-language = 鏃堕棿涓庤瑷€
+xdg-entry-touchpad = 瑙︽懜鏉?xdg-entry-touchpad-comment = 瑙︽懜鏉块€熷害銆佺偣鍑婚€夐」鍜屾墜鍔?xdg-entry-users = 鐢ㄦ埛
+xdg-entry-users-comment = 韬唤楠岃瘉鍜岀敤鎴疯处鎴?xdg-entry-vpn-comment = VPN 杩炴帴鍜岄厤缃枃浠?xdg-entry-wallpaper = 澹佺焊
+xdg-entry-wallpaper-comment = 澹佺焊鍥剧墖銆侀鑹插拰骞荤伅鐗囬€夐」
+xdg-entry-window-management = 绐楀彛绠＄悊
+xdg-entry-window-management-comment = Super 閿搷浣溿€佺獥鍙ｆ帶鍒堕€夐」鍜岄澶栫殑绐楀彛骞抽摵閫夐」
+xdg-entry-wired = 鏈夌嚎杩炴帴
+xdg-entry-wired-comment = 鏈夌嚎杩炴帴鍜岄厤缃枃浠?xdg-entry-wireless-comment = Wi-Fi 杩炴帴鍜岄厤缃枃浠?xdg-entry-workspaces = 宸ヤ綔鍖?xdg-entry-workspaces-comment = 宸ヤ綔鍖烘柟鍚戙€佹€昏鍜屽鏄剧ず灞忚涓?xdg-entry-x11-applications = X11 搴旂敤绋嬪簭鍏煎鎬?xdg-entry-x11-applications-comment = X11 绐楀彛绯荤粺搴旂敤绋嬪簭缂╂斁銆佷富瑕佹樉绀哄櫒鍜屽叏灞€蹇嵎閿?
 ## Network & Wireless
 
-add-network = 添加网络
-    .profile = 添加配置
-add-vpn = 添加 VPN
-airplane-on = 飞行模式已开启�?
-cable-unplugged = 网线已拔�?
-connect = 连接
-connected = 已连�?
-connecting = 正在连接�?
-disconnect = 断开连接
-forget = 忘记
-known-networks = 已知网络
-network-and-wireless = 网络与无�?
-no-networks = 未找到任何网络�?
-no-vpn = 没有可用�?VPN 连接�?
-password = 密码
-password-confirm = 确认密码
-remove = 移除
-settings = 设置
-username = 用户�?
-visible-networks = 可见网络
-identity = 标识
-auth-dialog = 需要认�?
-    .vpn-description = 请输�?VPN 服务要求的用户名和密码�?
-    .wifi-description = 输入密码或加密密钥。您也可以通过路由器上的“WPS”按钮来连接�?
-forget-dialog = 忘记�?Wi-Fi 网络�?
-    .description = 未来使用�?Wi-Fi 网络时需要重新输入密码�?
-network-device-state =
-    .activated = 已连�?
-    .config = 正在连接
-    .deactivating = 正在断开连接
-    .disconnected = 已断开连接
-    .failed = 连接失败
-    .ip-check = 正在检查连�?
-    .ip-config = 正在请求 IP 和路由信�?
-    .need-auth = 需要认�?
-    .prepare = 正在准备连接
-    .secondaries = 等待次要连接
-    .unavailable = 不可�?
-    .unknown = 未知状�?
-    .unmanaged = 未管�?
-    .unplugged = 网线已拔�?
-remove-connection-dialog = 确定移除连接配置文件�?
-    .vpn-description = 未来使用此网络时需要重新输入密码�?
-    .wired-description = 未来使用此网络时需要重新创建配置文件�?
-vpn = VPN
-    .connections = VPN 连接
-    .error = 添加 VPN 配置失败
-    .remove = 移除连接配置文件
-    .select-file = 选择 VPN 配置文件
-vpn-error = VPN 错误
-    .config = 添加 VPN 配置失败
-    .connect = 连接 VPN 失败
-    .connection-editor = 连接编辑器失�?
-    .connection-settings = 获取活跃连接设置失败
-    .openvpn-config-path = OpenVPN 配置文件路径无效
-    .openvpn-config-path-desc = 所选文件必须在本地文件系统上�?
-    .updating-state = 更新网络管理器状态失�?
-    .wireguard-config-path = WireGuard 配置文件路径无效
-    .wireguard-config-path-desc = 所选文件必须在本地文件系统上�?
-    .wireguard-device = 创建 WireGuard 设备失败
+add-network = 娣诲姞缃戠粶
+    .profile = 娣诲姞閰嶇疆
+add-vpn = 娣诲姞 VPN
+airplane-on = 椋炶妯″紡宸插紑鍚€?cable-unplugged = 缃戠嚎宸叉嫈鍑?connect = 杩炴帴
+connected = 宸茶繛鎺?connecting = 姝ｅ湪杩炴帴鈥?disconnect = 鏂紑杩炴帴
+forget = 蹇樿
+known-networks = 宸茬煡缃戠粶
+network-and-wireless = 缃戠粶涓庢棤绾?no-networks = 鏈壘鍒颁换浣曠綉缁溿€?no-vpn = 娌℃湁鍙敤鐨?VPN 杩炴帴銆?password = 瀵嗙爜
+password-confirm = 纭瀵嗙爜
+remove = 绉婚櫎
+settings = 璁剧疆
+username = 鐢ㄦ埛鍚?visible-networks = 鍙缃戠粶
+identity = 鏍囪瘑
+auth-dialog = 闇€瑕佽璇?    .vpn-description = 璇疯緭鍏?VPN 鏈嶅姟瑕佹眰鐨勭敤鎴峰悕鍜屽瘑鐮併€?    .wifi-description = 杈撳叆瀵嗙爜鎴栧姞瀵嗗瘑閽ャ€傛偍涔熷彲浠ラ€氳繃璺敱鍣ㄤ笂鐨勨€淲PS鈥濇寜閽潵杩炴帴銆?forget-dialog = 蹇樿姝?Wi-Fi 缃戠粶锛?    .description = 鏈潵浣跨敤姝?Wi-Fi 缃戠粶鏃堕渶瑕侀噸鏂拌緭鍏ュ瘑鐮併€?network-device-state =
+    .activated = 宸茶繛鎺?    .config = 姝ｅ湪杩炴帴
+    .deactivating = 姝ｅ湪鏂紑杩炴帴
+    .disconnected = 宸叉柇寮€杩炴帴
+    .failed = 杩炴帴澶辫触
+    .ip-check = 姝ｅ湪妫€鏌ヨ繛鎺?    .ip-config = 姝ｅ湪璇锋眰 IP 鍜岃矾鐢变俊鎭?    .need-auth = 闇€瑕佽璇?    .prepare = 姝ｅ湪鍑嗗杩炴帴
+    .secondaries = 绛夊緟娆¤杩炴帴
+    .unavailable = 涓嶅彲鐢?    .unknown = 鏈煡鐘舵€?    .unmanaged = 鏈鐞?    .unplugged = 缃戠嚎宸叉嫈鍑?remove-connection-dialog = 纭畾绉婚櫎杩炴帴閰嶇疆鏂囦欢锛?    .vpn-description = 鏈潵浣跨敤姝ょ綉缁滄椂闇€瑕侀噸鏂拌緭鍏ュ瘑鐮併€?    .wired-description = 鏈潵浣跨敤姝ょ綉缁滄椂闇€瑕侀噸鏂板垱寤洪厤缃枃浠躲€?vpn = VPN
+    .connections = VPN 杩炴帴
+    .error = 娣诲姞 VPN 閰嶇疆澶辫触
+    .remove = 绉婚櫎杩炴帴閰嶇疆鏂囦欢
+    .select-file = 閫夋嫨 VPN 閰嶇疆鏂囦欢
+vpn-error = VPN 閿欒
+    .config = 娣诲姞 VPN 閰嶇疆澶辫触
+    .connect = 杩炴帴 VPN 澶辫触
+    .connection-editor = 杩炴帴缂栬緫鍣ㄥけ璐?    .connection-settings = 鑾峰彇娲昏穬杩炴帴璁剧疆澶辫触
+    .openvpn-config-path = OpenVPN 閰嶇疆鏂囦欢璺緞鏃犳晥
+    .openvpn-config-path-desc = 鎵€閫夋枃浠跺繀椤诲湪鏈湴鏂囦欢绯荤粺涓娿€?    .updating-state = 鏇存柊缃戠粶绠＄悊鍣ㄧ姸鎬佸け璐?    .wireguard-config-path = WireGuard 閰嶇疆鏂囦欢璺緞鏃犳晥
+    .wireguard-config-path-desc = 鎵€閫夋枃浠跺繀椤诲湪鏈湴鏂囦欢绯荤粺涓娿€?    .wireguard-device = 鍒涘缓 WireGuard 璁惧澶辫触
     .with-password =
-        使用 nmcli 设置 VPN { $field ->
-           *[username] 用户�?
-            [password] 密码
-            [password-flags] 密码标志
-        }失败
-wired = 有线网络
-    .adapter = 有线网络适配�?{ $id }
-    .connections = 有线连接
-    .devices = 有线设备
-    .remove = 移除连接配置文件
+        浣跨敤 nmcli 璁剧疆 VPN { $field ->
+           *[username] 鐢ㄦ埛鍚?            [password] 瀵嗙爜
+            [password-flags] 瀵嗙爜鏍囧織
+        }澶辫触
+wired = 鏈夌嚎缃戠粶
+    .adapter = 鏈夌嚎缃戠粶閫傞厤鍣?{ $id }
+    .connections = 鏈夌嚎杩炴帴
+    .devices = 鏈夌嚎璁惧
+    .remove = 绉婚櫎杩炴帴閰嶇疆鏂囦欢
 wifi = Wi-Fi
-    .adapter = Wi-Fi 适配�?{ $id }
-    .forget = 忘记此网�?
-wireguard-dialog = 添加 WireGuard 设备
-    .description = �?WireGuard 配置选择设备名称�?
-
+    .adapter = Wi-Fi 閫傞厤鍣?{ $id }
+    .forget = 蹇樿姝ょ綉缁?wireguard-dialog = 娣诲姞 WireGuard 璁惧
+    .description = 涓?WireGuard 閰嶇疆閫夋嫨璁惧鍚嶇О銆?
 ## Networking: Online Accounts
 
-online-accounts = 在线账户
-    .desc = 添加账户、IMAP与SMTP设置、企业登�?
-
+online-accounts = 鍦ㄧ嚎璐︽埛
+    .desc = 娣诲姞璐︽埛銆両MAP涓嶴MTP璁剧疆銆佷紒涓氱櫥褰?
 # Bluetooth
 
-activate = 激�?
-confirm = 确认
-enable = 启用
-bluetooth = 蓝牙
-    .status = 当蓝牙设置打开时，此系统显示为 { $aliases }�?
-    .connected = 已连�?
-    .connecting = 正在连接
-    .disconnecting = 正在断开连接
-    .connect = 连接
-    .disconnect = 断开连接
-    .forget = 忘记
-    .dbus-error = �?DBus 交互时发生错误：{ $why }
-    .disabled = 蓝牙服务已禁�?
-    .inactive = 蓝牙服务未激�?
-    .unknown = 无法激活蓝牙服务。是否已安装 Bluez�?
-bluetooth-paired = 已连接过的设�?
-    .connect = 连接
-    .battery = 电量 { $percentage }%
-bluetooth-confirm-pin = 确认蓝牙 PIN �?
-    .description = 请确认以�?PIN 码与 { $device } 上显示的是否匹配
-bluetooth-available = 附近设备
-bluetooth-adapters = 蓝牙适配�?
-
+activate = 婵€娲?confirm = 纭
+enable = 鍚敤
+bluetooth = 钃濈墮
+    .status = 褰撹摑鐗欒缃墦寮€鏃讹紝姝ょ郴缁熸樉绀轰负 { $aliases }銆?    .connected = 宸茶繛鎺?    .connecting = 姝ｅ湪杩炴帴
+    .disconnecting = 姝ｅ湪鏂紑杩炴帴
+    .connect = 杩炴帴
+    .disconnect = 鏂紑杩炴帴
+    .forget = 蹇樿
+    .dbus-error = 涓?DBus 浜や簰鏃跺彂鐢熼敊璇細{ $why }
+    .disabled = 钃濈墮鏈嶅姟宸茬鐢?    .inactive = 钃濈墮鏈嶅姟鏈縺娲?    .unknown = 鏃犳硶婵€娲昏摑鐗欐湇鍔°€傛槸鍚﹀凡瀹夎 Bluez锛?bluetooth-paired = 宸茶繛鎺ヨ繃鐨勮澶?    .connect = 杩炴帴
+    .battery = 鐢甸噺 { $percentage }%
+bluetooth-confirm-pin = 纭钃濈墮 PIN 鐮?    .description = 璇风‘璁や互涓?PIN 鐮佷笌 { $device } 涓婃樉绀虹殑鏄惁鍖归厤
+bluetooth-available = 闄勮繎璁惧
+bluetooth-adapters = 钃濈墮閫傞厤鍣?
 ## Accessibility
 
-accessibility = 无障�?
-    .vision = 视觉
-    .on = 开�?
-    .off = 关闭
-    .unavailable = 不可�?
-    .screen-reader = 屏幕阅读�?
-    .high-contrast = 高对比度模式
-    .invert-colors = 颜色反转
-    .color-filters = 色彩滤镜
-hearing = 听觉
-    .mono = 播放立体声音频为单声�?
-default = 默认
-magnifier = 放大�?
-    .controls =
-        或使用这些快捷键：{ $zoom_in ->
+accessibility = 鏃犻殰纰?    .vision = 瑙嗚
+    .on = 寮€鍚?    .off = 鍏抽棴
+    .unavailable = 涓嶅彲鐢?    .screen-reader = 灞忓箷闃呰鍣?    .high-contrast = 楂樺姣斿害妯″紡
+    .invert-colors = 棰滆壊鍙嶈浆
+    .color-filters = 鑹插僵婊ら暅
+    .shake-cursor = 鏅冨姩鎸囬拡鏉ュ鎵惧畠
+    .shake-cursor-desc = 蹇€熸檭鍔ㄩ紶鏍囦互鏆傛椂鏀惧ぇ鎸囨爣
+hearing = 鍚
+    .mono = 鎾斁绔嬩綋澹伴煶棰戜负鍗曞０閬?default = 榛樿
+magnifier = 鏀惧ぇ闀?    .controls =
+        鎴栦娇鐢ㄨ繖浜涘揩鎹烽敭锛歿 $zoom_in ->
             [zero] { "" }
            *[other]
                 { "" }
-                �?{ $zoom_in } 放大�?
-        }{ $zoom_out ->
+                鎸?{ $zoom_in } 鏀惧ぇ锛?        }{ $zoom_out ->
             [zero] { "" }
            *[other]
                 { "" }
-                �?{ $zoom_out } 缩小�?
-        }
-        �?Super 并滚动鼠�?
-    .scroll_controls = �?Super 并使用鼠标或触摸板滚动来启用缩放
-    .show_overlay = 显示放大镜叠加层
-    .increment = 缩放增量
-    .signin = 登录时启动放大镜
-    .applet = 在面板上的小部件中切换放大镜开�?
-    .movement = 放大视图移动
-    .continuous = 跟随指针连续移动
-    .onedge = 当指针到达边缘时
-    .centered = 保持指针居中
-color-filter = 色彩滤镜类型
-    .unknown = 未知滤镜已激�?
-    .greyscale = 灰度
-    .deuteranopia = 绿色/红色（绿色弱视，绿色盲）
-    .protanopia = 红色/绿色（红色弱视，红色盲）
-    .tritanopia = 蓝色/黄色（蓝色弱视，蓝色盲）
+                鎸?{ $zoom_out } 缂╁皬锛?        }
+        鎸?Super 骞舵粴鍔ㄩ紶鏍?    .scroll_controls = 鎸?Super 骞朵娇鐢ㄩ紶鏍囨垨瑙︽懜鏉挎粴鍔ㄦ潵鍚敤缂╂斁
+    .show_overlay = 鏄剧ず鏀惧ぇ闀滃彔鍔犲眰
+    .increment = 缂╂斁澧為噺
+    .signin = 鐧诲綍鏃跺惎鍔ㄦ斁澶ч暅
+    .applet = 鍦ㄩ潰鏉夸笂鐨勫皬閮ㄤ欢涓垏鎹㈡斁澶ч暅寮€鍏?    .movement = 鏀惧ぇ瑙嗗浘绉诲姩
+    .continuous = 璺熼殢鎸囬拡杩炵画绉诲姩
+    .onedge = 褰撴寚閽堝埌杈捐竟缂樻椂
+    .centered = 淇濇寔鎸囬拡灞呬腑
+color-filter = 鑹插僵婊ら暅绫诲瀷
+    .unknown = 鏈煡婊ら暅宸叉縺娲?    .greyscale = 鐏板害
+    .deuteranopia = 缁胯壊/绾㈣壊锛堢豢鑹插急瑙嗭紝缁胯壊鐩诧級
+    .protanopia = 绾㈣壊/缁胯壊锛堢孩鑹插急瑙嗭紝绾㈣壊鐩诧級
+    .tritanopia = 钃濊壊/榛勮壊锛堣摑鑹插急瑙嗭紝钃濊壊鐩诧級
 
 ## Desktop
 
-desktop = 桌面
+desktop = 妗岄潰
 
 ## Desktop: Wallpaper
 
-wallpaper = 壁纸
-    .change = 图片更换间隙
-    .fit = 壁纸适应方式
-    .folder-dialog = 选择壁纸文件�?
-    .image-dialog = 选择壁纸图片
-    .plural = 壁纸
-    .same = 所有显示器使用相同壁纸
-    .slide = 幻灯�?
-add-color = 添加颜色
-add-image = 添加图片
-all-displays = 所有显示器
-colors = 颜色
-dialog-add = 添加
-fill = 填充
-fit-to-screen = 适应屏幕
-open-new-folder = 打开新文件夹
-recent-folders = 最近文件夹
+wallpaper = 澹佺焊
+    .change = 鍥剧墖鏇存崲闂撮殭
+    .fit = 澹佺焊閫傚簲鏂瑰紡
+    .folder-dialog = 閫夋嫨澹佺焊鏂囦欢澶?    .image-dialog = 閫夋嫨澹佺焊鍥剧墖
+    .plural = 澹佺焊
+    .same = 鎵€鏈夋樉绀哄櫒浣跨敤鐩稿悓澹佺焊
+    .slide = 骞荤伅鐗?add-color = 娣诲姞棰滆壊
+add-image = 娣诲姞鍥剧墖
+all-displays = 鎵€鏈夋樉绀哄櫒
+colors = 棰滆壊
+dialog-add = 娣诲姞
+fill = 濉厖
+fit-to-screen = 閫傚簲灞忓箷
+open-new-folder = 鎵撳紑鏂版枃浠跺す
+recent-folders = 鏈€杩戞枃浠跺す
 x-minutes =
     { $number } { $number ->
-        [one] 分钟
-       *[other] 分钟
+        [one] 鍒嗛挓
+       *[other] 鍒嗛挓
     }
 x-hours =
     { $number ->
-        [one] 小时
-       *[other] { $number } 小时
+        [one] 灏忔椂
+       *[other] { $number } 灏忔椂
     }
-never = 从不
+never = 浠庝笉
 
 ## Desktop: Appearance
 
-appearance = 外观
-accent-color = 主题�?
-app-background = 窗口背景
-auto = 自动
-close = 关闭
-color-picker = 取色�?
-copied-to-clipboard = 已复制到剪切�?
-copy-to-clipboard = 复制到剪切板
-dark = 暗色模式
-export = 导出
-hex = 十六进制
-import = 导入
-light = 亮色模式
-mode-and-colors = 模式和颜�?
-recent-colors = 最近使用的颜色
-reset-to-default = 重置为默认�?
-rgb = RGB
-window-hint-accent = 活动窗口提示颜色
-window-hint-accent-toggle = 使用主题色作为活动窗口提示色
-auto-switch = 自动在亮色与暗色模式之间切换
-    .sunrise = 日出时切换到亮色模式
-    .sunset = 日落时切换到暗色模式
-    .next-sunrise = 下次日出时切换到亮色模式
-    .next-sunset = 下次日落时切换到暗色模式
-container-background = 容器背景
-    .desc-detail = 容器背景色用于导航侧栏、侧边抽屉、对话框等小部件。默认情况下，容器背景色会自动从窗口背景派生�?
-    .reset = 重置为自�?
-    .desc = 用于导航侧栏、侧边抽屉、对话框等小部件
-control-tint = 控件色调
-    .desc = 用于标准按钮、搜索输入框、文本输入框等组件的背景
-frosted = 系统界面磨砂玻璃效应
-    .desc = 对面板、程序坞、小部件、启动器和应用程序库应用背景模糊效果
-enable-export = 将此主题应用�?GNOME 应用程序
-    .desc = 并非所有工具包都支持自动切换。非 COSMIC 应用程序可能需要在主题更改后重新启动�?
-icon-theme = 图标主题
-    .desc = 为应用程序应用另一套图标集
-text-tint = 界面文字色调
-    .desc = 用于派生在各种界面背景上都具有足够对比度的文字颜�?
-style = 样式
-    .round = 圆角
-    .slightly-round = 微圆�?
-    .square = 方角
-    .frosted-glass = 磨砂玻璃效应
-    .frosted-system-interface = 系统界面
-    .frosted-system-interface-desc = 将磨砂玻璃应用于启动器、应用程序库�?工作区总览、屏幕控�?
-    .frosted-windows = 窗口
-    .frosted-windows-desc = 将磨砂玻璃应用于窗口和对话框
-    .frosted-panels = 面板
-    .frosted-panels-desc = 将磨砂玻璃应用于面板和程序坞
-    .frosted-applets = 小部�?
-    .frosted-applets-desc = 将磨砂玻璃应用于处在面板与程序坞的小部件
-    .frosted-thickness = 磨砂厚度
-    .less = �?
-    .more = �?
-    .glass-opacity = 玻璃不透明�?
-interface-density = 界面密度
-    .comfortable = 适中
-    .compact = 紧凑
-    .spacious = 宽裕
-window-management-appearance = 窗口管理
-    .active-hint = 活动窗口提示大小
-    .gaps = 平铺窗口周围的间�?
-
+appearance = 澶栬
+accent-color = 涓婚鑹?app-background = 绐楀彛鑳屾櫙
+auto = 鑷姩
+close = 鍏抽棴
+color-picker = 鍙栬壊鍣?copied-to-clipboard = 宸插鍒跺埌鍓垏鏉?copy-to-clipboard = 澶嶅埗鍒板壀鍒囨澘
+dark = 鏆楄壊妯″紡
+export = 瀵煎嚭
+hex = 鍗佸叚杩涘埗
+import = 瀵煎叆
+light = 浜壊妯″紡
+mode-and-colors = 妯″紡鍜岄鑹?recent-colors = 鏈€杩戜娇鐢ㄧ殑棰滆壊
+reset-to-default = 閲嶇疆涓洪粯璁ゅ€?rgb = RGB
+window-hint-accent = 娲诲姩绐楀彛鎻愮ず棰滆壊
+window-hint-accent-toggle = 浣跨敤涓婚鑹蹭綔涓烘椿鍔ㄧ獥鍙ｆ彁绀鸿壊
+auto-switch = 鑷姩鍦ㄤ寒鑹蹭笌鏆楄壊妯″紡涔嬮棿鍒囨崲
+    .sunrise = 鏃ュ嚭鏃跺垏鎹㈠埌浜壊妯″紡
+    .sunset = 鏃ヨ惤鏃跺垏鎹㈠埌鏆楄壊妯″紡
+    .next-sunrise = 涓嬫鏃ュ嚭鏃跺垏鎹㈠埌浜壊妯″紡
+    .next-sunset = 涓嬫鏃ヨ惤鏃跺垏鎹㈠埌鏆楄壊妯″紡
+container-background = 瀹瑰櫒鑳屾櫙
+    .desc-detail = 瀹瑰櫒鑳屾櫙鑹茬敤浜庡鑸晶鏍忋€佷晶杈规娊灞夈€佸璇濇绛夊皬閮ㄤ欢銆傞粯璁ゆ儏鍐典笅锛屽鍣ㄨ儗鏅壊浼氳嚜鍔ㄤ粠绐楀彛鑳屾櫙娲剧敓銆?    .reset = 閲嶇疆涓鸿嚜鍔?    .desc = 鐢ㄤ簬瀵艰埅渚ф爮銆佷晶杈规娊灞夈€佸璇濇绛夊皬閮ㄤ欢
+control-tint = 鎺т欢鑹茶皟
+    .desc = 鐢ㄤ簬鏍囧噯鎸夐挳銆佹悳绱㈣緭鍏ユ銆佹枃鏈緭鍏ユ绛夌粍浠剁殑鑳屾櫙
+frosted = 绯荤粺鐣岄潰纾ㄧ爞鐜荤拑鏁堝簲
+    .desc = 瀵归潰鏉裤€佺▼搴忓潪銆佸皬閮ㄤ欢銆佸惎鍔ㄥ櫒鍜屽簲鐢ㄧ▼搴忓簱搴旂敤鑳屾櫙妯＄硦鏁堟灉
+enable-export = 灏嗘涓婚搴旂敤鍒?GNOME 搴旂敤绋嬪簭
+    .desc = 骞堕潪鎵€鏈夊伐鍏峰寘閮芥敮鎸佽嚜鍔ㄥ垏鎹€傞潪 LINGMO 搴旂敤绋嬪簭鍙兘闇€瑕佸湪涓婚鏇存敼鍚庨噸鏂板惎鍔ㄣ€?icon-theme = 鍥炬爣涓婚
+    .desc = 涓哄簲鐢ㄧ▼搴忓簲鐢ㄥ彟涓€濂楀浘鏍囬泦
+text-tint = 鐣岄潰鏂囧瓧鑹茶皟
+    .desc = 鐢ㄤ簬娲剧敓鍦ㄥ悇绉嶇晫闈㈣儗鏅笂閮藉叿鏈夎冻澶熷姣斿害鐨勬枃瀛楅鑹?style = 鏍峰紡
+    .round = 鍦嗚
+    .slightly-round = 寰渾瑙?    .square = 鏂硅
+    .frosted-glass = 纾ㄧ爞鐜荤拑鏁堝簲
+    .frosted-system-interface = 绯荤粺鐣岄潰
+    .frosted-system-interface-desc = 灏嗙（鐮傜幓鐠冨簲鐢ㄤ簬鍚姩鍣ㄣ€佸簲鐢ㄧ▼搴忓簱銆?宸ヤ綔鍖烘€昏銆佸睆骞曟帶浠?    .frosted-windows = 绐楀彛
+    .frosted-windows-desc = 灏嗙（鐮傜幓鐠冨簲鐢ㄤ簬绐楀彛鍜屽璇濇
+    .frosted-panels = 闈㈡澘
+    .frosted-panels-desc = 灏嗙（鐮傜幓鐠冨簲鐢ㄤ簬闈㈡澘鍜岀▼搴忓潪
+    .frosted-applets = 灏忛儴浠?    .frosted-applets-desc = 灏嗙（鐮傜幓鐠冨簲鐢ㄤ簬澶勫湪闈㈡澘涓庣▼搴忓潪鐨勫皬閮ㄤ欢
+    .frosted-thickness = 纾ㄧ爞鍘氬害
+    .less = 灏?    .more = 澶?    .glass-opacity = 鐜荤拑涓嶉€忔槑搴?interface-density = 鐣岄潰瀵嗗害
+    .comfortable = 閫備腑
+    .compact = 绱у噾
+    .spacious = 瀹借
+window-management-appearance = 绐楀彛绠＄悊
+    .active-hint = 娲诲姩绐楀彛鎻愮ず澶у皬
+    .gaps = 骞抽摵绐楀彛鍛ㄥ洿鐨勯棿闅?
 ### Experimental
 
-experimental-settings = 实验性设�?
-icons-and-toolkit = 图标和工具包主题
-interface-font = 系统字体
-monospace-font = 等宽字体
+experimental-settings = 瀹為獙鎬ц缃?icons-and-toolkit = 鍥炬爣鍜屽伐鍏峰寘涓婚
+interface-font = 绯荤粺瀛椾綋
+monospace-font = 绛夊瀛椾綋
 
 ## Desktop: Notifications
 
-notifications = 通知
+notifications = 閫氱煡
 
 ## Desktop: Panel
 
-panel = 面板
-add = 添加
-add-applet = 添加小部�?
-all = 全部
-applets = 小部�?
-center-segment = 中间区段
-end-segment = 结束区段
-large = �?
-no-applets-found = 未找到小部件�?
-panel-bottom = 底部
-panel-left = 左侧
-panel-right = 右侧
-panel-top = 顶部
-search-applets = 搜索小部件�?
-small = �?
-start-segment = 开始区�?
-panel-appearance = 外观
-    .match = 匹配桌面
-    .light = 亮色模式
-    .dark = 暗色模式
-panel-behavior-and-position = 行为和位�?
-    .autohide = 自动隐藏面板
-    .dock-autohide = 自动隐藏程序�?
-    .position = 屏幕位置
-    .display = 在显示器上显�?
-panel-style = 样式
-    .anchor-gap = 面板与屏幕边缘的间距
-    .dock-anchor-gap = 程序坞与屏幕边缘的间�?
-    .extend = 延伸面板至屏幕边�?
-    .dock-extend = 延伸程序坞至屏幕边缘
-    .appearance = 外观
-    .size = 大小
-    .background-opacity = 背景不透明�?
-panel-applets = 配置
-    .dock-desc = 配置程序坞部�?
-    .desc = 配置面板小部�?
-panel-missing = 缺少面板配置
-    .desc = 由于使用自定义配置或配置文件已损坏，面板配置文件丢失�?
-    .fix = 重置为默认�?
-
+panel = 闈㈡澘
+add = 娣诲姞
+add-applet = 娣诲姞灏忛儴浠?all = 鍏ㄩ儴
+applets = 灏忛儴浠?center-segment = 涓棿鍖烘
+end-segment = 缁撴潫鍖烘
+large = 澶?no-applets-found = 鏈壘鍒板皬閮ㄤ欢鈥?panel-bottom = 搴曢儴
+panel-left = 宸︿晶
+panel-right = 鍙充晶
+panel-top = 椤堕儴
+search-applets = 鎼滅储灏忛儴浠垛€?small = 灏?start-segment = 寮€濮嬪尯娈?panel-appearance = 澶栬
+    .match = 鍖归厤妗岄潰
+    .light = 浜壊妯″紡
+    .dark = 鏆楄壊妯″紡
+panel-behavior-and-position = 琛屼负鍜屼綅缃?    .autohide = 鑷姩闅愯棌闈㈡澘
+    .dock-autohide = 鑷姩闅愯棌绋嬪簭鍧?    .position = 灞忓箷浣嶇疆
+    .display = 鍦ㄦ樉绀哄櫒涓婃樉绀?panel-style = 鏍峰紡
+    .anchor-gap = 闈㈡澘涓庡睆骞曡竟缂樼殑闂磋窛
+    .dock-anchor-gap = 绋嬪簭鍧炰笌灞忓箷杈圭紭鐨勯棿璺?    .extend = 寤朵几闈㈡澘鑷冲睆骞曡竟缂?    .dock-extend = 寤朵几绋嬪簭鍧炶嚦灞忓箷杈圭紭
+    .appearance = 澶栬
+    .size = 澶у皬
+    .background-opacity = 鑳屾櫙涓嶉€忔槑搴?panel-applets = 閰嶇疆
+    .dock-desc = 閰嶇疆绋嬪簭鍧為儴浠?    .desc = 閰嶇疆闈㈡澘灏忛儴浠?panel-missing = 缂哄皯闈㈡澘閰嶇疆
+    .desc = 鐢变簬浣跨敤鑷畾涔夐厤缃垨閰嶇疆鏂囦欢宸叉崯鍧忥紝闈㈡澘閰嶇疆鏂囦欢涓㈠け銆?    .fix = 閲嶇疆涓洪粯璁ゅ€?
 ## Desktop: Dock
 
-dock = 程序�?
-
+dock = 绋嬪簭鍧?
 ## Desktop: Window management
 
-window-management = 窗口管理
-super-key = Super 键动�?
-    .launcher = 打开启动�?
-    .workspaces = 打开工作�?
-    .applications = 打开应用程序
-    .none = �?
-edge-gravity = 悬浮窗口吸附到附近边�?
-window-controls = 窗口控制
-    .maximize = 显示最大化按钮
-    .minimize = 显示最小化按钮
-    .active-window-hint = 显示活动窗口提示
-focus-navigation = 焦点导航
-    .focus-follows-cursor = 焦点跟随光标
-    .focus-follows-cursor-delay = 焦点跟随光标延迟（毫秒）
-    .cursor-follows-focus = 光标跟随焦点
+window-management = 绐楀彛绠＄悊
+super-key = Super 閿姩浣?    .launcher = 鎵撳紑鍚姩鍣?    .workspaces = 鎵撳紑宸ヤ綔鍖?    .applications = 鎵撳紑搴旂敤绋嬪簭
+    .none = 鏃?edge-gravity = 鎮诞绐楀彛鍚搁檮鍒伴檮杩戣竟缂?window-controls = 绐楀彛鎺у埗
+    .maximize = 鏄剧ず鏈€澶у寲鎸夐挳
+    .minimize = 鏄剧ず鏈€灏忓寲鎸夐挳
+    .active-window-hint = 鏄剧ず娲诲姩绐楀彛鎻愮ず
+focus-navigation = 鐒︾偣瀵艰埅
+    .focus-follows-cursor = 鐒︾偣璺熼殢鍏夋爣
+    .focus-follows-cursor-delay = 鐒︾偣璺熼殢鍏夋爣寤惰繜锛堟绉掞級
+    .cursor-follows-focus = 鍏夋爣璺熼殢鐒︾偣
 
 ## Desktop: Workspaces
 
-workspaces = 工作�?
-workspaces-behavior = 工作区行�?
-    .dynamic = 动态工作区
-    .dynamic-desc = 自动移除空的工作�?
-    .fixed = 固定数量工作�?
-    .fixed-desc = 在总览视图中添加或移除工作区�?
-workspaces-multi-behavior = 多显示器行为
-    .span = 工作区跨显示�?
-    .separate = 显示器有独立工作�?
-workspaces-overview-thumbnails = 工作区总览缩略
-    .show-number = 显示工作区编�?
-    .show-name = 显示工作区名�?
-workspaces-orientation = 工作区方�?
-    .vertical = 垂直
-    .horizontal = 水平
-hot-corner = 热角
-    .top-left-corner = 启用左上角热角以打开工作�?
-
+workspaces = 宸ヤ綔鍖?workspaces-behavior = 宸ヤ綔鍖鸿涓?    .dynamic = 鍔ㄦ€佸伐浣滃尯
+    .dynamic-desc = 鑷姩绉婚櫎绌虹殑宸ヤ綔鍖?    .fixed = 鍥哄畾鏁伴噺宸ヤ綔鍖?    .fixed-desc = 鍦ㄦ€昏瑙嗗浘涓坊鍔犳垨绉婚櫎宸ヤ綔鍖恒€?workspaces-multi-behavior = 澶氭樉绀哄櫒琛屼负
+    .span = 宸ヤ綔鍖鸿法鏄剧ず鍣?    .separate = 鏄剧ず鍣ㄦ湁鐙珛宸ヤ綔鍖?workspaces-overview-thumbnails = 宸ヤ綔鍖烘€昏缂╃暐
+    .show-number = 鏄剧ず宸ヤ綔鍖虹紪鍙?    .show-name = 鏄剧ず宸ヤ綔鍖哄悕绉?workspaces-orientation = 宸ヤ綔鍖烘柟鍚?    .vertical = 鍨傜洿
+    .horizontal = 姘村钩
+hot-corner = 鐑
+    .top-left-corner = 鍚敤宸︿笂瑙掔儹瑙掍互鎵撳紑宸ヤ綔鍖?
 ## Display
 
--requires-restart = 需要重�?
-color = 颜色
-    .depth = 色深
-    .profile = 颜色配置文件
-    .sidebar = 颜色配置文件
-    .temperature = 色温
-display = 显示
-    .arrangement = 显示器排�?
-    .arrangement-desc = 拖动显示器来重新排列
-    .enable = 启用显示�?
-    .external = { $size } { $output } 的外部显示器
-    .laptop = { $size } 的笔记本显示�?
-    .options = 显示选项
-    .refresh-rate = 刷新�?
-    .resolution = 分辨�?
-    .scale = 缩放
-    .additional-scale-options = 其他缩放选项
-mirroring = 镜像
-    .id = 镜像 { $id }
-    .dont = 不镜�?
-    .mirror = 镜像�?{ $display }
+-requires-restart = 闇€瑕侀噸鍚?color = 棰滆壊
+    .depth = 鑹叉繁
+    .profile = 棰滆壊閰嶇疆鏂囦欢
+    .sidebar = 棰滆壊閰嶇疆鏂囦欢
+    .temperature = 鑹叉俯
+display = 鏄剧ず
+    .arrangement = 鏄剧ず鍣ㄦ帓鍒?    .arrangement-desc = 鎷栧姩鏄剧ず鍣ㄦ潵閲嶆柊鎺掑垪
+    .enable = 鍚敤鏄剧ず鍣?    .external = { $size } { $output } 鐨勫閮ㄦ樉绀哄櫒
+    .laptop = { $size } 鐨勭瑪璁版湰鏄剧ず鍣?    .options = 鏄剧ず閫夐」
+    .refresh-rate = 鍒锋柊鐜?    .resolution = 鍒嗚鲸鐜?    .scale = 缂╂斁
+    .additional-scale-options = 鍏朵粬缂╂斁閫夐」
+mirroring = 闀滃儚
+    .id = 闀滃儚 { $id }
+    .dont = 涓嶉暅鍍?    .mirror = 闀滃儚鍒?{ $display }
     .project =
-        投影�?{ $display ->
-            [all] 所有显示器
+        鎶曞奖鍒?{ $display ->
+            [all] 鎵€鏈夋樉绀哄櫒
            *[other] { $display }
         }
     .project-count =
-        正在投影�?{ $count } 个其他{ $count ->
-            [1] 显示�?
-           *[other] 显示�?
-        }
-night-light = 夜光
-    .auto = 自动（日落到日出�?
-    .desc = 通过更暖的颜色减少蓝�?
-orientation = 方向
-    .standard = 标准
-    .rotate-90 = 旋转 90 �?
-    .rotate-180 = 旋转 180 �?
-    .rotate-270 = 旋转 270 �?
-vrr = 可变刷新�?
-    .enabled = 已启�?
-    .force = 始终启用
-    .auto = 自动
-    .disabled = 已禁�?
-scheduling = 日程
-    .manual = 手动日程
-dialog = 对话�?
-    .title = 保留这些显示设置�?
-    .keep-changes = 保留更改
-    .change-prompt = 显示设置将在 { $time } 秒后自动还原�?
-    .revert-settings = 还原设置
+        姝ｅ湪鎶曞奖鍒?{ $count } 涓叾浠杮 $count ->
+            [1] 鏄剧ず鍣?           *[other] 鏄剧ず鍣?        }
+night-light = 澶滃厜
+    .auto = 鑷姩锛堟棩钀藉埌鏃ュ嚭锛?    .desc = 閫氳繃鏇存殩鐨勯鑹插噺灏戣摑鍏?orientation = 鏂瑰悜
+    .standard = 鏍囧噯
+    .rotate-90 = 鏃嬭浆 90 搴?    .rotate-180 = 鏃嬭浆 180 搴?    .rotate-270 = 鏃嬭浆 270 搴?vrr = 鍙彉鍒锋柊鐜?    .enabled = 宸插惎鐢?    .force = 濮嬬粓鍚敤
+    .auto = 鑷姩
+    .disabled = 宸茬鐢?scheduling = 鏃ョ▼
+    .manual = 鎵嬪姩鏃ョ▼
+dialog = 瀵硅瘽妗?    .title = 淇濈暀杩欎簺鏄剧ず璁剧疆锛?    .keep-changes = 淇濈暀鏇存敼
+    .change-prompt = 鏄剧ず璁剧疆灏嗗湪 { $time } 绉掑悗鑷姩杩樺師銆?    .revert-settings = 杩樺師璁剧疆
 
 ## Sound
 
-sound = 声音
-sound-output = 输出
-    .volume = 输出音量
-    .device = 输出设备
-    .level = 输出电平
-    .config = 配置
-    .balance = 平衡
-    .left = �?
-    .right = �?
-sound-input = 输入
-    .volume = 输入音量
-    .device = 输入设备
-    .level = 输入电平
-sound-alerts = 警告�?
-    .volume = 警告音音�?
-    .sound = 警告音效
-sound-applications = 应用程序
-    .desc = 应用程序音量和设�?
+sound = 澹伴煶
+sound-output = 杈撳嚭
+    .volume = 杈撳嚭闊抽噺
+    .device = 杈撳嚭璁惧
+    .level = 杈撳嚭鐢靛钩
+    .config = 閰嶇疆
+    .balance = 骞宠　
+    .left = 宸?    .right = 鍙?sound-input = 杈撳叆
+    .volume = 杈撳叆闊抽噺
+    .device = 杈撳叆璁惧
+    .level = 杈撳叆鐢靛钩
+sound-alerts = 璀﹀憡闊?    .volume = 璀﹀憡闊抽煶閲?    .sound = 璀﹀憡闊虫晥
+sound-applications = 搴旂敤绋嬪簭
+    .desc = 搴旂敤绋嬪簭闊抽噺鍜岃缃?    .none = 娌℃湁浠讳綍搴旂敤绋嬪簭姝ｅ湪浣跨敤澹伴煶
 
 ## Power
 
-power = 电源与电�?
-battery = 电池
+power = 鐢垫簮涓庣數姹?battery = 鐢垫睜
     .minute =
         { $value } { $value ->
-            [1] 分钟
-           *[other] 分钟
+            [1] 鍒嗛挓
+           *[other] 鍒嗛挓
         }
     .hour =
         { $value } { $value ->
-            [1] 小时
-           *[other] 小时
+            [1] 灏忔椂
+           *[other] 灏忔椂
         }
     .day =
         { $value } { $value ->
-            [1] �?
-           *[other] �?
+            [1] 澶?           *[other] 澶?        }
+    .less-than-minute = 涓嶅埌涓€鍒嗛挓
+    .and = 鍜?    .remaining-time =
+        { $time }鍚巤 $action ->
+            [full] 鍏呮弧
+           *[other] 鐢甸噺鑰楀敖
         }
-    .less-than-minute = 不到一分钟
-    .and = �?
-    .remaining-time =
-        { $time }后{ $action ->
-            [full] 充满
-           *[other] 电量耗尽
-        }
-connected-devices = 已连接设�?
-    .unknown = 未知设备
-power-mode = 电源模式
-    .battery = 延长电池续航
-    .battery-desc = 降低功耗并保持静音运行
-    .balanced = 平衡
-    .balanced-desc = 静音运行和适中的功�?
-    .performance = 高性能
-    .performance-desc = 最高性能和功�?
-    .no-backend = 未找到后端服务。请安装 system76-power �?power-profiles-daemon�?
-power-saving = 节能选项
-    .turn-off-screen-after = 在此时间后关闭屏�?
-    .auto-suspend = 自动待机
-    .auto-suspend-ac = 接通电源时自动挂起
-    .auto-suspend-battery = 使用电池时自动挂�?
-
+connected-devices = 宸茶繛鎺ヨ澶?    .unknown = 鏈煡璁惧
+power-mode = 鐢垫簮妯″紡
+    .battery = 寤堕暱鐢垫睜缁埅
+    .battery-desc = 闄嶄綆鍔熻€楀苟淇濇寔闈欓煶杩愯
+    .balanced = 骞宠　
+    .balanced-desc = 闈欓煶杩愯鍜岄€備腑鐨勫姛鑰?    .performance = 楂樻€ц兘
+    .performance-desc = 鏈€楂樻€ц兘鍜屽姛鑰?    .no-backend = 鏈壘鍒板悗绔湇鍔°€傝瀹夎 system76-power 鎴?power-profiles-daemon銆?power-saving = 鑺傝兘閫夐」
+    .turn-off-screen-after = 鍦ㄦ鏃堕棿鍚庡叧闂睆骞?    .auto-suspend = 鑷姩寰呮満
+    .auto-suspend-ac = 鎺ラ€氱數婧愭椂鑷姩鎸傝捣
+    .auto-suspend-battery = 浣跨敤鐢垫睜鏃惰嚜鍔ㄦ寕璧?
 ## Input
 
-acceleration-desc = 根据速度自动调整跟踪灵敏�?
-disable-while-typing = 打字时禁用触摸板
-input-devices = 输入设备
-primary-button = 主按�?
-    .desc = 设置物理按键的顺�?
-    .left = �?
-    .right = �?
-scrolling = 滚动
-    .two-finger = 双指滚动
-    .edge = 单指边缘滚动
-    .speed = 滚动速度
-    .natural = 自然滚动
-    .natural-desc = 滚动内容而不是视�?
-
+acceleration-desc = 鏍规嵁閫熷害鑷姩璋冩暣璺熻釜鐏垫晱搴?disable-while-typing = 鎵撳瓧鏃剁鐢ㄨЕ鎽告澘
+input-devices = 杈撳叆璁惧
+primary-button = 涓绘寜閿?    .desc = 璁剧疆鐗╃悊鎸夐敭鐨勯『搴?    .left = 宸?    .right = 鍙?scrolling = 婊氬姩
+    .two-finger = 鍙屾寚婊氬姩
+    .edge = 鍗曟寚杈圭紭婊氬姩
+    .speed = 婊氬姩閫熷害
+    .natural = 鑷劧婊氬姩
+    .natural-desc = 婊氬姩鍐呭鑰屼笉鏄鍥?
 ## Input: Keyboard
 
-slow = �?
-fast = �?
-short = �?
-long = �?
-keyboard = 键盘
-keyboard-sources = 输入�?
-    .desc = 可以使用 Super + 空格键组合切换输入源。可以在键盘快捷键设置中自定义�?
-    .move-up = 上移
-    .move-down = 下移
-    .settings = 设置
-    .view-layout = 查看键盘布局
-    .remove = 移除
-    .add = 添加输入�?
-keyboard-special-char = 特殊字符输入
-    .alternate = 备用字符�?
-    .compose = 组合�?(Compose Key)
-    .compose-desc = 组合键允许输入种类繁多的字符。使用方法：按下组合键，然后依次输入字符序列。例如，按下组合键后依次输入 C �?o 可输�?©，而按下组合键后依次输�?a �?�?则可输入 á�?
-    .caps = 大写锁定�?
-    .ctrl = Control �?
-    .ctrl-right = �?Control �?
-    .swap-with-ctrl = Control 键互�?
-    .alt = Alt �?
-    .alt-left = �?Alt �?
-    .alt-right = �?Alt �?
-    .super = Super �?
-    .super-left = �?Super �?
-    .super-right = �?Super �?
-    .menu = Menu �?
-    .backspace = 退格键
-    .escape = Escape �?
-    .swap-with-escape = Escape 键互�?
-    .print-screen = Print Screen �?
-    .scroll-lock = Scroll Lock �?
-    .none = �?
-keyboard-typing-assist = 打字
-    .repeat-rate = 重复�?
-    .repeat-delay = 重复延迟
-keyboard-numlock-boot = 数字锁定
-    .boot-state = 启动时状�?
-    .last-boot = 上次启动
-    .on = 开�?
-    .off = 关闭
-    .set = 设置数字锁定启动状�?
-added = 已添�?
-type-to-search = 输入即可搜索�?
-show-extended-input-sources = 显示扩展输入�?
-
+slow = 鎱?fast = 蹇?short = 鐭?long = 闀?keyboard = 閿洏
+keyboard-sources = 杈撳叆婧?    .desc = 鍙互浣跨敤 Super + 绌烘牸閿粍鍚堝垏鎹㈣緭鍏ユ簮銆傚彲浠ュ湪閿洏蹇嵎閿缃腑鑷畾涔夈€?    .move-up = 涓婄Щ
+    .move-down = 涓嬬Щ
+    .settings = 璁剧疆
+    .view-layout = 鏌ョ湅閿洏甯冨眬
+    .remove = 绉婚櫎
+    .add = 娣诲姞杈撳叆婧?keyboard-special-char = 鐗规畩瀛楃杈撳叆
+    .alternate = 澶囩敤瀛楃閿?    .compose = 缁勫悎閿?(Compose Key)
+    .compose-desc = 缁勫悎閿厑璁歌緭鍏ョ绫荤箒澶氱殑瀛楃銆備娇鐢ㄦ柟娉曪細鎸変笅缁勫悎閿紝鐒跺悗渚濇杈撳叆瀛楃搴忓垪銆備緥濡傦紝鎸変笅缁勫悎閿悗渚濇杈撳叆 C 鍜?o 鍙緭鍏?漏锛岃€屾寜涓嬬粍鍚堥敭鍚庝緷娆¤緭鍏?a 鍜?鈥?鍒欏彲杈撳叆 谩銆?    .caps = 澶у啓閿佸畾閿?    .ctrl = Control 閿?    .ctrl-right = 鍙?Control 閿?    .swap-with-ctrl = Control 閿簰鎹?    .alt = Alt 閿?    .alt-left = 宸?Alt 閿?    .alt-right = 鍙?Alt 閿?    .super = Super 閿?    .super-left = 宸?Super 閿?    .super-right = 鍙?Super 閿?    .menu = Menu 閿?    .backspace = 閫€鏍奸敭
+    .escape = Escape 閿?    .swap-with-escape = Escape 閿簰鎹?    .print-screen = Print Screen 閿?    .scroll-lock = Scroll Lock 閿?    .none = 鏃?keyboard-typing-assist = 鎵撳瓧
+    .repeat-rate = 閲嶅鐜?    .repeat-delay = 閲嶅寤惰繜
+keyboard-numlock-boot = 鏁板瓧閿佸畾
+    .boot-state = 鍚姩鏃剁姸鎬?    .last-boot = 涓婃鍚姩
+    .on = 寮€鍚?    .off = 鍏抽棴
+    .set = 璁剧疆鏁板瓧閿佸畾鍚姩鐘舵€?added = 宸叉坊鍔?type-to-search = 杈撳叆鍗冲彲鎼滅储鈥?show-extended-input-sources = 鏄剧ず鎵╁睍杈撳叆婧?
 ## Input: Keyboard: Shortcuts
 
-keyboard-shortcuts = 键盘快捷�?
-    .desc = 查看并自定义快捷�?
-add-another-keybinding = 添加另一个快捷键
-cancel = 取消
-command = 命令
-custom = 自定�?
-debug = 调试
-disabled = 已禁�?
-input-source-switch = 切换键盘语言输入�?
-migrate-workspace-prev = 将工作区移至上一个输�?
-migrate-workspace-next = 将工作区移至下一个输�?
-migrate-workspace =
-    将工作区移至{ $direction ->
-       *[down] 下方
-        [left] 左侧
-        [right] 右侧
-        [up] 上方
-    }输出
-navigate = 导航
-replace = 替换
-shortcut-name = 快捷键名�?
-system-controls = 系统控制
-terminate = 终止
-toggle-stacking = 切换窗口堆叠
-type-key-combination = 输入按键组合
-custom-shortcuts = 自定义快捷键
-    .add = 添加快捷�?
-    .context = 添加自定义快捷键
-    .none = 暂无自定义快捷键
-modified = 已修�?{ $count } �?
-nav-shortcuts = 导航快捷�?
-    .prev-output = 聚焦上一个输�?
-    .next-output = 聚焦下一个输�?
-    .last-workspace = 聚焦最后一个工作区
-    .prev-workspace = 聚焦上一个工作区
-    .next-workspace = 聚焦下一个工作区
+keyboard-shortcuts = 閿洏蹇嵎閿?    .desc = 鏌ョ湅骞惰嚜瀹氫箟蹇嵎閿?add-another-keybinding = 娣诲姞鍙︿竴涓揩鎹烽敭
+cancel = 鍙栨秷
+command = 鍛戒护
+custom = 鑷畾涔?debug = 璋冭瘯
+disabled = 宸茬鐢?input-source-switch = 鍒囨崲閿洏璇█杈撳叆婧?migrate-workspace-prev = 灏嗗伐浣滃尯绉昏嚦涓婁竴涓緭鍑?migrate-workspace-next = 灏嗗伐浣滃尯绉昏嚦涓嬩竴涓緭鍑?migrate-workspace =
+    灏嗗伐浣滃尯绉昏嚦{ $direction ->
+       *[down] 涓嬫柟
+        [left] 宸︿晶
+        [right] 鍙充晶
+        [up] 涓婃柟
+    }杈撳嚭
+navigate = 瀵艰埅
+replace = 鏇挎崲
+shortcut-name = 蹇嵎閿悕绉?system-controls = 绯荤粺鎺у埗
+terminate = 缁堟
+toggle-stacking = 鍒囨崲绐楀彛鍫嗗彔
+type-key-combination = 杈撳叆鎸夐敭缁勫悎
+custom-shortcuts = 鑷畾涔夊揩鎹烽敭
+    .add = 娣诲姞蹇嵎閿?    .context = 娣诲姞鑷畾涔夊揩鎹烽敭
+    .none = 鏆傛棤鑷畾涔夊揩鎹烽敭
+modified = 宸蹭慨鏀?{ $count } 椤?nav-shortcuts = 瀵艰埅蹇嵎閿?    .prev-output = 鑱氱劍涓婁竴涓緭鍑?    .next-output = 鑱氱劍涓嬩竴涓緭鍑?    .last-workspace = 鑱氱劍鏈€鍚庝竴涓伐浣滃尯
+    .prev-workspace = 鑱氱劍涓婁竴涓伐浣滃尯
+    .next-workspace = 鑱氱劍涓嬩竴涓伐浣滃尯
     .focus =
-        聚焦{ $direction ->
-           *[down] 下方
-            [in] 内部
-            [left] 左侧
-            [out] 外部
-            [right] 右侧
-            [up] 上方
-        }窗口
+        鑱氱劍{ $direction ->
+           *[down] 涓嬫柟
+            [in] 鍐呴儴
+            [left] 宸︿晶
+            [out] 澶栭儴
+            [right] 鍙充晶
+            [up] 涓婃柟
+        }绐楀彛
     .output =
-        切换到{ $direction ->
-           *[down] 下方
-            [left] 左侧
-            [right] 右侧
-            [up] 上方
-        }输出
-    .workspace = 切换到工作区 { $num }
-manage-windows = 管理窗口
-    .close = 关闭窗口
-    .maximize = 最大化窗口
-    .fullscreen = 窗口全屏
-    .minimize = 最小化窗口
-    .resize-inwards = 向内调整窗口大小
-    .resize-outwards = 向外调整窗口大小
-    .toggle-sticky = 切换窗口置顶
-move-windows = 移动窗口
+        鍒囨崲鍒皗 $direction ->
+           *[down] 涓嬫柟
+            [left] 宸︿晶
+            [right] 鍙充晶
+            [up] 涓婃柟
+        }杈撳嚭
+    .workspace = 鍒囨崲鍒板伐浣滃尯 { $num }
+manage-windows = 绠＄悊绐楀彛
+    .close = 鍏抽棴绐楀彛
+    .maximize = 鏈€澶у寲绐楀彛
+    .fullscreen = 绐楀彛鍏ㄥ睆
+    .minimize = 鏈€灏忓寲绐楀彛
+    .resize-inwards = 鍚戝唴璋冩暣绐楀彛澶у皬
+    .resize-outwards = 鍚戝璋冩暣绐楀彛澶у皬
+    .toggle-sticky = 鍒囨崲绐楀彛缃《
+move-windows = 绉诲姩绐楀彛
     .direction =
-        将窗口向{ $direction ->
-           *[down] �?
-            [left] �?
-            [right] �?
-            [up] �?
-        }移动
+        灏嗙獥鍙ｅ悜{ $direction ->
+           *[down] 涓?            [left] 宸?            [right] 鍙?            [up] 涓?        }绉诲姩
     .display =
-        将窗口移动到{ $direction ->
-           *[down] 下方
-            [left] 左侧
-            [right] 右侧
-            [up] 上方
-        }的显示器
+        灏嗙獥鍙ｇЩ鍔ㄥ埌{ $direction ->
+           *[down] 涓嬫柟
+            [left] 宸︿晶
+            [right] 鍙充晶
+            [up] 涓婃柟
+        }鐨勬樉绀哄櫒
     .workspace =
-        将窗口移动到{ $direction ->
-           *[below] 下方
-            [left] 左侧
-            [right] 右侧
-            [above] 上方
-        }的工作区
-    .workspace-num = 将窗口移动到工作�?{ $num }
-    .prev-workspace = 将窗口移动到上一个工作区
-    .next-workspace = 将窗口移动到下一个工作区
-    .last-workspace = 将窗口移动到最后一个工作区
-    .next-display = 将窗口移动到下一个显示器
-    .prev-display = 将窗口移动到上一个显示器
-    .send-to-prev-workspace = 将窗口移动到上一个工作区
-    .send-to-next-workspace = 将窗口移动到下一个工作区
-system-shortcut = 系统快捷�?
-    .app-library = 打开应用程序�?
-    .brightness-down = 降低显示器亮�?
-    .brightness-up = 提高显示器亮�?
-    .display-toggle = 切换内部显示
-    .home-folder = 打开主目�?
-    .keyboard-brightness-down = 降低键盘背光亮度
-    .keyboard-brightness-up = 提高键盘背光亮度
-    .launcher = 打开启动�?
-    .log-out = 登出
-    .lock-screen = 锁定屏幕
-    .mute = 静音
-    .mute-mic = 麦克风静�?
-    .play-pause = 播放/暂停
-    .play-next = 下一�?
-    .play-prev = 上一�?
-    .poweroff = 关机
-    .screenshot = 截图
-    .suspend = 待机
-    .terminal = 打开终端
-    .touchpad-toggle = 切换触摸�?
-    .volume-lower = 降低音量
-    .volume-raise = 提高音量
-    .web-browser = 打开网络浏览�?
-    .window-switcher = 切换打开的窗�?
-    .window-switcher-previous = 反向切换打开的窗�?
-    .workspace-overview = 打开工作区总览
-window-tiling = 窗口平铺
-    .horizontal = 设置水平布局
-    .vertical = 设置垂直布局
-    .swap-window = 交换窗口
-    .toggle-tiling = 开关窗口平�?
-    .toggle-stacking = 开关窗口堆�?
-    .toggle-floating = 开关窗口悬�?
-    .toggle-orientation = 切换布局方向
-replace-shortcut-dialog = 是否替换快捷键？
-    .desc = { $shortcut } 已被 { $name } 占用。如果替换它，{ $name } 将被停用�?
-zoom-in = 放大
-zoom-out = 缩小
+        灏嗙獥鍙ｇЩ鍔ㄥ埌{ $direction ->
+           *[below] 涓嬫柟
+            [left] 宸︿晶
+            [right] 鍙充晶
+            [above] 涓婃柟
+        }鐨勫伐浣滃尯
+    .workspace-num = 灏嗙獥鍙ｇЩ鍔ㄥ埌宸ヤ綔鍖?{ $num }
+    .prev-workspace = 灏嗙獥鍙ｇЩ鍔ㄥ埌涓婁竴涓伐浣滃尯
+    .next-workspace = 灏嗙獥鍙ｇЩ鍔ㄥ埌涓嬩竴涓伐浣滃尯
+    .last-workspace = 灏嗙獥鍙ｇЩ鍔ㄥ埌鏈€鍚庝竴涓伐浣滃尯
+    .next-display = 灏嗙獥鍙ｇЩ鍔ㄥ埌涓嬩竴涓樉绀哄櫒
+    .prev-display = 灏嗙獥鍙ｇЩ鍔ㄥ埌涓婁竴涓樉绀哄櫒
+    .send-to-prev-workspace = 灏嗙獥鍙ｇЩ鍔ㄥ埌涓婁竴涓伐浣滃尯
+    .send-to-next-workspace = 灏嗙獥鍙ｇЩ鍔ㄥ埌涓嬩竴涓伐浣滃尯
+system-shortcut = 绯荤粺蹇嵎閿?    .app-library = 鎵撳紑搴旂敤绋嬪簭搴?    .brightness-down = 闄嶄綆鏄剧ず鍣ㄤ寒搴?    .brightness-up = 鎻愰珮鏄剧ず鍣ㄤ寒搴?    .display-toggle = 鍒囨崲鍐呴儴鏄剧ず
+    .home-folder = 鎵撳紑涓荤洰褰?    .keyboard-brightness-down = 闄嶄綆閿洏鑳屽厜浜害
+    .keyboard-brightness-up = 鎻愰珮閿洏鑳屽厜浜害
+    .launcher = 鎵撳紑鍚姩鍣?    .log-out = 鐧诲嚭
+    .lock-screen = 閿佸畾灞忓箷
+    .mute = 闈欓煶
+    .mute-mic = 楹﹀厠椋庨潤闊?    .play-pause = 鎾斁/鏆傚仠
+    .play-next = 涓嬩竴鏇?    .play-prev = 涓婁竴鏇?    .poweroff = 鍏虫満
+    .screenshot = 鎴浘
+    .suspend = 寰呮満
+    .terminal = 鎵撳紑缁堢
+    .touchpad-toggle = 鍒囨崲瑙︽懜鏉?    .volume-lower = 闄嶄綆闊抽噺
+    .volume-raise = 鎻愰珮闊抽噺
+    .web-browser = 鎵撳紑缃戠粶娴忚鍣?    .window-switcher = 鍒囨崲鎵撳紑鐨勭獥鍙?    .window-switcher-previous = 鍙嶅悜鍒囨崲鎵撳紑鐨勭獥鍙?    .workspace-overview = 鎵撳紑宸ヤ綔鍖烘€昏
+window-tiling = 绐楀彛骞抽摵
+    .horizontal = 璁剧疆姘村钩甯冨眬
+    .vertical = 璁剧疆鍨傜洿甯冨眬
+    .swap-window = 浜ゆ崲绐楀彛
+    .toggle-tiling = 寮€鍏崇獥鍙ｅ钩閾?    .toggle-stacking = 寮€鍏崇獥鍙ｅ爢鍙?    .toggle-floating = 寮€鍏崇獥鍙ｆ偓娴?    .toggle-orientation = 鍒囨崲甯冨眬鏂瑰悜
+replace-shortcut-dialog = 鏄惁鏇挎崲蹇嵎閿紵
+    .desc = { $shortcut } 宸茶 { $name } 鍗犵敤銆傚鏋滄浛鎹㈠畠锛寋 $name } 灏嗚鍋滅敤銆?zoom-in = 鏀惧ぇ
+zoom-out = 缂╁皬
 
 ## Input: Mouse
 
-mouse = 鼠标
-    .speed = 鼠标速度
-    .acceleration = 启用鼠标加速度
+mouse = 榧犳爣
+    .speed = 榧犳爣閫熷害
+    .acceleration = 鍚敤榧犳爣鍔犻€熷害
 
 ## Input: Touchpad
 
-click-behavior = 点击行为
-    .click-finger = 双指点击为右键点击，三指点击为中键点�?
-    .button-areas = 右下角点击为右键点击，底部中间点击为中键点击
-pinch-to-zoom = 双指捏合缩放
-    .desc = 使用双指捏合手势缩放内容（适用于支持缩放的应用程序�?
-tap-to-click = 轻触点击
-    .desc = 启用单指轻触进行主点击，双指轻触进行次点击，三指轻触进行中键点击
-touchpad = 触控�?
-    .acceleration = 启用触控板加速度
-    .speed = 触控板速度
+click-behavior = 鐐瑰嚮琛屼负
+    .click-finger = 鍙屾寚鐐瑰嚮涓哄彸閿偣鍑伙紝涓夋寚鐐瑰嚮涓轰腑閿偣鍑?    .button-areas = 鍙充笅瑙掔偣鍑讳负鍙抽敭鐐瑰嚮锛屽簳閮ㄤ腑闂寸偣鍑讳负涓敭鐐瑰嚮
+pinch-to-zoom = 鍙屾寚鎹忓悎缂╂斁
+    .desc = 浣跨敤鍙屾寚鎹忓悎鎵嬪娍缂╂斁鍐呭锛堥€傜敤浜庢敮鎸佺缉鏀剧殑搴旂敤绋嬪簭锛?tap-to-click = 杞昏Е鐐瑰嚮
+    .desc = 鍚敤鍗曟寚杞昏Е杩涜涓荤偣鍑伙紝鍙屾寚杞昏Е杩涜娆＄偣鍑伙紝涓夋寚杞昏Е杩涜涓敭鐐瑰嚮
+touchpad = 瑙︽帶鏉?    .acceleration = 鍚敤瑙︽帶鏉垮姞閫熷害
+    .speed = 瑙︽帶鏉块€熷害
 
 ## Input: Gestures
 
-gestures = 手势
-    .four-finger-down = 四指向下滑动
-    .four-finger-left = 四指向左滑动
-    .four-finger-right = 四指向右滑动
-    .four-finger-up = 四指向上滑动
-    .three-finger-any = 三指任意方向滑动
-switch-workspaces = 切换工作�?
-    .horizontal = 四指左右滑动
-    .vertical = 四指上下滑动
-switch-between-windows = 在窗口间切换
-open-application-library = 打开应用程序�?
-open-workspaces-view = 打开工作区总览
+gestures = 鎵嬪娍
+    .four-finger-down = 鍥涙寚鍚戜笅婊戝姩
+    .four-finger-left = 鍥涙寚鍚戝乏婊戝姩
+    .four-finger-right = 鍥涙寚鍚戝彸婊戝姩
+    .four-finger-up = 鍥涙寚鍚戜笂婊戝姩
+    .three-finger-any = 涓夋寚浠绘剰鏂瑰悜婊戝姩
+switch-workspaces = 鍒囨崲宸ヤ綔鍖?    .horizontal = 鍥涙寚宸﹀彸婊戝姩
+    .vertical = 鍥涙寚涓婁笅婊戝姩
+switch-between-windows = 鍦ㄧ獥鍙ｉ棿鍒囨崲
+open-application-library = 鎵撳紑搴旂敤绋嬪簭搴?open-workspaces-view = 鎵撳紑宸ヤ綔鍖烘€昏
 
 ## Time & Language
 
-time = 时间与语言
-time-date = 日期与时�?
-    .auto = 自动设置
-    .auto-ntp = 当时区设置好后，日期与时间将自动更新
-time-zone = 时区
-    .auto = 自动设置时区
-    .auto-info = 需要位置服务和互联网连�?
-time-format = 日期与时间格�?
-    .twenty-four = 24 小时�?
-    .show-seconds = 显示秒数
-    .first = 每周第一�?
-    .show-date = 在时间小部件中显示日�?
-    .friday = 星期�?
-    .saturday = 星期�?
-    .sunday = 星期�?
-    .monday = 星期一
-time-region = 区域与语言
-formatting = 格式设置
-    .dates = 日期
-    .time = 时间
-    .date-and-time = 日期与时�?
-    .numbers = 数字
-    .measurement = 度量单位
-    .paper = 纸张
-preferred-languages = 首选语言
-    .desc = 语言的排序决定了用户界面所使用的语言。更改将在下次登录后生效�?
-add-language = 添加语言
-    .context = 添加语言
-install-additional-languages = 安装其他语言
-region = 区域
+time = 鏃堕棿涓庤瑷€
+time-date = 鏃ユ湡涓庢椂闂?    .auto = 鑷姩璁剧疆
+    .auto-ntp = 褰撴椂鍖鸿缃ソ鍚庯紝鏃ユ湡涓庢椂闂村皢鑷姩鏇存柊
+time-zone = 鏃跺尯
+    .auto = 鑷姩璁剧疆鏃跺尯
+    .auto-info = 闇€瑕佷綅缃湇鍔″拰浜掕仈缃戣繛鎺?time-format = 鏃ユ湡涓庢椂闂存牸寮?    .twenty-four = 24 灏忔椂鍒?    .show-seconds = 鏄剧ず绉掓暟
+    .first = 姣忓懆绗竴澶?    .show-date = 鍦ㄦ椂闂村皬閮ㄤ欢涓樉绀烘棩鏈?    .friday = 鏄熸湡浜?    .saturday = 鏄熸湡鍏?    .sunday = 鏄熸湡鏃?    .monday = 鏄熸湡涓€
+time-region = 鍖哄煙涓庤瑷€
+formatting = 鏍煎紡璁剧疆
+    .dates = 鏃ユ湡
+    .time = 鏃堕棿
+    .date-and-time = 鏃ユ湡涓庢椂闂?    .numbers = 鏁板瓧
+    .measurement = 搴﹂噺鍗曚綅
+    .paper = 绾稿紶
+preferred-languages = 棣栭€夎瑷€
+    .desc = 璇█鐨勬帓搴忓喅瀹氫簡鐢ㄦ埛鐣岄潰鎵€浣跨敤鐨勮瑷€銆傛洿鏀瑰皢鍦ㄤ笅娆＄櫥褰曞悗鐢熸晥銆?add-language = 娣诲姞璇█
+    .context = 娣诲姞璇█
+install-additional-languages = 瀹夎鍏朵粬璇█
+region = 鍖哄煙
 
 ## Applications
 
-applications = 应用程序
+applications = 搴旂敤绋嬪簭
 
 ## Applications: Default Applications
 
-default-apps = 默认应用程序
-    .web-browser = 网络浏览�?
-    .file-manager = 文件管理�?
-    .mail-client = 邮件客户�?
-    .music = 音乐
-    .video = 视频
-    .photos = 照片
-    .calendar = 日历
-    .terminal = 终端
-    .other-associations = 其他关联
-    .text-editor = 文本编辑�?
-    .not-installed = 未安�?
-
+default-apps = 榛樿搴旂敤绋嬪簭
+    .web-browser = 缃戠粶娴忚鍣?    .file-manager = 鏂囦欢绠＄悊鍣?    .mail-client = 閭欢瀹㈡埛绔?    .music = 闊充箰
+    .video = 瑙嗛
+    .photos = 鐓х墖
+    .calendar = 鏃ュ巻
+    .terminal = 缁堢
+    .other-associations = 鍏朵粬鍏宠仈
+    .text-editor = 鏂囨湰缂栬緫鍣?    .not-installed = 鏈畨瑁?
 ## Applications: Startup Applications
 
-startup-apps = 自动启动应用程序
-    .add = 添加应用程序
-    .user = 登录时启动的应用程序
-    .none = 未添加自动启动应用程�?
-    .remove-dialog-title = 移除 { $name } 吗？
-    .remove-dialog-description = 是否删除此自动启动应用程序？
-    .add-startup-app = 添加自动启动应用程序
+startup-apps = 鑷姩鍚姩搴旂敤绋嬪簭
+    .add = 娣诲姞搴旂敤绋嬪簭
+    .user = 鐧诲綍鏃跺惎鍔ㄧ殑搴旂敤绋嬪簭
+    .none = 鏈坊鍔犺嚜鍔ㄥ惎鍔ㄥ簲鐢ㄧ▼搴?    .remove-dialog-title = 绉婚櫎 { $name } 鍚楋紵
+    .remove-dialog-description = 鏄惁鍒犻櫎姝よ嚜鍔ㄥ惎鍔ㄥ簲鐢ㄧ▼搴忥紵
+    .add-startup-app = 娣诲姞鑷姩鍚姩搴旂敤绋嬪簭
 
 ## Applications: Legacy Applications
 
-legacy-applications = X11 应用程序兼容�?
-legacy-app-global-shortcuts = X11 应用程序中的全局快捷�?
-    .desc = 全局快捷键允许其他应用程序识别在应用程序中执行的击键和鼠标按钮事件，以实现按下通话或按下静音等功能。默认情况下，X11 应用程序中禁用全局快捷键，以确保其他应用程序无法监控包含敏感信息的键盘和鼠标事件�?
-    .none = 无按�?
-    .modifiers = 修饰�?(Super、Shift、Control、Alt)
-    .combination = 当修饰键 Super、Control �?Alt 被按下时的所有按�?
-    .all = 所有按�?
-    .mouse = X11 应用程序中的鼠标按钮事件
-legacy-app-scaling = X11 窗口系统应用程序缩放
-    .scaled-gaming = 为游戏和全屏应用优化
-    .gaming-description = �?Wayland 应用相比，X11 应用程序可能看起来稍�?稍小
-    .scaled-applications = 为应用程序优�?
-    .applications-description = 游戏和全�?X11 应用可能与您的显示分辨率不匹�?
-    .scaled-compatibility = 最大兼容性模�?
-    .compatibility-description = X11 应用程序在高分辨率屏幕上可能显示模糊
-    .preferred-display = 游戏和全�?X11 应用程序的首选显示器
-    .no-display = �?
-
+legacy-applications = X11 搴旂敤绋嬪簭鍏煎鎬?legacy-app-global-shortcuts = X11 搴旂敤绋嬪簭涓殑鍏ㄥ眬蹇嵎閿?    .desc = 鍏ㄥ眬蹇嵎閿厑璁稿叾浠栧簲鐢ㄧ▼搴忚瘑鍒湪搴旂敤绋嬪簭涓墽琛岀殑鍑婚敭鍜岄紶鏍囨寜閽簨浠讹紝浠ュ疄鐜版寜涓嬮€氳瘽鎴栨寜涓嬮潤闊崇瓑鍔熻兘銆傞粯璁ゆ儏鍐典笅锛孹11 搴旂敤绋嬪簭涓鐢ㄥ叏灞€蹇嵎閿紝浠ョ‘淇濆叾浠栧簲鐢ㄧ▼搴忔棤娉曠洃鎺у寘鍚晱鎰熶俊鎭殑閿洏鍜岄紶鏍囦簨浠躲€?    .none = 鏃犳寜閿?    .modifiers = 淇グ閿?(Super銆丼hift銆丆ontrol銆丄lt)
+    .combination = 褰撲慨楗伴敭 Super銆丆ontrol 鎴?Alt 琚寜涓嬫椂鐨勬墍鏈夋寜閿?    .all = 鎵€鏈夋寜閿?    .mouse = X11 搴旂敤绋嬪簭涓殑榧犳爣鎸夐挳浜嬩欢
+legacy-app-scaling = X11 绐楀彛绯荤粺搴旂敤绋嬪簭缂╂斁
+    .scaled-gaming = 涓烘父鎴忓拰鍏ㄥ睆搴旂敤浼樺寲
+    .gaming-description = 涓?Wayland 搴旂敤鐩告瘮锛孹11 搴旂敤绋嬪簭鍙兘鐪嬭捣鏉ョ◢澶?绋嶅皬
+    .scaled-applications = 涓哄簲鐢ㄧ▼搴忎紭鍖?    .applications-description = 娓告垙鍜屽叏灞?X11 搴旂敤鍙兘涓庢偍鐨勬樉绀哄垎杈ㄧ巼涓嶅尮閰?    .scaled-compatibility = 鏈€澶у吋瀹规€фā寮?    .compatibility-description = X11 搴旂敤绋嬪簭鍦ㄩ珮鍒嗚鲸鐜囧睆骞曚笂鍙兘鏄剧ず妯＄硦
+    .preferred-display = 娓告垙鍜屽叏灞?X11 搴旂敤绋嬪簭鐨勯閫夋樉绀哄櫒
+    .no-display = 鏃?
 ## System
 
-system = 系统与账�?
-
+system = 绯荤粺涓庤处鎴?
 ## System: About
 
-about = 关于
-about-device = 设备名称
-    .desc = 此名称将显示给其他网络或蓝牙设备
-about-hardware = 硬件
-    .model = 硬件型号
-    .memory = 内存
-    .processor = 处理�?
-    .graphics = 图形处理�?
-    .disk-capacity = 磁盘容量
-about-os = 操作系统
-    .os = 操作系统
-    .os-architecture = 操作系统架构
-    .kernel = 内核版本
-    .desktop-environment = 桌面环境
-    .windowing-system = 窗口系统
-about-related = 相关设置
-    .support = 获取支持
+about = 鍏充簬
+about-device = 璁惧鍚嶇О
+    .desc = 姝ゅ悕绉板皢鏄剧ず缁欏叾浠栫綉缁滄垨钃濈墮璁惧
+about-hardware = 纭欢
+    .model = 纭欢鍨嬪彿
+    .memory = 鍐呭瓨
+    .processor = 澶勭悊鍣?    .graphics = 鍥惧舰澶勭悊鍣?    .disk-capacity = 纾佺洏瀹归噺
+about-os = 鎿嶄綔绯荤粺
+    .os = 鎿嶄綔绯荤粺
+    .os-architecture = 鎿嶄綔绯荤粺鏋舵瀯
+    .kernel = 鍐呮牳鐗堟湰
+    .desktop-environment = 妗岄潰鐜
+    .windowing-system = 绐楀彛绯荤粺
+about-related = 鐩稿叧璁剧疆
+    .support = 鑾峰彇鏀寔
 
 ## System: Firmware
 
-firmware = 固件
+firmware = 鍥轰欢
 
 ## System: Users
 
-users = 用户
-    .admin = 管理�?
-    .standard = 标准用户
-    .profile-add = 选择个人资料图像
-administrator = 管理�?
-    .desc = 管理员可以为所有用户更改设置、添加和移除其他用户
-add-user = 添加用户
-change-password = 修改密码
-remove-user = 删除用户
-full-name = 全名
-invalid-username = 无效的用户名
-password-mismatch = 密码与确认密码必须匹�?
-save = 保存
-amplification = 音量增强
-    .desc = 允许将音量提高到150%
-network-name = 网络名称
-place-here = 将小部件放置于此
-qr-code-unavailable = 二维码不可用
-share = 分享网络
-scan-to-connect-description = 扫描二维码即可连接到该网络�?
-sound-device-port-unplugged = 未插�?
-sound-hd-audio = 高清音频
-sound-usb-audio = USB 音频
-sound-device-profiles = 设备配置文件
-shadows-floating = 悬浮窗口
-    .clip = 匹配系统角落并且应用阴影
-shadows-tiling = 平铺窗口
-    .clip = 匹配系统角落
-    .shadow = 应用阴影
-shadow-and-corners = 窗口阴影与角�?
-workspaces-overview = 工作区总览
-    .action-on-typing = 输入操作
-    .none = �?
-    .launcher = 开启启动器
-    .applications = 打开应用程序
-xdg-entry-about-keywords = COSMIC;关于
+users = 鐢ㄦ埛
+    .admin = 绠＄悊鍛?    .standard = 鏍囧噯鐢ㄦ埛
+    .profile-add = 閫夋嫨涓汉璧勬枡鍥惧儚
+administrator = 绠＄悊鍛?    .desc = 绠＄悊鍛樺彲浠ヤ负鎵€鏈夌敤鎴锋洿鏀硅缃€佹坊鍔犲拰绉婚櫎鍏朵粬鐢ㄦ埛
+add-user = 娣诲姞鐢ㄦ埛
+change-password = 淇敼瀵嗙爜
+remove-user = 鍒犻櫎鐢ㄦ埛
+full-name = 鍏ㄥ悕
+invalid-username = 鏃犳晥鐨勭敤鎴峰悕
+password-mismatch = 瀵嗙爜涓庣‘璁ゅ瘑鐮佸繀椤诲尮閰?save = 淇濆瓨
+amplification = 闊抽噺澧炲己
+    .desc = 鍏佽灏嗛煶閲忔彁楂樺埌150%
+network-name = 缃戠粶鍚嶇О
+place-here = 灏嗗皬閮ㄤ欢鏀剧疆浜庢
+qr-code-unavailable = 浜岀淮鐮佷笉鍙敤
+share = 鍒嗕韩缃戠粶
+scan-to-connect-description = 鎵弿浜岀淮鐮佸嵆鍙繛鎺ュ埌璇ョ綉缁溿€?sound-device-port-unplugged = 鏈彃鍏?sound-hd-audio = 楂樻竻闊抽
+sound-usb-audio = USB 闊抽
+sound-device-profiles = 璁惧閰嶇疆鏂囦欢
+shadows-floating = 鎮诞绐楀彛
+    .clip = 鍖归厤绯荤粺瑙掕惤骞朵笖搴旂敤闃村奖
+shadows-tiling = 骞抽摵绐楀彛
+    .clip = 鍖归厤绯荤粺瑙掕惤
+    .shadow = 搴旂敤闃村奖
+shadow-and-corners = 绐楀彛闃村奖涓庤钀?workspaces-overview = 宸ヤ綔鍖烘€昏
+    .action-on-typing = 杈撳叆鎿嶄綔
+    .none = 鏃?    .launcher = 寮€鍚惎鍔ㄥ櫒
+    .applications = 鎵撳紑搴旂敤绋嬪簭
+xdg-entry-about-keywords = LINGMO;鍏充簬
 xdg-entry-wireless = Wi-Fi
-xdg-entry-comment = COSMIC 桌面的设置应用程�?
-xdg-entry-mouse-keywords = COSMIC;鼠标;加速度;滚动;
-xdg-entry-notifications-keywords = COSMIC;通知;锁屏;
-xdg-entry-startup-apps-keywords = COSMIC;自动启动;应用程序;
-xdg-entry-wired-keywords = COSMIC;有线;LAN;网络;连接;
-xdg-entry-appearance-keywords = COSMIC;主题�?颜色;图标;字体;主题
-xdg-entry-dock-keywords = COSMIC;程序�?面板;小部�?
-xdg-entry-panel-keywords = COSMIC;面板;小部�?
-xdg-entry-time-language-comment = 管理系统日期、时间、地区和语言
-xdg-entry-desktop-keywords = COSMIC;桌面;
-xdg-entry-x11-applications-keywords = Lingmo;X11;应用程序;游戏;兼容�?
-xdg-entry-touchpad-keywords = COSMIC;触摸�?手势;
-xdg-entry-system-keywords = COSMIC;系统;信息;账户;固件;
-xdg-entry-wireless-keywords = COSMIC;WiFi;Wi-Fi;网络;连接;
-xdg-entry-a11y-keywords = COSMIC;无障�?A11y;屏幕;阅读�?放大�?对比;对比�?颜色;色彩;
-xdg-entry-date-time-keywords = COSMIC;时间;时区;
-xdg-entry-desktop-comment = 壁纸、外观、面板、程序坞、窗口管理和工作区设�?
-xdg-entry-bluetooth-keywords = COSMIC;蓝牙;
-xdg-entry-network-keywords = COSMIC;网络;无线;WiFi;VPN;
-xdg-entry-workspaces-keywords = COSMIC;工作�?方向;总览;显示�?
-xdg-entry-wallpaper-keywords = COSMIC;壁纸;背景;幻灯�?
-xdg-entry-users-keywords = COSMIC;用户;账户;
-xdg-entry-vpn-keywords = Lingmo;VPN;网络;连接;OpenVPN;OpenConnect;
-xdg-entry-time-language-keywords = COSMIC;系统;时间;日期;地区;语言;
-xdg-entry-input-keywords = COSMIC;输入;键盘;鼠标;
-xdg-entry-sound-keywords = COSMIC;声音;音频;警报;Pipewire;
-xdg-entry-power-keywords = COSMIC;电源;电池
-xdg-entry-default-apps-keywords = COSMIC;默认;应用程序
-xdg-entry-keywords = COSMIC;设置;
-xdg-entry-region-language-keywords = COSMIC;地区;语言;日期;格式;时间;当地;本地�?
-xdg-entry-applications-keywords = COSMIC;默认;应用程序;自动启动;X11;兼容�?
-xdg-entry-keyboard-keywords = COSMIC;键盘;输入;输入�?快捷�?
-xdg-entry-window-management-keywords = COSMIC;窗口;管理;平铺;Super;�?
-xdg-entry-displays-keywords = COSMIC;显示�?屏幕;
-no-search-results = 无网络符合您的搜索�?
-workspaces-navigation = 导航
-    .wraparound = 使用快捷键和手势在第一个和最后一个工作区间切�?
-bluetooth-display-passkey = 蓝牙配对
-    .description = 请在 { $device } 上输入以下密钥，然后按回车键
-bluetooth-display-pin = 蓝牙配对
-    .description = 请在 { $device } 上输入以�?PIN 码，然后按回车键
+xdg-entry-comment = LINGMO 妗岄潰鐨勮缃簲鐢ㄧ▼搴?xdg-entry-mouse-keywords = LINGMO;榧犳爣;鍔犻€熷害;婊氬姩;
+xdg-entry-notifications-keywords = LINGMO;閫氱煡;閿佸睆;
+xdg-entry-startup-apps-keywords = LINGMO;鑷姩鍚姩;搴旂敤绋嬪簭;
+xdg-entry-wired-keywords = LINGMO;鏈夌嚎;LAN;缃戠粶;杩炴帴;
+xdg-entry-appearance-keywords = LINGMO;涓婚鑹?棰滆壊;鍥炬爣;瀛椾綋;涓婚
+xdg-entry-dock-keywords = LINGMO;绋嬪簭鍧?闈㈡澘;灏忛儴浠?xdg-entry-panel-keywords = LINGMO;闈㈡澘;灏忛儴浠?xdg-entry-time-language-comment = 绠＄悊绯荤粺鏃ユ湡銆佹椂闂淬€佸湴鍖哄拰璇█
+xdg-entry-desktop-keywords = LINGMO;妗岄潰;
+xdg-entry-x11-applications-keywords = LINGMO;X11;搴旂敤绋嬪簭;娓告垙;鍏煎鎬?
+xdg-entry-touchpad-keywords = LINGMO;瑙︽懜鏉?鎵嬪娍;
+xdg-entry-system-keywords = LINGMO;绯荤粺;淇℃伅;璐︽埛;鍥轰欢;
+xdg-entry-wireless-keywords = LINGMO;WiFi;Wi-Fi;缃戠粶;杩炴帴;
+xdg-entry-a11y-keywords = LINGMO;鏃犻殰纰?A11y;灞忓箷;闃呰鍣?鏀惧ぇ闀?瀵规瘮;瀵规瘮搴?棰滆壊;鑹插僵;
+xdg-entry-date-time-keywords = LINGMO;鏃堕棿;鏃跺尯;
+xdg-entry-desktop-comment = 澹佺焊銆佸瑙傘€侀潰鏉裤€佺▼搴忓潪銆佺獥鍙ｇ鐞嗗拰宸ヤ綔鍖鸿缃?xdg-entry-bluetooth-keywords = LINGMO;钃濈墮;
+xdg-entry-network-keywords = LINGMO;缃戠粶;鏃犵嚎;WiFi;VPN;
+xdg-entry-workspaces-keywords = LINGMO;宸ヤ綔鍖?鏂瑰悜;鎬昏;鏄剧ず灞?
+xdg-entry-wallpaper-keywords = LINGMO;澹佺焊;鑳屾櫙;骞荤伅鐗?
+xdg-entry-users-keywords = LINGMO;鐢ㄦ埛;璐︽埛;
+xdg-entry-vpn-keywords = LINGMO;VPN;缃戠粶;杩炴帴;OpenVPN;OpenConnect;
+xdg-entry-time-language-keywords = LINGMO;绯荤粺;鏃堕棿;鏃ユ湡;鍦板尯;璇█;
+xdg-entry-input-keywords = LINGMO;杈撳叆;閿洏;榧犳爣;
+xdg-entry-sound-keywords = LINGMO;澹伴煶;闊抽;璀︽姤;Pipewire;
+xdg-entry-power-keywords = LINGMO;鐢垫簮;鐢垫睜
+xdg-entry-default-apps-keywords = LINGMO;榛樿;搴旂敤绋嬪簭
+xdg-entry-keywords = LINGMO;璁剧疆;
+xdg-entry-region-language-keywords = LINGMO;鍦板尯;璇█;鏃ユ湡;鏍煎紡;鏃堕棿;褰撳湴;鏈湴鍖?
+xdg-entry-applications-keywords = LINGMO;榛樿;搴旂敤绋嬪簭;鑷姩鍚姩;X11;鍏煎鎬?xdg-entry-keyboard-keywords = LINGMO;閿洏;杈撳叆;杈撳叆婧?蹇嵎閿?
+xdg-entry-window-management-keywords = LINGMO;绐楀彛;绠＄悊;骞抽摵;Super;閿?
+xdg-entry-displays-keywords = LINGMO;鏄剧ず鍣?灞忓箷;
+no-search-results = 鏃犵綉缁滅鍚堟偍鐨勬悳绱€?workspaces-navigation = 瀵艰埅
+    .wraparound = 浣跨敤蹇嵎閿拰鎵嬪娍鍦ㄧ涓€涓拰鏈€鍚庝竴涓伐浣滃尯闂村垏鎹?bluetooth-display-passkey = 钃濈墮閰嶅
+    .description = 璇峰湪 { $device } 涓婅緭鍏ヤ互涓嬪瘑閽ワ紝鐒跺悗鎸夊洖杞﹂敭
+bluetooth-display-pin = 钃濈墮閰嶅
+    .description = 璇峰湪 { $device } 涓婅緭鍏ヤ互涓?PIN 鐮侊紝鐒跺悗鎸夊洖杞﹂敭

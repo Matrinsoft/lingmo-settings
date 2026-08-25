@@ -6,131 +6,131 @@ number = { $number }
 
 ## Freedesktop desktop entries
 
-app = Lingmo Settings
-xdg-entry-comment = Settings application for the Lingmo desktop
-xdg-entry-keywords = Lingmo;Settings;
+app = LINGMO Settings
+xdg-entry-comment = Settings application for the LINGMO desktop
+xdg-entry-keywords = LINGMO;Settings;
 
 xdg-entry-about = About
 xdg-entry-about-comment = Device name, hardware information, operating system defaults
-xdg-entry-about-keywords = Lingmo;About
+xdg-entry-about-keywords = LINGMO;About
 
 xdg-entry-a11y = Accessibility
 xdg-entry-a11y-comment = Screen reader, magnifier, high contrast, and color filters
-xdg-entry-a11y-keywords = Lingmo;Accessibility;A11y;Screen;Reader;Magnifier;Contrast;Color;
+xdg-entry-a11y-keywords = LINGMO;Accessibility;A11y;Screen;Reader;Magnifier;Contrast;Color;
 
 xdg-entry-appearance = Appearance
 xdg-entry-appearance-comment = Accent colors and theming
-xdg-entry-appearance-keywords = COSMIC;Accent;Color;Icon;Font;Theme
+xdg-entry-appearance-keywords = LINGMO;Accent;Color;Icon;Font;Theme
 
 xdg-entry-applications = Applications
 xdg-entry-applications-comment = Default applications, startup applications, and X11 application compatibility settings
-xdg-entry-applications-keywords = Lingmo;Default;Application;Startup;X11;Compatibility
+xdg-entry-applications-keywords = LINGMO;Default;Application;Startup;X11;Compatibility
 
 xdg-entry-bluetooth-comment = Manage Bluetooth devices
-xdg-entry-bluetooth-keywords = Lingmo;Bluetooth;
+xdg-entry-bluetooth-keywords = LINGMO;Bluetooth;
 
 xdg-entry-date-time = Date & Time
 xdg-entry-date-time-comment = Time zone, automatic clock settings, and time formatting
-xdg-entry-date-time-keywords = Lingmo;Time;Zone;
+xdg-entry-date-time-keywords = LINGMO;Time;Zone;
 
 xdg-entry-default-apps = Default Applications
 xdg-entry-default-apps-comment = Default web browser, mail client, file browser, and other applications
-xdg-entry-default-apps-keywords = Lingmo;Default;Application
+xdg-entry-default-apps-keywords = LINGMO;Default;Application
 
 xdg-entry-desktop = Desktop
 xdg-entry-desktop-comment = Wallpaper, appearance, panel, dock, window management and workspace settings
-xdg-entry-desktop-keywords = Lingmo;Desktop;
+xdg-entry-desktop-keywords = LINGMO;Desktop;
 
 xdg-entry-displays = Displays
 xdg-entry-displays-comment = Manage display configuration settings
-xdg-entry-displays-keywords = Lingmo;Display;
+xdg-entry-displays-keywords = LINGMO;Display;
 
 xdg-entry-dock = Dock
 xdg-entry-dock-comment = An optional bar for apps and applets
-xdg-entry-dock-keywords = Lingmo;Dock;Panel;Applet
+xdg-entry-dock-keywords = LINGMO;Dock;Panel;Applet
 
 xdg-entry-input = Input Devices
 xdg-entry-input-comment = Keyboard and mouse settings
-xdg-entry-input-keywords = Lingmo;Input;Keyboard;Mouse;Mice;
+xdg-entry-input-keywords = LINGMO;Input;Keyboard;Mouse;Mice;
 
 xdg-entry-keyboard = Keyboard
 xdg-entry-keyboard-comment = Input sources, switching, special character entry, shortcuts
-xdg-entry-keyboard-keywords = Lingmo;Keyboard;Input;Source;Shortcuts;
+xdg-entry-keyboard-keywords = LINGMO;Keyboard;Input;Source;Shortcuts;
 
 xdg-entry-mouse = Mouse
 xdg-entry-mouse-comment = Mouse speed, acceleration, and natural scrolling
-xdg-entry-mouse-keywords = Lingmo;Mouse;Acceleration;Scrolling;
+xdg-entry-mouse-keywords = LINGMO;Mouse;Acceleration;Scrolling;
 
 xdg-entry-network = Network & Wireless
 xdg-entry-network-comment = Manage network connections
-xdg-entry-network-keywords = Lingmo;Network;Wireless;WiFi;VPN;
+xdg-entry-network-keywords = LINGMO;Network;Wireless;WiFi;VPN;
 
 xdg-entry-notifications = Notifications
 xdg-entry-notifications-comment = Do Not Disturb, lockscreen notifications, and per-application settings
-xdg-entry-notifications-keywords = Lingmo;Notification;Lock;
+xdg-entry-notifications-keywords = LINGMO;Notification;Lock;
 
 xdg-entry-panel = Panel
 xdg-entry-panel-comment = Primary system bar for menus and applets
-xdg-entry-panel-keywords = Lingmo;Panel;Applet
+xdg-entry-panel-keywords = LINGMO;Panel;Applet
 
 xdg-entry-power = Power & Battery
 xdg-entry-power-comment = Power modes and power saving options
-xdg-entry-power-keywords = Lingmo;Power;Battery
+xdg-entry-power-keywords = LINGMO;Power;Battery
 
 xdg-entry-region-language = Region & Language
 xdg-entry-region-language-comment = Format dates, times, and numbers based on your region
-xdg-entry-region-language-keywords = Lingmo;Region;Language;Date;Format;Time;Locale;Localization;
+xdg-entry-region-language-keywords = LINGMO;Region;Language;Date;Format;Time;Locale;Localization;
 
 xdg-entry-sound = Sound
 xdg-entry-sound-comment = Audio settings for devices, alerts, and applications
-xdg-entry-sound-keywords = Lingmo;Sound;Audio;Alert;Pipewire;
+xdg-entry-sound-keywords = LINGMO;Sound;Audio;Alert;Pipewire;
 
 xdg-entry-startup-apps = Startup Applications
 xdg-entry-startup-apps-comment = Configure applications which run on login
-xdg-entry-startup-apps-keywords = Lingmo;Startup;Application;
+xdg-entry-startup-apps-keywords = LINGMO;Startup;Application;
 
 xdg-entry-system = System & Accounts
 xdg-entry-system-comment = System information, accounts, and firmware updates
-xdg-entry-system-keywords = Lingmo;System;Info;Accounts;Firmware;
+xdg-entry-system-keywords = LINGMO;System;Info;Accounts;Firmware;
 
 xdg-entry-time-language = Time & Language
 xdg-entry-time-language-comment = Manage system date, time, region, and language
-xdg-entry-time-language-keywords = Lingmo;System;Time;Date;Region;Language;
+xdg-entry-time-language-keywords = LINGMO;System;Time;Date;Region;Language;
 
 xdg-entry-touchpad = Touchpad
 xdg-entry-touchpad-comment = Touchpad speed, click options, and gestures
-xdg-entry-touchpad-keywords = Lingmo;Touchpad;Gesture;
+xdg-entry-touchpad-keywords = LINGMO;Touchpad;Gesture;
 
 xdg-entry-users = Users
 xdg-entry-users-comment = Authentication and user accounts
-xdg-entry-users-keywords = COSMIC;User;Account;
+xdg-entry-users-keywords = LINGMO;User;Account;
 
 xdg-entry-vpn-comment = VPN connections and connection profiles
-xdg-entry-vpn-keywords = Lingmo;VPN;Network;Connection;OpenVPN;OpenConnect;
+xdg-entry-vpn-keywords = LINGMO;VPN;Network;Connection;OpenVPN;OpenConnect;
 
 xdg-entry-wallpaper = Wallpaper
 xdg-entry-wallpaper-comment = Wallpaper images, colors, and slideshow options
-xdg-entry-wallpaper-keywords = Lingmo;Wallpaper;Background;Slideshow;
+xdg-entry-wallpaper-keywords = LINGMO;Wallpaper;Background;Slideshow;
 
 xdg-entry-window-management = Window Management
 xdg-entry-window-management-comment = Super key action, window control options, and additional window tiling options
-xdg-entry-window-management-keywords = Lingmo;Window;Management;Tiling;Super;Key;
+xdg-entry-window-management-keywords = LINGMO;Window;Management;Tiling;Super;Key;
 
 xdg-entry-wired = Wired
 xdg-entry-wired-comment = Wired connections and connection profiles
-xdg-entry-wired-keywords = Lingmo;Wired;LAN;Network;Connection;
+xdg-entry-wired-keywords = LINGMO;Wired;LAN;Network;Connection;
 
 xdg-entry-wireless = Wi-Fi
 xdg-entry-wireless-comment = Wi-Fi connections and connection profiles
-xdg-entry-wireless-keywords = COSMIC;WiFi;Wi-Fi;Network;Connection;
+xdg-entry-wireless-keywords = LINGMO;WiFi;Wi-Fi;Network;Connection;
 
 xdg-entry-workspaces = Workspaces
 xdg-entry-workspaces-comment = Workspace orientation, overview, and multi-monitor behavior
-xdg-entry-workspaces-keywords = COSMIC;Workspace;Orientation;Overview;Monitor;
+xdg-entry-workspaces-keywords = LINGMO;Workspace;Orientation;Overview;Monitor;
 
 xdg-entry-x11-applications = X11 Applications Compatibility
 xdg-entry-x11-applications-comment = X11 window system application scaling, primary display, and global shortcuts
-xdg-entry-x11-applications-keywords = Lingmo;X11;Application;Game;Compatibility;
+xdg-entry-x11-applications-keywords = LINGMO;X11;Application;Game;Compatibility;
 
 ## Network & Wireless
 
@@ -141,8 +141,7 @@ airplane-on = Airplane mode is on.
 cable-unplugged = Cable unplugged
 connect = Connect
 connected = Connected
-connecting = Connecting�?
-disconnect = Disconnect
+connecting = Connecting鈥?disconnect = Disconnect
 forget = Forget
 known-networks = Known networks
 network-and-wireless = Network & wireless
@@ -162,7 +161,7 @@ identity = Identity
 
 auth-dialog = Authentication required
     .vpn-description = Enter the username and password required by the VPN service.
-    .wifi-description = Enter the password or encryption key. You can also connect by pressing the “WPS�?button on the router.
+    .wifi-description = Enter the password or encryption key. You can also connect by pressing the 鈥淲PS鈥?button on the router.
 
 forget-dialog = Forget this Wi-Fi network?
     .description = You'll need to enter a password again to use this Wi-Fi network in the future.
@@ -275,6 +274,8 @@ accessibility = Accessibility
     .high-contrast = High contrast mode
     .invert-colors = Invert colors
     .color-filters = Color filters
+    .shake-cursor = Shake pointer to find it
+    .shake-cursor-desc = Quickly shake the mouse to temporarily enlarge the pointer
 
 hearing = Hearing
     .mono = Play stereo audio as mono
@@ -389,7 +390,7 @@ frosted = Frosted glass effect on system interface
     .desc = Applies background blur to panel, dock, applets, launcher, and application library
 
 enable-export = Apply current theme to GNOME apps
-    .desc = Not all toolkits support auto-switching. Non-COSMIC apps may need to be restarted after a theme change.
+    .desc = Not all toolkits support auto-switching. Non-LINGMO apps may need to be restarted after a theme change.
 
 icon-theme = Icon theme
     .desc = Applies a different set of icons to applications
@@ -586,9 +587,9 @@ night-light = Night light
 
 orientation = Orientation
     .standard = Standard
-    .rotate-90 = Rotate 90°
-    .rotate-180 = Rotate 180°
-    .rotate-270 = Rotate 270°
+    .rotate-90 = Rotate 90掳
+    .rotate-180 = Rotate 180掳
+    .rotate-270 = Rotate 270掳
 
 vrr = Variable refresh rate
     .enabled = Enabled
@@ -724,7 +725,7 @@ keyboard-sources = Input Sources
 keyboard-special-char = Special Character Entry
     .alternate = Alternate characters key
     .compose = Compose key
-    .compose-desc = The compose key allows a wide variety of characters to be entered. To use it, press compose and then a sequence of characters. For example, compose key followed by C and o will enter ©, while compose key followed by a and �?will enter á.
+    .compose-desc = The compose key allows a wide variety of characters to be entered. To use it, press compose and then a sequence of characters. For example, compose key followed by C and o will enter 漏, while compose key followed by a and 鈥?will enter 谩.
     .caps = Caps Lock key
     .ctrl = Control
     .ctrl-right = Right Ctrl
@@ -1010,7 +1011,7 @@ startup-apps = Startup applications
 legacy-applications = X11 applications compatibility
 
 legacy-app-global-shortcuts = Global shortcuts in X11 applications
-    .desc = Global shortcuts allows keystrokes and mouse button events performed in applications to be recognized by other applications for features like push-to-talk or push-to-mute. By default, Global shortcuts is disabled in X11 applications to ensure other applications can’t monitor for keyboard and mouse events containing sensitive information.
+    .desc = Global shortcuts allows keystrokes and mouse button events performed in applications to be recognized by other applications for features like push-to-talk or push-to-mute. By default, Global shortcuts is disabled in X11 applications to ensure other applications can鈥檛 monitor for keyboard and mouse events containing sensitive information.
     .none = No keys
     .modifiers = Modifiers (Super, Shift, Control, Alt)
     .combination = All keys while modifiers Super, Control or Alt are being pressed

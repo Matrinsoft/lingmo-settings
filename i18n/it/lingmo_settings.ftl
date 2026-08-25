@@ -1,4 +1,4 @@
-app = Impostazioni di COSMIC
+app = Impostazioni di LINGMO
 dbus-connection-error = Connessione a DBus fallita
 ok = OK
 unknown = Sconosciuto
@@ -8,8 +8,8 @@ number = { $number }
 
 xdg-entry-about = Informazioni su
 xdg-entry-about-comment = Nome del dispositivo, informazioni sull'hardware e sul sistema operativo
-xdg-entry-a11y = Accessibilità
-xdg-entry-a11y-comment = Impostazioni accessibilità
+xdg-entry-a11y = Accessibilit脿
+xdg-entry-a11y-comment = Impostazioni accessibilit脿
 xdg-entry-appearance = Aspetto
 xdg-entry-appearance-comment = Colore d'accento e temi
 xdg-entry-applications = Applicazioni
@@ -29,15 +29,15 @@ xdg-entry-input-comment = Tastiera, mouse, ecc.
 xdg-entry-keyboard = Tastiera
 xdg-entry-keyboard-comment = Sorgenti di immissione, switch, caratteri speciali e scorciatoie
 xdg-entry-mouse = Mouse
-xdg-entry-mouse-comment = Velocità del cursore, accelerazione e scorrimento naturale
+xdg-entry-mouse-comment = Velocit脿 del cursore, accelerazione e scorrimento naturale
 xdg-entry-network = Rete e connessioni Wi-Fi
 xdg-entry-network-comment = Gestisci le connessioni di rete
 xdg-entry-notifications = Notifiche
 xdg-entry-notifications-comment = Non disturbare, notifiche su schermata di blocco e impostazioni per applicazioni
 xdg-entry-panel = Pannello
-xdg-entry-panel-comment = Barra di sistema principale per il menù e le applet
+xdg-entry-panel-comment = Barra di sistema principale per il men霉 e le applet
 xdg-entry-power = Alimentazione e batteria
-xdg-entry-power-comment = Modalità di alimentazione e opzioni risparmio energia
+xdg-entry-power-comment = Modalit脿 di alimentazione e opzioni risparmio energia
 xdg-entry-region-language = Regione e lingua
 xdg-entry-region-language-comment = Formato della data, dell'ora e dei numeri in base alla regione
 xdg-entry-sound = Audio
@@ -47,7 +47,7 @@ xdg-entry-startup-apps-comment = Configura le applicazioni da avviare automatica
 xdg-entry-system = Sistema e account
 xdg-entry-time-language = Ora e lingua
 xdg-entry-touchpad = Touchpad
-xdg-entry-touchpad-comment = Velocità del touchpad, opzioni di tocco e gesti
+xdg-entry-touchpad-comment = Velocit脿 del touchpad, opzioni di tocco e gesti
 xdg-entry-users = Utenti
 xdg-entry-users-comment = Autenticazione e account utenti
 xdg-entry-vpn-comment = Connessioni VPN e profili di connessione
@@ -60,7 +60,7 @@ xdg-entry-wired-comment = Connessioni cablate e profili
 xdg-entry-wireless-comment = Connessioni Wi-Fi e profili di connessione
 xdg-entry-workspaces = Spazi di lavoro
 xdg-entry-workspaces-comment = Orientamento e comportamento degli spazi di lavoro
-xdg-entry-x11-applications = Compatibilità applicazioni X11
+xdg-entry-x11-applications = Compatibilit脿 applicazioni X11
 xdg-entry-x11-applications-comment = Scaling applicazioni X11 e shortcut globali
 
 ## Network & Wireless
@@ -68,12 +68,11 @@ xdg-entry-x11-applications-comment = Scaling applicazioni X11 e shortcut globali
 add-network = Aggiungi rete
     .profile = Aggiungi profilo
 add-vpn = Aggiungi VPN
-airplane-on = Modalità aereo attivata.
+airplane-on = Modalit脿 aereo attivata.
 cable-unplugged = Cavo scollegato
 connect = Connetti
 connected = Connesso
-connecting = Connessione in corso�?
-disconnect = Disconnetti
+connecting = Connessione in corso鈥?disconnect = Disconnetti
 forget = Dimentica
 known-networks = Reti conosciute
 network-and-wireless = Rete e wireless
@@ -85,10 +84,10 @@ remove = Rimuovi
 settings = Impostazioni
 username = Nome utente
 visible-networks = Reti visibili
-identity = Identità
+identity = Identit脿
 auth-dialog = Autenticazione richiesta
     .vpn-description = Inserisci il nome utente e la password richiesti dal servizio VPN.
-    .wifi-description = Inserisci la password o la chiave di crittografia. Puoi anche connetterti premendo il pulsante “WPS�?sul router.
+    .wifi-description = Inserisci la password o la chiave di crittografia. Puoi anche connetterti premendo il pulsante 鈥淲PS鈥?sul router.
 forget-dialog = Dimenticare questa rete Wi-Fi?
     .description = Per usare di nuovo questa rete Wi-Fi in futuro dovrai reinserire la password.
 network-device-state =
@@ -107,8 +106,8 @@ network-device-state =
     .unmanaged = Non gestito
     .unplugged = Cavo scollegato
 remove-connection-dialog = Rimuovere il profilo di connessione?
-    .vpn-description = Sarà necessario reinserire la password per utilizzare questa rete in futuro.
-    .wired-description = Sarà necessario ricreare questo profilo per utilizzarlo in futuro.
+    .vpn-description = Sar脿 necessario reinserire la password per utilizzare questa rete in futuro.
+    .wired-description = Sar脿 necessario ricreare questo profilo per utilizzarlo in futuro.
 vpn = VPN
     .connections = Connessioni VPN
     .error = Aggiunta del file di configurazione VPN fallita
@@ -152,7 +151,7 @@ confirm = Conferma
 enable = Abilita
 bluetooth = Bluetooth
     .desc = Gestisci dispositivi Bluetooth
-    .status = Il sistema è visibile come { $aliases } quando le impostazioni Bluetooth sono aperte.
+    .status = Il sistema 猫 visibile come { $aliases } quando le impostazioni Bluetooth sono aperte.
     .connected = Connesso
     .connecting = Connessione ...
     .disconnecting = Disconnessione ...
@@ -160,9 +159,9 @@ bluetooth = Bluetooth
     .disconnect = Disconnetti
     .forget = Dimentica
     .dbus-error = Errore durante l'interazione con DBus: { $why }
-    .disabled = Il servizio Bluetooth è disabilitato
-    .inactive = Il servizio Bluetooth non è attivo
-    .unknown = Il servizio Bluetooth non può essere attivato. Verificare l'installazione di BlueZ.
+    .disabled = Il servizio Bluetooth 猫 disabilitato
+    .inactive = Il servizio Bluetooth non 猫 attivo
+    .unknown = Il servizio Bluetooth non pu貌 essere attivato. Verificare l'installazione di BlueZ.
 bluetooth-paired = Dispositivi accoppiati
     .connect = Connetti
     .battery = { $percentage }% batteria rimanente
@@ -173,19 +172,19 @@ bluetooth-adapters = Adattatori Bluetooth
 
 ## Accessibility
 
-accessibility = Accessibilità
+accessibility = Accessibilit脿
     .vision = Vista
     .on = Attivo
     .off = Disattivo
     .unavailable = Non disponibile
     .screen-reader = Lettore schermo
-    .high-contrast = Modalità ad alto contrasto
+    .high-contrast = Modalit脿 ad alto contrasto
     .invert-colors = Inverti colori
     .color-filters = Filtri colore
 hearing = Udito
     .mono = Riproduci audio stereo come mono
 default = Predefinito
-magnifier = Lente d’ingrandimento
+magnifier = Lente d鈥檌ngrandimento
     .controls =
         Oppure usa queste scorciatoie: { $zoom_in ->
             [zero] { "" }
@@ -200,10 +199,10 @@ magnifier = Lente d’ingrandimento
         }
         Super + scorrimento con il mouse
     .scroll_controls = Abilita zoom con Super + Scorrimento del mouse o touchpad
-    .show_overlay = Mostra sovrapposizione della lente d’ingrandimento
+    .show_overlay = Mostra sovrapposizione della lente d鈥檌ngrandimento
     .increment = Incremento zoom
-    .signin = Avvia la lente d’ingrandimento all’accesso
-    .applet = Attiva/disattiva lente d’ingrandimento nell’applet del pannello
+    .signin = Avvia la lente d鈥檌ngrandimento all鈥檃ccesso
+    .applet = Attiva/disattiva lente d鈥檌ngrandimento nell鈥檃pplet del pannello
     .movement = Vista ingrandita si muove
     .continuous = Continuamente con il puntatore
     .onedge = Quando il puntatore raggiunge il bordo
@@ -266,7 +265,7 @@ export = Esporta
 hex = Esadecimale
 import = Importa
 light = Chiaro
-mode-and-colors = Modalità e colori
+mode-and-colors = Modalit脿 e colori
 recent-colors = Colori recenti
 reset-to-default = Ripristina predefinito
 rgb = RGB
@@ -286,7 +285,7 @@ control-tint = Tinta per componenti di controllo
 frosted = Effetto "vetro smerigliato" per l'interfaccia
     .desc = Applica un effetto di sfocatura al pannello, la barra delle applicazioni, gli applet, il launcher e la libreria della applicazioni.
 enable-export = Applica questo tema alle app GNOME.
-    .desc = Non tutte le applicazioni supportano l'auto-switch. Le app Non-COSMIC potrebbero dover essere riavviate dopo aver cambiato tema.
+    .desc = Non tutte le applicazioni supportano l'auto-switch. Le app Non-LINGMO potrebbero dover essere riavviate dopo aver cambiato tema.
 icon-theme = Tema icone
     .desc = Applica icone differenti alle applicazioni.
 text-tint = Tinta per il testo dell'interfaccia
@@ -301,7 +300,7 @@ interface-density = Interface Density
     .spacious = Spaziosa
 window-management-appearance = Gestione finestre
     .active-hint = Dimensione bordo finestra attiva
-    .gaps = Spaziatura finestre in modalità tiling
+    .gaps = Spaziatura finestre in modalit脿 tiling
 
 ### Experimental
 
@@ -350,12 +349,12 @@ panel-style = Stile
     .dock-extend = Estendi barra delle applicazioni ai bordi dello schermo
     .appearance = Aspetto
     .size = Dimensione
-    .background-opacity = Opacità sfondo
+    .background-opacity = Opacit脿 sfondo
 panel-applets = Configurazione
     .dock-desc = Configura gli applet della barra delle applicazioni
     .desc = Configura gli applet del pannello
-panel-missing = La configurazione del pannello è mancante
-    .desc = Il file di configurazione è corrotto o non è stato trovato per via di una configurazione non prevista
+panel-missing = La configurazione del pannello 猫 mancante
+    .desc = Il file di configurazione 猫 corrotto o non 猫 stato trovato per via di una configurazione non prevista
     .fix = Ripristina configurazione predefinita
 
 ## Desktop: Dock
@@ -372,7 +371,7 @@ super-key = Tasto Super
     .workspaces = Apri Spazi di Lavoro
     .applications = Apri Applicazioni
     .disable = Disabilita
-edge-gravity = Le finestre flottanti gravitano verso l'angolo più vicino
+edge-gravity = Le finestre flottanti gravitano verso l'angolo pi霉 vicino
 window-controls = Controlli finestra
     .minimize = Mostra pulsante minimizza
     .maximize = Mostra pulsante massimizza
@@ -407,12 +406,12 @@ hot-corner = Bordi reattivi
 
 -requires-restart = Richiede il riavvio
 color = Colore
-    .depth = Profondità colore
+    .depth = Profondit脿 colore
     .profile = Profilo colore
     .sidebar = Profili colore
     .temperature = Temperatura colore
 display = Schermi
-    .desc = Gestione schermi, modalità GPU e modalità notturna
+    .desc = Gestione schermi, modalit脿 GPU e modalit脿 notturna
     .arrangement = Ordinamento schermi
     .arrangement-desc = Trascina gli schermi per ordinarli.
     .enable = Attiva schermo
@@ -437,9 +436,9 @@ mirroring = Duplicazione
             [1] altro schermo
            *[other] altri schermi
         }
-night-light = Modalità notturna
+night-light = Modalit脿 notturna
     .auto = Automatica (dal tramonto all'alba)
-    .desc = Riduci la luce blu usando colori più caldi.
+    .desc = Riduci la luce blu usando colori pi霉 caldi.
 orientation = Orientamento
     .standard = Standard
     .rotate-90 = 90 gradi in senso orario
@@ -527,7 +526,7 @@ power-saving = Opzioni risparmio energia
 
 ## Input
 
-acceleration-desc = La velocità del puntatore viene basata sulla sua velocità.
+acceleration-desc = La velocit脿 del puntatore viene basata sulla sua velocit脿.
 disable-while-typing = Disabilita durante la digitazione
 input-devices = Dispositivi di immissione
     .desc = Dispositivi di immissione (come mouse e tastiera)
@@ -538,7 +537,7 @@ primary-button = Pulsante principale
 scrolling = Scorrimento
     .two-finger = Scorrimento con due dita
     .edge = Scorrimento lungo il bordo con un dito
-    .speed = Velocità di scorrimento
+    .speed = Velocit脿 di scorrimento
     .natural = Scorrimento naturale
     .natural-desc = Fa scorrere il contenuto invece che la visualizzazione
 
@@ -551,7 +550,7 @@ long = Lungo
 keyboard = Tastiera
     .desc = Sorgenti di immissione, cambio tastiera, inserimento caratteri speciali, scorciatoie.
 keyboard-sources = Sorgenti di immissione
-    .desc = Le sorgenti di immissione possono essere cambiate usando la combinazione Super + Spazio. Ciò può essere personalizzato nelle impostazioni delle scorciatorie da tastiera.
+    .desc = Le sorgenti di immissione possono essere cambiate usando la combinazione Super + Spazio. Ci貌 pu貌 essere personalizzato nelle impostazioni delle scorciatorie da tastiera.
     .move-up = Sposta in alto
     .move-down = Sposta in basso
     .settings = Impostazioni
@@ -615,7 +614,7 @@ nav-shortcuts = Navigazione
     .next-workspace = Focus sullo spazio di lavoro successivo
     .focus =
         Focus sulla finestra { $direction ->
-           *[down] giù
+           *[down] gi霉
             [in] dentro
             [left] sinistra
             [out] fuori
@@ -624,7 +623,7 @@ nav-shortcuts = Navigazione
         }
     .output =
         Passa a output { $direction ->
-           *[down] giù
+           *[down] gi霉
             [left] sinistra
             [right] destra
             [up] su
@@ -641,14 +640,14 @@ manage-windows = Gestione finestre
 move-windows = Sposta finestre
     .direction =
         Sposta finestra { $direction ->
-           *[down] giù
+           *[down] gi霉
             [left] sinistra
             [right] destra
             [up] su
         }
     .display =
         Sposta finestra su un monitor { $direction ->
-           *[down] giù
+           *[down] gi霉
             [left] sinistra
             [right] destra
             [up] su
@@ -670,12 +669,12 @@ move-windows = Sposta finestre
     .send-to-next-workspace = Sposta finestra allo spazio di lavoro successivo
 system-shortcut = Sistema
     .app-library = Apri la libreria delle app
-    .brightness-down = Riduci luminosità del display
-    .brightness-up = Aumenta luminosità del display
+    .brightness-down = Riduci luminosit脿 del display
+    .brightness-up = Aumenta luminosit脿 del display
     .display-toggle = Attiva/disattiva schermo integrato
     .home-folder = Apri cartella home
-    .keyboard-brightness-down = Riduci luminosità della tastiera
-    .keyboard-brightness-up = Aumenta luminosità della tastiera
+    .keyboard-brightness-down = Riduci luminosit脿 della tastiera
+    .keyboard-brightness-up = Aumenta luminosit脿 della tastiera
     .launcher = Apri il launcher
     .log-out = Disconnetti
     .lock-screen = Blocca lo schermo
@@ -703,15 +702,15 @@ window-tiling = Affiancamento finestre
     .toggle-floating = Attiva/disattiva finestra flottante
     .toggle-orientation = Cambia orientamento
 replace-shortcut-dialog = Sostituire scorciatoia?
-    .desc = { $shortcut } è utilizzata da { $name }. Se la sostituisci, { $name } sarà disabilitato.
+    .desc = { $shortcut } 猫 utilizzata da { $name }. Se la sostituisci, { $name } sar脿 disabilitato.
 zoom-in = Ingrandisci
 zoom-out = Rimpicciolisci
 
 ## Input: Mouse
 
 mouse = Mouse
-    .desc = Velocità mouse, accelerazione e scorrimento naturale
-    .speed = Velocità mouse
+    .desc = Velocit脿 mouse, accelerazione e scorrimento naturale
+    .speed = Velocit脿 mouse
     .acceleration = Abilita accelerazione mouse
 
 ## Input: Touchpad
@@ -725,8 +724,8 @@ tap-to-click = Tocca per fare click
     .desc = Abilita il tocco singolo per il click principale, il tocco a due dita per il click secondario e il tocco con tre dita per il click centrale.
 touchpad = Touchpad
     .acceleration = Abilita l'accelerazione del touchpad
-    .desc = Velocità del touchpad, opzioni click e gestures.
-    .speed = Velocità del touchpad
+    .desc = Velocit脿 del touchpad, opzioni click e gestures.
+    .speed = Velocit脿 del touchpad
 
 ## Input: Gestures
 
@@ -738,7 +737,7 @@ gestures = Gestures
     .three-finger-any = Scorri in qualsiasi direzione con tre dita
 switch-workspaces = Cambia spazio di lavoro
     .horizontal = Scorri con quattro dita a sinistra/destra
-    .vertical = Scorri con quattro dita in su/giù
+    .vertical = Scorri con quattro dita in su/gi霉
 switch-between-windows = Scorri tra le varie finestre
 open-application-library = Apri la libreria delle applicazioni
 open-workspaces-view = Riepilogo degli spazi di lavoro
@@ -759,10 +758,10 @@ time-format = Formato data e ora
     .show-seconds = Mostra i secondi
     .first = Primo giorno della settimana
     .show-date = Mostra data sul pannello superiore
-    .friday = Venerdì
+    .friday = Venerd矛
     .saturday = Sabato
     .sunday = Domenica
-    .monday = Lunedì
+    .monday = Luned矛
 time-region = Area geografica e lingua
     .desc = Formatta date, ore e numeri in base alla tua regione.
 formatting = Formato
@@ -770,10 +769,10 @@ formatting = Formato
     .time = Ora
     .date-and-time = Data e ora
     .numbers = Numeri
-    .measurement = Unità di misura
+    .measurement = Unit脿 di misura
     .paper = Fogli
 preferred-languages = Lingua preferite
-    .desc = L’ordine delle lingue determina quale lingua verrà usata per l’interfaccia utente. Le modifiche avranno effetto al prossimo accesso.
+    .desc = L鈥檕rdine delle lingue determina quale lingua verr脿 usata per l鈥檌nterfaccia utente. Le modifiche avranno effetto al prossimo accesso.
 add-language = Aggiungi lingua
     .context = Aggiungi lingua
 install-additional-languages = Installa lingue aggiuntive
@@ -804,17 +803,17 @@ startup-apps = Applicazioni d'avvio
     .desc = Configura logica di avvio delle applicazioni
     .add = Aggiungi applicazione
     .user = Applicazioni specifiche per utente
-    .none = Nessuna applicazione d’avvio aggiunta
+    .none = Nessuna applicazione d鈥檃vvio aggiunta
     .remove-dialog-title = Rimuovere { $name }?
     .remove-dialog-description = Sei sicuro di voler rimuovere questa applicazione d'avvio?
     .search-for-application = Cerca applicazione
 
 ## Applications: Legacy Applications
 
-legacy-applications = Compatibilità applicazioni X11
+legacy-applications = Compatibilit脿 applicazioni X11
     .desc = Ridimensionamento delle applicazioni del sistema X11 e scorciatoie globali.
 legacy-app-global-shortcuts = Scorciatoie globali nelle applicazioni X11
-    .desc = Le scorciatoie globali permettono ai tasti premuti e agli eventi del mouse eseguiti in un'applicazione di essere riconosciuti da altre applicazioni per funzionalità come push-to-talk o push-to-mute. Per impostazione predefinita, questo è disabilitato nelle applicazioni X11 per evitare che altre applicazioni possano intercettare eventi della tastiera o del mouse contenenti informazioni sensibili.
+    .desc = Le scorciatoie globali permettono ai tasti premuti e agli eventi del mouse eseguiti in un'applicazione di essere riconosciuti da altre applicazioni per funzionalit脿 come push-to-talk o push-to-mute. Per impostazione predefinita, questo 猫 disabilitato nelle applicazioni X11 per evitare che altre applicazioni possano intercettare eventi della tastiera o del mouse contenenti informazioni sensibili.
     .none = Nessun tasto
     .modifiers = Modificatori (Super, Shift, Control, Alt)
     .combination = Tutti i tasti mentre sono premuti i modificatori Super, Control o Alt
@@ -822,10 +821,10 @@ legacy-app-global-shortcuts = Scorciatoie globali nelle applicazioni X11
     .mouse = Eventi dei pulsanti del mouse nelle applicazioni X11
 legacy-app-scaling = Ridimensionamento delle applicazioni del sistema X11
     .scaled-gaming = Ottimizza per giochi e applicazioni a schermo intero
-    .gaming-description = Le applicazioni X11 potrebbero apparire leggermente più grandi o più piccole rispetto alle applicazioni Wayland.
+    .gaming-description = Le applicazioni X11 potrebbero apparire leggermente pi霉 grandi o pi霉 piccole rispetto alle applicazioni Wayland.
     .scaled-applications = Ottimizza per le applicazioni
     .applications-description = I giochi e le applicazioni X11 a schermo intero potrebbero non corrispondere alla risoluzione del tuo display.
-    .scaled-compatibility = Modalità di massima compatibilità
+    .scaled-compatibility = Modalit脿 di massima compatibilit脿
     .compatibility-description = Le applicazioni X11 potrebbero apparire sfocate sugli schermi HiDPI.
     .preferred-display = Display preferito per giochi e applicazioni X11 a schermo intero
     .no-display = Nessuno
@@ -845,7 +844,7 @@ about-hardware = Hardware
     .memory = Memoria
     .processor = Processore
     .graphics = GPU
-    .disk-capacity = Capacità archiviazione
+    .disk-capacity = Capacit脿 archiviazione
 about-os = Sistema Operativo
     .os = Sistema Operativo
     .os-architecture = Architettura Sistema Operativo

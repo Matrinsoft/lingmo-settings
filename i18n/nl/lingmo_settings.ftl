@@ -1,6 +1,6 @@
-app = COSMIC Instellingen
+app = LINGMO Instellingen
 dbus-connection-error = Kon niet met DBus verbinden
-ok = Oké
+ok = Ok茅
 unknown = Onbekend
 number = { $number }
 
@@ -67,8 +67,7 @@ airplane-on = Vliegtuigmodus staat aan.
 cable-unplugged = Kabel niet verbonden
 connect = Verbinden
 connected = Verbonden
-connecting = Verbinding maken�?
-disconnect = Verbinding verbreken
+connecting = Verbinding maken鈥?disconnect = Verbinding verbreken
 forget = Vergeten
 known-networks = Bekende netwerken
 network-and-wireless = Netwerk en wifi
@@ -83,21 +82,15 @@ visible-networks = Zichtbare netwerken
 identity = Identiteit
 auth-dialog = Authenticatie vereist
     .vpn-description = Voer de door de VPN-dienst vereiste gebruikersnaam en wachtwoord in.
-    .wifi-description = Voer het wachtwoord of de encryptiesleutel in. U kunt ook verbinding maken door op de “WPS�?knop op de router te drukken.
+    .wifi-description = Voer het wachtwoord of de encryptiesleutel in. U kunt ook verbinding maken door op de 鈥淲PS鈥?knop op de router te drukken.
 forget-dialog = Dit wifi-netwerk vergeten?
     .description = U moet in de toekomst opnieuw een wachtwoord invoeren om dit wifi-netwerk te kunnen gebruiken.
 network-device-state =
     .activated = Verbonden
-    .config = Verbinding maken�?
-    .deactivating = Verbinding verbreken�?
-    .disconnected = Verbinding verbroken
+    .config = Verbinding maken鈥?    .deactivating = Verbinding verbreken鈥?    .disconnected = Verbinding verbroken
     .failed = Kon niet verbinden
-    .ip-check = Verbinding controleren�?
-    .ip-config = IP- en routeringsinformatie opvragen�?
-    .need-auth = Vereist authenticatie
-    .prepare = Verbinding voorbereiden�?
-    .secondaries = Wachten op secundaire verbinding�?
-    .unavailable = Niet beschikbaar
+    .ip-check = Verbinding controleren鈥?    .ip-config = IP- en routeringsinformatie opvragen鈥?    .need-auth = Vereist authenticatie
+    .prepare = Verbinding voorbereiden鈥?    .secondaries = Wachten op secundaire verbinding鈥?    .unavailable = Niet beschikbaar
     .unknown = Onbekende status
     .unmanaged = Onbeheerd
     .unplugged = Kabel niet verbonden
@@ -157,7 +150,7 @@ bluetooth = Bluetooth
     .dbus-error = Er is een fout opgetreden tijdens de interactie met DBus: { $why }
     .disabled = De bluetooth-service is uitgeschakeld
     .inactive = De bluetooth-service is niet actief
-    .unknown = De bluetooth-service kon niet worden geactiveerd. Is BlueZ geïnstalleerd?
+    .unknown = De bluetooth-service kon niet worden geactiveerd. Is BlueZ ge茂nstalleerd?
 bluetooth-paired = Recent verbonden apparaten
     .connect = Verbinden
     .battery = { $percentage }% batterij
@@ -254,7 +247,7 @@ auto = Automatisch
 close = Sluiten
 color-picker = Kleurenkiezer
 copied-to-clipboard = Naar klembord gekopieerd
-copy-to-clipboard = Naar klembord kopiëren
+copy-to-clipboard = Naar klembord kopi毛ren
 dark = Donker
 export = Exporteren
 hex = Hex
@@ -280,7 +273,7 @@ control-tint = Kleuring van controlecomponenten
 frosted = Matglaseffect op de systeeminterface
     .desc = Past achtergrondvervaging toe op het paneel, de dock, applets, snelstarter en het appmenu.
 enable-export = Pas dit thema toe op GNOME-apps.
-    .desc = Niet alle toolkit-omgevingen ondersteunen automatische thema wisseling. Niet-COSMIC-apps moeten mogelijk opnieuw worden opgestart na een themawijziging.
+    .desc = Niet alle toolkit-omgevingen ondersteunen automatische thema wisseling. Niet-LINGMO-apps moeten mogelijk opnieuw worden opgestart na een themawijziging.
 icon-theme = Icoonthema
     .desc = Past een andere set pictogrammen toe op toepassingen.
 text-tint = Interfacetekstkleur
@@ -320,13 +313,11 @@ applets = Applets
 center-segment = Middenstuk
 end-segment = Eindstuk
 large = Groot
-no-applets-found = Geen applets gevonden�?
-panel-bottom = Onder
+no-applets-found = Geen applets gevonden鈥?panel-bottom = Onder
 panel-left = Links
 panel-right = Rechts
 panel-top = Boven
-search-applets = Applets zoeken�?
-small = Klein
+search-applets = Applets zoeken鈥?small = Klein
 start-segment = Beginstuk
 panel-appearance = Uiterlijk
     .match = Systeemstandaard
@@ -379,7 +370,7 @@ focus-navigation = Focusbesturing
 ## Desktop: Workspaces
 
 workspaces = Virtuele werkbladen
-    .desc = Werking en oriëntatie van virtuele werkbladen instellen.
+    .desc = Werking en ori毛ntatie van virtuele werkbladen instellen.
 workspaces-behavior = Werking virtuele werkbladen
     .dynamic = Dynamische werkbladen
     .dynamic-desc = Lege werkbladen automatisch verwijderen.
@@ -391,7 +382,7 @@ workspaces-multi-behavior = Werking over meerdere beeldschermen
 workspaces-overview-thumbnails = Miniatuurweergaven van het werkbladoverzicht
     .show-number = Toon het nummer van de werkbladen
     .show-name = Toon de naam van de werkbladen
-workspaces-orientation = Oriëntatie van virtuele werkbladen
+workspaces-orientation = Ori毛ntatie van virtuele werkbladen
     .vertical = Verticaal
     .horizontal = Horizontaal
 hot-corner = Slimme hoek
@@ -434,11 +425,11 @@ mirroring = Scherm dupliceren
 night-light = Nachtlichtbeheer
     .auto = Automatisch (van zonsondergang tot zonsopgang)
     .desc = Blauw licht verminderen met warmere lichtkleuren
-orientation = Oriëntatie
+orientation = Ori毛ntatie
     .standard = Standaard
-    .rotate-90 = 90° draaien
-    .rotate-180 = 180° draaien
-    .rotate-270 = 270° draaien
+    .rotate-90 = 90掳 draaien
+    .rotate-180 = 180掳 draaien
+    .rotate-270 = 270掳 draaien
 vrr = Variable refresh rate
     .enabled = Ingeschakeld
     .force = Ingeschakeld houden
@@ -490,7 +481,7 @@ battery = Batterij
             [one] dag
            *[other] dagen
         }
-    .less-than-minute = In minder dan één minuut
+    .less-than-minute = In minder dan 茅茅n minuut
     .and = en
     .remaining-time =
         De batterij is over { $time } { $action ->
@@ -552,7 +543,7 @@ keyboard-special-char = Invoer speciale tekens
     .caps = Capslocktoets
 keyboard-typing-assist = Typen
     .repeat-rate = Herhalingssnelheid
-    .repeat-delay = Vertraging vóór herhaalde toetsaanslag
+    .repeat-delay = Vertraging v贸贸r herhaalde toetsaanslag
 keyboard-numlock-boot = Numlock
     .boot-state = Status van de numlock bij het opstarten
     .last-boot = Ongewijzigd laten
@@ -560,8 +551,7 @@ keyboard-numlock-boot = Numlock
     .off = Uitgeschakeld
     .set = Numlock bij het opstarten
 added = Toegevoegd
-type-to-search = Typ om te zoeken�?
-show-extended-input-sources = Toon uitgebreide invoermethodes
+type-to-search = Typ om te zoeken鈥?show-extended-input-sources = Toon uitgebreide invoermethodes
 
 ## Input: Keyboard: Shortcuts
 
@@ -586,7 +576,7 @@ navigate = Navigeren
 replace = Vervangen
 shortcut-name = Sneltoetsnaam
 system-controls = Systeemaansturing
-terminate = Beëindigen
+terminate = Be毛indigen
 toggle-stacking = Zet vensterstapelen aan/uit
 type-key-combination = Toetsencombinatie invoeren
 custom-shortcuts = Aangepaste sneltoetsen
@@ -634,14 +624,14 @@ move-windows = Venster verplaatsen
             [up] boven
         } verplaatsen
     .display =
-        Venster één beeldscherm naar { $direction ->
+        Venster 茅茅n beeldscherm naar { $direction ->
            *[down] beneden
             [left] links
             [right] rechts
             [up] boven
         } verplaatsen
     .workspace =
-        Venster één werkblad naar { $direction ->
+        Venster 茅茅n werkblad naar { $direction ->
            *[below] beneden
             [left] links
             [right] rechts
@@ -680,13 +670,13 @@ system-shortcut = Systeem
     .window-switcher-previous = Omgekeerd tussen openstaande vensters wisselen
     .workspace-overview = Het werkbladoverzicht openen
 window-tiling = Venstertegelen
-    .horizontal = Kies de horizontale oriëntatie
-    .vertical = Kies de verticale oriëntatie
+    .horizontal = Kies de horizontale ori毛ntatie
+    .vertical = Kies de verticale ori毛ntatie
     .swap-window = Vensters omwisselen
     .toggle-tiling = Zet venstertegelen aan/uit
     .toggle-stacking = Zet vensterstapelen aan/uit
     .toggle-floating = Zet zwevende vensters aan/uit
-    .toggle-orientation = Verander de oriëntatie
+    .toggle-orientation = Verander de ori毛ntatie
 replace-shortcut-dialog = Sneltoets overschrijven?
     .desc = { $shortcut } wordt al gebruikt door { $name }. Als u het overschrijft, wordt { $name } uitgeschakeld.
 zoom-in = Inzoomen
@@ -707,7 +697,7 @@ click-behavior = Klikeigenschappen
 pinch-to-zoom = Zoomen met twee vingers
     .desc = Gebruik twee vingers om in te zoomen, voor apps die zoom ondersteunen.
 tap-to-click = Tikken om te klikken
-    .desc = Met één vinger tikken voor de primaire klik, met twee vingers voor de secundaire klik en met drie vingers voor de middelklik.
+    .desc = Met 茅茅n vinger tikken voor de primaire klik, met twee vingers voor de secundaire klik en met drie vingers voor de middelklik.
 touchpad = Touchpad
     .acceleration = Schakelt muisversnelling voor touchpad in
     .desc = Muissnelheid, klikopties en veeggebaren voor touchpad.
@@ -758,7 +748,7 @@ formatting = Opmaak
     .measurement = Maateenheden
     .paper = Papiervoormaat
 preferred-languages = Taalvoorkeur
-    .desc = De volgorde van de talen bepaalt welke door COSMIC wordt gebruikt. Wijzigingen worden doorgevoerd nadat u zich opnieuw heeft aangemeld.
+    .desc = De volgorde van de talen bepaalt welke door LINGMO wordt gebruikt. Wijzigingen worden doorgevoerd nadat u zich opnieuw heeft aangemeld.
 add-language = Taal toevoegen
     .context = Taal toevoegen
 install-additional-languages = Meer talen installeren
@@ -870,17 +860,17 @@ sound-hd-audio = HD-audio
 sound-device-profiles = Apparaatprofielen
 amplification = Verhoog maximum volume
     .desc = Hiermee kan het volume tot 150% worden verhoogd
-xdg-entry-appearance-keywords = COSMIC;Accent;Kleur;Accentkleur;Icoon;Iconen;Lettertype;Thema
-xdg-entry-a11y-keywords = COSMIC;Toegankelijkheid;A11y;Scherm;Lezer;Schermlezer;Vergrootglas;Contrast;Kleur;
-xdg-entry-comment = Instellingentoepassing voor COSMIC
-xdg-entry-keywords = COSMIC;Instellingen;
+xdg-entry-appearance-keywords = LINGMO;Accent;Kleur;Accentkleur;Icoon;Iconen;Lettertype;Thema
+xdg-entry-a11y-keywords = LINGMO;Toegankelijkheid;A11y;Scherm;Lezer;Schermlezer;Vergrootglas;Contrast;Kleur;
+xdg-entry-comment = Instellingentoepassing voor LINGMO
+xdg-entry-keywords = LINGMO;Instellingen;
 workspaces-navigation = Navigatie
     .wraparound = Ga met sneltoetsen en gebaren ook tussen het eerste en laatste werkblad heen en weer
 xdg-entry-bluetooth-comment = Bluetooth-apparaten beheren
-xdg-entry-desktop-keywords = COSMIC;Bureaublad;
-xdg-entry-about-keywords = COSMIC;Over;
-xdg-entry-date-time-keywords = COSMIC;Tijd;Zone;Tijdzone;
+xdg-entry-desktop-keywords = LINGMO;Bureaublad;
+xdg-entry-about-keywords = LINGMO;Over;
+xdg-entry-date-time-keywords = LINGMO;Tijd;Zone;Tijdzone;
 xdg-entry-desktop-comment = Schermachtergrond, uiterlijk, paneel, dock, vensterbeheer, en werkbladinstellingen
-xdg-entry-bluetooth-keywords = Lingmo;Bluetooth;
-xdg-entry-default-apps-keywords = COSMIC;Standaard;Toepassing;Standaardtoepassing
-xdg-entry-applications-keywords = COSMIC;Standaard;Opstart;Autostart;Toepassingen;Standaardtoepassingen;Autostarttoepassingen;X11;Compatibiliteit;
+xdg-entry-bluetooth-keywords = LINGMO;Bluetooth;
+xdg-entry-default-apps-keywords = LINGMO;Standaard;Toepassing;Standaardtoepassing
+xdg-entry-applications-keywords = LINGMO;Standaard;Opstart;Autostart;Toepassingen;Standaardtoepassingen;Autostarttoepassingen;X11;Compatibiliteit;
