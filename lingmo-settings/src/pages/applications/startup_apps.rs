@@ -501,13 +501,13 @@ fn get_all_apps(locales: Vec<String>) -> Vec<DesktopEntry> {
 
         // skip if we can't run this in Lingmo
         if let Some(only_show_in) = entry.only_show_in()
-            && !only_show_in.contains("Lingmo")
+            && !only_show_in.contains(&"Lingmo")
         {
             continue;
         }
 
         if let Some(not_show_in) = entry.not_show_in()
-            && not_show_in.contains("Lingmo")
+            && not_show_in.contains(&"Lingmo")
         {
             continue;
         }
