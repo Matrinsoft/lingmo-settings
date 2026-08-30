@@ -34,10 +34,5 @@
 /usr/share/metainfo/com.lingmoos.LingmoSettings.metainfo.xml
 /usr/share/polkit-1/actions/com.lingmoos.LingmoSettings.Users.policy
 /usr/share/polkit-1/rules.d/lingmo-settings.rules
-/usr/share/lingmo/com.lingmoos.LingmoTheme.Dark
-/usr/share/lingmo/com.lingmoos.LingmoTheme.Dark.Builder
-/usr/share/lingmo/com.lingmoos.LingmoTheme.Light
-/usr/share/lingmo/com.lingmoos.LingmoTheme.Light.Builder
-/usr/share/lingmo/com.lingmoos.LingmoTheme.Mode
-/usr/share/lingmo/com.lingmoos.LingmoComp/v1/input_touchpad
+
 /usr/share/icons/hicolor
